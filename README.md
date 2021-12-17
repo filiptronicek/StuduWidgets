@@ -4,9 +4,9 @@
 
 ### Table of contents
 
-+ <a href="">Get started with StuduWidgets</a>
-+ <a href="">Master the UI</a>
-+ <a href="">Understand the code</a>
++ <a href="https://github.com/filiptronicek/StuduWidgets/blob/main/README.md#get-started-with-studuwidgets">Get started with StuduWidgets</a>
++ <a href="https://github.com/filiptronicek/StuduWidgets/blob/main/README.md#master-the-ui">Master the UI</a>
++ <a href="https://github.com/filiptronicek/StuduWidgets/blob/main/README.md#understand-the-code">Understand the code</a>
 
 
 ## Get started with StuduWidgets
