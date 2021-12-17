@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LaunchView.swift
 //  StuduWidgets
 //
 //  Created by Rostislav Brož on 12/18/21.
