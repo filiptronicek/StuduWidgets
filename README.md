@@ -1,6 +1,6 @@
 # Widgets for students, leveraging popular services and their data
 
-~ Programmed with convenience in mind
+~ Programmed with convenience on our minds
 
 ### Table of contents
 
