@@ -1,5 +1,5 @@
 //
-//  LaunchView.swift
+//  HomeView.swift
 //  StuduWidgets
 //
 //  Created by Rostislav Brož on 12/18/21.
@@ -21,7 +21,7 @@ public var fontClr = Color(red: 1, green: 1, blue: 1)
 
 
 
-struct ContentView: View {
+struct HomeView: View {
     
     @State private var showingTimetableWidgetSheet:Bool = false
     
@@ -64,8 +64,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
