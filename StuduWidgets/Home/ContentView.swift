@@ -22,6 +22,9 @@ public var fontClr = Color(red: 1, green: 1, blue: 1)
 
 
 struct ContentView: View {
+    
+    @State private var showingTimetableWidgetSheet:Bool = false
+    
     var body: some View {
         ZStack {
             bg.ignoresSafeArea()
@@ -35,7 +38,7 @@ struct ContentView: View {
                 
                 ScrollView {
                     VStack {
-                        Button(action: {}, label: {
+                        Button(action: {showingTimetableWidgetSheet.toggle()}, label: {
                             ZStack {
                                 Rectangle()
                                     .fill(objectsClr)
@@ -53,7 +56,7 @@ struct ContentView: View {
                                         .foregroundColor(Color.gray)
                                 }
                             }
-                        })
+                        }).sheet(isPresented: $showingTimetableWidgetSheet) {TimetableSheet()}
                     }
                 }
             }
