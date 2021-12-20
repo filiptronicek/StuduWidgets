@@ -84,8 +84,42 @@ struct HomeView: View {
                 ZStack {
                     Rectangle()
                         .fill(objectsClr)
-                        .frame(width: screenSize.width, height: screenSize.width / 5)
+                        .frame(width: screenSize.width, height: screenSize.width / 6)
                         .ignoresSafeArea()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {}, label: {
+                            VStack {
+                                Image(systemName: "circle.grid.cross")
+                                    .resizable()
+                                    .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                    .foregroundColor(fontClr)
+                                
+                                Text("Widgets")
+                                    .foregroundColor(fontClr)
+                                    .font(.system(size: screenSize.width / 30))
+                            }
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: {}, label: {
+                            VStack {
+                                Image(systemName: "sparkles")
+                                    .resizable()
+                                    .frame(width: screenSize.width / 18, height: screenSize.width / 15)
+                                    .foregroundColor(fontClr)
+                                
+                                Text("Coming soon")
+                                    .foregroundColor(fontClr)
+                                    .font(.system(size: screenSize.width / 30))
+                            }
+                        })
+                        
+                        Spacer()
+                    }
                 }
             }
         }
