@@ -12,7 +12,7 @@ struct TimetableSheet: View {
         ZStack {
             objectsClr.ignoresSafeArea()
             
-            Text("* Demo on how to use widget, what's on it, \nhow it works and source code *")
+            Text("* Demo on how to use widget, what's on it, \nhow it works and link to the source code *")
                 .foregroundColor(fontClr)
         }
     }

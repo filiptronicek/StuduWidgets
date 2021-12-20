@@ -9,7 +9,12 @@ import SwiftUI
 
 struct LunchSheet: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            objectsClr.ignoresSafeArea()
+            
+            Text("* Demo on how to use widget, what's on it, \nhow it works and link to the source code *")
+                .foregroundColor(fontClr)
+        }
     }
 }
 
