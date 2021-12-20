@@ -146,6 +146,19 @@ struct HomeView: View {
                                                     .font(.system(size: screenSize.width / 18))
                                             }
                                 })
+                                
+                                HStack {
+                                      Spacer()
+                                      
+                                      Text("Something else")
+                                          .foregroundColor(objectsClrLight)
+                                          .font(.system(size: screenSize.width / 15))
+                                          .padding(.top, 30)
+                                      
+                                      Spacer()
+                                      Spacer()
+                                      Spacer()
+                                  }
                             }
                         }
                     }
