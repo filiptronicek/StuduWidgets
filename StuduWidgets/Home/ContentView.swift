@@ -16,7 +16,8 @@ let screenSize: CGRect = UIScreen.main.bounds
 // declare vars for UI colors
 
 public var bg = Color(red: 0.05, green: 0, blue: 0)
-public var objectsClr = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+public var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+public var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
 public var fontClr = Color(red: 1, green: 1, blue: 1)
 
 
@@ -44,60 +45,115 @@ struct HomeView: View {
                     ScrollView {
                         VStack {
                             Button(action: {showingTimetableSheet.toggle()}, label: {
-                                ZStack {
-                                    Rectangle()
-                                        .fill(objectsClr)
-                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                        .cornerRadius(15)
-                                    
-                                    HStack {
-                                        Text("Timetable Widget")
-                                            .foregroundColor(fontClr)
-                                            .font(.system(size: screenSize.width / 16))
-                                        Image(systemName: "chevron.right")
-                                            .resizable()
-                                            .frame(width: screenSize.width / 30, height: screenSize.width / 20)
-                                            .padding(.leading, screenSize.width / 6)
-                                            .foregroundColor(Color.gray)
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(objectsClrDark)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                            .cornerRadius(15)
+                                        
+                                        HStack {
+                                            Text("Timetable Widget")
+                                                .foregroundColor(fontClr)
+                                                .font(.system(size: screenSize.width / 16))
+                                            Image(systemName: "chevron.right")
+                                                .resizable()
+                                                .frame(width: screenSize.width / 30, height: screenSize.width / 20)
+                                                .padding(.leading, screenSize.width / 6)
+                                                .foregroundColor(Color.gray)
+                                        }
                                     }
-                                }
                             }).sheet(isPresented: $showingTimetableSheet) {TimetableSheet()}
                             
-                            Button(action: {showingLunchSheet.toggle()}, label: {
-                                ZStack {
-                                    Rectangle()
-                                        .fill(objectsClr)
-                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                        .cornerRadius(15)
-                                    
-                                    HStack {
-                                        Text("Lunch Widget")
-                                            .foregroundColor(fontClr)
-                                            .font(.system(size: screenSize.width / 16))
-                                        Image(systemName: "chevron.right")
-                                            .resizable()
-                                            .frame(width: screenSize.width / 30, height: screenSize.width / 20)
-                                            .padding(.leading, screenSize.width / 3.75)
-                                            .foregroundColor(Color.gray)
-                                    }
-                                }
+                            Button(action: {showingLunchSheet.toggle()},
+                                   label: {
+                                        ZStack {
+                                            Rectangle()
+                                                .fill(objectsClrDark)
+                                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                .cornerRadius(15)
+                                            
+                                            HStack {
+                                                Text("Lunch Widget")
+                                                    .foregroundColor(fontClr)
+                                                    .font(.system(size: screenSize.width / 16))
+                                                Image(systemName: "chevron.right")
+                                                    .resizable()
+                                                    .frame(width: screenSize.width / 30, height: screenSize.width / 20)
+                                                    .padding(.leading, screenSize.width / 3.75)
+                                                    .foregroundColor(Color.gray)
+                                            }
+                                        }
                             }).sheet(isPresented: $showingLunchSheet) {LunchSheet()}
                         }
                     }
                 }
                 
                 else {
-                    ScrollView {
-                        VStack {
-                            Text("bruh dude")
-                                .foregroundColor(fontClr)
+                    VStack {
+                        ScrollView {
+                            VStack {
+                                HStack {
+                                      Spacer()
+                                      
+                                      Text("Accounts")
+                                          .foregroundColor(objectsClrLight)
+                                          .font(.system(size: screenSize.width / 15))
+                                      
+                                      Spacer()
+                                      Spacer()
+                                      Spacer()
+                                      Spacer()
+                                  }
+                                
+                                ZStack {
+                                    Rectangle()
+                                        .fill(objectsClrDark)
+                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
+                                        .cornerRadius(15)
+                                }
+                                
+                                Button(action: {},
+                                       label: {
+                                            ZStack {
+                                                Rectangle()
+                                                    .fill(objectsClrDark)
+                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                    .cornerRadius(15)
+                                                
+                                                HStack {
+                                                    Image(systemName: "plus")
+                                                        .resizable()
+                                                        .foregroundColor(Color.blue)
+                                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                                    
+                                                    Text("Add account")
+                                                        .foregroundColor(Color.blue)
+                                                        .font(.system(size: screenSize.width / 18))
+                                                }
+                                            }
+                                })
+                                
+                                Button(action: {},
+                                       label: {
+                                            ZStack {
+                                                Rectangle()
+                                                    .fill(objectsClrDark)
+                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                    .cornerRadius(15)
+                                                
+                                                Text("Log out")
+                                                    .foregroundColor(Color.red)
+                                                    .font(.system(size: screenSize.width / 18))
+                                            }
+                                })
+                            }
                         }
                     }
                 }
                 
                 ZStack {
                     Rectangle()
-                        .fill(objectsClr)
+                        .fill(objectsClrDark)
                         .frame(width: screenSize.width, height: screenSize.width / 6)
                         .ignoresSafeArea()
                     
