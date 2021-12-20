@@ -104,9 +104,9 @@ struct HomeView: View {
                     HStack {
                         Spacer()
                         
-                        Button(action: {showingComingSoon.toggle()}, label: {
+                        Button(action: {showingComingSoon = false}, label: {
                             VStack {
-                                Image(systemName: "circle.grid.cross")
+                                Image(systemName: showingComingSoon ? "circle.grid.cross" : "circle.grid.cross.fill")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
@@ -119,11 +119,11 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Button(action: {showingComingSoon.toggle()}, label: {
+                        Button(action: {showingComingSoon = true}, label: {
                             VStack {
-                                Image(systemName: "sparkles")
+                                Image(systemName: showingComingSoon ? "aqi.medium" : "aqi.low")
                                     .resizable()
-                                    .frame(width: screenSize.width / 18, height: screenSize.width / 15)
+                                    .frame(width: screenSize.width / 18, height: screenSize.width / 16)
                                     .foregroundColor(fontClr)
                                 
                                 Text("Coming soon")
