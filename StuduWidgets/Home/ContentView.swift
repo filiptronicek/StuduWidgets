@@ -59,6 +59,13 @@ struct HomeView: View {
                         }).sheet(isPresented: $showingTimetableWidgetSheet) {TimetableSheet()}
                     }
                 }
+                
+                ZStack {
+                    Rectangle()
+                        .fill(objectsClr)
+                        .frame(width: screenSize.width, height: screenSize.width / 5)
+                        .ignoresSafeArea()
+                }
             }
         }
     }
