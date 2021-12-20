@@ -13,7 +13,7 @@ import SwiftUI
 let screenSize: CGRect = UIScreen.main.bounds
 
 
-// declare UI colors
+// declare vars for UI colors
 
 public var bg = Color(red: 0.05, green: 0, blue: 0)
 public var objectsClr = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
@@ -121,12 +121,12 @@ struct HomeView: View {
                         
                         Button(action: {showingComingSoon = true}, label: {
                             VStack {
-                                Image(systemName: showingComingSoon ? "aqi.medium" : "aqi.low")
+                                Image(systemName: showingComingSoon ? "gearshape.fill" : "gearshape")
                                     .resizable()
-                                    .frame(width: screenSize.width / 18, height: screenSize.width / 16)
+                                    .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
                                 
-                                Text("Coming soon")
+                                Text("Settings")
                                     .foregroundColor(fontClr)
                                     .font(.system(size: screenSize.width / 30))
                             }
