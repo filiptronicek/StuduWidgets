@@ -29,6 +29,7 @@ struct HomeView: View {
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
     @State private var showingComingSoon:Bool = false
+    @State private var isSignedIn:Bool = false
     
     var body: some View {
         ZStack {
@@ -105,35 +106,39 @@ struct HomeView: View {
                                       Spacer()
                                   }
                                 
-                                ZStack {
-                                    Rectangle()
-                                        .fill(objectsClrDark)
-                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                        .cornerRadius(15)
+                                if isSignedIn == true {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(objectsClrDark)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
+                                            .cornerRadius(15)
+                                    }
                                 }
                                 
-                                Button(action: {},
-                                       label: {
-                                            ZStack {
-                                                Rectangle()
-                                                    .fill(objectsClrDark)
-                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                                    .cornerRadius(15)
-                                                
-                                                HStack {
-                                                    Image(systemName: "plus")
-                                                        .resizable()
-                                                        .foregroundColor(Color.blue)
-                                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                else {
+                                    Button(action: {isSignedIn = true},
+                                           label: {
+                                                ZStack {
+                                                    Rectangle()
+                                                        .fill(objectsClrDark)
+                                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                        .cornerRadius(15)
                                                     
-                                                    Text("Add account")
-                                                        .foregroundColor(Color.blue)
-                                                        .font(.system(size: screenSize.width / 18))
+                                                    HStack {
+                                                        Image(systemName: "plus")
+                                                            .resizable()
+                                                            .foregroundColor(Color.blue)
+                                                            .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                                        
+                                                        Text("Add account")
+                                                            .foregroundColor(Color.blue)
+                                                            .font(.system(size: screenSize.width / 18))
+                                                    }
                                                 }
-                                            }
-                                })
+                                    })
+                                }
                                 
-                                Button(action: {},
+                                Button(action: {isSignedIn = false},
                                        label: {
                                             ZStack {
                                                 Rectangle()
