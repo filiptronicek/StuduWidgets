@@ -28,7 +28,7 @@ struct HomeView: View {
     
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
-    @State private var showingComingSoon:Bool = false
+    @State private var showingSettings:Bool = false
     @State private var isSignedIn:Bool = false
     
     var body: some View {
@@ -42,7 +42,7 @@ struct HomeView: View {
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
-                if showingComingSoon == false {
+                if showingSettings == false {
                     ScrollView {
                         VStack {
                             Button(action: {showingTimetableSheet.toggle()}, label: {
@@ -178,9 +178,9 @@ struct HomeView: View {
                     HStack {
                         Spacer()
                         
-                        Button(action: {showingComingSoon = false}, label: {
+                        Button(action: {showingSettings = false}, label: {
                             VStack {
-                                Image(systemName: showingComingSoon ? "circle.grid.cross" : "circle.grid.cross.fill")
+                                Image(systemName: showingSettings ? "circle.grid.cross" : "circle.grid.cross.fill")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
@@ -193,9 +193,9 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Button(action: {showingComingSoon = true}, label: {
+                        Button(action: {showingSettings = true}, label: {
                             VStack {
-                                Image(systemName: showingComingSoon ? "gearshape.fill" : "gearshape")
+                                Image(systemName: showingSettings ? "gearshape.fill" : "gearshape")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
