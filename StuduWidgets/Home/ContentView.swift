@@ -23,7 +23,8 @@ public var fontClr = Color(red: 1, green: 1, blue: 1)
 
 struct HomeView: View {
     
-    @State private var showingTimetableWidgetSheet:Bool = false
+    @State private var showingTimetableSheet:Bool = false
+    @State private var showingLunchSheet:Bool = false
     
     var body: some View {
         ZStack {
@@ -38,7 +39,7 @@ struct HomeView: View {
                 
                 ScrollView {
                     VStack {
-                        Button(action: {showingTimetableWidgetSheet.toggle()}, label: {
+                        Button(action: {showingTimetableSheet.toggle()}, label: {
                             ZStack {
                                 Rectangle()
                                     .fill(objectsClr)
@@ -56,7 +57,27 @@ struct HomeView: View {
                                         .foregroundColor(Color.gray)
                                 }
                             }
-                        }).sheet(isPresented: $showingTimetableWidgetSheet) {TimetableSheet()}
+                        }).sheet(isPresented: $showingTimetableSheet) {TimetableSheet()}
+                        
+                        Button(action: {showingLunchSheet.toggle()}, label: {
+                            ZStack {
+                                Rectangle()
+                                    .fill(objectsClr)
+                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                    .cornerRadius(15)
+                                
+                                HStack {
+                                    Text("Lunch Widget")
+                                        .foregroundColor(fontClr)
+                                        .font(.system(size: screenSize.width / 16))
+                                    Image(systemName: "chevron.right")
+                                        .resizable()
+                                        .frame(width: screenSize.width / 30, height: screenSize.width / 20)
+                                        .padding(.leading, screenSize.width / 3.75)
+                                        .foregroundColor(Color.gray)
+                                }
+                            }
+                        }).sheet(isPresented: $showingLunchSheet) {LunchSheet()}
                     }
                 }
                 
