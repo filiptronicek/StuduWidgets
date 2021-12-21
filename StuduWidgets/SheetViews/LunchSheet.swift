@@ -31,9 +31,13 @@ struct LunchSheet: View {
                               Spacer()
                               Spacer()
                               Spacer()
-                          }
+                        }
                     }
                 }
+                
+                Text("Swipe down")
+                    .foregroundColor(fontClr)
+                    .font(.system(size: screenSize.width / 18))
             }
         }
     }
