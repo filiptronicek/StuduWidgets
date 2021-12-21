@@ -17,6 +17,7 @@ let screenSize: CGRect = UIScreen.main.bounds
 
 public var bg = Color(red: 0.05, green: 0, blue: 0)
 public var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+public var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
 public var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
 public var fontClr = Color(red: 1, green: 1, blue: 1)
 
@@ -155,7 +156,7 @@ struct HomeView: View {
                                 HStack {
                                       Spacer()
                                       
-                                      Text("Something else")
+                                      Text("Customization")
                                           .foregroundColor(objectsClrLight)
                                           .font(.system(size: screenSize.width / 15))
                                           .padding(.top, 30)
@@ -172,7 +173,7 @@ struct HomeView: View {
                 ZStack {
                     Rectangle()
                         .fill(objectsClrDark)
-                        .frame(width: screenSize.width, height: screenSize.width / 6)
+                        .frame(width: screenSize.width, height: screenSize.width / 5.5)
                         .ignoresSafeArea()
                     
                     HStack {

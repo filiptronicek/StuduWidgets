@@ -12,8 +12,77 @@ struct TimetableSheet: View {
         ZStack {
             objectsClrDark.ignoresSafeArea()
             
-            Text("* Demo on how to use widget, what's on it, \nhow it works and link to the source code *")
-                .foregroundColor(fontClr)
+            VStack {
+                Text("Timetable Widget")
+                    .foregroundColor(fontClr)
+                    .font(.system(size: screenSize.width / 12))
+                    .padding(.trailing, screenSize.width / 5)
+                    .padding([.top, .bottom], screenSize.width / 18)
+                
+                ScrollView {
+                    VStack {
+                        HStack {
+                              Spacer()
+                              
+                              Text("Customization")
+                                  .foregroundColor(objectsClrLight)
+                                  .font(.system(size: screenSize.width / 15))
+                              
+                              Spacer()
+                              Spacer()
+                              Spacer()
+                          }
+                        
+                        ZStack {
+                            Rectangle()
+                                .fill(objectsClrMedium)
+                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                .cornerRadius(15)
+                            
+                            HStack {
+                                Text("Morning message")
+                                    .foregroundColor(fontClr)
+                                    .font(.system(size: screenSize.width / 20))
+                                    .padding(.trailing, screenSize.width / 2.8)
+                                
+                                //TODO Textfield for input of the morning message
+                            }
+                        }
+                        
+                        ZStack {
+                            Rectangle()
+                                .fill(objectsClrMedium)
+                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                .cornerRadius(15)
+                            
+                            HStack {
+                                Text("Evening message")
+                                    .foregroundColor(fontClr)
+                                    .font(.system(size: screenSize.width / 20))
+                                    .padding(.trailing, screenSize.width / 2.8)
+                                
+                                //TODO Textfield for input of the evening message
+                            }
+                        }
+                        Button(action: {},
+                               label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(objectsClrMedium)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                            .cornerRadius(15)
+                                        
+                                        HStack {
+                                            Text("Dividers")
+                                                .foregroundColor(fontClr)
+                                                .font(.system(size: screenSize.width / 20))
+                                                .padding(.trailing, screenSize.width / 1.77)
+                                        }
+                                    }
+                        })
+                    }
+                }
+            }
         }
     }
 }
