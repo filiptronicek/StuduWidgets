@@ -162,7 +162,7 @@ struct HomeView: View {
                         
                         Button(action: {showingComingSoon = false}, label: {
                             VStack {
-                                Image(systemName: showingComingSoon ? "circle.grid.cross" : "circle.grid.cross.fill")
+                                Image(systemName: showingComingSoon ? "greetingcard" : "greetingcard.fill")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
