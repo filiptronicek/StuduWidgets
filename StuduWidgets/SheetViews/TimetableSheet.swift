@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TimetableSheet: View {
+    
+    @State private var dividersAreNumbers:Bool = false
+    
     var body: some View {
         ZStack {
             objectsClrDark.ignoresSafeArea()
@@ -64,7 +67,7 @@ struct TimetableSheet: View {
                                 //TODO Textfield for input of the evening message
                             }
                         }
-                        Button(action: {},
+                        Button(action: {dividersAreNumbers.toggle()},
                                label: {
                                     ZStack {
                                         Rectangle()
@@ -76,7 +79,23 @@ struct TimetableSheet: View {
                                             Text("Dividers")
                                                 .foregroundColor(fontClr)
                                                 .font(.system(size: screenSize.width / 20))
-                                                .padding(.trailing, screenSize.width / 1.77)
+                                                .padding(.trailing, screenSize.width / 4.9)
+                                            
+                                            // I feel like this is a pixel off and moves when you click the dividers button
+                                            
+                                            if dividersAreNumbers == false {
+                                                Text("Lines")
+                                                    .foregroundColor(objectsClrLight)
+                                                    .font(.system(size: screenSize.width / 20))
+                                                    .padding(.leading, screenSize.width / 4.72)
+                                            }
+                                            
+                                            else if dividersAreNumbers == true {
+                                                Text("Numbers")
+                                                    .foregroundColor(objectsClrLight)
+                                                    .font(.system(size: screenSize.width / 20))
+                                                    .padding(.leading, screenSize.width / 7.9)
+                                            }
                                         }
                                     }
                         })
