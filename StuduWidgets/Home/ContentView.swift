@@ -204,7 +204,7 @@ struct HomeView: View {
                         
                         Button(action: {showingSettings = false}, label: {
                             VStack {
-                                Image(systemName: showingSettings ? "circle.grid.cross" : "circle.grid.cross.fill")
+                                Image(systemName: showingSettings ? "greetingcard" : "greetingcard.fill")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)

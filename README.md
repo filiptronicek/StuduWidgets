@@ -11,6 +11,12 @@
 
 ## Get started with StuduWidgets
 
++ bla bla 
+
+### Timetable Widget
+
+### Lunch Widget 
+
 ## Master the UI
 
 ## Understand the code 
