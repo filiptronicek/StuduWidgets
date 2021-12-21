@@ -113,6 +113,29 @@ struct HomeView: View {
                                             .fill(objectsClrDark)
                                             .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
                                             .cornerRadius(15)
+                                        
+                                        HStack {
+                                            Spacer()
+                                            
+                                            Image("frightened")
+                                                .resizable()
+                                                .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
+                                                .clipShape(Circle())
+                                                .overlay(Circle().stroke(fontClr, lineWidth: screenSize.width / 150))
+                                                .padding(.trailing, screenSize.width / 50)
+                                            
+                                            VStack {
+                                                Text("Rostislav Brož")
+                                                    .foregroundColor(fontClr)
+                                                    .font(.system(size: screenSize.width / 18))
+                                                
+                                                Text("Gymnázium J. K. Tyla")
+                                                    .foregroundColor(objectsClrLight)
+                                                    .font(.system(size: screenSize.width / 25))
+                                            }
+                                            
+                                            Spacer()
+                                        }
                                     }
                                 }
                                 

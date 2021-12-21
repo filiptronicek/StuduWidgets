@@ -12,8 +12,29 @@ struct LunchSheet: View {
         ZStack {
             objectsClrDark.ignoresSafeArea()
             
-            Text("* Demo on how to use widget, what's on it, \nhow it works and link to the source code *")
-                .foregroundColor(fontClr)
+            VStack {
+                Text("Lunch Widget")
+                    .foregroundColor(fontClr)
+                    .font(.system(size: screenSize.width / 12))
+                    .padding(.trailing, screenSize.width / 3)
+                    .padding([.top, .bottom], screenSize.width / 18)
+                
+                ScrollView {
+                    VStack {
+                        HStack {
+                              Spacer()
+                              
+                              Text("Customization")
+                                  .foregroundColor(objectsClrLight)
+                                  .font(.system(size: screenSize.width / 15))
+                              
+                              Spacer()
+                              Spacer()
+                              Spacer()
+                          }
+                    }
+                }
+            }
         }
     }
 }
