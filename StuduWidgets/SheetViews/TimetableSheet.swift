@@ -82,6 +82,10 @@ struct TimetableSheet: View {
                         })
                     }
                 }
+                
+                Text("Swipe down")
+                    .foregroundColor(fontClr)
+                    .font(.system(size: screenSize.width / 18))
             }
         }
     }
