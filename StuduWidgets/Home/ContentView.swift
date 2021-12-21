@@ -17,6 +17,7 @@ let screenSize: CGRect = UIScreen.main.bounds
 
 public var bg = Color(red: 0.05, green: 0, blue: 0)
 public var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+public var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
 public var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
 public var fontClr = Color(red: 1, green: 1, blue: 1)
 
@@ -28,7 +29,8 @@ struct HomeView: View {
     
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
-    @State private var showingComingSoon:Bool = false
+    @State private var showingSettings:Bool = false
+    @State private var isSignedIn:Bool = false
     
     var body: some View {
         ZStack {
@@ -41,7 +43,7 @@ struct HomeView: View {
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
-                if showingComingSoon == false {
+                if showingSettings == false {
                     ScrollView {
                         VStack {
                             Button(action: {showingTimetableSheet.toggle()}, label: {
@@ -105,35 +107,62 @@ struct HomeView: View {
                                       Spacer()
                                   }
                                 
-                                ZStack {
-                                    Rectangle()
-                                        .fill(objectsClrDark)
-                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                        .cornerRadius(15)
+                                if isSignedIn == true {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(objectsClrDark)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
+                                            .cornerRadius(15)
+                                        
+                                        HStack {
+                                            Spacer()
+                                            
+                                            Image("frightened")
+                                                .resizable()
+                                                .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
+                                                .clipShape(Circle())
+                                                .overlay(Circle().stroke(fontClr, lineWidth: screenSize.width / 150))
+                                                .padding(.trailing, screenSize.width / 50)
+                                            
+                                            VStack {
+                                                Text("Rostislav Brož")
+                                                    .foregroundColor(fontClr)
+                                                    .font(.system(size: screenSize.width / 18))
+                                                
+                                                Text("Gymnázium J. K. Tyla")
+                                                    .foregroundColor(objectsClrLight)
+                                                    .font(.system(size: screenSize.width / 25))
+                                            }
+                                            
+                                            Spacer()
+                                        }
+                                    }
                                 }
                                 
-                                Button(action: {},
-                                       label: {
-                                            ZStack {
-                                                Rectangle()
-                                                    .fill(objectsClrDark)
-                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                                    .cornerRadius(15)
-                                                
-                                                HStack {
-                                                    Image(systemName: "plus")
-                                                        .resizable()
-                                                        .foregroundColor(Color.blue)
-                                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                else {
+                                    Button(action: {isSignedIn = true},
+                                           label: {
+                                                ZStack {
+                                                    Rectangle()
+                                                        .fill(objectsClrDark)
+                                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                        .cornerRadius(15)
                                                     
-                                                    Text("Add account")
-                                                        .foregroundColor(Color.blue)
-                                                        .font(.system(size: screenSize.width / 18))
+                                                    HStack {
+                                                        Image(systemName: "plus")
+                                                            .resizable()
+                                                            .foregroundColor(Color.blue)
+                                                            .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                                        
+                                                        Text("Add account")
+                                                            .foregroundColor(Color.blue)
+                                                            .font(.system(size: screenSize.width / 18))
+                                                    }
                                                 }
-                                            }
-                                })
+                                    })
+                                }
                                 
-                                Button(action: {},
+                                Button(action: {isSignedIn = false},
                                        label: {
                                             ZStack {
                                                 Rectangle()
@@ -146,6 +175,19 @@ struct HomeView: View {
                                                     .font(.system(size: screenSize.width / 18))
                                             }
                                 })
+                                
+                                HStack {
+                                      Spacer()
+                                      
+                                      Text("Customization")
+                                          .foregroundColor(objectsClrLight)
+                                          .font(.system(size: screenSize.width / 15))
+                                          .padding(.top, 30)
+                                      
+                                      Spacer()
+                                      Spacer()
+                                      Spacer()
+                                  }
                             }
                         }
                     }
@@ -154,13 +196,13 @@ struct HomeView: View {
                 ZStack {
                     Rectangle()
                         .fill(objectsClrDark)
-                        .frame(width: screenSize.width, height: screenSize.width / 6)
+                        .frame(width: screenSize.width, height: screenSize.width / 5.5)
                         .ignoresSafeArea()
                     
                     HStack {
                         Spacer()
                         
-                        Button(action: {showingComingSoon = false}, label: {
+                        Button(action: {showingSettings = false}, label: {
                             VStack {
                                 Image(systemName: showingComingSoon ? "greetingcard" : "greetingcard.fill")
                                     .resizable()
@@ -175,9 +217,9 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Button(action: {showingComingSoon = true}, label: {
+                        Button(action: {showingSettings = true}, label: {
                             VStack {
-                                Image(systemName: showingComingSoon ? "gearshape.fill" : "gearshape")
+                                Image(systemName: showingSettings ? "gearshape.fill" : "gearshape")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
