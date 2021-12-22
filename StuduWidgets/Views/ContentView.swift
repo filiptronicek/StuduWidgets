@@ -46,10 +46,34 @@ struct HomeView: View {
                 if showingSettings == false {
                     ScrollView {
                         VStack {
-                            Text("Get started")
+                            if isSignedIn == false {
+                                Text("Get started")
+                                    .foregroundColor(objectsClrLight)
+                                    .font(.system(size: screenSize.width / 15))
+                                    .padding(.trailing, screenSize.width / 3)
+                                    .padding(.bottom, screenSize.width / 30)
+                                
+                                HStack {
+                                    Spacer()
+                                    
+                                    Image(systemName: "gearshape")
+                                        .resizable()
+                                        .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                        .foregroundColor(fontClr)
+                                                                        
+                                    Text("Open Settings")
+                                        .foregroundColor(fontClr)
+                                        .font(.system(size: screenSize.width / 25))
+                                        .padding(screenSize.width / 30)
+                                    
+                                    Spacer()
+                                }
+                            }
+                            
+                            Text("Widgets")
                                 .foregroundColor(objectsClrLight)
                                 .font(.system(size: screenSize.width / 15))
-                                .padding(.trailing, screenSize.width / 3)
+                                .padding(.trailing, screenSize.width / 2.42)
                             
                             Button(action: {showingTimetableSheet.toggle()}, label: {
                                     ZStack {
