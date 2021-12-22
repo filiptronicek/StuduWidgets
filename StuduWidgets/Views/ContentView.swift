@@ -61,8 +61,6 @@ struct HomeView: View {
                                     .padding(.trailing, screenSize.width / 20)
                                 
                                 HStack {
-                                    Spacer()
-                                    
                                     Image(systemName: "gearshape")
                                         .resizable()
                                         .frame(width: screenSize.width / 18, height: screenSize.width / 18)
@@ -72,9 +70,32 @@ struct HomeView: View {
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
-                                    
-                                    Spacer()
                                 }
+                                
+                                HStack {
+                                    Image(systemName: "plus")
+                                        .resizable()
+                                        .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                        .foregroundColor(fontClr)
+                                    
+                                    Text("Click on Add account")
+                                        .foregroundColor(fontClr)
+                                        .font(.system(size: screenSize.width / 25))
+                                        .padding(.leading, screenSize.width / 30)
+                                }.padding(.top, screenSize.width / 50)
+                                
+                                HStack {
+                                    Image(systemName: "person.circle")
+                                        .resizable()
+                                        .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                        .foregroundColor(fontClr)
+                                    
+                                    Text("Sign in")
+                                        .foregroundColor(fontClr)
+                                        .font(.system(size: screenSize.width / 25))
+                                        .padding(.leading, screenSize.width / 30)
+                                }.padding(.top, screenSize.width / 50)
+                                    .padding(.bottom, screenSize.width / 20)
                             }
                             
                             Text("Widgets")
