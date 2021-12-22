@@ -16,22 +16,15 @@ struct LunchSheet: View {
                 Text("Lunch Widget")
                     .foregroundColor(fontClr)
                     .font(.system(size: screenSize.width / 12))
-                    .padding(.trailing, screenSize.width / 3)
+                    .padding(.trailing, screenSize.width / 3.02)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
                 ScrollView {
                     VStack {
-                        HStack {
-                              Spacer()
-                              
-                              Text("Customization")
-                                  .foregroundColor(objectsClrLight)
-                                  .font(.system(size: screenSize.width / 15))
-                              
-                              Spacer()
-                              Spacer()
-                              Spacer()
-                        }
+                        Text("Customization")
+                            .foregroundColor(objectsClrLight)
+                            .font(.system(size: screenSize.width / 15))
+                            .padding(.trailing, screenSize.width / 4.2)
                         
                         ZStack {
                             Rectangle()

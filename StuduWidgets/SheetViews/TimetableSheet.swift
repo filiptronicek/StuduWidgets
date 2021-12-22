@@ -24,17 +24,10 @@ struct TimetableSheet: View {
                 
                 ScrollView {
                     VStack {
-                        HStack {
-                              Spacer()
-                              
-                              Text("Customization")
-                                  .foregroundColor(objectsClrLight)
-                                  .font(.system(size: screenSize.width / 15))
-                              
-                              Spacer()
-                              Spacer()
-                              Spacer()
-                          }
+                        Text("Customization")
+                            .foregroundColor(objectsClrLight)
+                            .font(.system(size: screenSize.width / 15))
+                            .padding(.trailing, screenSize.width / 4.2)
                         
                         ZStack {
                             Rectangle()
