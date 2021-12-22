@@ -32,6 +32,22 @@ struct LunchSheet: View {
                               Spacer()
                               Spacer()
                         }
+                        
+                        ZStack {
+                            Rectangle()
+                                .fill(objectsClrMedium)
+                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                .cornerRadius(15)
+                            
+                            HStack {
+                                Text("Layout")
+                                    .foregroundColor(fontClr)
+                                    .font(.system(size: screenSize.width / 20))
+                                    .padding(.trailing, screenSize.width / 1.655)
+                                
+                                //TODO Textfield for input of the morning message
+                            }
+                        }
                     }
                 }
                 
