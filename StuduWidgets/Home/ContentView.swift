@@ -136,29 +136,38 @@ struct HomeView: View {
                                             
                                             Spacer()
                                         }
-                                    }.contextMenu{
-                                        Button (role: .destructive) {
-                                            isSignedIn = false
-                                        } label: {
-                                            Label("Sign out", systemImage: "trash")
-                                        }
+                                    }.contextMenu {
+                                        Button(role: .destructive,
+                                               action: {
+                                                    isSignedIn = false
+                                                },
+                                               
+                                               label: {
+                                                    Label("Sign out", systemImage: "trash")
+                                        })
                                     }
                                 }
                                 
                                 else {
                                     Menu {
-                                        Button {
-                                            // Todo(ft): add sign in action
-                                            isSignedIn = true
-                                        } label: {
-                                            Label("Add a Bakaláři account", systemImage: "graduationcap")
-                                        }
-                                        Button {
-                                            // Todo(ft): add sign in action
-                                            isSignedIn = true
-                                        } label: {
-                                            Label("Add a Strava.cz account", systemImage: "fork.knife")
-                                        }                                    } label: {
+                                        Button (action: {
+                                                    // Todo(ft): add sign in action
+                                                    isSignedIn = true
+                                                },
+                                                
+                                                label: {
+                                                    Label("Add Bakaláři.cz account", systemImage: "graduationcap")
+                                        })
+                                        
+                                        Button (action: {
+                                                    // Todo(ft): add sign in action
+                                                    isSignedIn = true
+                                                },
+                                                label: {
+                                                    Label("Add Strava.cz account", systemImage: "fork.knife")
+                                        })
+                                        
+                                    } label: {
                                             ZStack {
                                                 Rectangle()
                                                     .fill(objectsClrDark)
