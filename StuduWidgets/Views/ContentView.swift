@@ -207,7 +207,7 @@ struct HomeView: View {
                                                 },
                                                 
                                                 label: {
-                                                    Label("Add Bakaláři.cz account", systemImage: "graduationcap")
+                                                    Label("Sign in to Bakaláři.cz", systemImage: "graduationcap")
                                         })
                                         
                                         Button (action: {
@@ -215,7 +215,7 @@ struct HomeView: View {
                                                     isSignedIn = true
                                                 },
                                                 label: {
-                                                    Label("Add Strava.cz account", systemImage: "fork.knife")
+                                                    Label("Sign in to Strava.cz", systemImage: "fork.knife")
                                         })
                                         
                                     } label: {
