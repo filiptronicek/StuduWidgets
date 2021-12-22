@@ -136,6 +136,12 @@ struct HomeView: View {
                                             
                                             Spacer()
                                         }
+                                    }.contextMenu{
+                                        Button (role: .destructive) {
+                                            isSignedIn = false
+                                        } label: {
+                                            Label("Sign out", systemImage: "trash")
+                                        }
                                     }
                                 }
                                 
@@ -143,11 +149,13 @@ struct HomeView: View {
                                     Menu {
                                         Button {
                                             // Todo(ft): add sign in action
+                                            isSignedIn = true
                                         } label: {
                                             Label("Add a Bakaláři account", systemImage: "graduationcap")
                                         }
                                         Button {
                                             // Todo(ft): add sign in action
+                                            isSignedIn = true
                                         } label: {
                                             Label("Add a Strava.cz account", systemImage: "fork.knife")
                                         }                                    } label: {
