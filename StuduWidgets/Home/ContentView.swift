@@ -194,11 +194,6 @@ struct HomeView: View {
                 }
                 
                 ZStack {
-                    Rectangle()
-                        .fill(objectsClrDark)
-                        .frame(width: screenSize.width, height: screenSize.width / 5.5)
-                        .ignoresSafeArea()
-                    
                     HStack {
                         Spacer()
                         
@@ -231,7 +226,7 @@ struct HomeView: View {
                         })
                         
                         Spacer()
-                    }
+                    }.padding(.bottom, screenSize.width / 20)
                 }
             }
         }
