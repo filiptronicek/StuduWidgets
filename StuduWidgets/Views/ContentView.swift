@@ -29,8 +29,6 @@ struct HomeView: View {
     
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
-    @State private var showingBakalariSheet:Bool = false
-    @State private var showingStravaSheet:Bool = false
     @State private var showingSettings:Bool = false
     @State private var isSignedIn:Bool = false
     
