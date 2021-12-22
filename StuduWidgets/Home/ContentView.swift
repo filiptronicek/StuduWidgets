@@ -199,9 +199,9 @@ struct HomeView: View {
                         
                         Button(action: {showingSettings = false}, label: {
                             VStack {
-                                Image(systemName: showingSettings ? "doc.richtext" : "doc.richtext.fill")
+                                Image(systemName: showingSettings ? "square.text.square" : "square.text.square.fill")
                                     .resizable()
-                                    .frame(width: screenSize.width / 18, height: screenSize.width / 16)
+                                    .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(fontClr)
                                 
                                 Text("Widgets")
