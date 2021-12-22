@@ -53,6 +53,13 @@ struct HomeView: View {
                                     .padding(.trailing, screenSize.width / 3)
                                     .padding(.bottom, screenSize.width / 30)
                                 
+                                Text("For the sake of widgets proper functioning, you need to sign in \nto the corresponding services...")
+                                    .foregroundColor(fontClr)
+                                    .font(.system(size: screenSize.width / 25))
+                                    .frame(width: screenSize.width / 1.3, height: screenSize.width / 5)
+                                    .padding(.bottom, screenSize.width / 30)
+                                    .padding(.leading, screenSize.width / 10)
+                                
                                 HStack {
                                     Spacer()
                                     
@@ -64,7 +71,7 @@ struct HomeView: View {
                                     Text("Open Settings")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
-                                        .padding(screenSize.width / 30)
+                                        .padding(.leading, screenSize.width / 30)
                                     
                                     Spacer()
                                 }
