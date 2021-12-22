@@ -89,7 +89,7 @@
 		9036D074277367E100480599 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				903AA92F276FBF5A0044B05F /* Home */,
+				903AA922276D535F0044B05F /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,14 +142,6 @@
 				903AA9322770801F0044B05F /* LunchSheet.swift */,
 			);
 			path = SheetViews;
-			sourceTree = "<group>";
-		};
-		903AA92F276FBF5A0044B05F /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				903AA922276D535F0044B05F /* ContentView.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		9096C62A277356C000A706B0 /* Frameworks */ = {
