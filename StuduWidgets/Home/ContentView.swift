@@ -188,20 +188,6 @@ struct HomeView: View {
                                     }
                                 }
                                 
-                                Button(action: {isSignedIn = false},
-                                       label: {
-                                            ZStack {
-                                                Rectangle()
-                                                    .fill(objectsClrDark)
-                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                                    .cornerRadius(15)
-                                                
-                                                Text("Log out")
-                                                    .foregroundColor(Color.red)
-                                                    .font(.system(size: screenSize.width / 18))
-                                            }
-                                })
-                                
                                 HStack {
                                       Spacer()
                                       
