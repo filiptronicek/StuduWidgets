@@ -140,26 +140,35 @@ struct HomeView: View {
                                 }
                                 
                                 else {
-                                    Button(action: {isSignedIn = true},
-                                           label: {
-                                                ZStack {
-                                                    Rectangle()
-                                                        .fill(objectsClrDark)
-                                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                                        .cornerRadius(15)
+                                    Menu {
+                                        Button {
+                                            print("Change country setting")
+                                        } label: {
+                                            Label("Add a Bakaláři account", systemImage: "graduationcap")
+                                        }
+                                        Button {
+                                            print("Enable geolocation")
+                                        } label: {
+                                            Label("Add a Strava.cz account", systemImage: "fork.knife")
+                                        }                                    } label: {
+                                            ZStack {
+                                                Rectangle()
+                                                    .fill(objectsClrDark)
+                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                    .cornerRadius(15)
+                                                
+                                                HStack {
+                                                    Image(systemName: "plus")
+                                                        .resizable()
+                                                        .foregroundColor(Color.blue)
+                                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
                                                     
-                                                    HStack {
-                                                        Image(systemName: "plus")
-                                                            .resizable()
-                                                            .foregroundColor(Color.blue)
-                                                            .frame(width: screenSize.width / 20, height: screenSize.width / 20)
-                                                        
-                                                        Text("Add account")
-                                                            .foregroundColor(Color.blue)
-                                                            .font(.system(size: screenSize.width / 18))
-                                                    }
+                                                    Text("Add account")
+                                                        .foregroundColor(Color.blue)
+                                                        .font(.system(size: screenSize.width / 18))
                                                 }
-                                    })
+                                            }
+                                    }
                                 }
                                 
                                 Button(action: {isSignedIn = false},
