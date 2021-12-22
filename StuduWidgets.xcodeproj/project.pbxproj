@@ -86,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9036D074277367E100480599 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				903AA92F276FBF5A0044B05F /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		903AA914276D535F0044B05F = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +118,9 @@
 			children = (
 				9096C6242773545300A706B0 /* StuduWidgets.entitlements */,
 				903AA920276D535F0044B05F /* StuduWidgetsApp.swift */,
-				9096C6462773658D00A706B0 /* ViewModels */,
-				9096C6452773658000A706B0 /* Views */,
+				9036D074277367E100480599 /* Views */,
 				903AA92E276FBF480044B05F /* SheetViews */,
+				9096C6462773658D00A706B0 /* ViewModels */,
 				903AA924276D53600044B05F /* Assets.xcassets */,
 				903AA926276D53600044B05F /* Preview Content */,
 			);
@@ -162,14 +170,6 @@
 				9096C635277356C200A706B0 /* Info.plist */,
 			);
 			path = "Timetable Widget";
-			sourceTree = "<group>";
-		};
-		9096C6452773658000A706B0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				903AA92F276FBF5A0044B05F /* Home */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		9096C6462773658D00A706B0 /* ViewModels */ = {
