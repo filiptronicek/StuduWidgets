@@ -142,12 +142,12 @@ struct HomeView: View {
                                 else {
                                     Menu {
                                         Button {
-                                            print("Change country setting")
+                                            // Todo(ft): add sign in action
                                         } label: {
                                             Label("Add a Bakaláři account", systemImage: "graduationcap")
                                         }
                                         Button {
-                                            print("Enable geolocation")
+                                            // Todo(ft): add sign in action
                                         } label: {
                                             Label("Add a Strava.cz account", systemImage: "fork.knife")
                                         }                                    } label: {
