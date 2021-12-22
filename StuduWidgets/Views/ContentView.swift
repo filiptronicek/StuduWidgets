@@ -46,6 +46,9 @@ struct HomeView: View {
                 if showingSettings == false {
                     ScrollView {
                         VStack {
+                            Text("Get started")
+                                .foregroundColor(objectsClrLight)
+                            
                             Button(action: {showingTimetableSheet.toggle()}, label: {
                                     ZStack {
                                         Rectangle()

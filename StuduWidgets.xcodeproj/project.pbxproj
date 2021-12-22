@@ -13,7 +13,6 @@
 		903AA928276D53600044B05F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA927276D53600044B05F /* Preview Assets.xcassets */; };
 		903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA930276FBF720044B05F /* TimetableSheet.swift */; };
 		903AA9332770801F0044B05F /* LunchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA9322770801F0044B05F /* LunchSheet.swift */; };
-		908BAF49277369510099CF5E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908BAF48277369510099CF5E /* LoginView.swift */; };
 		9096C62C277356C000A706B0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9096C62B277356C000A706B0 /* WidgetKit.framework */; };
 		9096C62E277356C000A706B0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9096C62D277356C000A706B0 /* SwiftUI.framework */; };
 		9096C631277356C000A706B0 /* Timetable_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096C630277356C000A706B0 /* Timetable_Widget.swift */; };
@@ -56,7 +55,6 @@
 		903AA927276D53600044B05F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		903AA930276FBF720044B05F /* TimetableSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableSheet.swift; sourceTree = "<group>"; };
 		903AA9322770801F0044B05F /* LunchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchSheet.swift; sourceTree = "<group>"; };
-		908BAF48277369510099CF5E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9096C6242773545300A706B0 /* StuduWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuduWidgets.entitlements; sourceTree = "<group>"; };
 		9096C629277356C000A706B0 /* Timetable WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Timetable WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9096C62B277356C000A706B0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				903AA922276D535F0044B05F /* ContentView.swift */,
-				908BAF48277369510099CF5E /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9096C637277356C200A706B0 /* Timetable_Widget.intentdefinition in Sources */,
-				908BAF49277369510099CF5E /* LoginView.swift in Sources */,
 				903AA923276D535F0044B05F /* ContentView.swift in Sources */,
 				903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */,
 				903AA9332770801F0044B05F /* LunchSheet.swift in Sources */,
