@@ -48,6 +48,8 @@ struct HomeView: View {
                         VStack {
                             Text("Get started")
                                 .foregroundColor(objectsClrLight)
+                                .font(.system(size: screenSize.width / 15))
+                                .padding(.trailing, screenSize.width / 3)
                             
                             Button(action: {showingTimetableSheet.toggle()}, label: {
                                     ZStack {
@@ -97,18 +99,11 @@ struct HomeView: View {
                     VStack {
                         ScrollView {
                             VStack {
-                                HStack {
-                                      Spacer()
-                                      
-                                      Text("Accounts")
-                                          .foregroundColor(objectsClrLight)
-                                          .font(.system(size: screenSize.width / 15))
-                                      
-                                      Spacer()
-                                      Spacer()
-                                      Spacer()
-                                      Spacer()
-                                  }
+                                Text("Accounts")
+                                    .foregroundColor(objectsClrLight)
+                                    .font(.system(size: screenSize.width / 15))
+                                    .padding(.trailing, screenSize.width / 2.63)
+                                    // this padding is 0.3 pixels off and it's pissing me off
                                 
                                 if isSignedIn == true {
                                     ZStack {
@@ -192,18 +187,11 @@ struct HomeView: View {
                                     }
                                 }
                                 
-                                HStack {
-                                      Spacer()
-                                      
-                                      Text("Customization")
-                                          .foregroundColor(objectsClrLight)
-                                          .font(.system(size: screenSize.width / 15))
-                                          .padding(.top, 30)
-                                      
-                                      Spacer()
-                                      Spacer()
-                                      Spacer()
-                                  }
+                                Text("Customization")
+                                    .foregroundColor(objectsClrLight)
+                                    .font(.system(size: screenSize.width / 15))
+                                    .padding(.top, 30)
+                                    .padding(.trailing, screenSize.width / 4.2)
                             }
                         }
                     }
