@@ -13,6 +13,12 @@ struct StuduWidgetsApp: App {
         WindowGroup {
             HomeView()
                 .environmentObject(ContentModel())
+            
+            TimetableSheet()
+                .environmentObject(ContentModel())
+            
+            LunchSheet()
+                .environmentObject(ContentModel())
         }
     }
 }

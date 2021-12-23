@@ -24,6 +24,10 @@ public var fontClr = Color(red: 1, green: 1, blue: 1)
 
 
 struct HomeView: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
     
     // declare state variables for sheets
     

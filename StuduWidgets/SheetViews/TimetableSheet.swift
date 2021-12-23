@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TimetableSheet: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
     
     @State private var dividersAreNumbers:Bool = false
     
@@ -87,6 +90,7 @@ struct TimetableSheet: View {
                                 //TODO Textfield for input of the evening message
                             }
                         }
+                        
                         Button(action: {dividersAreNumbers.toggle()},
                                label: {
                                     ZStack {
