@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA920276D535F0044B05F /* StuduWidgetsApp.swift */; };
-		903AA923276D535F0044B05F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA922276D535F0044B05F /* ContentView.swift */; };
+		903AA923276D535F0044B05F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA922276D535F0044B05F /* HomeView.swift */; };
 		903AA925276D53600044B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA924276D53600044B05F /* Assets.xcassets */; };
 		903AA928276D53600044B05F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA927276D53600044B05F /* Preview Assets.xcassets */; };
 		903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA930276FBF720044B05F /* TimetableSheet.swift */; };
@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		903AA91D276D535F0044B05F /* StuduWidgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuduWidgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903AA920276D535F0044B05F /* StuduWidgetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuduWidgetsApp.swift; sourceTree = "<group>"; };
-		903AA922276D535F0044B05F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		903AA922276D535F0044B05F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		903AA924276D53600044B05F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		903AA927276D53600044B05F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		903AA930276FBF720044B05F /* TimetableSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableSheet.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		9036D074277367E100480599 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				903AA922276D535F0044B05F /* ContentView.swift */,
+				903AA922276D535F0044B05F /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9096C637277356C200A706B0 /* Timetable_Widget.intentdefinition in Sources */,
-				903AA923276D535F0044B05F /* ContentView.swift in Sources */,
+				903AA923276D535F0044B05F /* HomeView.swift in Sources */,
 				903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */,
 				903AA9332770801F0044B05F /* LunchSheet.swift in Sources */,
 				903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */,
