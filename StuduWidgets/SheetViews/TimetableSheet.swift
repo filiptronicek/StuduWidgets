@@ -10,33 +10,6 @@ import SwiftUI
 struct TimetableSheet: View {
     @State private var dividersAreNumbers:Bool = false
     
-    
-    func getStravaToken (username: String, password: String, canteen: String) {
-        let url = URL(string: "https://strava-api.vercel.app/api/auth/token?username=\(username)&password=\(password)&canteen=\(canteen)")
-        guard let requestUrl = url else { fatalError() }
-
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "GET"
-
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            if let error = error {
-                print("Error took place \(error)")
-                return
-            }
-            
-            if let response = response as? HTTPURLResponse {
-                print("Response HTTP Status code: \(response.statusCode)")
-            }
-            
-            if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                print("Response data string:\n \(dataString)")
-            }
-            
-        }.resume()
-    
-    }
-    
     var body: some View {
         ZStack {
             objectsClrDark.ignoresSafeArea()
