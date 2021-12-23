@@ -10,5 +10,5 @@ import Foundation
 // TODO - linking to the API
 
 class ContentModel: ObservableObject {
-    var timetable = ["m"]
+    var timetable = "m"
 }
