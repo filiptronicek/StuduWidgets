@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct LunchSheet: View {
-    // Access data in ContentModel.swift
-    
-    @EnvironmentObject var model: ContentModel
-    
     var body: some View {
         ZStack {
             objectsClrDark.ignoresSafeArea()

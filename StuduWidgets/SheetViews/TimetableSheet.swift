@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct TimetableSheet: View {
-    // Access data in ContentModel.swift
-    
-    @EnvironmentObject var model: ContentModel
-    
     @State private var dividersAreNumbers:Bool = false
     
     
