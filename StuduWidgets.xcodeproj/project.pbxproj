@@ -13,8 +13,6 @@
 		903AA928276D53600044B05F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA927276D53600044B05F /* Preview Assets.xcassets */; };
 		903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA930276FBF720044B05F /* TimetableSheet.swift */; };
 		903AA9332770801F0044B05F /* LunchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA9322770801F0044B05F /* LunchSheet.swift */; };
-		9096C62C277356C000A706B0 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9096C62B277356C000A706B0 /* WidgetKit.framework */; };
-		9096C62E277356C000A706B0 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9096C62D277356C000A706B0 /* SwiftUI.framework */; };
 		9096C631277356C000A706B0 /* Timetable_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096C630277356C000A706B0 /* Timetable_Widget.swift */; };
 		9096C634277356C200A706B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9096C633277356C200A706B0 /* Assets.xcassets */; };
 		9096C636277356C200A706B0 /* Timetable_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9096C632277356C100A706B0 /* Timetable_Widget.intentdefinition */; };
@@ -55,10 +53,9 @@
 		903AA927276D53600044B05F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		903AA930276FBF720044B05F /* TimetableSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableSheet.swift; sourceTree = "<group>"; };
 		903AA9322770801F0044B05F /* LunchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchSheet.swift; sourceTree = "<group>"; };
+		908D1AFC277690E1002A0595 /* StuduWidgetsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuduWidgetsDebug.entitlements; sourceTree = "<group>"; };
 		9096C6242773545300A706B0 /* StuduWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuduWidgets.entitlements; sourceTree = "<group>"; };
 		9096C629277356C000A706B0 /* Timetable WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Timetable WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9096C62B277356C000A706B0 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		9096C62D277356C000A706B0 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		9096C630277356C000A706B0 /* Timetable_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable_Widget.swift; sourceTree = "<group>"; };
 		9096C632277356C100A706B0 /* Timetable_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Timetable_Widget.intentdefinition; sourceTree = "<group>"; };
 		9096C633277356C200A706B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,8 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9096C62E277356C000A706B0 /* SwiftUI.framework in Frameworks */,
-				9096C62C277356C000A706B0 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,7 +94,6 @@
 			children = (
 				903AA91F276D535F0044B05F /* StuduWidgets */,
 				9096C62F277356C000A706B0 /* Timetable Widget */,
-				9096C62A277356C000A706B0 /* Frameworks */,
 				903AA91E276D535F0044B05F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +110,7 @@
 		903AA91F276D535F0044B05F /* StuduWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				908D1AFC277690E1002A0595 /* StuduWidgetsDebug.entitlements */,
 				9096C6242773545300A706B0 /* StuduWidgets.entitlements */,
 				903AA920276D535F0044B05F /* StuduWidgetsApp.swift */,
 				9036D074277367E100480599 /* Views */,
@@ -142,15 +137,6 @@
 				903AA9322770801F0044B05F /* LunchSheet.swift */,
 			);
 			path = SheetViews;
-			sourceTree = "<group>";
-		};
-		9096C62A277356C000A706B0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9096C62B277356C000A706B0 /* WidgetKit.framework */,
-				9096C62D277356C000A706B0 /* SwiftUI.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9096C62F277356C000A706B0 /* Timetable Widget */ = {
@@ -424,7 +410,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = StuduWidgets/StuduWidgets.entitlements;
+				CODE_SIGN_ENTITLEMENTS = StuduWidgets/StuduWidgetsDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StuduWidgets/Preview Content\"";
