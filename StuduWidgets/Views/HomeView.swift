@@ -74,7 +74,7 @@ struct HomeView: View {
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
-                                }.padding(.top, screenSize.width / 30)
+                                }.padding(.top, screenSize.width / 40)
                                 
                                 HStack {
                                     Image(systemName: "plus")
