@@ -57,7 +57,7 @@ struct HomeView: View {
                                     .padding(.trailing, screenSize.width / 3)
                                     .padding(.bottom, screenSize.width / 30)
                                 
-                                Text("For the sake of widgets proper functioning, you need to **sign in** to the corresponding services...")
+                                Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
                                     .foregroundColor(fontClr)
                                     .font(.system(size: screenSize.width / 25))
                                     .frame(width: screenSize.width / 1.2, height: screenSize.width / 5)
@@ -99,7 +99,7 @@ struct HomeView: View {
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
                                 }.padding(.top, screenSize.width / 50)
-                                    .padding(.bottom, screenSize.width / 20)
+                                    .padding(.bottom, screenSize.width / 18)
                             }
                             
                             Text("Widgets")
