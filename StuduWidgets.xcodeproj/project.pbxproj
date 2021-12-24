@@ -414,7 +414,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StuduWidgets/Preview Content\"";
-				DEVELOPMENT_TEAM = H4NW3RCM58;
+				DEVELOPMENT_TEAM = 9K37685DN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -427,7 +427,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fifarosta.StuduWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = fufurosta.StuduWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -445,7 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StuduWidgets/Preview Content\"";
-				DEVELOPMENT_TEAM = H4NW3RCM58;
+				DEVELOPMENT_TEAM = 9K37685DN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -458,7 +458,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fifarosta.StuduWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = fufurosta.StuduWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -473,7 +473,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H4NW3RCM58;
+				DEVELOPMENT_TEAM = 9K37685DN3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Timetable Widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Timetable Widget";
@@ -484,7 +484,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "fifarosta.StuduWidgets.Timetable-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "fufurosta.StuduWidgets.Timetable-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -500,7 +500,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H4NW3RCM58;
+				DEVELOPMENT_TEAM = 9K37685DN3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Timetable Widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Timetable Widget";
@@ -511,7 +511,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "fifarosta.StuduWidgets.Timetable-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "fufurosta.StuduWidgets.Timetable-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
