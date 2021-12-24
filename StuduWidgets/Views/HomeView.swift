@@ -67,45 +67,55 @@ struct HomeView: View {
                                 HStack {
                                     Image(systemName: "gearshape")
                                         .resizable()
-                                        .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
                                         .foregroundColor(fontClr)
                                                                         
                                     Text("Open **Settings**")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
+                                    
+                                    Spacer()
                                 }.padding(.top, screenSize.width / 40)
+                                    .frame(width: screenSize.width / 1.7, height: screenSize.width / 15)
                                 
                                 HStack {
                                     Image(systemName: "plus")
                                         .resizable()
-                                        .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
                                         .foregroundColor(fontClr)
                                     
                                     Text("Click on **Add account**")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
+                                    
+                                    Spacer()
                                 }.padding(.top, screenSize.width / 50)
+                                    .frame(width: screenSize.width / 1.7, height: screenSize.width / 15)
                                 
                                 HStack {
                                     Image(systemName: "person.circle")
                                         .resizable()
-                                        .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
                                         .foregroundColor(fontClr)
                                     
                                     Text("**Sign in** to a service")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
-                                }.padding(.top, screenSize.width / 50)
+                                    
+                                    Spacer()
+                                }.padding(.top, screenSize.width / 14)
                                     .padding(.bottom, screenSize.width / 18)
+                                    .frame(width: screenSize.width / 1.7, height: screenSize.width / 15)
                             }
                             
                             Text("Widgets")
                                 .foregroundColor(objectsClrLight)
                                 .font(.system(size: screenSize.width / 15))
                                 .padding(.trailing, screenSize.width / 2.42)
+                                .padding(.top, screenSize.width / 18)
                             
                             Button(action: {showingTimetableSheet.toggle()}, label: {
                                     ZStack {
