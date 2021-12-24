@@ -57,7 +57,7 @@ struct HomeView: View {
                                     .padding(.trailing, screenSize.width / 3)
                                     .padding(.bottom, screenSize.width / 30)
                                 
-                                Text("For the sake of widgets proper functioning, you need to sign in to the corresponding services...")
+                                Text("For the sake of widgets proper functioning, you need to **sign in** to the corresponding services...")
                                     .foregroundColor(fontClr)
                                     .font(.system(size: screenSize.width / 25))
                                     .frame(width: screenSize.width / 1.2, height: screenSize.width / 5)
@@ -70,7 +70,7 @@ struct HomeView: View {
                                         .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                         .foregroundColor(fontClr)
                                                                         
-                                    Text("Open Settings")
+                                    Text("Open **Settings**")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
@@ -82,7 +82,7 @@ struct HomeView: View {
                                         .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                         .foregroundColor(fontClr)
                                     
-                                    Text("Click on Add account")
+                                    Text("Click on **Add account**")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
@@ -94,7 +94,7 @@ struct HomeView: View {
                                         .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                         .foregroundColor(fontClr)
                                     
-                                    Text("Sign in")
+                                    Text("**Sign in** to a service")
                                         .foregroundColor(fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
