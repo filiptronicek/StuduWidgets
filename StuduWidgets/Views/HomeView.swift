@@ -22,7 +22,6 @@ public var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
 public var fontClr = Color(red: 1, green: 1, blue: 1)
 
 
-
 struct HomeView: View {
     // Access data in ContentModel.swift
     
