@@ -9,6 +9,10 @@ import WidgetKit
 import SwiftUI
 
 struct TimetableWidgetSmall: View {
+    
+    @State private var xcor:CGFloat = 150
+    @State private var ycor:CGFloat = 150
+    
     var entry: SimpleEntry
     
     var body: some View {
@@ -59,7 +63,7 @@ struct TimetableWidgetSmall: View {
                             .foregroundColor(fontClr)
                             .font(.system(size: screenSize.width / 10))
                     }
-                }
+                }.position(x: xcor, y: ycor)
             }
         }
     }
