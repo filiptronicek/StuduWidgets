@@ -41,11 +41,28 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct Timetable_WidgetEntryView : View {
+    @Environment(\.widgetFamily) var widgetFamily
+    
     var entry: Provider.Entry
 
     var body: some View {
         ZStack {
-            Text(entry.date, style: .time)
+            switch widgetFamily {
+                case .systemSmall:
+                
+                    TimetableWidgetSmall()
+                
+                case .systemMedium:
+                
+                    TimetableWidgetMedium()
+                
+                case .systemLarge:
+                
+                    TimetableWidgetLarge()
+                
+                default:
+                    Text("Not implemented!")
+            }
         }
     }
 }
@@ -58,8 +75,9 @@ struct Timetable_Widget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             Timetable_WidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .configurationDisplayName("Timetable Widget")
+        .description("View your timetable on home screen")
     }
 }
 

@@ -19,6 +19,9 @@
 		9096C637277356C200A706B0 /* Timetable_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9096C632277356C100A706B0 /* Timetable_Widget.intentdefinition */; };
 		9096C63A277356C200A706B0 /* Timetable WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9096C629277356C000A706B0 /* Timetable WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9096C648277365C800A706B0 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096C647277365C800A706B0 /* ContentModel.swift */; };
+		90A6A101277863000056C953 /* TimetableWidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A100277863000056C953 /* TimetableWidgetSmall.swift */; };
+		90A6A1032778633E0056C953 /* TimetableWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1022778633E0056C953 /* TimetableWidgetMedium.swift */; };
+		90A6A1052778634D0056C953 /* TimetableWidgetLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1042778634D0056C953 /* TimetableWidgetLarge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		9096C633277356C200A706B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9096C635277356C200A706B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9096C647277365C800A706B0 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		90A6A100277863000056C953 /* TimetableWidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetSmall.swift; sourceTree = "<group>"; };
+		90A6A1022778633E0056C953 /* TimetableWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetMedium.swift; sourceTree = "<group>"; };
+		90A6A1042778634D0056C953 /* TimetableWidgetLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetLarge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +148,11 @@
 		9096C62F277356C000A706B0 /* Timetable Widget */ = {
 			isa = PBXGroup;
 			children = (
-				9096C630277356C000A706B0 /* Timetable_Widget.swift */,
 				9096C632277356C100A706B0 /* Timetable_Widget.intentdefinition */,
+				9096C630277356C000A706B0 /* Timetable_Widget.swift */,
 				9096C633277356C200A706B0 /* Assets.xcassets */,
 				9096C635277356C200A706B0 /* Info.plist */,
+				90A6A0FB277862280056C953 /* Widgets */,
 			);
 			path = "Timetable Widget";
 			sourceTree = "<group>";
@@ -156,6 +163,16 @@
 				9096C647277365C800A706B0 /* ContentModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		90A6A0FB277862280056C953 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				90A6A100277863000056C953 /* TimetableWidgetSmall.swift */,
+				90A6A1022778633E0056C953 /* TimetableWidgetMedium.swift */,
+				90A6A1042778634D0056C953 /* TimetableWidgetLarge.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9096C636277356C200A706B0 /* Timetable_Widget.intentdefinition in Sources */,
+				90A6A101277863000056C953 /* TimetableWidgetSmall.swift in Sources */,
+				90A6A1032778633E0056C953 /* TimetableWidgetMedium.swift in Sources */,
+				90A6A1052778634D0056C953 /* TimetableWidgetLarge.swift in Sources */,
 				9096C631277356C000A706B0 /* Timetable_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
