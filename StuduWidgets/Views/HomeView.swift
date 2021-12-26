@@ -32,9 +32,10 @@ struct HomeView: View {
     
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
-    @State private var showingSettings:Bool = true
+    @State private var showingSettings:Bool = false
     @State private var isSignedInToBakalari:Bool = false
     @State private var isSignedInToStrava:Bool = false
+    
     
     var body: some View {
         ZStack {

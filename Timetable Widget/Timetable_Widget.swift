@@ -9,6 +9,23 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+
+// declaration of a constant from which screen width and height is accessed to properly position and size objects
+
+let screenSize: CGRect = UIScreen.main.bounds
+
+
+// declare vars for UI colors
+
+public var bg = Color(red: 0.05, green: 0, blue: 0)
+public var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+public var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
+public var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
+public var objectClrBlue = Color(red: 0, green: 1, blue: 0.9375)
+public var fontClr = Color(red: 1, green: 1, blue: 1)
+public var fontClrDark = Color(red: 0.3320, green: 0.3242, blue: 0.3242)
+
+
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
