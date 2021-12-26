@@ -110,6 +110,18 @@ struct TimetableSheet: View {
                             .resizable()
                             .frame(width: screenSize.width / 2.6, height: screenSize.width / 3)
                     }.frame(width: screenSize.width / 1.2)
+                        .padding(.bottom, screenSize.width / 10)
+                    
+                    HStack {
+                        Image("CustomTimetableWidget")
+                            .resizable()
+                            .frame(width: screenSize.width / 2.6, height: screenSize.width / 3)
+                        
+                        Text("The widget is customizable in the app. Make it yours!")
+                            .foregroundColor(fontClr)
+                            .font(.system(size: screenSize.width / 25))
+                            .padding(.leading, screenSize.width / 25)
+                    }.frame(width: screenSize.width / 1.2)
                 }
                 
                 Text("Swipe down")
