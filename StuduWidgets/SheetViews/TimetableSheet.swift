@@ -21,7 +21,7 @@ struct TimetableSheet: View {
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack {
                         Text("Customization")
                             .foregroundColor(objectsClrLight)
@@ -99,9 +99,15 @@ struct TimetableSheet: View {
                         .font(.system(size: screenSize.width / 15))
                         .padding(.trailing, screenSize.width / 3.02)
                         .padding(.top, screenSize.width / 15)
+                        .padding(.bottom, screenSize.width / 40)
+                    
+                    Text("TimeTable Widget lets you view your school subjects on Home Screen!")
+                        .foregroundColor(fontClr)
+                        .font(.system(size: screenSize.width / 25))
+                        .frame(width: screenSize.width / 1.1)
                     
                     HStack {
-                        Text("TimeTable Widget lets you view your subjects on Home Screen!")
+                        Text("Here's a quick preview!")
                             .foregroundColor(fontClr)
                             .font(.system(size: screenSize.width / 25))
                             .padding(.trailing, screenSize.width / 25)
@@ -110,7 +116,7 @@ struct TimetableSheet: View {
                             .resizable()
                             .frame(width: screenSize.width / 2.7, height: screenSize.width / 3)
                     }.frame(width: screenSize.width / 1.2)
-                        .padding(.bottom, screenSize.width / 10)
+                        .padding([.top, .bottom], screenSize.width / 10)
                     
                     HStack {
                         Image("CustomTimetableWidget")
