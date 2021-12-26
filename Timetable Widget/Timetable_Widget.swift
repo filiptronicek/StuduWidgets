@@ -50,11 +50,11 @@ struct Timetable_WidgetEntryView : View {
             switch widgetFamily {
                 case .systemSmall:
                 
-                    TimetableWidgetSmall()
+                    TimetableWidgetSmall(entry: entry)
                 
                 case .systemMedium:
                 
-                    TimetableWidgetMedium()
+                    TimetableWidgetMedium(entry: entry)
                 
                 case .systemLarge:
                 

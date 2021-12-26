@@ -148,8 +148,8 @@
 		9096C62F277356C000A706B0 /* Timetable Widget */ = {
 			isa = PBXGroup;
 			children = (
-				9096C632277356C100A706B0 /* Timetable_Widget.intentdefinition */,
 				9096C630277356C000A706B0 /* Timetable_Widget.swift */,
+				9096C632277356C100A706B0 /* Timetable_Widget.intentdefinition */,
 				9096C633277356C200A706B0 /* Assets.xcassets */,
 				9096C635277356C200A706B0 /* Info.plist */,
 				90A6A0FB277862280056C953 /* Widgets */,

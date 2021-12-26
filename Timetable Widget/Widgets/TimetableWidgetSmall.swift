@@ -5,16 +5,23 @@
 //  Created by Rostislav Brož on 12/26/21.
 //
 
+import WidgetKit
 import SwiftUI
 
 struct TimetableWidgetSmall: View {
+    var entry: SimpleEntry
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct TimetableWidgetSmall_Previews: PreviewProvider {
-    static var previews: some View {
-        TimetableWidgetSmall()
+        GroupBox {
+            HStack {
+                Image(systemName: "person")
+                    .resizable()
+                    .scaledToFit()
+                
+                Divider()
+            }
+        } label: {
+            Label("Timetable Widget", systemImage: "square.text.square")
+        }
     }
 }
