@@ -467,7 +467,7 @@ struct HomeView: View {
                                 Text("Customization")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
-                                    .padding(.top, 30)
+                                    .padding(.top, screenSize.width / 15)
                                     .padding(.trailing, screenSize.width / 4.2)
                             }
                         }

@@ -93,6 +93,35 @@ struct TimetableSheet: View {
                                     }
                         })
                     }
+                    
+                    Text("Get started")
+                        .foregroundColor(objectsClrLight)
+                        .font(.system(size: screenSize.width / 15))
+                        .padding(.trailing, screenSize.width / 3.02)
+                        .padding(.top, screenSize.width / 15)
+                    
+                    HStack {
+                        Text("TimeTable Widget lets you view your subjects on Home Screen!")
+                            .foregroundColor(fontClr)
+                            .font(.system(size: screenSize.width / 25))
+                            .padding(.trailing, screenSize.width / 25)
+                        
+                        Image("TimetableWidget")
+                            .resizable()
+                            .frame(width: screenSize.width / 2.7, height: screenSize.width / 3)
+                    }.frame(width: screenSize.width / 1.2)
+                        .padding(.bottom, screenSize.width / 10)
+                    
+                    HStack {
+                        Image("CustomTimetableWidget")
+                            .resizable()
+                            .frame(width: screenSize.width / 2.7, height: screenSize.width / 3)
+                        
+                        Text("The widget is customizable in the app. Make it yours!")
+                            .foregroundColor(fontClr)
+                            .font(.system(size: screenSize.width / 25))
+                            .padding(.leading, screenSize.width / 25)
+                    }.frame(width: screenSize.width / 1.2)
                 }
                 
                 Text("Swipe down")
