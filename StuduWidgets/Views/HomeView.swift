@@ -32,7 +32,7 @@ struct HomeView: View {
     
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
-    @State private var showingSettings:Bool = false
+    @State private var showingSettings:Bool = true
     @State private var isSignedInToBakalari:Bool = false
     @State private var isSignedInToStrava:Bool = false
     
@@ -460,7 +460,7 @@ struct HomeView: View {
                                 Text("Customization")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
-                                    .padding(.top, 30)
+                                    .padding(.top, screenSize.width / 15)
                                     .padding(.trailing, screenSize.width / 4.2)
                             }
                         }
