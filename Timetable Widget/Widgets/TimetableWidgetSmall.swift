@@ -10,8 +10,8 @@ import SwiftUI
 
 struct TimetableWidgetSmall: View {
     
-    @State private var xcor:CGFloat = 150
-    @State private var ycor:CGFloat = 150
+    @State private var xcor:CGFloat = 100
+    @State private var ycor:CGFloat = 200
     
     var entry: SimpleEntry
     
@@ -25,8 +25,6 @@ struct TimetableWidgetSmall: View {
             
             VStack {
                 HStack {
-                    Spacer()
-                    
                     ZStack {
                         Text("Ch")
                             .foregroundColor(fontClrDark)
@@ -38,7 +36,9 @@ struct TimetableWidgetSmall: View {
                             .font(.system(size: screenSize.width / 10))
                     }
                     
-                    Spacer()
+                    Rectangle()
+                        .fill(fontClr)
+                        .frame(width: screenSize.width / 150, height: screenSize.width / 15)
                     
                     ZStack {
                         Text("F")
@@ -51,7 +51,9 @@ struct TimetableWidgetSmall: View {
                             .font(.system(size: screenSize.width / 10))
                     }
                     
-                    Spacer()
+                    Rectangle()
+                        .fill(fontClr)
+                        .frame(width: screenSize.width / 150, height: screenSize.width / 15)
                     
                     ZStack {
                         Text("M")
