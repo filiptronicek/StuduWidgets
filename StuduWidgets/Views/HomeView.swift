@@ -33,6 +33,10 @@ struct HomeView: View {
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
     @State private var showingSettings:Bool = false
+    
+    @State private var showingLoginStrava:Bool = false
+    @State private var showingLoginBakalari:Bool = false
+    
     @State private var isSignedInToBakalari:Bool = false
     @State private var isSignedInToStrava:Bool = false
     
@@ -386,7 +390,7 @@ struct HomeView: View {
                                     Menu {
                                         Button (action: {
                                                     // Todo(ft): add sign in action
-                                            
+                                                    
                                                     isSignedInToBakalari = true
                                                 },
                                                 
@@ -396,11 +400,11 @@ struct HomeView: View {
                                         
                                         Button (action: {
                                                     // Todo(ft): add sign in action
-                                                    isSignedInToStrava = true
+                                            showingLoginStrava.toggle()
                                                 },
                                                 label: {
                                                     Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                        })
+                                        }).sheet(isPresented: $showingLoginStrava) {StravaLoginSheet()}
                                         
                                     } label: {
                                             ZStack {
@@ -437,11 +441,12 @@ struct HomeView: View {
                                         
                                         Button (action: {
                                                     // Todo(ft): add sign in action
-                                                    isSignedInToStrava = true
+                                            showingLoginStrava.toggle()
                                                 },
                                                 label: {
                                                     Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                        })
+                                        }).sheet(isPresented: $showingLoginStrava) {StravaLoginSheet()}
+
                                         
                                     } label: {
                                             ZStack {
