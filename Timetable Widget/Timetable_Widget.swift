@@ -58,7 +58,7 @@ struct Timetable_WidgetEntryView : View {
                 
                 case .systemLarge:
                 
-                    TimetableWidgetLarge()
+                    TimetableWidgetLarge(entry: entry)
                 
                 default:
                     Text("Not implemented!")
