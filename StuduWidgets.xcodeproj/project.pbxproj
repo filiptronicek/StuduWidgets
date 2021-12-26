@@ -22,13 +22,6 @@
 		90A6A101277863000056C953 /* TimetableWidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A100277863000056C953 /* TimetableWidgetSmall.swift */; };
 		90A6A1032778633E0056C953 /* TimetableWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1022778633E0056C953 /* TimetableWidgetMedium.swift */; };
 		90A6A1052778634D0056C953 /* TimetableWidgetLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1042778634D0056C953 /* TimetableWidgetLarge.swift */; };
-		90A6A10D27786BDA0056C953 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A6A10C27786BDA0056C953 /* WidgetKit.framework */; };
-		90A6A10F27786BDA0056C953 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A6A10E27786BDA0056C953 /* SwiftUI.framework */; };
-		90A6A11227786BDA0056C953 /* LunchWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A11127786BDA0056C953 /* LunchWidget.swift */; };
-		90A6A11527786BDB0056C953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A6A11427786BDB0056C953 /* Assets.xcassets */; };
-		90A6A11727786BDB0056C953 /* LunchWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A11327786BDA0056C953 /* LunchWidget.intentdefinition */; };
-		90A6A11827786BDB0056C953 /* LunchWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A11327786BDA0056C953 /* LunchWidget.intentdefinition */; };
-		90A6A11B27786BDB0056C953 /* LunchWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90A6A10A27786BDA0056C953 /* LunchWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +31,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9096C628277356C000A706B0;
 			remoteInfo = "Timetable WidgetExtension";
-		};
-		90A6A11927786BDB0056C953 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 903AA915276D535F0044B05F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 90A6A10927786BDA0056C953;
-			remoteInfo = LunchWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,7 +42,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				9096C63A277356C200A706B0 /* Timetable WidgetExtension.appex in Embed App Extensions */,
-				90A6A11B27786BDB0056C953 /* LunchWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,13 +67,8 @@
 		90A6A100277863000056C953 /* TimetableWidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetSmall.swift; sourceTree = "<group>"; };
 		90A6A1022778633E0056C953 /* TimetableWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetMedium.swift; sourceTree = "<group>"; };
 		90A6A1042778634D0056C953 /* TimetableWidgetLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetLarge.swift; sourceTree = "<group>"; };
-		90A6A10A27786BDA0056C953 /* LunchWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LunchWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A6A10C27786BDA0056C953 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		90A6A10E27786BDA0056C953 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		90A6A11127786BDA0056C953 /* LunchWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidget.swift; sourceTree = "<group>"; };
-		90A6A11327786BDA0056C953 /* LunchWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = LunchWidget.intentdefinition; sourceTree = "<group>"; };
-		90A6A11427786BDB0056C953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		90A6A11627786BDB0056C953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		90A6A10727786BDA0056C953 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90A6A10F27786BDA0056C953 /* SwiftUI.framework in Frameworks */,
-				90A6A10D27786BDA0056C953 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +102,6 @@
 			children = (
 				903AA91F276D535F0044B05F /* StuduWidgets */,
 				9096C62F277356C000A706B0 /* Timetable Widget */,
-				90A6A11027786BDA0056C953 /* LunchWidget */,
 				90A6A10B27786BDA0056C953 /* Frameworks */,
 				903AA91E276D535F0044B05F /* Products */,
 			);
@@ -142,7 +112,6 @@
 			children = (
 				903AA91D276D535F0044B05F /* StuduWidgets.app */,
 				9096C629277356C000A706B0 /* Timetable WidgetExtension.appex */,
-				90A6A10A27786BDA0056C953 /* LunchWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,17 +187,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		90A6A11027786BDA0056C953 /* LunchWidget */ = {
-			isa = PBXGroup;
-			children = (
-				90A6A11127786BDA0056C953 /* LunchWidget.swift */,
-				90A6A11327786BDA0056C953 /* LunchWidget.intentdefinition */,
-				90A6A11427786BDB0056C953 /* Assets.xcassets */,
-				90A6A11627786BDB0056C953 /* Info.plist */,
-			);
-			path = LunchWidget;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,7 +203,6 @@
 			);
 			dependencies = (
 				9096C639277356C200A706B0 /* PBXTargetDependency */,
-				90A6A11A27786BDB0056C953 /* PBXTargetDependency */,
 			);
 			name = StuduWidgets;
 			productName = StuduWidgets;
@@ -269,23 +226,6 @@
 			productReference = 9096C629277356C000A706B0 /* Timetable WidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		90A6A10927786BDA0056C953 /* LunchWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 90A6A11C27786BDB0056C953 /* Build configuration list for PBXNativeTarget "LunchWidgetExtension" */;
-			buildPhases = (
-				90A6A10627786BDA0056C953 /* Sources */,
-				90A6A10727786BDA0056C953 /* Frameworks */,
-				90A6A10827786BDA0056C953 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LunchWidgetExtension;
-			productName = LunchWidgetExtension;
-			productReference = 90A6A10A27786BDA0056C953 /* LunchWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -301,9 +241,6 @@
 					};
 					9096C628277356C000A706B0 = {
 						CreatedOnToolsVersion = 13.1;
-					};
-					90A6A10927786BDA0056C953 = {
-						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
@@ -322,7 +259,6 @@
 			targets = (
 				903AA91C276D535F0044B05F /* StuduWidgets */,
 				9096C628277356C000A706B0 /* Timetable WidgetExtension */,
-				90A6A10927786BDA0056C953 /* LunchWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -345,14 +281,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90A6A10827786BDA0056C953 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90A6A11527786BDB0056C953 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -364,7 +292,6 @@
 				903AA923276D535F0044B05F /* HomeView.swift in Sources */,
 				903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */,
 				903AA9332770801F0044B05F /* LunchSheet.swift in Sources */,
-				90A6A11827786BDB0056C953 /* LunchWidget.intentdefinition in Sources */,
 				903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */,
 				9096C648277365C800A706B0 /* ContentModel.swift in Sources */,
 			);
@@ -382,15 +309,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		90A6A10627786BDA0056C953 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90A6A11227786BDA0056C953 /* LunchWidget.swift in Sources */,
-				90A6A11727786BDB0056C953 /* LunchWidget.intentdefinition in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -398,11 +316,6 @@
 			isa = PBXTargetDependency;
 			target = 9096C628277356C000A706B0 /* Timetable WidgetExtension */;
 			targetProxy = 9096C638277356C200A706B0 /* PBXContainerItemProxy */;
-		};
-		90A6A11A27786BDB0056C953 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 90A6A10927786BDA0056C953 /* LunchWidgetExtension */;
-			targetProxy = 90A6A11927786BDB0056C953 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -639,62 +552,6 @@
 			};
 			name = Release;
 		};
-		90A6A11D27786BDB0056C953 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9K37685DN3;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LunchWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LunchWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fufurosta.StuduWidgets.LunchWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		90A6A11E27786BDB0056C953 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9K37685DN3;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LunchWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LunchWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fufurosta.StuduWidgets.LunchWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -721,15 +578,6 @@
 			buildConfigurations = (
 				9096C63C277356C200A706B0 /* Debug */,
 				9096C63D277356C200A706B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		90A6A11C27786BDB0056C953 /* Build configuration list for PBXNativeTarget "LunchWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				90A6A11D27786BDB0056C953 /* Debug */,
-				90A6A11E27786BDB0056C953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
