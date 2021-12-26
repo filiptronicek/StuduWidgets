@@ -1,8 +1,8 @@
 //
-//  Timetable_Widget.swift
-//  Timetable Widget
+//  Widgets.swift
+//  Widgets
 //
-//  Created by Rostislav Brož on 12/22/21.
+//  Created by Rostislav Brož on 12/26/21.
 //
 
 import WidgetKit
@@ -57,7 +57,7 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
-struct Timetable_WidgetEntryView : View {
+struct WidgetsEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     
     var entry: Provider.Entry
@@ -85,22 +85,21 @@ struct Timetable_WidgetEntryView : View {
 }
 
 @main
-struct Timetable_Widget: Widget {
-    let kind: String = "Timetable_Widget"
+struct Widgets: Widget {
+    let kind: String = "Widgets"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            Timetable_WidgetEntryView(entry: entry)
+            WidgetsEntryView(entry: entry)
         }
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
-        .configurationDisplayName("Timetable Widget")
-        .description("View your timetable on home screen")
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
     }
 }
 
-struct Timetable_Widget_Previews: PreviewProvider {
+struct Widgets_Previews: PreviewProvider {
     static var previews: some View {
-        Timetable_WidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        WidgetsEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

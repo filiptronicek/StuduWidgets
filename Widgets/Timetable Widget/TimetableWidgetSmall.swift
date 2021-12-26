@@ -1,15 +1,13 @@
 //
 //  TimetableWidgetSmall.swift
-//  Timetable WidgetExtension
+//  WidgetsExtension
 //
 //  Created by Rostislav Brož on 12/26/21.
 //
 
-import WidgetKit
 import SwiftUI
 
 struct TimetableWidgetSmall: View {
-    
     @State private var xcor:CGFloat = 100
     @State private var ycor:CGFloat = 200
     
@@ -70,3 +68,6 @@ struct TimetableWidgetSmall: View {
         }
     }
 }
+
+
+

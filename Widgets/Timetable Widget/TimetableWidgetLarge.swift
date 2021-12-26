@@ -1,6 +1,6 @@
 //
-//  TimetableWidgetMedium.swift
-//  Timetable WidgetExtension
+//  TimetableWidgetLarge.swift
+//  WidgetsExtension
 //
 //  Created by Rostislav Brož on 12/26/21.
 //
@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct TimetableWidgetMedium: View {
+struct TimetableWidgetLarge: View {
     var entry: SimpleEntry
     
     var body: some View {
