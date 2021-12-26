@@ -255,26 +255,32 @@ struct HomeView: View {
                                         }
                                         
                                         Menu {
-                                            Button (action: {
-                                                        // Todo(ft): add sign in action
-                                                
-                                                        isSignedInToStrava = true
-                                                    },
+                                            if !isSignedInToBakalari {
+                                                Button (action: {
+                                                            // Todo(ft): add sign in action
                                                     
-                                                    label: {
-                                                        Label("Sign in to Bakaláři.cz", systemImage: "graduationcap")
-                                            })
+                                                            isSignedInToStrava = true
+                                                        },
+                                                        
+                                                        label: {
+                                                            Label("Sign in to Bakaláři.cz", systemImage: "graduationcap")
+                                                })
+                                            }
                                             
-                                            Button (action: {
-                                                        // Todo(ft): add sign in action
-                                                        isSignedInToStrava = true
-                                                    },
-                                                    label: {
-                                                        Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                            })
+                                            if !isSignedInToStrava {
+                                                Button (action: {
+                                                            // Todo(ft): add sign in action
+                                                            isSignedInToStrava = true
+                                                        },
+                                                        label: {
+                                                            Label("Sign in to Strava.cz", systemImage: "fork.knife")
+                                                })
+                                            }
                                             
                                         } label: {
                                                 ZStack {
+                                                    if !(isSignedInToStrava && isSignedInToBakalari) {
+
                                                     Rectangle()
                                                         .fill(objectsClrDark)
                                                         .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
@@ -291,6 +297,7 @@ struct HomeView: View {
                                                             .font(.system(size: screenSize.width / 18))
                                                     }
                                                 }
+                                            }
                                         }
                                     }
                                 }
