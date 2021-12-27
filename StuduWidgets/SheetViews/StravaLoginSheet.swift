@@ -11,7 +11,7 @@ struct StravaLoginSheet: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var canteen: String = ""
-    @State private var token: String = ""
+    @State private var token: String = "No token"
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
@@ -47,6 +47,7 @@ struct StravaLoginSheet: View {
                             .padding(.bottom, 20)
                             .padding(.horizontal, screenSize.width / 10)
                         Button("Log in", action: {
+                            token = "Loading the token"
                             Task {
                                 let tokenResp = await model.getStravaToken(username: username, password: password, canteen: canteen)
                                 if tokenResp != nil {
@@ -57,7 +58,7 @@ struct StravaLoginSheet: View {
                             }
                         }
                         ).buttonStyle(.bordered)
-
+                        Text(token)
                     }
                 }
                 
