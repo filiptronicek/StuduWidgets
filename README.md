@@ -2,21 +2,10 @@
 
 ~ Programmed with convenience on our minds
 
-### Table of contents
+# StuduWidgets Status 
 
-+ <a href="https://github.com/filiptronicek/StuduWidgets/blob/main/README.md#get-started-with-studuwidgets">Get started with StuduWidgets</a>
-+ <a href="https://github.com/filiptronicek/StuduWidgets/blob/main/README.md#master-the-ui">Master the UI</a>
-+ <a href="https://github.com/filiptronicek/StuduWidgets/blob/main/README.md#understand-the-code">Understand the code</a>
+StuduWidgets are currently in active development 
 
+## Full documentation 
 
-## Get started with StuduWidgets
-
-+ bla bla 
-
-### Timetable Widget
-
-### Lunch Widget 
-
-## Master the UI
-
-## Understand the code 
+See the <a href="https://github.com/filiptronicek/StuduWidgets/wiki">StuduWidgets Wiki</a> for full documentation, code structure, and other information. 
