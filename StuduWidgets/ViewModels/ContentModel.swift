@@ -35,7 +35,11 @@ class ContentModel: ObservableObject {
             let url = URL(string: "\(endpoint)/auth/token?username=\(username)&password=\(password)&canteen=\(canteen)")
             guard let requestUrl = url else { fatalError() }
             let data: Response = try await fetchAPI(url: requestUrl)
-            return data.result.token
+            if (data.status == "success") {
+                return data.result.token
+            } else {
+                return nil
+            }
         } catch {
             print(error.localizedDescription)
             return nil
