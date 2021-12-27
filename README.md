@@ -4,7 +4,7 @@
 
 # StuduWidgets Status 
 
-+ StuduWidgets are currently in active development 
+StuduWidgets are currently in active development 
 
 ## Full documentation 
 
