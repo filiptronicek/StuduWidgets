@@ -53,7 +53,7 @@ struct StravaLoginSheet: View {
                                 if tokenResp != nil {
                                     token = tokenResp!
                                 } else {
-                                    // Handle errors
+                                    token = "Error getting the token"
                                 }
                             }
                         }
