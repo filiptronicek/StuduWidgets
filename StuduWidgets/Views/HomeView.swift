@@ -30,9 +30,11 @@ struct HomeView: View {
     
     // declare state variables for sheets
     
+    @State private var showingSettings:Bool = true
+    
     @State private var showingTimetableSheet:Bool = false
     @State private var showingLunchSheet:Bool = false
-    @State private var showingSettings:Bool = false
+    @State private var showingDataSheet:Bool = false
     
     @State private var showingLoginStrava:Bool = false
     @State private var showingLoginBakalari:Bool = false
@@ -136,7 +138,7 @@ struct HomeView: View {
                                             Image(systemName: "chevron.right")
                                                 .resizable()
                                                 .frame(width: screenSize.width / 30, height: screenSize.width / 20)
-                                                .padding(.leading, screenSize.width / 6)
+                                                .padding(.leading, screenSize.width / 5.95)
                                                 .foregroundColor(Color.gray)
                                         }
                                     }
@@ -469,11 +471,31 @@ struct HomeView: View {
                                     }
                                 }
                                 
-                                Text("Customization")
+                                Text("Information")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
                                     .padding(.top, screenSize.width / 15)
-                                    .padding(.trailing, screenSize.width / 2.5)
+                                    .padding(.trailing, screenSize.width / 1.986)
+                                
+                                Button(action: {showingDataSheet.toggle()}, label: {
+                                        ZStack {
+                                            Rectangle()
+                                                .fill(objectsClrDark)
+                                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                                .cornerRadius(15)
+                                            
+                                            HStack {
+                                                Text("Data handling")
+                                                    .foregroundColor(fontClr)
+                                                    .font(.system(size: screenSize.width / 16))
+                                                Image(systemName: "chevron.right")
+                                                    .resizable()
+                                                    .frame(width: screenSize.width / 30, height: screenSize.width / 20)
+                                                    .padding(.leading, screenSize.width / 3.68)
+                                                    .foregroundColor(Color.gray)
+                                            }
+                                        }
+                                }).sheet(isPresented: $showingDataSheet) {DataSheet()}
                             }
                         }
                     }
