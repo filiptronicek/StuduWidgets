@@ -26,7 +26,7 @@ struct TimetableSheet: View {
                         Text("Customization")
                             .foregroundColor(objectsClrLight)
                             .font(.system(size: screenSize.width / 15))
-                            .padding(.trailing, screenSize.width / 4.2)
+                            .padding(.trailing, screenSize.width / 2.2)
                         
                         ZStack {
                             Rectangle()
@@ -97,7 +97,7 @@ struct TimetableSheet: View {
                     Text("Get started")
                         .foregroundColor(objectsClrLight)
                         .font(.system(size: screenSize.width / 15))
-                        .padding(.trailing, screenSize.width / 3.02)
+                        .padding(.trailing, screenSize.width / 1.85)
                         .padding(.top, screenSize.width / 15)
                         .padding(.bottom, screenSize.width / 40)
                     

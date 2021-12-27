@@ -59,7 +59,7 @@ struct HomeView: View {
                                 Text("Get started")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
-                                    .padding(.trailing, screenSize.width / 3)
+                                    .padding(.trailing, screenSize.width / 1.8)
                                     .padding(.bottom, screenSize.width / 60)
                                 
                                 Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
@@ -67,8 +67,8 @@ struct HomeView: View {
                                     .font(.system(size: screenSize.width / 25))
                                     .frame(width: screenSize.width / 1.2, height: screenSize.width / 10)
                                     .padding(.bottom, screenSize.width / 25)
-                                    .padding(.trailing, screenSize.width / 20)
-                                
+                                    .padding(.trailing, screenSize.width / 9)
+
                                 HStack {
                                     Image(systemName: "gearshape")
                                         .resizable()
@@ -82,7 +82,7 @@ struct HomeView: View {
                                     
                                     Spacer()
                                 }.padding(.top, screenSize.width / 40)
-                                    .frame(width: screenSize.width / 1.7, height: screenSize.width / 15)
+                                    .frame(width: screenSize.width / 1.2, height: screenSize.width / 15)
                                 
                                 HStack {
                                     Image(systemName: "plus")
@@ -97,7 +97,7 @@ struct HomeView: View {
                                     
                                     Spacer()
                                 }.padding(.top, screenSize.width / 50)
-                                    .frame(width: screenSize.width / 1.7, height: screenSize.width / 15)
+                                    .frame(width: screenSize.width / 1.2, height: screenSize.width / 15)
                                 
                                 HStack {
                                     Image(systemName: "person.circle")
@@ -113,13 +113,13 @@ struct HomeView: View {
                                     Spacer()
                                 }.padding(.top, screenSize.width / 14)
                                     .padding(.bottom, screenSize.width / 18)
-                                    .frame(width: screenSize.width / 1.7, height: screenSize.width / 15)
+                                    .frame(width: screenSize.width / 1.2, height: screenSize.width / 15)
                             }
                             
                             Text("Widgets")
                                 .foregroundColor(objectsClrLight)
                                 .font(.system(size: screenSize.width / 15))
-                                .padding(.trailing, screenSize.width / 2.42)
+                                .padding(.trailing, screenSize.width / 1.6)
                                 .padding(.top, screenSize.width / 18)
                             
                             Button(action: {showingTimetableSheet.toggle()}, label: {
@@ -173,7 +173,7 @@ struct HomeView: View {
                                 Text("Accounts")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
-                                    .padding(.trailing, screenSize.width / 2.63)
+                                    .padding(.trailing, screenSize.width / 1.8)
                                     // this padding is 0.3 pixels off and it's pissing me off
                                 
                                 if isSignedInToBakalari == true {
@@ -473,7 +473,7 @@ struct HomeView: View {
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
                                     .padding(.top, screenSize.width / 15)
-                                    .padding(.trailing, screenSize.width / 4.2)
+                                    .padding(.trailing, screenSize.width / 2.5)
                             }
                         }
                     }
