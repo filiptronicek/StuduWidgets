@@ -11,13 +11,15 @@ struct StravaLoginSheet: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var canteen: String = ""
-
+    @State private var token: String = ""
+    @EnvironmentObject var model: ContentModel
+    
     var body: some View {
         ZStack {
             objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Text("Log in to Strava.cz")
+                Text("Strava login")
                     .foregroundColor(fontClr)
                     .font(.system(size: screenSize.width / 12))
                     .padding(.trailing, screenSize.width / 3.02)
@@ -28,22 +30,38 @@ struct StravaLoginSheet: View {
                         TextField("Username", text: $username)
                             .padding()
                             .background(objectsClrLight)
+                            .foregroundColor(fontClr)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
+                            .padding(.horizontal, screenSize.width / 10)
                         SecureField("Password", text: $password)
                             .padding()
                             .background(objectsClrLight)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
+                            .padding(.horizontal, screenSize.width / 10)
                         TextField("Canteen", text: $canteen)
                             .padding()
                             .background(objectsClrLight)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
+                            .padding(.horizontal, screenSize.width / 10)
+                        Button("Log in", action: {
+                            Task {
+                                let tokenResp = await model.getStravaToken(username: username, password: password, canteen: canteen)
+                                if tokenResp != nil {
+                                    token = tokenResp!
+                                } else {
+                                    // Handle errors
+                                }
+                            }
+                        }
+                        ).buttonStyle(.bordered)
+
                     }
                 }
                 
-                Text("Swipe down")
+                Text("Swipe down to cancel")
                     .foregroundColor(fontClr)
                     .font(.system(size: screenSize.width / 18))
             }
