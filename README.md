@@ -6,6 +6,12 @@ StuduWidgts is an iOS native app built to make student life go more smoothly. St
 
 StuduWidgets are currently in active development
 
+### Latest TestFlight release:
+
+<a href="https://youtu.be/dQw4w9WgXcQ"> <img width="250" alt="Download on TestFlight" src="https://developer.apple.com/news/images/og/testflight-og.png">
+
+    - TestFlight® logo is a trademark of Apple Inc.
+  
 ### Latest release on the App Store: 
 
 <a href="https://youtu.be/dQw4w9WgXcQ"> <img width="250" alt="Download on the App Store" src="https://files.catbox.moe/bpoouz.svg"> </a>
