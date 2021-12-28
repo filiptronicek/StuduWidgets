@@ -8,7 +8,7 @@ StuduWidgets are currently in active development
 
 ### Latest TestFlight release:
 
-<a href="https://youtu.be/dQw4w9WgXcQ"> <img width="250" alt="Download on TestFlight" src="https://developer.apple.com/news/images/og/testflight-og.png">
+<a href="https://youtu.be/dQw4w9WgXcQ"> <img width="250" alt="Download on TestFlight" src="https://upload.wikimedia.org/wikipedia/en/e/ed/TestFlight_Icon.png"> </a>
 
     - TestFlight® logo is a trademark of Apple Inc.
   
