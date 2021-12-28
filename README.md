@@ -4,7 +4,13 @@
 
 # StuduWidgets Status 
 
-StuduWidgets are currently in active development 
+StuduWidgets are currently in active development
+
+### Latest release on the App Store: 
+
+<a href="https://youtu.be/dQw4w9WgXcQ"> <img width="250" alt="Download on the App Store" src="https://files.catbox.moe/bpoouz.svg">
+
+  - App Store® and the Apple logo® are trademarks of Apple Inc.
 
 ## Full documentation 
 
