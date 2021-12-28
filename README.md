@@ -1,6 +1,16 @@
 # Widgets for students, leveraging popular services and their data
 
-StuduWidgts is an iOS native app built to make student life go more smoothly. StuduWidgets make it easy to absorbe everyday information by presenting things such as timetable on your Home Screen with a Widget. 
+StuduWidgts is an iOS native app built to make student life go more smoothly. StuduWidgets make it easy to absorbe everyday information by presenting things such as timetable on your Home Screen with a Widget.
+
+This is building upon the fact, that most schools in Czechia use two services: Strava.cz for ordering lunches at the school canteen and Bakaláři for managing grades, timetables, absense and more.
+
+## Groundwork
+
+To achieve good communication for both of these services, we created a connector for Strava.cz and are leveraging the Bakaláři v3 API.
+
+- We created https://github.com/filiptronicek/strava.cz-api for easier endpoint managemet, removal of redundant or unnecesary information and transforming the XML responses into JSON.
+- We are using https://github.com/bakalari-api/bakalari-api-v3 for documentation about the Bakaláři v3 API, it is a very helpful resource.
+
 
 ## Why
 
