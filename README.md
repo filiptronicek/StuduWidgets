@@ -38,3 +38,4 @@ Click <a href="">here</a> or use the Redeem Code: <b>bla bla bla</b>
 ## Full documentation 
 
 See the <a href="https://github.com/filiptronicek/StuduWidgets/wiki">StuduWidgets Wiki</a> for full documentation, code structure, and other information. 
+
