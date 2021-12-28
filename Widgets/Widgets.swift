@@ -85,6 +85,13 @@ struct WidgetsEntryView : View {
 }
 
 @main
+struct StuduWidgetsBundle: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        Widgets()
+    }
+}
+
 struct Widgets: Widget {
     let kind: String = "Widgets"
 
