@@ -2,7 +2,16 @@
 
 StuduWidgts is an iOS native app built to make student life go more smoothly. StuduWidgets make it easy to absorbe everyday information by presenting things such as timetable on your Home Screen with a Widget. 
 
-# StuduWidgets Status 
+## Why
+
+We, as highschool students find it hard to manage and get quick answers to questions like:
+- what subject do we have next period?
+- where is that next period?
+- how long will this period last? I wanna go home
+- what will be for lunch today?
+- are my lunches all ordered for next week?
+
+## StuduWidgets Status 
 
 StuduWidgets are currently in active development
 
