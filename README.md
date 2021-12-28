@@ -1,6 +1,6 @@
 # Widgets for students, leveraging popular services and their data
 
-~ Programmed with convenience on our minds
+StuduWidgts is an iOS native app built to make student life go more smoothly. StuduWidgets make it easy to absorbe everyday information by presenting things such as timetable on your Home Screen with a Widget. 
 
 # StuduWidgets Status 
 
