@@ -14,11 +14,7 @@ StuduWidgets are currently in active development
 
 ### Latest TestFlight release:
 
-Redeem Code: <b>bla bla bla</b>
-
-<a href="https://youtu.be/dQw4w9WgXcQ"> <img width="50" alt="Download on TestFlight" src="https://upload.wikimedia.org/wikipedia/en/e/ed/TestFlight_Icon.png"> </a> 
-
-  - TestFlight® logo is a trademark of Apple Inc.
+Click <a href="">here</a> or use the Redeem Code: <b>bla bla bla</b>
   
 ## Full documentation 
 
