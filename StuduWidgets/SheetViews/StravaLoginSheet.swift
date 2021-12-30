@@ -12,6 +12,8 @@ struct StravaLoginSheet: View {
     @State private var password: String = ""
     @State private var canteen: String = ""
     @State private var token: String = "No token"
+    @State private var statusFontColor: Color = fontClr
+
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
@@ -47,18 +49,29 @@ struct StravaLoginSheet: View {
                             .padding(.bottom, 20)
                             .padding(.horizontal, screenSize.width / 10)
                         Button("Log in", action: {
+                            statusFontColor = fontClr
                             token = "Loading the token"
+                            
+                            if (canteen == "" || username == "" || password == "") {
+                                statusFontColor = Color(red: 1, green: 0, blue: 0)
+                                token = "Missing fields"
+                                return
+                            }
+                            
                             Task {
                                 let tokenResp = await model.getStravaToken(username: username, password: password, canteen: canteen)
                                 if tokenResp != nil {
                                     token = tokenResp!
+                                    statusFontColor = Color(red: 0, green: 1, blue: 0)
                                 } else {
+                                    statusFontColor = Color(red: 1, green: 0, blue: 0)
                                     token = "Error getting the token"
                                 }
                             }
                         }
                         ).buttonStyle(.bordered)
-                        Text(token)
+                        Text(token).foregroundColor(statusFontColor)
+
                     }
                 }
                 
