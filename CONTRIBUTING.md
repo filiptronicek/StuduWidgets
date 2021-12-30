@@ -13,7 +13,7 @@ All files are released with the MIT License.
 
 # Guidelines 
 
-For the sake of readability, it's importatnt to be consistent while writing code. Here are noted our conventions and style!
+For the sake of readability, it's importatnt to be consistent while writing code. Here are noted our conventions and style to make it easier for everybody!
 
 ### Table of contents 
 
@@ -33,7 +33,7 @@ Button(action: {
 
 ## Spacing
 
-We only use blank lines between elements in containers as shows the following code snippet...
+We only use blank lines between views in containers and between containers themselves as shows the following code snippet...
 
 ```swift
 var body: some View {
