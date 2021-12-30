@@ -1,17 +1,18 @@
 //
-//  StravaLoginSheet.swift
+//  StravaLoginView.swift
 //  StuduWidgets
 //
-//  Created by Filip on 26.12.2021.
+//  Created by Rostislav Brož on 12/30/21.
 //
 
 import SwiftUI
 
-struct StravaLoginSheet: View {
+struct StravaLoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var canteen: String = ""
     @State private var token: String = "No token"
+    
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
@@ -70,8 +71,10 @@ struct StravaLoginSheet: View {
     }
 }
 
-struct StravaLoginSheet_Previews: PreviewProvider {
+}
+
+struct StravaLoginView_Previews: PreviewProvider {
     static var previews: some View {
-        StravaLoginSheet()
+        StravaLoginView()
     }
 }

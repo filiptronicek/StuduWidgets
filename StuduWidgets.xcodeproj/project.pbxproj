@@ -17,6 +17,7 @@
 		90A1FF25277A622200C15484 /* WidgetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1FF24277A622200C15484 /* WidgetsView.swift */; };
 		90A1FF27277A623700C15484 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1FF26277A623700C15484 /* SettingsView.swift */; };
 		90A1FF29277A662000C15484 /* DataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1FF28277A662000C15484 /* DataSheet.swift */; };
+		90A1FF2B277E0C0D00C15484 /* StravaLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1FF2A277E0C0D00C15484 /* StravaLoginView.swift */; };
 		90A20E532778CD8B005F1E33 /* TimetableWidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A20E522778CD8B005F1E33 /* TimetableWidgetSmall.swift */; };
 		90A20E552778CDD9005F1E33 /* TimetableWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A20E542778CDD9005F1E33 /* TimetableWidgetMedium.swift */; };
 		90A20E572778CDEE005F1E33 /* TimetableWidgetLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A20E562778CDEE005F1E33 /* TimetableWidgetLarge.swift */; };
@@ -27,7 +28,6 @@
 		90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1342778CC310056C953 /* Widgets.intentdefinition */; };
 		90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1342778CC310056C953 /* Widgets.intentdefinition */; };
 		90A6A13C2778CC320056C953 /* WidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90A6A12E2778CC310056C953 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A1CB6277918620052135A /* StravaLoginSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,7 @@
 		90A1FF24277A622200C15484 /* WidgetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetsView.swift; sourceTree = "<group>"; };
 		90A1FF26277A623700C15484 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		90A1FF28277A662000C15484 /* DataSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSheet.swift; sourceTree = "<group>"; };
+		90A1FF2A277E0C0D00C15484 /* StravaLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaLoginView.swift; sourceTree = "<group>"; };
 		90A20E522778CD8B005F1E33 /* TimetableWidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetSmall.swift; sourceTree = "<group>"; };
 		90A20E542778CDD9005F1E33 /* TimetableWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetMedium.swift; sourceTree = "<group>"; };
 		90A20E562778CDEE005F1E33 /* TimetableWidgetLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetLarge.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		90A6A1342778CC310056C953 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		90A6A1352778CC320056C953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A6A1372778CC320056C953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC7A1CB6277918620052135A /* StravaLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaLoginSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				903AA922276D535F0044B05F /* HomeView.swift */,
+				90A1FF2A277E0C0D00C15484 /* StravaLoginView.swift */,
 				90A1FF24277A622200C15484 /* WidgetsView.swift */,
 				90A1FF26277A623700C15484 /* SettingsView.swift */,
 			);
@@ -159,7 +160,6 @@
 				903AA930276FBF720044B05F /* TimetableSheet.swift */,
 				903AA9322770801F0044B05F /* LunchSheet.swift */,
 				90A1FF28277A662000C15484 /* DataSheet.swift */,
-				DC7A1CB6277918620052135A /* StravaLoginSheet.swift */,
 			);
 			path = SheetViews;
 			sourceTree = "<group>";
@@ -310,9 +310,9 @@
 				90A1FF27277A623700C15484 /* SettingsView.swift in Sources */,
 				903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */,
 				9096C648277365C800A706B0 /* ContentModel.swift in Sources */,
+				90A1FF2B277E0C0D00C15484 /* StravaLoginView.swift in Sources */,
 				90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				90A1FF25277A622200C15484 /* WidgetsView.swift in Sources */,
-				DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */,
 				90A1FF29277A662000C15484 /* DataSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
