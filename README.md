@@ -1,6 +1,6 @@
 # Widgets for students, leveraging popular services and their data
 
-StuduWidgts is an iOS native app built to make student life go more smoothly. StuduWidgets make it easy to absorbe everyday information by presenting things such as timetable on your Home Screen with a Widget.
+StuduWidgts is an iOS native app built to make student life go smoothly. StuduWidgets make it easy to absorbe everyday information by presenting things such as timetable on your Home Screen with a Widget.
 
 This is building upon the fact, that most schools in Czechia use two services: Strava.cz for ordering lunches at the school canteen and Bakaláři for managing grades, timetables, absense and more.
 
