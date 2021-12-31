@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeViewConcept: View {
     @State var offset: CGSize = .zero
+    @State var showingSettings:Bool = false
     
     var body: some View {
         ZStack {
@@ -27,14 +28,34 @@ struct HomeViewConcept: View {
                                     offset = value.translation
                             }
                         }).onEnded({ (value) in
-                            
+                            withAnimation(.spring()) {
+                                if -offset.width > screenSize.width / 2 {
+                                    offset.width = -screenSize.height
+                                    showingSettings.toggle()
+                                }
+                                
+                                else {
+                                    offset = .zero
+                                }
+                            }
                         })
                         )
                         .foregroundColor(objectsClrDark)
-                        .offset(x: screenSize.width / 50, y: screenSize.width / 3.6),
+                        .offset(x: screenSize.width / 50, y: screenSize.width / 3.6)
+                        .opacity(offset == .zero ? 1 : 0),
                     alignment: .topTrailing
                 )
                 .ignoresSafeArea()
+            
+            if showingSettings == true {
+                Text("show home")
+                    .onTapGesture {
+                        withAnimation(.spring()) {
+                            offset = .zero
+                            showingSettings.toggle()
+                        }
+                    }
+            }
         }
     }
 }
@@ -42,6 +63,11 @@ struct HomeViewConcept: View {
 struct LiquidShape: Shape {
     
     var offset: CGSize
+    
+    var animatableData: CGSize.AnimatableData {
+        get {return offset.animatableData}
+        set {offset.animatableData = newValue}
+    }
     
     func path(in rect: CGRect) -> Path {
         return Path {path in
