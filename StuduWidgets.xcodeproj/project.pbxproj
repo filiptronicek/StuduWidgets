@@ -27,6 +27,7 @@
 		90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1342778CC310056C953 /* Widgets.intentdefinition */; };
 		90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1342778CC310056C953 /* Widgets.intentdefinition */; };
 		90A6A13C2778CC320056C953 /* WidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90A6A12E2778CC310056C953 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		90BDB21D277E570C00C73AD5 /* HomeViewConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */; };
 		DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A1CB6277918620052135A /* StravaLoginSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		90A6A1342778CC310056C953 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		90A6A1352778CC320056C953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A6A1372778CC320056C953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConcept.swift; sourceTree = "<group>"; };
 		DC7A1CB6277918620052135A /* StravaLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaLoginSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				903AA922276D535F0044B05F /* HomeView.swift */,
 				90A1FF24277A622200C15484 /* WidgetsView.swift */,
 				90A1FF26277A623700C15484 /* SettingsView.swift */,
+				90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */,
 				903AA9332770801F0044B05F /* LunchSheet.swift in Sources */,
 				90A1FF27277A623700C15484 /* SettingsView.swift in Sources */,
+				90BDB21D277E570C00C73AD5 /* HomeViewConcept.swift in Sources */,
 				903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */,
 				9096C648277365C800A706B0 /* ContentModel.swift in Sources */,
 				90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */,
