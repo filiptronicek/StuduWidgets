@@ -1,49 +1,94 @@
 //
-//  ConfettiConcept.swift
-//  StuduWidgets
+//  ContentView.swift
+//  Shared
 //
-//  Created by Rostislav Brož on 1/1/22.
+//  Created by Balaji on 31/05/21.
 //
 
 import SwiftUI
 
-struct ConfettiConcept: View {
-    var body: some View {
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
         Home()
     }
 }
 
+
 struct Home: View {
-    @State var buttonPressed:Bool = false
     
-    var body: some View {
+    @State var wish = false
+    // Finish Wishes..
+    @State var finshWish = false
+    
+    var body: some View{
+        
         ZStack {
-            VStack {
-                Button(action: {},
-                       label: {
-                            Text("Confetti GO!")
-                                .foregroundColor(Color.black)
+            
+            VStack(spacing: 30){
+                Button(action: doAnimation, label: {
+                    Text("Confetti GO!")
                 })
+                .disabled(wish)
+                
             }
             
             EmitterView()
-                .scaleEffect(buttonPressed ? 1 : 0, anchor: .top)
-                .opacity(!buttonPressed ? 1 : 0)
+                .scaleEffect(wish ? 1 : 0, anchor: .top)
+                .opacity(wish && !finshWish ? 1 : 0)
+                // Moving From Center Effect...
+                .offset(y: wish ? 0 : getRect().height / 2)
                 .ignoresSafeArea()
+        }
+    }
+    
+    func doAnimation(){
+        
+        withAnimation(.spring()){
+            
+            wish = true
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            
+            withAnimation(.easeInOut(duration: 1.5)){
+                finshWish = true
+            }
+            
+            // Resetting After Wish Finished...
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                
+                finshWish = false
+                wish = false
+            }
         }
     }
 }
 
+// Global Function for getting Size...
+func getRect()->CGRect{
+    return UIScreen.main.bounds
+}
+
+// Emit Particle View...
+// AKA CAEmmiterLayer from UIKit...
 struct EmitterView: UIViewRepresentable {
+    
     func makeUIView(context: Context) -> UIView {
-        let view = UIView()
-        view.backgroundColor = .red
         
+        let view = UIView()
+        view.backgroundColor = .clear
+        
+        // Emitter Layer...
         let emitterLayer = CAEmitterLayer()
+        // Since we need top to down animation....
+        // it;s your Own Wish...
+        // Just change and play with properties.....
         emitterLayer.emitterShape = .line
-        emitterLayer.emitterCells = createEmitterCells()
-        emitterLayer.emitterSize = CGSize(width: screenSize.width, height: 1)
-        emitterLayer.emitterPosition = CGPoint(x: screenSize.width / 2, y: 0)
+        emitterLayer.emitterCells = createEmiterCells()
+        
+        // Size And Postion...
+        emitterLayer.emitterSize = CGSize(width: getRect().width, height: 1)
+        emitterLayer.emitterPosition = CGPoint(x: getRect().width / 2, y: 0)
         
         view.layer.addSublayer(emitterLayer)
         
@@ -54,32 +99,59 @@ struct EmitterView: UIViewRepresentable {
         
     }
     
-    func createEmitterCells() -> [CAEmitterCell] {
+    func createEmiterCells()->[CAEmitterCell]{
+        
+        // Multiple Differect Shped Emmiters....
+        
         var emitterCells: [CAEmitterCell] = []
         
-        for index in 1...12 {
+        for index in 1...12{
+            
             let cell = CAEmitterCell()
             
-            cell.contents = UIImage(named: "Rectangle")?.cgImage
-            cell.color = UIColor.red.cgColor
+            // Import White Particle Images...
+            // Other wise color wont Work....
+            cell.contents = UIImage(named: getImage(index: index))?.cgImage
+            cell.color = getColor().cgColor
+            // New Partcle Creation...
             cell.birthRate = 4.5
+            // Particle Existence....
             cell.lifetime = 20
+            // Velocity...
             cell.velocity = 120
+            // Scale..
             cell.scale = 0.2
+            cell.scaleRange = 0.3
             cell.emissionLongitude = .pi
             cell.emissionRange = 0.5
             cell.spin = 3.5
             cell.spinRange = 1
+            
+            // Accleartion...
+            cell.yAcceleration = 40
             
             emitterCells.append(cell)
         }
         
         return emitterCells
     }
-}
-
-struct ConfettiConcept_Previews: PreviewProvider {
-    static var previews: some View {
-        ConfettiConcept()
+    
+    func getColor() -> UIColor{
+        let colors : [UIColor] = [.systemPink,.systemGreen,.systemRed,.systemOrange,.systemPurple]
+        
+        return colors.randomElement()!
+    }
+    
+    func getImage(index: Int)->String{
+        
+        if index < 4{
+            return "rectangle"
+        }
+        else if index > 5 && index <= 8{
+            return "circle"
+        }
+        else{
+            return "triangle"
+        }
     }
 }
