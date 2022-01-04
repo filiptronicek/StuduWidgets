@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct TimetableWidgetSmall: View {
-    @State private var xcor:CGFloat = 100
-    @State private var ycor:CGFloat = 200
+    @State private var xcor:CGFloat = 50
     
     var entry: SimpleEntry
     
@@ -63,7 +62,7 @@ struct TimetableWidgetSmall: View {
                             .foregroundColor(fontClr)
                             .font(.system(size: screenSize.width / 10))
                     }
-                }.position(x: xcor, y: ycor)
+                }.offset(x: xcor)
             }
         }
     }
