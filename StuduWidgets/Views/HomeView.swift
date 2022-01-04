@@ -54,10 +54,10 @@ struct HomeView: View {
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
-                if showingSettings == false {
+                if !showingSettings {
                     ScrollView {
                         VStack {
-                            if isSignedInToBakalari == false && isSignedInToStrava == false {
+                            if !isSignedInToBakalari && !isSignedInToStrava {
                                 Text("Get started")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
@@ -178,7 +178,7 @@ struct HomeView: View {
                                     .padding(.trailing, screenSize.width / 1.8)
                                     // this padding is 0.3 pixels off and it's pissing me off
                                 
-                                if isSignedInToBakalari == true {
+                                if isSignedInToBakalari {
                                     VStack {
                                         ZStack {
                                             Rectangle()
@@ -219,7 +219,7 @@ struct HomeView: View {
                                             })
                                         }
                                         
-                                        if isSignedInToStrava == true {
+                                        if isSignedInToStrava {
                                             ZStack {
                                                 Rectangle()
                                                     .fill(objectsClrDark)
@@ -308,7 +308,7 @@ struct HomeView: View {
                                     }
                                 }
                                 
-                                else if isSignedInToStrava == true {
+                                else if isSignedInToStrava {
                                     ZStack {
                                         Rectangle()
                                             .fill(objectsClrDark)
@@ -348,7 +348,7 @@ struct HomeView: View {
                                         })
                                     }
                                     
-                                    if isSignedInToBakalari == true {
+                                    if isSignedInToBakalari {
                                         ZStack {
                                             Rectangle()
                                                 .fill(objectsClrDark)
