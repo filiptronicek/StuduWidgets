@@ -402,7 +402,7 @@ struct HomeView: View {
                                         
                                         Button (action: {
                                                     // Todo(ft): add sign in action
-                                            showingLoginStrava.toggle()
+                                                    showingLoginStrava.toggle()
                                                 },
                                                 label: {
                                                     Label("Sign in to Strava.cz", systemImage: "fork.knife")
