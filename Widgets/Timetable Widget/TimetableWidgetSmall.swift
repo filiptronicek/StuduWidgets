@@ -13,7 +13,10 @@ let hour = calendar.component(.hour, from: date)
 let minutes = calendar.component(.minute, from: date)
 
 struct TimetableWidgetSmall: View {
-    @State private var xcor:CGFloat = 50
+    @State private var xcor:CGFloat = 50 // TODO - Create conversion from time that corresponds
+                                        // to the right positioning (8:00 is the time when the first
+                                        // subject's hitbox (idk how to call it xd) should begin touching
+                                        // the cyan line
     
     var entry: SimpleEntry
     
@@ -67,6 +70,9 @@ struct TimetableWidgetSmall: View {
                             .foregroundColor(fontClr)
                             .font(.system(size: screenSize.width / 10))
                     }
+                    
+                    // TODO - Create child appending based on the number of subjects in a list
+                    
                 }.offset(x: xcor)
             }
         }
