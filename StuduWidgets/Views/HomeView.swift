@@ -265,7 +265,6 @@ struct HomeView: View {
                                             if !isSignedInToBakalari {
                                                 Button (action: {
                                                             // Todo(ft): add sign in action
-                                                    
                                                             isSignedInToBakalari = true
                                                         },
                                                         
@@ -283,7 +282,6 @@ struct HomeView: View {
                                                             Label("Sign in to Strava.cz", systemImage: "fork.knife")
                                                 })
                                             }
-                                            
                                         } label: {
                                                 ZStack {
                                                     if !(isSignedInToStrava && isSignedInToBakalari) {
