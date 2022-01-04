@@ -54,10 +54,10 @@ struct HomeView: View {
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
-                if showingSettings == false {
+                if !showingSettings {
                     ScrollView {
                         VStack {
-                            if isSignedInToBakalari == false && isSignedInToStrava == false {
+                            if !isSignedInToBakalari && !isSignedInToStrava {
                                 Text("Get started")
                                     .foregroundColor(objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
@@ -178,8 +178,8 @@ struct HomeView: View {
                                     .padding(.trailing, screenSize.width / 1.8)
                                     // this padding is 0.3 pixels off and it's pissing me off
                                 
-                                if isSignedInToBakalari == true {
-                                    VStack {
+                                VStack {
+                                    if isSignedInToBakalari {
                                         ZStack {
                                             Rectangle()
                                                 .fill(objectsClrDark)
@@ -218,8 +218,9 @@ struct HomeView: View {
                                                         Label("Sign out", systemImage: "trash")
                                             })
                                         }
+                                    }
                                         
-                                        if isSignedInToStrava == true {
+                                        if isSignedInToStrava {
                                             ZStack {
                                                 Rectangle()
                                                     .fill(objectsClrDark)
@@ -264,8 +265,7 @@ struct HomeView: View {
                                             if !isSignedInToBakalari {
                                                 Button (action: {
                                                             // Todo(ft): add sign in action
-                                                    
-                                                            isSignedInToStrava = true
+                                                            isSignedInToBakalari = true
                                                         },
                                                         
                                                         label: {
@@ -282,7 +282,6 @@ struct HomeView: View {
                                                             Label("Sign in to Strava.cz", systemImage: "fork.knife")
                                                 })
                                             }
-                                            
                                         } label: {
                                                 ZStack {
                                                     if !(isSignedInToStrava && isSignedInToBakalari) {
@@ -306,170 +305,7 @@ struct HomeView: View {
                                             }
                                         }
                                     }
-                                }
-                                
-                                else if isSignedInToStrava == true {
-                                    ZStack {
-                                        Rectangle()
-                                            .fill(objectsClrDark)
-                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                            .cornerRadius(15)
-                                        
-                                        HStack {
-                                            Spacer()
-                                            
-                                            Image("frightened")
-                                                .resizable()
-                                                .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
-                                                .clipShape(Circle())
-                                                .overlay(Circle().stroke(fontClr, lineWidth: screenSize.width / 150))
-                                                .padding(.trailing, screenSize.width / 50)
-                                            
-                                            VStack {
-                                                Text("Rostislav Brož")
-                                                    .foregroundColor(fontClr)
-                                                    .font(.system(size: screenSize.width / 18))
-                                                
-                                                Text("Strava")
-                                                    .foregroundColor(objectsClrLight)
-                                                    .font(.system(size: screenSize.width / 25))
-                                            }
-                                            
-                                            Spacer()
-                                        }
-                                    }.contextMenu {
-                                        Button(role: .destructive,
-                                               action: {
-                                                    isSignedInToStrava = false
-                                                },
-                                               
-                                               label: {
-                                                    Label("Sign out", systemImage: "trash")
-                                        })
-                                    }
-                                    
-                                    if isSignedInToBakalari == true {
-                                        ZStack {
-                                            Rectangle()
-                                                .fill(objectsClrDark)
-                                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                                .cornerRadius(15)
-                                            
-                                            HStack {
-                                                Spacer()
-                                                
-                                                Image("frightened")
-                                                    .resizable()
-                                                    .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
-                                                    .clipShape(Circle())
-                                                    .overlay(Circle().stroke(fontClr, lineWidth: screenSize.width / 150))
-                                                    .padding(.trailing, screenSize.width / 50)
-                                                
-                                                VStack {
-                                                    Text("Rostislav Brož")
-                                                        .foregroundColor(fontClr)
-                                                        .font(.system(size: screenSize.width / 18))
-                                                    
-                                                    Text("Bakalari")
-                                                        .foregroundColor(objectsClrLight)
-                                                        .font(.system(size: screenSize.width / 25))
-                                                }
-                                                
-                                                Spacer()
-                                            }
-                                        }.contextMenu {
-                                            Button(role: .destructive,
-                                                   action: {
-                                                        isSignedInToBakalari = false
-                                                    },
-                                                   
-                                                   label: {
-                                                        Label("Sign out", systemImage: "trash")
-                                            })
-                                        }
-                                    }
-                                    
-                                    Menu {
-                                        Button (action: {
-                                                    // Todo(ft): add sign in action
-                                                    
-                                                    isSignedInToBakalari = true
-                                                },
-                                                
-                                                label: {
-                                                    Label("Sign in to Bakaláři.cz", systemImage: "graduationcap")
-                                        })
-                                        
-                                        Button (action: {
-                                                    // Todo(ft): add sign in action
-                                            showingLoginStrava.toggle()
-                                                },
-                                                label: {
-                                                    Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                        }).sheet(isPresented: $showingLoginStrava) {StravaLoginSheet()}
-                                        
-                                    } label: {
-                                            ZStack {
-                                                Rectangle()
-                                                    .fill(objectsClrDark)
-                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                                    .cornerRadius(15)
-                                                
-                                                HStack {
-                                                    Image(systemName: "plus")
-                                                        .resizable()
-                                                        .foregroundColor(Color.blue)
-                                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
-                                                    
-                                                    Text("Add account")
-                                                        .foregroundColor(Color.blue)
-                                                        .font(.system(size: screenSize.width / 18))
-                                                }
-                                            }
-                                    }
-                                }
-                                
-                                else {
-                                    Menu {
-                                        Button (action: {
-                                                    // Todo(ft): add sign in action
-                                            
-                                                    isSignedInToBakalari = true
-                                                },
-                                                
-                                                label: {
-                                                    Label("Sign in to Bakaláři.cz", systemImage: "graduationcap")
-                                        })
-                                        
-                                        Button (action: {
-                                                    // Todo(ft): add sign in action
-                                            showingLoginStrava.toggle()
-                                                },
-                                                label: {
-                                                    Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                        }).sheet(isPresented: $showingLoginStrava) {StravaLoginSheet()}
 
-                                        
-                                    } label: {
-                                            ZStack {
-                                                Rectangle()
-                                                    .fill(objectsClrDark)
-                                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                                    .cornerRadius(15)
-                                                
-                                                HStack {
-                                                    Image(systemName: "plus")
-                                                        .resizable()
-                                                        .foregroundColor(Color.blue)
-                                                        .frame(width: screenSize.width / 20, height: screenSize.width / 20)
-                                                    
-                                                    Text("Add account")
-                                                        .foregroundColor(Color.blue)
-                                                        .font(.system(size: screenSize.width / 18))
-                                                }
-                                            }
-                                    }
-                                }
                                 
                                 Text("Information")
                                     .foregroundColor(objectsClrLight)
