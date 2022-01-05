@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct TimetableSheet: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    
     @State private var dividersAreNumbers:Bool = false
     
     var body: some View {
         ZStack {
-            objectsClrDark.ignoresSafeArea()
+            model.objectsClrDark.ignoresSafeArea()
             
             VStack {
                 Text("Timetable Widget")
-                    .foregroundColor(fontClr)
+                    .foregroundColor(model.fontClr)
                     .font(.system(size: screenSize.width / 12))
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
@@ -24,19 +29,19 @@ struct TimetableSheet: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         Text("Customization")
-                            .foregroundColor(objectsClrLight)
+                            .foregroundColor(model.objectsClrLight)
                             .font(.system(size: screenSize.width / 15))
                             .padding(.trailing, screenSize.width / 2.2)
                         
                         ZStack {
                             Rectangle()
-                                .fill(objectsClrMedium)
+                                .fill(model.objectsClrMedium)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                 .cornerRadius(15)
                             
                             HStack {
                                 Text("Morning message")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 20))
                                     .padding(.trailing, screenSize.width / 2.8)
                                 
@@ -46,13 +51,13 @@ struct TimetableSheet: View {
                         
                         ZStack {
                             Rectangle()
-                                .fill(objectsClrMedium)
+                                .fill(model.objectsClrMedium)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                 .cornerRadius(15)
                             
                             HStack {
                                 Text("Evening message")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 20))
                                     .padding(.trailing, screenSize.width / 2.8)
                                 
@@ -64,13 +69,13 @@ struct TimetableSheet: View {
                                label: {
                                     ZStack {
                                         Rectangle()
-                                            .fill(objectsClrMedium)
+                                            .fill(model.objectsClrMedium)
                                             .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                             .cornerRadius(15)
                                         
                                         HStack {
                                             Text("Dividers")
-                                                .foregroundColor(fontClr)
+                                                .foregroundColor(model.fontClr)
                                                 .font(.system(size: screenSize.width / 20))
                                                 .padding(.trailing, screenSize.width / 4.9)
                                             
@@ -78,14 +83,14 @@ struct TimetableSheet: View {
                                             
                                             if dividersAreNumbers == false {
                                                 Text("Lines")
-                                                    .foregroundColor(objectsClrLight)
+                                                    .foregroundColor(model.objectsClrLight)
                                                     .font(.system(size: screenSize.width / 20))
                                                     .padding(.leading, screenSize.width / 4.72)
                                             }
                                             
                                             else if dividersAreNumbers == true {
                                                 Text("Numbers")
-                                                    .foregroundColor(objectsClrLight)
+                                                    .foregroundColor(model.objectsClrLight)
                                                     .font(.system(size: screenSize.width / 20))
                                                     .padding(.leading, screenSize.width / 7.9)
                                             }
@@ -95,20 +100,20 @@ struct TimetableSheet: View {
                     }
                     
                     Text("Get started")
-                        .foregroundColor(objectsClrLight)
+                        .foregroundColor(model.objectsClrLight)
                         .font(.system(size: screenSize.width / 15))
                         .padding(.trailing, screenSize.width / 1.85)
                         .padding(.top, screenSize.width / 15)
                         .padding(.bottom, screenSize.width / 40)
                     
                     Text("TimeTable Widget lets you view your school subjects on Home Screen!")
-                        .foregroundColor(fontClr)
+                        .foregroundColor(model.fontClr)
                         .font(.system(size: screenSize.width / 25))
                         .frame(width: screenSize.width / 1.1)
                     
                     HStack {
                         Text("Here's a quick preview!")
-                            .foregroundColor(fontClr)
+                            .foregroundColor(model.fontClr)
                             .font(.system(size: screenSize.width / 25))
                             .padding(.trailing, screenSize.width / 25)
                         
@@ -124,14 +129,14 @@ struct TimetableSheet: View {
                             .frame(width: screenSize.width / 2.7, height: screenSize.width / 3)
                         
                         Text("The widget is customizable in the app. Make it yours!")
-                            .foregroundColor(fontClr)
+                            .foregroundColor(model.fontClr)
                             .font(.system(size: screenSize.width / 25))
                             .padding(.leading, screenSize.width / 25)
                     }.frame(width: screenSize.width / 1.2)
                 }
                 
                 Text("Swipe down")
-                    .foregroundColor(fontClr)
+                    .foregroundColor(model.fontClr)
                     .font(.system(size: screenSize.width / 18))
             }
         }

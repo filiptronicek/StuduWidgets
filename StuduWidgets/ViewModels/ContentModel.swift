@@ -6,8 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ContentModel: ObservableObject {
+    
+    var bg = Color(red: 0.05, green: 0, blue: 0)
+    var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+    var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
+    var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
+    var fontClr = Color(red: 1, green: 1, blue: 1)
+    
     func fetchAPI<D: Decodable>(url: URL) async throws -> D {
         let task = Task { () -> D in
             let data = try Data(contentsOf: url)

@@ -15,6 +15,10 @@ struct Home_Previews: PreviewProvider {
 
 
 struct Home: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
     
     @State var wish = false
     // Finish Wishes..

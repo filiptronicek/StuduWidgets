@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct DataSheet: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    
     var body: some View {
         ZStack {
-            objectsClrDark.ignoresSafeArea()
+            model.objectsClrDark.ignoresSafeArea()
 
             VStack {
                 Text("Learn how your data is handled...")
-                    .foregroundColor(fontClr)
+                    .foregroundColor(model.fontClr)
                     .font(.system(size: screenSize.width / 12))
                     .padding(.trailing, screenSize.width / 10.9)
                     .padding([.top, .bottom], screenSize.width / 18)
@@ -28,10 +33,10 @@ struct DataSheet: View {
                                 Image(systemName: "person")
                                     .resizable()
                                     .frame(width: screenSize.width / 10, height: screenSize.width / 10)
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
 
                                 Text("User")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 25))
                             }
 
@@ -39,7 +44,7 @@ struct DataSheet: View {
                                 Spacer()
 
                                 Rectangle()
-                                    .fill(fontClr)
+                                    .fill(model.fontClr)
                                     .frame(width: screenSize.width / 10, height: screenSize.width / 100)
 
                                 Spacer()
@@ -49,10 +54,10 @@ struct DataSheet: View {
                                 Image(systemName: "antenna.radiowaves.left.and.right.circle")
                                         .resizable()
                                         .frame(width: screenSize.width / 10, height: screenSize.width / 10)
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
 
                                 Text("API")
-                                        .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                         .font(.system(size: screenSize.width / 25))
                             }
 
@@ -60,7 +65,7 @@ struct DataSheet: View {
                                 Spacer()
 
                                 Rectangle()
-                                    .fill(fontClr)
+                                    .fill(model.fontClr)
                                     .frame(width: screenSize.width / 10, height: screenSize.width / 100)
 
                                     Spacer()
@@ -70,10 +75,10 @@ struct DataSheet: View {
                                 Image(systemName: "icloud")
                                     .resizable()
                                     .frame(width: screenSize.width / 10, height: screenSize.width / 15)
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
 
                                 Text("Server")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 25))
                             }
 
@@ -88,10 +93,10 @@ struct DataSheet: View {
                             Image(systemName: "person.2")
                                 .resizable()
                                 .frame(width: screenSize.width / 10, height: screenSize.width / 14)
-                                .foregroundColor(fontClr)
+                                .foregroundColor(model.fontClr)
 
                             Text("Us")
-                                .foregroundColor(fontClr)
+                                .foregroundColor(model.fontClr)
                                 .font(.system(size: screenSize.width / 25))
                         }.padding(.trailing, screenSize.width / 10.8)
 
@@ -99,7 +104,7 @@ struct DataSheet: View {
 
 
                         Rectangle()
-                            .fill(fontClr)
+                            .fill(model.fontClr)
                             .frame(width: screenSize.width / 100, height: screenSize.width / 10)
                             .padding(.trailing, screenSize.width / 8)
                         }

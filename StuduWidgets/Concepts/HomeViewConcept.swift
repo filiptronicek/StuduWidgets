@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct HomeViewConcept: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    
     @State var offset: CGSize = .zero
     @State var showingSettings:Bool = false
     
     var body: some View {
         ZStack {
-            bg.overlay(
+            model.bg.overlay(
                     Text("rest of the homeview")
-                        .foregroundColor(fontClr)
+                        .foregroundColor(model.fontClr)
                 )
                 .clipShape(LiquidShape(offset: offset))
                 .overlay(
@@ -40,7 +45,7 @@ struct HomeViewConcept: View {
                             }
                         })
                         )
-                        .foregroundColor(objectsClrDark)
+                        .foregroundColor(model.objectsClrDark)
                         .offset(x: screenSize.width / 50, y: screenSize.width / 3.6)
                         .opacity(offset == .zero ? 1 : 0),
                     alignment: .topTrailing

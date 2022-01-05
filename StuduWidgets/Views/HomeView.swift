@@ -15,11 +15,7 @@ let screenSize: CGRect = UIScreen.main.bounds
 
 // declare vars for UI colors
 
-public var bg = Color(red: 0.05, green: 0, blue: 0)
-public var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
-public var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
-public var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
-public var fontClr = Color(red: 1, green: 1, blue: 1)
+
 
 
 struct HomeView: View {
@@ -45,11 +41,11 @@ struct HomeView: View {
     
     var body: some View {
         ZStack {
-            bg.ignoresSafeArea()
+            model.bg.ignoresSafeArea()
             
             VStack {
                 Text("StuduWidgets")
-                    .foregroundColor(fontClr)
+                    .foregroundColor(model.fontClr)
                     .font(.system(size: screenSize.width / 10))
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
@@ -59,13 +55,13 @@ struct HomeView: View {
                         VStack {
                             if !isSignedInToBakalari && !isSignedInToStrava {
                                 Text("Get started")
-                                    .foregroundColor(objectsClrLight)
+                                    .foregroundColor(model.objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
                                     .padding(.trailing, screenSize.width / 1.8)
                                     .padding(.bottom, screenSize.width / 60)
                                 
                                 Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 25))
                                     .frame(width: screenSize.width / 1.2, height: screenSize.width / 10)
                                     .padding(.bottom, screenSize.width / 25)
@@ -75,10 +71,10 @@ struct HomeView: View {
                                     Image(systemName: "gearshape")
                                         .resizable()
                                         .frame(width: screenSize.width / 20, height: screenSize.width / 20)
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
                                                                         
                                     Text("Open **Settings**")
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
                                     
@@ -90,10 +86,10 @@ struct HomeView: View {
                                     Image(systemName: "plus")
                                         .resizable()
                                         .frame(width: screenSize.width / 20, height: screenSize.width / 20)
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
                                     
                                     Text("Click on **Add account**")
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
                                     
@@ -105,10 +101,10 @@ struct HomeView: View {
                                     Image(systemName: "person.circle")
                                         .resizable()
                                         .frame(width: screenSize.width / 20, height: screenSize.width / 20)
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
                                     
                                     Text("**Sign in** to a service")
-                                        .foregroundColor(fontClr)
+                                        .foregroundColor(model.fontClr)
                                         .font(.system(size: screenSize.width / 25))
                                         .padding(.leading, screenSize.width / 30)
                                     
@@ -119,7 +115,7 @@ struct HomeView: View {
                             }
                             
                             Text("Widgets")
-                                .foregroundColor(objectsClrLight)
+                                .foregroundColor(model.objectsClrLight)
                                 .font(.system(size: screenSize.width / 15))
                                 .padding(.trailing, screenSize.width / 1.6)
                                 .padding(.top, screenSize.width / 18)
@@ -127,13 +123,13 @@ struct HomeView: View {
                             Button(action: {showingTimetableSheet.toggle()}, label: {
                                     ZStack {
                                         Rectangle()
-                                            .fill(objectsClrDark)
+                                            .fill(model.objectsClrDark)
                                             .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                             .cornerRadius(15)
                                         
                                         HStack {
                                             Text("Timetable Widget")
-                                                .foregroundColor(fontClr)
+                                                .foregroundColor(model.fontClr)
                                                 .font(.system(size: screenSize.width / 16))
                                             Image(systemName: "chevron.right")
                                                 .resizable()
@@ -148,13 +144,13 @@ struct HomeView: View {
                                    label: {
                                         ZStack {
                                             Rectangle()
-                                                .fill(objectsClrDark)
+                                                .fill(model.objectsClrDark)
                                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                                 .cornerRadius(15)
                                             
                                             HStack {
                                                 Text("Lunch Widget")
-                                                    .foregroundColor(fontClr)
+                                                    .foregroundColor(model.fontClr)
                                                     .font(.system(size: screenSize.width / 16))
                                                 Image(systemName: "chevron.right")
                                                     .resizable()
@@ -173,7 +169,7 @@ struct HomeView: View {
                         ScrollView {
                             VStack {
                                 Text("Accounts")
-                                    .foregroundColor(objectsClrLight)
+                                    .foregroundColor(model.objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
                                     .padding(.trailing, screenSize.width / 1.8)
                                     // this padding is 0.3 pixels off and it's pissing me off
@@ -182,7 +178,7 @@ struct HomeView: View {
                                     if isSignedInToBakalari {
                                         ZStack {
                                             Rectangle()
-                                                .fill(objectsClrDark)
+                                                .fill(model.objectsClrDark)
                                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
                                                 .cornerRadius(15)
                                             
@@ -193,16 +189,16 @@ struct HomeView: View {
                                                     .resizable()
                                                     .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
                                                     .clipShape(Circle())
-                                                    .overlay(Circle().stroke(fontClr, lineWidth: screenSize.width / 150))
+                                                    .overlay(Circle().stroke(model.fontClr, lineWidth: screenSize.width / 150))
                                                     .padding(.trailing, screenSize.width / 50)
                                                 
                                                 VStack {
                                                     Text("Rostislav Brož")
-                                                        .foregroundColor(fontClr)
+                                                        .foregroundColor(model.fontClr)
                                                         .font(.system(size: screenSize.width / 18))
                                                     
                                                     Text("Bakalari")
-                                                        .foregroundColor(objectsClrLight)
+                                                        .foregroundColor(model.objectsClrLight)
                                                         .font(.system(size: screenSize.width / 25))
                                                 }
                                                 
@@ -223,7 +219,7 @@ struct HomeView: View {
                                         if isSignedInToStrava {
                                             ZStack {
                                                 Rectangle()
-                                                    .fill(objectsClrDark)
+                                                    .fill(model.objectsClrDark)
                                                     .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
                                                     .cornerRadius(15)
                                                 
@@ -234,16 +230,16 @@ struct HomeView: View {
                                                         .resizable()
                                                         .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
                                                         .clipShape(Circle())
-                                                        .overlay(Circle().stroke(fontClr, lineWidth: screenSize.width / 150))
+                                                        .overlay(Circle().stroke(model.fontClr, lineWidth: screenSize.width / 150))
                                                         .padding(.trailing, screenSize.width / 50)
                                                     
                                                     VStack {
                                                         Text("Rostislav Brož")
-                                                            .foregroundColor(fontClr)
+                                                            .foregroundColor(model.fontClr)
                                                             .font(.system(size: screenSize.width / 18))
                                                         
                                                         Text("Strava")
-                                                            .foregroundColor(objectsClrLight)
+                                                            .foregroundColor(model.objectsClrLight)
                                                             .font(.system(size: screenSize.width / 25))
                                                     }
                                                     
@@ -287,7 +283,7 @@ struct HomeView: View {
                                                     if !(isSignedInToStrava && isSignedInToBakalari) {
 
                                                     Rectangle()
-                                                        .fill(objectsClrDark)
+                                                            .fill(model.objectsClrDark)
                                                         .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                                         .cornerRadius(15)
                                                     
@@ -308,7 +304,7 @@ struct HomeView: View {
 
                                 
                                 Text("Information")
-                                    .foregroundColor(objectsClrLight)
+                                    .foregroundColor(model.objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
                                     .padding(.top, screenSize.width / 15)
                                     .padding(.trailing, screenSize.width / 1.986)
@@ -316,13 +312,13 @@ struct HomeView: View {
                                 Button(action: {showingDataSheet.toggle()}, label: {
                                         ZStack {
                                             Rectangle()
-                                                .fill(objectsClrDark)
+                                                .fill(model.objectsClrDark)
                                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                                 .cornerRadius(15)
                                             
                                             HStack {
                                                 Text("Data handling")
-                                                    .foregroundColor(fontClr)
+                                                    .foregroundColor(model.fontClr)
                                                     .font(.system(size: screenSize.width / 16))
                                                 Image(systemName: "chevron.right")
                                                     .resizable()
@@ -346,10 +342,10 @@ struct HomeView: View {
                                 Image(systemName: showingSettings ? "square.text.square" : "square.text.square.fill")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                 
                                 Text("Widgets")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 30))
                             }
                         })
@@ -361,10 +357,10 @@ struct HomeView: View {
                                 Image(systemName: showingSettings ? "gearshape.fill" : "gearshape")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                 
                                 Text("Settings")
-                                    .foregroundColor(fontClr)
+                                    .foregroundColor(model.fontClr)
                                     .font(.system(size: screenSize.width / 30))
                             }
                         })
@@ -380,5 +376,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(ContentModel())
     }
 }
