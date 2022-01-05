@@ -41,11 +41,11 @@ class ContentModel: ObservableObject {
         if isDarkmode == true {
             isDarkmode = false
             
-            bg = Color.red
-            objectsClrDark = Color.red
-            objectsClrMedium = Color.red
-            objectsClrLight = Color.yellow
-            fontClr = Color.blue
+            bg = Color(red: 1, green: 1, blue: 1)
+            objectsClrDark = Color(red: 0.6, green: 0.6, blue: 0.6)
+            objectsClrMedium = Color(red: 0.7, green: 0.7, blue: 0.7)
+            objectsClrLight = Color(red: 0.8, green: 0.8, blue: 0.8)
+            fontClr = Color(red: 0.05, green: 0, blue: 0)
         }
         
         
