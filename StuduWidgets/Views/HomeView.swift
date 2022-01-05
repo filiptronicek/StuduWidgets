@@ -12,32 +12,11 @@ import SwiftUI
 
 let screenSize: CGRect = UIScreen.main.bounds
 
-
-// declare vars for UI colors
-
-
-
-
 struct HomeView: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-    
-    
-    // declare state variables for sheets
-    
-    @State private var showingSettings:Bool = true
-    
-    @State private var showingTimetableSheet:Bool = false
-    @State private var showingLunchSheet:Bool = false
-    @State private var showingDataSheet:Bool = false
-    
-    @State private var showingLoginStrava:Bool = false
-    @State private var showingLoginBakalari:Bool = false
-    
-    @State private var isSignedInToBakalari:Bool = false
-    @State private var isSignedInToStrava:Bool = false
-    
+
     
     var body: some View {
         ZStack {
@@ -50,10 +29,10 @@ struct HomeView: View {
                     .padding(.trailing, screenSize.width / 5)
                     .padding([.top, .bottom], screenSize.width / 18)
                 
-                if !showingSettings {
+                if !model.showingSettings {
                     ScrollView {
                         VStack {
-                            if !isSignedInToBakalari && !isSignedInToStrava {
+                            if !model.isSignedInToBakalari && !model.isSignedInToStrava {
                                 Text("Get started")
                                     .foregroundColor(model.objectsClrLight)
                                     .font(.system(size: screenSize.width / 15))
@@ -120,7 +99,7 @@ struct HomeView: View {
                                 .padding(.trailing, screenSize.width / 1.6)
                                 .padding(.top, screenSize.width / 18)
                             
-                            Button(action: {showingTimetableSheet.toggle()}, label: {
+                            Button(action: {model.showingTimetableSheet.toggle()}, label: {
                                     ZStack {
                                         Rectangle()
                                             .fill(model.objectsClrDark)
@@ -138,9 +117,9 @@ struct HomeView: View {
                                                 .foregroundColor(Color.gray)
                                         }
                                     }
-                            }).sheet(isPresented: $showingTimetableSheet) {TimetableSheet()}
+                            }).sheet(isPresented: $model.showingTimetableSheet) {TimetableSheet()}
                             
-                            Button(action: {showingLunchSheet.toggle()},
+                            Button(action: {model.showingLunchSheet.toggle()},
                                    label: {
                                         ZStack {
                                             Rectangle()
@@ -159,7 +138,7 @@ struct HomeView: View {
                                                     .foregroundColor(Color.gray)
                                             }
                                         }
-                            }).sheet(isPresented: $showingLunchSheet) {LunchSheet()}
+                            }).sheet(isPresented: $model.showingLunchSheet) {LunchSheet()}
                         }
                     }
                 }
@@ -175,7 +154,7 @@ struct HomeView: View {
                                     // this padding is 0.3 pixels off and it's pissing me off
                                 
                                 VStack {
-                                    if isSignedInToBakalari {
+                                    if model.isSignedInToBakalari {
                                         ZStack {
                                             Rectangle()
                                                 .fill(model.objectsClrDark)
@@ -207,7 +186,7 @@ struct HomeView: View {
                                         }.contextMenu {
                                             Button(role: .destructive,
                                                    action: {
-                                                        isSignedInToBakalari = false
+                                                        model.isSignedInToBakalari = false
                                                     },
                                                    
                                                    label: {
@@ -216,7 +195,7 @@ struct HomeView: View {
                                         }
                                     }
                                         
-                                        if isSignedInToStrava {
+                                    if model.isSignedInToStrava {
                                             ZStack {
                                                 Rectangle()
                                                     .fill(model.objectsClrDark)
@@ -248,7 +227,7 @@ struct HomeView: View {
                                             }.contextMenu {
                                                 Button(role: .destructive,
                                                        action: {
-                                                            isSignedInToStrava = false
+                                                            model.isSignedInToStrava = false
                                                         },
                                                        
                                                        label: {
@@ -258,10 +237,10 @@ struct HomeView: View {
                                         }
                                         
                                         Menu {
-                                            if !isSignedInToBakalari {
+                                            if !model.isSignedInToBakalari {
                                                 Button (action: {
                                                             // Todo(ft): add sign in action
-                                                            isSignedInToBakalari = true
+                                                            model.isSignedInToBakalari = true
                                                         },
                                                         
                                                         label: {
@@ -269,10 +248,10 @@ struct HomeView: View {
                                                 })
                                             }
                                             
-                                            if !isSignedInToStrava {
+                                            if !model.isSignedInToStrava {
                                                 Button (action: {
                                                             // Todo(ft): add sign in action
-                                                            isSignedInToStrava = true
+                                                            model.isSignedInToStrava = true
                                                         },
                                                         label: {
                                                             Label("Sign in to Strava.cz", systemImage: "fork.knife")
@@ -280,7 +259,7 @@ struct HomeView: View {
                                             }
                                         } label: {
                                                 ZStack {
-                                                    if !(isSignedInToStrava && isSignedInToBakalari) {
+                                                    if !(model.isSignedInToStrava && model.isSignedInToBakalari) {
 
                                                     Rectangle()
                                                             .fill(model.objectsClrDark)
@@ -337,7 +316,7 @@ struct HomeView: View {
                                             .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
                                             .cornerRadius(15)
                                         HStack {
-                                            Text("Light (lame)")
+                                            Text("Light (lamer)")
                                                 .foregroundColor(model.fontClr)
                                                 .font(.system(size: screenSize.width / 18))
                                                 .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
@@ -358,7 +337,7 @@ struct HomeView: View {
                                     .padding(.top, screenSize.width / 15)
                                     .padding(.trailing, screenSize.width / 1.986)
                                 
-                                Button(action: {showingDataSheet.toggle()}, label: {
+                                Button(action: {model.showingDataSheet.toggle()}, label: {
                                         ZStack {
                                             Rectangle()
                                                 .fill(model.objectsClrDark)
@@ -376,7 +355,7 @@ struct HomeView: View {
                                                     .foregroundColor(Color.gray)
                                             }
                                         }
-                                }).sheet(isPresented: $showingDataSheet) {DataSheet()}
+                                }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
                             }
                         }
                     }
@@ -386,9 +365,9 @@ struct HomeView: View {
                     HStack {
                         Spacer()
                         
-                        Button(action: {showingSettings = false}, label: {
+                        Button(action: {model.showingSettings = false}, label: {
                             VStack {
-                                Image(systemName: showingSettings ? "square.text.square" : "square.text.square.fill")
+                                Image(systemName: model.showingSettings ? "square.text.square" : "square.text.square.fill")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(model.fontClr)
@@ -401,9 +380,9 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        Button(action: {showingSettings = true}, label: {
+                        Button(action: {model.showingSettings = true}, label: {
                             VStack {
-                                Image(systemName: showingSettings ? "gearshape.fill" : "gearshape")
+                                Image(systemName: model.showingSettings ? "gearshape.fill" : "gearshape")
                                     .resizable()
                                     .frame(width: screenSize.width / 18, height: screenSize.width / 18)
                                     .foregroundColor(model.fontClr)

@@ -9,6 +9,21 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
+    // STATE VARIABLES
+    
+    @Published var showingSettings:Bool = true
+    
+    @Published var showingTimetableSheet:Bool = false
+    @Published var showingLunchSheet:Bool = false
+    @Published var showingDataSheet:Bool = false
+    
+    @Published var showingLoginStrava:Bool = false
+    @Published var showingLoginBakalari:Bool = false
+    
+    @Published var isSignedInToBakalari:Bool = false
+    @Published var isSignedInToStrava:Bool = false
+    
+    
     // UI COLORS AND CHANGING COLOR THEME
     
     @Published var isDarkmode:Bool = true
