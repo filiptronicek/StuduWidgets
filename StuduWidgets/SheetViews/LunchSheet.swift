@@ -31,7 +31,7 @@ struct LunchSheet: View {
                             .font(.system(size: screenSize.width / 15))
                             .padding(.trailing, screenSize.width / 4.2)
                         
-                        Button(action: {model.changeColorTheme()},
+                        Button(action: {},
                                label: {
                                     ZStack {
                                         Rectangle()

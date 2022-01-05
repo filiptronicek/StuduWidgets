@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
+    // UI COLORS AND CHANGING COLOR THEME
+    
+    @Published var isDarkmode:Bool = true
     
     @Published var bg = Color(red: 0.05, green: 0, blue: 0)
     @Published var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
@@ -18,12 +21,34 @@ class ContentModel: ObservableObject {
     
     
     func changeColorTheme() {
-        bg = Color.red
-        objectsClrDark = Color.red
-        objectsClrMedium = Color.red
-        objectsClrLight = Color.red
-        fontClr = Color.blue
+        // Switch to light theme
+        
+        if isDarkmode == true {
+            isDarkmode = false
+            
+            bg = Color.red
+            objectsClrDark = Color.red
+            objectsClrMedium = Color.red
+            objectsClrLight = Color.red
+            fontClr = Color.blue
+        }
+        
+        
+        // Switch back to dark theme
+        
+        else if isDarkmode == false {
+            isDarkmode = true
+            
+            bg = Color(red: 0.05, green: 0, blue: 0)
+            objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+            objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
+            objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
+            fontClr = Color(red: 1, green: 1, blue: 1)
+        }
     }
+    
+    
+    // GETTING STRAVA.CZ TOKEN
     
     func fetchAPI<D: Decodable>(url: URL) async throws -> D {
         let task = Task { () -> D in
