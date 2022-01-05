@@ -131,5 +131,6 @@ struct WidgetsView: View {
 struct WidgetsView_Previews: PreviewProvider {
     static var previews: some View {
         WidgetsView()
+            .environmentObject(ContentModel())
     }
 }

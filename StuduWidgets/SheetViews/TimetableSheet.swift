@@ -146,5 +146,6 @@ struct TimetableSheet: View {
 struct TimetableSheet_Previews: PreviewProvider {
     static var previews: some View {
         TimetableSheet()
+            .environmentObject(ContentModel())
     }
 }

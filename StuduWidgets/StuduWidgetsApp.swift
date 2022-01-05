@@ -11,7 +11,8 @@ import SwiftUI
 struct StuduWidgetsApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView().environmentObject(ContentModel())
+            HomeView()
+                .environmentObject(ContentModel())
         }
     }
 }

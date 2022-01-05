@@ -90,5 +90,6 @@ struct StravaLoginSheet: View {
 struct StravaLoginSheet_Previews: PreviewProvider {
     static var previews: some View {
         StravaLoginSheet()
+            .environmentObject(ContentModel())
     }
 }

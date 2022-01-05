@@ -118,5 +118,7 @@ struct DataSheet: View {
 struct DataSheet_Previews: PreviewProvider {
     static var previews: some View {
         DataSheet()
+            .environmentObject(ContentModel())
     }
 }
+
