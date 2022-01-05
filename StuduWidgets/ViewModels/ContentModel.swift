@@ -10,11 +10,20 @@ import SwiftUI
 
 class ContentModel: ObservableObject {
     
-    var bg = Color(red: 0.05, green: 0, blue: 0)
-    var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
-    var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
-    var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
-    var fontClr = Color(red: 1, green: 1, blue: 1)
+    @Published var bg = Color(red: 0.05, green: 0, blue: 0)
+    @Published var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+    @Published var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
+    @Published var objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
+    @Published var fontClr = Color(red: 1, green: 1, blue: 1)
+    
+    
+    func changeColorTheme() {
+        bg = Color.red
+        objectsClrDark = Color.red
+        objectsClrMedium = Color.red
+        objectsClrLight = Color.red
+        fontClr = Color.blue
+    }
     
     func fetchAPI<D: Decodable>(url: URL) async throws -> D {
         let task = Task { () -> D in
