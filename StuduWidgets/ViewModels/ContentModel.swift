@@ -11,7 +11,7 @@ import SwiftUI
 class ContentModel: ObservableObject {
     // STATE VARIABLES
     
-    @Published var showingSettings:Bool = true
+    @Published var showingSettings:Bool = false
     
     @Published var showingTimetableSheet:Bool = false
     @Published var showingLunchSheet:Bool = false

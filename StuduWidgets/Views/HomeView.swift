@@ -30,11 +30,11 @@ struct HomeView: View {
                     .padding([.top, .bottom], screenSize.width / 18)
                 
                 if !model.showingSettings {
-                    SettingsView()
+                    WidgetsView()
                 }
                 
                 else {
-                    WidgetsView()
+                    SettingsView()
                 }
                 
                 ZStack {
