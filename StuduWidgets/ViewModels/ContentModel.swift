@@ -24,7 +24,7 @@ class ContentModel: ObservableObject {
     @Published var isSignedInToStrava:Bool = false
     
     
-    // UI COLORS AND CHANGING COLOR THEME
+    // UI COLORS AND CHANGING THE COLOR THEME
     
     @Published var isDarkmode:Bool = true
     

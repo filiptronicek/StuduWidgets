@@ -74,7 +74,7 @@ struct StravaLoginSheet: View {
                             }
                         }
                         ).buttonStyle(.bordered)
-                        Text(token).foregroundColor(statusFontColor)
+                        Text(token).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
 
                     }
                 }
