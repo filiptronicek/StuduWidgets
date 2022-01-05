@@ -29,7 +29,7 @@ class ContentModel: ObservableObject {
             bg = Color.red
             objectsClrDark = Color.red
             objectsClrMedium = Color.red
-            objectsClrLight = Color.red
+            objectsClrLight = Color.yellow
             fontClr = Color.blue
         }
         

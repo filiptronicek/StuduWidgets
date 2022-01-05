@@ -302,6 +302,55 @@ struct HomeView: View {
                                         }
                                     }
 
+                                Text("Color theme")
+                                    .foregroundColor(model.objectsClrLight)
+                                    .font(.system(size: screenSize.width / 15))
+                                    .padding(.top, screenSize.width / 15)
+                                    .padding(.trailing, screenSize.width / 1.986)
+                                
+                                Button(action: {model.changeColorTheme()}, label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(model.objectsClrDark)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                            .cornerRadius(15)
+                                        HStack {
+                                            Text("Dark (default)")
+                                                .foregroundColor(model.fontClr)
+                                                .font(.system(size: screenSize.width / 18))
+                                                .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
+                                                
+                                            
+                                            Image(systemName: model.isDarkmode ? "checkmark" : "")
+                                                .resizable()
+                                                .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                                .foregroundColor(model.objectsClrLight)
+                                                
+                                        }
+                                    }
+                                })
+                                
+                                Button(action: {model.changeColorTheme()}, label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(model.objectsClrDark)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                            .cornerRadius(15)
+                                        HStack {
+                                            Text("Light (lame)")
+                                                .foregroundColor(model.fontClr)
+                                                .font(.system(size: screenSize.width / 18))
+                                                .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
+                                                
+                                            
+                                            Image(systemName: model.isDarkmode ? "" : "checkmark")
+                                                .resizable()
+                                                .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                                .foregroundColor(model.objectsClrLight)
+                                                
+                                        }
+                                    }
+                                })
                                 
                                 Text("Information")
                                     .foregroundColor(model.objectsClrLight)
