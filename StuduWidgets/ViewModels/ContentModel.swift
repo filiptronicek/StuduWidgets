@@ -26,8 +26,7 @@ class ContentModel: ObservableObject {
     
     // UI COLORS AND CHANGING THE COLOR THEME
     
-    @Published var isDarkmode:Bool = true
-    
+    @AppStorage("theme") public var currentTheme = "dark"
     @Published var bg = Color(red: 0.05, green: 0, blue: 0)
     @Published var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
     @Published var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
@@ -35,12 +34,19 @@ class ContentModel: ObservableObject {
     @Published var fontClr = Color(red: 1, green: 1, blue: 1)
     
     
-    func changeColorTheme() {
+    func changeColorTheme(theme: String?) {
+            
+        var themeToUse: String
+        if (theme == nil) {
+            themeToUse = currentTheme
+        } else {
+            themeToUse = theme!
+            currentTheme = theme!
+        }
+         
         // Switch to light theme
         
-        if isDarkmode == true {
-            isDarkmode = false
-            
+        if themeToUse == "light" {
             bg = Color(red: 1, green: 1, blue: 1)
             objectsClrDark = Color(red: 0.6, green: 0.6, blue: 0.6)
             objectsClrMedium = Color(red: 0.7, green: 0.7, blue: 0.7)
@@ -51,9 +57,7 @@ class ContentModel: ObservableObject {
         
         // Switch back to dark theme
         
-        else if isDarkmode == false {
-            isDarkmode = true
-            
+        else if themeToUse == "dark" {
             bg = Color(red: 0.05, green: 0, blue: 0)
             objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
             objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)

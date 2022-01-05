@@ -11,8 +11,7 @@ struct SettingsView: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-    
-    
+        
     var body: some View {
         VStack {
             ScrollView {
@@ -157,7 +156,7 @@ struct SettingsView: View {
                         .padding(.top, screenSize.width / 15)
                         .padding(.trailing, screenSize.width / 1.986)
                     
-                    Button(action: {model.changeColorTheme()}, label: {
+                    Button(action: {model.changeColorTheme(theme: "dark")}, label: {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
@@ -170,7 +169,7 @@ struct SettingsView: View {
                                     .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
                                     
                                 
-                                Image(systemName: model.isDarkmode ? "checkmark" : "")
+                                Image(systemName: model.currentTheme == "dark" ? "checkmark" : "")
                                     .resizable()
                                     .frame(width: screenSize.width / 20, height: screenSize.width / 20)
                                     .foregroundColor(model.objectsClrLight)
@@ -179,7 +178,7 @@ struct SettingsView: View {
                         }
                     })
                     
-                    Button(action: {model.changeColorTheme()}, label: {
+                    Button(action: {model.changeColorTheme(theme: "light")}, label: {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
@@ -192,7 +191,7 @@ struct SettingsView: View {
                                     .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
                                     
                                 
-                                Image(systemName: model.isDarkmode ? "" : "checkmark")
+                                Image(systemName: model.currentTheme == "dark" ? "" : "checkmark")
                                     .resizable()
                                     .frame(width: screenSize.width / 20, height: screenSize.width / 20)
                                     .foregroundColor(model.objectsClrLight)
