@@ -31,21 +31,22 @@ struct LunchSheet: View {
                             .font(.system(size: screenSize.width / 15))
                             .padding(.trailing, screenSize.width / 4.2)
                         
-                        ZStack {
-                            Rectangle()
-                                .fill(model.objectsClrMedium)
-                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(15)
-                            
-                            HStack {
-                                Text("Layout")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 20))
-                                    .padding(.trailing, screenSize.width / 1.655)
-                                
-                                //TODO Textfield for input of the morning message
-                            }
-                        }
+                        Button(action: {model.changeColorTheme()},
+                               label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(model.objectsClrMedium)
+                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                            .cornerRadius(15)
+                                        
+                                        HStack {
+                                            Text("Layout")
+                                                .foregroundColor(model.fontClr)
+                                                .font(.system(size: screenSize.width / 20))
+                                                .padding(.trailing, screenSize.width / 1.655)
+                                        }
+                                }
+                        })
                     }
                 }
                 
@@ -60,5 +61,6 @@ struct LunchSheet: View {
 struct LunchSheet_Previews: PreviewProvider {
     static var previews: some View {
         LunchSheet()
+            .environmentObject(ContentModel())
     }
 }
