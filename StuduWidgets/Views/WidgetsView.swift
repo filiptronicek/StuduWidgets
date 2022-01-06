@@ -88,7 +88,7 @@ struct WidgetsView: View {
                             Rectangle()
                                 .fill(model.objectsClrDark)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(15)
+                                .cornerRadius(screenSize.width / 28)
                             
                             HStack {
                                 Text("Timetable Widget")
@@ -109,7 +109,7 @@ struct WidgetsView: View {
                                 Rectangle()
                                     .fill(model.objectsClrDark)
                                     .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                    .cornerRadius(15)
+                                    .cornerRadius(screenSize.width / 28)
                                 
                                 HStack {
                                     Text("Lunch Widget")

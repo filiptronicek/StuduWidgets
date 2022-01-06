@@ -28,7 +28,7 @@ struct SettingsView: View {
                                 Rectangle()
                                     .fill(model.objectsClrDark)
                                     .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                    .cornerRadius(15)
+                                    .cornerRadius(screenSize.width / 28)
                                 
                                 HStack {
                                     Spacer()
@@ -69,7 +69,7 @@ struct SettingsView: View {
                                     Rectangle()
                                         .fill(model.objectsClrDark)
                                         .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                        .cornerRadius(15)
+                                        .cornerRadius(screenSize.width / 28)
                                     
                                     HStack {
                                         Spacer()
@@ -133,7 +133,7 @@ struct SettingsView: View {
                                         Rectangle()
                                                 .fill(model.objectsClrDark)
                                             .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                            .cornerRadius(15)
+                                            .cornerRadius(screenSize.width / 28)
                                         
                                         HStack {
                                             Image(systemName: "plus")
@@ -161,7 +161,7 @@ struct SettingsView: View {
                             Rectangle()
                                 .fill(model.objectsClrDark)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(15)
+                                .cornerRadius(screenSize.width / 28)
                             HStack {
                                 Text("Dark (default)")
                                     .foregroundColor(model.fontClr)
@@ -183,7 +183,7 @@ struct SettingsView: View {
                             Rectangle()
                                 .fill(model.objectsClrDark)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(15)
+                                .cornerRadius(screenSize.width / 28)
                             HStack {
                                 Text("Light (lamer)")
                                     .foregroundColor(model.fontClr)
@@ -211,7 +211,7 @@ struct SettingsView: View {
                                 Rectangle()
                                     .fill(model.objectsClrDark)
                                     .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                    .cornerRadius(15)
+                                    .cornerRadius(screenSize.width / 28)
                                 
                                 HStack {
                                     Text("Data handling")

@@ -37,7 +37,7 @@ struct TimetableSheet: View {
                             Rectangle()
                                 .fill(model.objectsClrMedium)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(15)
+                                .cornerRadius(screenSize.width / 28)
                             
                             HStack {
                                 Text("Morning message")
@@ -53,7 +53,7 @@ struct TimetableSheet: View {
                             Rectangle()
                                 .fill(model.objectsClrMedium)
                                 .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(15)
+                                .cornerRadius(screenSize.width / 28)
                             
                             HStack {
                                 Text("Evening message")
