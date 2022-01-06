@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858BE2787105F00482F93 /* LunchWidgetSmall.swift */; };
+		902858C12787106F00482F93 /* LunchWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858C02787106F00482F93 /* LunchWidgetMedium.swift */; };
 		903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA920276D535F0044B05F /* StuduWidgetsApp.swift */; };
 		903AA923276D535F0044B05F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA922276D535F0044B05F /* HomeView.swift */; };
 		903AA925276D53600044B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA924276D53600044B05F /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		902858BE2787105F00482F93 /* LunchWidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetSmall.swift; sourceTree = "<group>"; };
+		902858C02787106F00482F93 /* LunchWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetMedium.swift; sourceTree = "<group>"; };
 		903AA91D276D535F0044B05F /* StuduWidgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuduWidgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903AA920276D535F0044B05F /* StuduWidgetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuduWidgetsApp.swift; sourceTree = "<group>"; };
 		903AA922276D535F0044B05F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		902858BD2787103800482F93 /* Lunch Widget */ = {
+			isa = PBXGroup;
+			children = (
+				902858BE2787105F00482F93 /* LunchWidgetSmall.swift */,
+				902858C02787106F00482F93 /* LunchWidgetMedium.swift */,
+			);
+			path = "Lunch Widget";
+			sourceTree = "<group>";
+		};
 		9036D074277367E100480599 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +216,7 @@
 				90A6A1342778CC310056C953 /* Widgets.intentdefinition */,
 				90A6A1352778CC320056C953 /* Assets.xcassets */,
 				90A6A1372778CC320056C953 /* Info.plist */,
+				902858BD2787103800482F93 /* Lunch Widget */,
 				90A20E512778CD72005F1E33 /* Timetable Widget */,
 			);
 			path = Widgets;
@@ -339,9 +353,11 @@
 			files = (
 				90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				90A20E532778CD8B005F1E33 /* TimetableWidgetSmall.swift in Sources */,
+				902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */,
 				90A20E552778CDD9005F1E33 /* TimetableWidgetMedium.swift in Sources */,
 				90A20E572778CDEE005F1E33 /* TimetableWidgetLarge.swift in Sources */,
 				90A6A1332778CC310056C953 /* Widgets.swift in Sources */,
+				902858C12787106F00482F93 /* LunchWidgetMedium.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
