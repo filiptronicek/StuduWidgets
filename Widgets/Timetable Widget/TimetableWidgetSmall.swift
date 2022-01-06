@@ -11,12 +11,13 @@ let date = Date()
 let calendar = Calendar.current
 let hour = calendar.component(.hour, from: date)
 let minutes = calendar.component(.minute, from: date)
+let seconds = calendar.component(.second, from: date)
+
+// ((hour * 3 600) + (minutes * 60) + seconds)
+// 28,800 (number of seconds at 8am) / 338.823 = 85 (aka the offset we need at 8am)
 
 struct TimetableWidgetSmall: View {
-    @State private var xcor:CGFloat = 50 // TODO - Create conversion from time that corresponds
-                                        // to the right positioning (8:00 is the time when the first
-                                        // subject's hitbox (idk how to call it xd) should begin touching
-                                        // the cyan line
+    @State private var xcor:CGFloat = 85 // TODO - Create conversion from time that corresponds to the right positioning (8:00 is the time when the first subject's hitbox (idk how to call it xd) should begin touching the cyan line
     
     var entry: SimpleEntry
     
