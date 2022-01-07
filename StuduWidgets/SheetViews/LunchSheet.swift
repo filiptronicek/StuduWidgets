@@ -20,30 +20,30 @@ struct LunchSheet: View {
             VStack {
                 Text("Lunch Widget")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 12))
-                    .padding(.trailing, screenSize.width / 3.02)
-                    .padding([.top, .bottom], screenSize.width / 18)
+                    .font(.system(size: model.screenSize.width / 12))
+                    .padding(.trailing, model.screenSize.width / 3.02)
+                    .padding([.top, .bottom], model.screenSize.width / 18)
                 
                 ScrollView {
                     VStack {
                         Text("Customization")
                             .foregroundColor(model.objectsClrLight)
-                            .font(.system(size: screenSize.width / 15))
-                            .padding(.trailing, screenSize.width / 4.2)
+                            .font(.system(size: model.screenSize.width / 15))
+                            .padding(.trailing, model.screenSize.width / 4.2)
                         
                         Button(action: {},
                                label: {
                                     ZStack {
                                         Rectangle()
                                             .fill(model.objectsClrMedium)
-                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                            .cornerRadius(screenSize.width / 28)
+                                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                            .cornerRadius(model.screenSize.width / 28)
                                         
                                         HStack {
                                             Text("Layout")
                                                 .foregroundColor(model.fontClr)
-                                                .font(.system(size: screenSize.width / 20))
-                                                .padding(.trailing, screenSize.width / 1.655)
+                                                .font(.system(size: model.screenSize.width / 20))
+                                                .padding(.trailing, model.screenSize.width / 1.655)
                                         }
                                 }
                         })
@@ -52,7 +52,7 @@ struct LunchSheet: View {
                 
                 Text("Swipe down")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 18))
+                    .font(.system(size: model.screenSize.width / 18))
             }
         }
     }

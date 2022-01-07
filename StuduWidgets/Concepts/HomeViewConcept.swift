@@ -25,8 +25,8 @@ struct HomeViewConcept: View {
                 .clipShape(LiquidShape(offset: offset))
                 .overlay(
                     Image(systemName: "gearshape")
-                        .font(.system(size: screenSize.width / 18))
-                        .frame(width: screenSize.width / 8, height: screenSize.width / 8)
+                        .font(.system(size: model.screenSize.width / 18))
+                        .frame(width: model.screenSize.width / 8, height: model.screenSize.width / 8)
                         .contentShape(Rectangle())
                         .gesture(DragGesture().onChanged({ (value) in
                             withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.6, blendDuration: 0.6)){
@@ -34,8 +34,8 @@ struct HomeViewConcept: View {
                             }
                         }).onEnded({ (value) in
                             withAnimation(.spring()) {
-                                if -offset.width > screenSize.width / 2 {
-                                    offset.width = -screenSize.height
+                                if -offset.width > model.screenSize.width / 2 {
+                                    offset.width = -model.screenSize.height
                                     showingSettings.toggle()
                                 }
                                 
@@ -46,7 +46,7 @@ struct HomeViewConcept: View {
                         })
                         )
                         .foregroundColor(model.objectsClrDark)
-                        .offset(x: screenSize.width / 50, y: screenSize.width / 3.6)
+                        .offset(x: model.screenSize.width / 50, y: model.screenSize.width / 3.6)
                         .opacity(offset == .zero ? 1 : 0),
                     alignment: .topTrailing
                 )

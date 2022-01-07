@@ -27,9 +27,9 @@ struct StravaLoginSheet: View {
             VStack {
                 Text("Strava login")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 12))
-                    .padding(.trailing, screenSize.width / 3.02)
-                    .padding([.top, .bottom], screenSize.width / 18)
+                    .font(.system(size: model.screenSize.width / 12))
+                    .padding(.trailing, model.screenSize.width / 3.02)
+                    .padding([.top, .bottom], model.screenSize.width / 18)
                 
                 ScrollView {
                     VStack {
@@ -39,19 +39,19 @@ struct StravaLoginSheet: View {
                             .foregroundColor(model.fontClr)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
-                            .padding(.horizontal, screenSize.width / 10)
+                            .padding(.horizontal, model.screenSize.width / 10)
                         SecureField("Password", text: $password)
                             .padding()
                             .background(model.objectsClrLight)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
-                            .padding(.horizontal, screenSize.width / 10)
+                            .padding(.horizontal, model.screenSize.width / 10)
                         TextField("Canteen", text: $canteen)
                             .padding()
                             .background(model.objectsClrLight)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
-                            .padding(.horizontal, screenSize.width / 10)
+                            .padding(.horizontal, model.screenSize.width / 10)
                         Button("Log in", action: {
                             statusFontColor = model.fontClr
                             token = "Loading the token"
@@ -81,7 +81,7 @@ struct StravaLoginSheet: View {
                 
                 Text("Swipe down to cancel")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 18))
+                    .font(.system(size: model.screenSize.width / 18))
             }
         }
     }

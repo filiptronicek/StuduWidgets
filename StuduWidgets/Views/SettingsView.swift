@@ -18,8 +18,8 @@ struct SettingsView: View {
                 VStack {
                     Text("Accounts")
                         .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: screenSize.width / 15))
-                        .padding(.trailing, screenSize.width / 1.8)
+                        .font(.system(size: model.screenSize.width / 15))
+                        .padding(.trailing, model.screenSize.width / 1.8)
                         // this padding is 0.3 pixels off and it's pissing me off
                     
                     VStack {
@@ -27,27 +27,27 @@ struct SettingsView: View {
                             ZStack {
                                 Rectangle()
                                     .fill(model.objectsClrDark)
-                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                    .cornerRadius(screenSize.width / 28)
+                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
+                                    .cornerRadius(model.screenSize.width / 28)
                                 
                                 HStack {
                                     Spacer()
                                     
                                     Image("frightened")
                                         .resizable()
-                                        .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
+                                        .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                                         .clipShape(Circle())
-                                        .overlay(Circle().stroke(model.fontClr, lineWidth: screenSize.width / 150))
-                                        .padding(.trailing, screenSize.width / 50)
+                                        .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                                        .padding(.trailing, model.screenSize.width / 50)
                                     
                                     VStack {
                                         Text("Rostislav Brož")
                                             .foregroundColor(model.fontClr)
-                                            .font(.system(size: screenSize.width / 18))
+                                            .font(.system(size: model.screenSize.width / 18))
                                         
                                         Text("Bakalari")
                                             .foregroundColor(model.objectsClrLight)
-                                            .font(.system(size: screenSize.width / 25))
+                                            .font(.system(size: model.screenSize.width / 25))
                                     }
                                     
                                     Spacer()
@@ -68,27 +68,27 @@ struct SettingsView: View {
                                 ZStack {
                                     Rectangle()
                                         .fill(model.objectsClrDark)
-                                        .frame(width: screenSize.width / 1.1, height: screenSize.width / 4)
-                                        .cornerRadius(screenSize.width / 28)
+                                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
+                                        .cornerRadius(model.screenSize.width / 28)
                                     
                                     HStack {
                                         Spacer()
                                         
                                         Image("frightened")
                                             .resizable()
-                                            .frame(width: screenSize.width / 5.5, height: screenSize.width / 5.5)
+                                            .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                                             .clipShape(Circle())
-                                            .overlay(Circle().stroke(model.fontClr, lineWidth: screenSize.width / 150))
-                                            .padding(.trailing, screenSize.width / 50)
+                                            .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                                            .padding(.trailing, model.screenSize.width / 50)
                                         
                                         VStack {
                                             Text("Rostislav Brož")
                                                 .foregroundColor(model.fontClr)
-                                                .font(.system(size: screenSize.width / 18))
+                                                .font(.system(size: model.screenSize.width / 18))
                                             
                                             Text("Strava")
                                                 .foregroundColor(model.objectsClrLight)
-                                                .font(.system(size: screenSize.width / 25))
+                                                .font(.system(size: model.screenSize.width / 25))
                                         }
                                         
                                         Spacer()
@@ -132,18 +132,18 @@ struct SettingsView: View {
 
                                         Rectangle()
                                                 .fill(model.objectsClrDark)
-                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                            .cornerRadius(screenSize.width / 28)
+                                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                            .cornerRadius(model.screenSize.width / 28)
                                         
                                         HStack {
                                             Image(systemName: "plus")
                                                 .resizable()
                                                 .foregroundColor(Color.blue)
-                                                .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                                .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                             
                                             Text("Add account")
                                                 .foregroundColor(Color.blue)
-                                                .font(.system(size: screenSize.width / 18))
+                                                .font(.system(size: model.screenSize.width / 18))
                                         }
                                     }
                                 }
@@ -152,26 +152,26 @@ struct SettingsView: View {
 
                     Text("Color theme")
                         .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: screenSize.width / 15))
-                        .padding(.top, screenSize.width / 15)
-                        .padding(.trailing, screenSize.width / 1.986)
+                        .font(.system(size: model.screenSize.width / 15))
+                        .padding(.top, model.screenSize.width / 15)
+                        .padding(.trailing, model.screenSize.width / 1.986)
                     
                     Button(action: {model.changeColorTheme(theme: "dark")}, label: {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
-                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(screenSize.width / 28)
+                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                .cornerRadius(model.screenSize.width / 28)
                             HStack {
                                 Text("Dark (default)")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 18))
-                                    .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
+                                    .font(.system(size: model.screenSize.width / 18))
+                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
                                     
                                 
                                 Image(systemName: model.currentTheme == "dark" ? "checkmark" : "")
                                     .resizable()
-                                    .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                    .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                     .foregroundColor(model.objectsClrLight)
                                     
                             }
@@ -182,18 +182,18 @@ struct SettingsView: View {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
-                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(screenSize.width / 28)
+                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                .cornerRadius(model.screenSize.width / 28)
                             HStack {
                                 Text("Light (lamer)")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 18))
-                                    .frame(width: screenSize.width / 1.5, height: screenSize.width / 8, alignment: .leading)
+                                    .font(.system(size: model.screenSize.width / 18))
+                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
                                     
                                 
                                 Image(systemName: model.currentTheme == "dark" ? "" : "checkmark")
                                     .resizable()
-                                    .frame(width: screenSize.width / 20, height: screenSize.width / 20)
+                                    .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                     .foregroundColor(model.objectsClrLight)
                                     
                             }
@@ -202,25 +202,25 @@ struct SettingsView: View {
                     
                     Text("Information")
                         .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: screenSize.width / 15))
-                        .padding(.top, screenSize.width / 15)
-                        .padding(.trailing, screenSize.width / 1.986)
+                        .font(.system(size: model.screenSize.width / 15))
+                        .padding(.top, model.screenSize.width / 15)
+                        .padding(.trailing, model.screenSize.width / 1.986)
                     
                     Button(action: {model.showingDataSheet.toggle()}, label: {
                             ZStack {
                                 Rectangle()
                                     .fill(model.objectsClrDark)
-                                    .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                    .cornerRadius(screenSize.width / 28)
+                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                    .cornerRadius(model.screenSize.width / 28)
                                 
                                 HStack {
                                     Text("Data handling")
                                         .foregroundColor(model.fontClr)
-                                        .font(.system(size: screenSize.width / 16))
+                                        .font(.system(size: model.screenSize.width / 16))
                                     Image(systemName: "chevron.right")
                                         .resizable()
-                                        .frame(width: screenSize.width / 30, height: screenSize.width / 20)
-                                        .padding(.leading, screenSize.width / 3.68)
+                                        .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
+                                        .padding(.leading, model.screenSize.width / 3.68)
                                         .foregroundColor(Color.gray)
                                 }
                             }

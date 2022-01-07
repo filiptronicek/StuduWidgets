@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-
-// declaration of a constant from which screen width and height is accessed to properly position and size objects
-
-let screenSize: CGRect = UIScreen.main.bounds
-
 struct HomeView: View {
     // Access data in ContentModel.swift
     
@@ -25,9 +20,9 @@ struct HomeView: View {
             VStack {
                 Text("StuduWidgets")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 10))
-                    .padding(.trailing, screenSize.width / 5)
-                    .padding([.top, .bottom], screenSize.width / 18)
+                    .font(.system(size: model.screenSize.width / 10))
+                    .padding(.trailing, model.screenSize.width / 5)
+                    .padding([.top, .bottom], model.screenSize.width / 18)
                 
                 if !model.showingSettings {
                     WidgetsView()
@@ -45,12 +40,12 @@ struct HomeView: View {
                             VStack {
                                 Image(systemName: model.showingSettings ? "square.text.square" : "square.text.square.fill")
                                     .resizable()
-                                    .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                    .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
                                     .foregroundColor(model.fontClr)
                                 
                                 Text("Widgets")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 30))
+                                    .font(.system(size: model.screenSize.width / 30))
                             }
                         })
                         
@@ -60,17 +55,17 @@ struct HomeView: View {
                             VStack {
                                 Image(systemName: model.showingSettings ? "gearshape.fill" : "gearshape")
                                     .resizable()
-                                    .frame(width: screenSize.width / 18, height: screenSize.width / 18)
+                                    .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
                                     .foregroundColor(model.fontClr)
                                 
                                 Text("Settings")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 30))
+                                    .font(.system(size: model.screenSize.width / 30))
                             }
                         })
                         
                         Spacer()
-                    }.padding(.bottom, screenSize.width / 20)
+                    }.padding(.bottom, model.screenSize.width / 20)
                 }
             }
         }

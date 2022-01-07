@@ -22,28 +22,28 @@ struct TimetableSheet: View {
             VStack {
                 Text("Timetable Widget")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 12))
-                    .padding(.trailing, screenSize.width / 5)
-                    .padding([.top, .bottom], screenSize.width / 18)
+                    .font(.system(size: model.screenSize.width / 12))
+                    .padding(.trailing, model.screenSize.width / 5)
+                    .padding([.top, .bottom], model.screenSize.width / 18)
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
                         Text("Customization")
                             .foregroundColor(model.objectsClrLight)
-                            .font(.system(size: screenSize.width / 15))
-                            .padding(.trailing, screenSize.width / 2.2)
+                            .font(.system(size: model.screenSize.width / 15))
+                            .padding(.trailing, model.screenSize.width / 2.2)
                         
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrMedium)
-                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(screenSize.width / 28)
+                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                .cornerRadius(model.screenSize.width / 28)
                             
                             HStack {
                                 Text("Morning message")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 20))
-                                    .padding(.trailing, screenSize.width / 2.8)
+                                    .font(.system(size: model.screenSize.width / 20))
+                                    .padding(.trailing, model.screenSize.width / 2.8)
                                 
                                 //TODO Textfield for input of the morning message
                             }
@@ -52,14 +52,14 @@ struct TimetableSheet: View {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrMedium)
-                                .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
-                                .cornerRadius(screenSize.width / 28)
+                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                .cornerRadius(model.screenSize.width / 28)
                             
                             HStack {
                                 Text("Evening message")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: screenSize.width / 20))
-                                    .padding(.trailing, screenSize.width / 2.8)
+                                    .font(.system(size: model.screenSize.width / 20))
+                                    .padding(.trailing, model.screenSize.width / 2.8)
                                 
                                 //TODO Textfield for input of the evening message
                             }
@@ -70,29 +70,29 @@ struct TimetableSheet: View {
                                     ZStack {
                                         Rectangle()
                                             .fill(model.objectsClrMedium)
-                                            .frame(width: screenSize.width / 1.1, height: screenSize.width / 8)
+                                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
                                             .cornerRadius(15)
                                         
                                         HStack {
                                             Text("Dividers")
                                                 .foregroundColor(model.fontClr)
-                                                .font(.system(size: screenSize.width / 20))
-                                                .padding(.trailing, screenSize.width / 4.9)
+                                                .font(.system(size: model.screenSize.width / 20))
+                                                .padding(.trailing, model.screenSize.width / 4.9)
                                             
                                             // I feel like this is a pixel off and moves when you click the dividers button
                                             
                                             if dividersAreNumbers == false {
                                                 Text("Lines")
                                                     .foregroundColor(model.objectsClrLight)
-                                                    .font(.system(size: screenSize.width / 20))
-                                                    .padding(.leading, screenSize.width / 4.72)
+                                                    .font(.system(size: model.screenSize.width / 20))
+                                                    .padding(.leading, model.screenSize.width / 4.72)
                                             }
                                             
                                             else if dividersAreNumbers == true {
                                                 Text("Numbers")
                                                     .foregroundColor(model.objectsClrLight)
-                                                    .font(.system(size: screenSize.width / 20))
-                                                    .padding(.leading, screenSize.width / 7.9)
+                                                    .font(.system(size: model.screenSize.width / 20))
+                                                    .padding(.leading, model.screenSize.width / 7.9)
                                             }
                                         }
                                     }
@@ -101,43 +101,43 @@ struct TimetableSheet: View {
                     
                     Text("Get started")
                         .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: screenSize.width / 15))
-                        .padding(.trailing, screenSize.width / 1.85)
-                        .padding(.top, screenSize.width / 15)
-                        .padding(.bottom, screenSize.width / 40)
+                        .font(.system(size: model.screenSize.width / 15))
+                        .padding(.trailing, model.screenSize.width / 1.85)
+                        .padding(.top, model.screenSize.width / 15)
+                        .padding(.bottom, model.screenSize.width / 40)
                     
                     Text("TimeTable Widget lets you view your school subjects on Home Screen!")
                         .foregroundColor(model.fontClr)
-                        .font(.system(size: screenSize.width / 25))
-                        .frame(width: screenSize.width / 1.1)
+                        .font(.system(size: model.screenSize.width / 25))
+                        .frame(width: model.screenSize.width / 1.1)
                     
                     HStack {
                         Text("Here's a quick preview!")
                             .foregroundColor(model.fontClr)
-                            .font(.system(size: screenSize.width / 25))
-                            .padding(.trailing, screenSize.width / 25)
+                            .font(.system(size: model.screenSize.width / 25))
+                            .padding(.trailing, model.screenSize.width / 25)
                         
                         Image("TimetableWidget")
                             .resizable()
-                            .frame(width: screenSize.width / 2.7, height: screenSize.width / 3)
-                    }.frame(width: screenSize.width / 1.2)
-                        .padding([.top, .bottom], screenSize.width / 10)
+                            .frame(width: model.screenSize.width / 2.7, height: model.screenSize.width / 3)
+                    }.frame(width: model.screenSize.width / 1.2)
+                        .padding([.top, .bottom], model.screenSize.width / 10)
                     
                     HStack {
                         Image("CustomTimetableWidget")
                             .resizable()
-                            .frame(width: screenSize.width / 2.7, height: screenSize.width / 3)
+                            .frame(width: model.screenSize.width / 2.7, height: model.screenSize.width / 3)
                         
                         Text("The widget is customizable in the app. Make it yours!")
                             .foregroundColor(model.fontClr)
-                            .font(.system(size: screenSize.width / 25))
-                            .padding(.leading, screenSize.width / 25)
-                    }.frame(width: screenSize.width / 1.2)
+                            .font(.system(size: model.screenSize.width / 25))
+                            .padding(.leading, model.screenSize.width / 25)
+                    }.frame(width: model.screenSize.width / 1.2)
                 }
                 
                 Text("Swipe down")
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: screenSize.width / 18))
+                    .font(.system(size: model.screenSize.width / 18))
             }
         }
     }

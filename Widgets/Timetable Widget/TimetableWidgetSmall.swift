@@ -30,49 +30,49 @@ struct TimetableWidgetSmall: View {
             
             Rectangle()
                 .fill(model.objectClrBlue)
-                .frame(width: screenSize.width / 300, height: screenSize.width)
+                .frame(width: model.screenSize.width / 300, height: model.screenSize.width)
             
             VStack {
                 HStack {
                     ZStack {
                         Text("Ch")
                             .foregroundColor(model.fontClrDark)
-                            .font(.system(size: screenSize.width / 10))
-                            .padding([.top, .leading], screenSize.width / 60)
+                            .font(.system(size: model.screenSize.width / 10))
+                            .padding([.top, .leading], model.screenSize.width / 60)
                         
                         Text("Ch")
                             .foregroundColor(model.fontClr)
-                            .font(.system(size: screenSize.width / 10))
+                            .font(.system(size: model.screenSize.width / 10))
                     }
                     
                     Rectangle()
                         .fill(model.fontClr)
-                        .frame(width: screenSize.width / 150, height: screenSize.width / 15)
+                        .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
                     
                     ZStack {
                         Text("F")
                             .foregroundColor(model.fontClrDark)
-                            .font(.system(size: screenSize.width / 10))
-                            .padding([.top, .leading], screenSize.width / 60)
+                            .font(.system(size: model.screenSize.width / 10))
+                            .padding([.top, .leading], model.screenSize.width / 60)
                         
                         Text("F")
                             .foregroundColor(model.fontClr)
-                            .font(.system(size: screenSize.width / 10))
+                            .font(.system(size: model.screenSize.width / 10))
                     }
                     
                     Rectangle()
                         .fill(model.fontClr)
-                        .frame(width: screenSize.width / 150, height: screenSize.width / 15)
+                        .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
                     
                     ZStack {
                         Text("M")
                             .foregroundColor(model.fontClrDark)
-                            .font(.system(size: screenSize.width / 10))
-                            .padding([.top, .leading], screenSize.width / 60)
+                            .font(.system(size: model.screenSize.width / 10))
+                            .padding([.top, .leading], model.screenSize.width / 60)
                         
                         Text("M")
                             .foregroundColor(model.fontClr)
-                            .font(.system(size: screenSize.width / 10))
+                            .font(.system(size: model.screenSize.width / 10))
                     }
                     
                     // TODO - Create child appending based on the number of subjects in a list

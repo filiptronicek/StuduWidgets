@@ -9,6 +9,11 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
+    // SCREEN SIZE BOUNDS
+
+    let screenSize: CGRect = UIScreen.main.bounds
+    
+    
     // STATE VARIABLES
     
     @Published var showingSettings:Bool = false
@@ -24,7 +29,7 @@ class ContentModel: ObservableObject {
     @Published var isSignedInToStrava:Bool = false
     
     
-    // UI COLORS AND CHANGING THE COLOR THEME
+    // UI COLORS
     
     @AppStorage("theme") public var currentTheme = "dark"
     @Published var bg = Color(red: 0.05, green: 0, blue: 0)
@@ -35,6 +40,8 @@ class ContentModel: ObservableObject {
     @Published var fontClrDark = Color(red: 0.3320, green: 0.3242, blue: 0.3242)
     @Published var fontClr = Color(red: 1, green: 1, blue: 1)
     
+    
+    // CHANGING THE COLOR THEME
     
     func changeColorTheme(theme: String?) {
             
@@ -108,6 +115,7 @@ class ContentModel: ObservableObject {
             return nil
         }
     }
+    
     
     // LOGIC BEHIND TIMETABLE WIDGET
     
