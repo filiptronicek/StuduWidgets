@@ -108,4 +108,8 @@ class ContentModel: ObservableObject {
             return nil
         }
     }
+    
+    // LOGIC BEHIND TIMETABLE WIDGET
+    
+    @Published var xcor:CGFloat = 85 // TODO - Create conversion from time that corresponds to the right positioning (8:00 is the time when the first subject's hitbox (idk how to call it xd) should begin touching the cyan line
 }
