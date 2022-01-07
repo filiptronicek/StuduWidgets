@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858BE2787105F00482F93 /* LunchWidgetSmall.swift */; };
 		902858C12787106F00482F93 /* LunchWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858C02787106F00482F93 /* LunchWidgetMedium.swift */; };
+		902858C22788ADAF00482F93 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096C647277365C800A706B0 /* ContentModel.swift */; };
 		903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA920276D535F0044B05F /* StuduWidgetsApp.swift */; };
 		903AA923276D535F0044B05F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA922276D535F0044B05F /* HomeView.swift */; };
 		903AA925276D53600044B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA924276D53600044B05F /* Assets.xcassets */; };
@@ -352,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */,
+				902858C22788ADAF00482F93 /* ContentModel.swift in Sources */,
 				90A20E532778CD8B005F1E33 /* TimetableWidgetSmall.swift in Sources */,
 				902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */,
 				90A20E552778CDD9005F1E33 /* TimetableWidgetMedium.swift in Sources */,
