@@ -46,7 +46,20 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
-struct WidgetsEntryView : View {
+
+struct TimetableWidget: Widget {
+    let kind: String = "Widgets"
+
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+            TimetableWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
+    }
+}
+
+struct TimetableWidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     
     var entry: Provider.Entry
@@ -57,14 +70,17 @@ struct WidgetsEntryView : View {
                 case .systemSmall:
                 
                     TimetableWidgetSmall(entry: entry)
+                        .environmentObject(ContentModel())
                 
                 case .systemMedium:
                 
                     TimetableWidgetMedium(entry: entry)
+                        .environmentObject(ContentModel())
                 
                 case .systemLarge:
                 
                     TimetableWidgetLarge(entry: entry)
+                        .environmentObject(ContentModel())
                 
                 default:
                     Text("Not implemented!")
@@ -73,29 +89,50 @@ struct WidgetsEntryView : View {
     }
 }
 
-@main
-struct StuduWidgetsBundle: WidgetBundle {
-    @WidgetBundleBuilder
-    var body: some Widget {
-        Widgets()
-    }
-}
 
-struct Widgets: Widget {
+struct LunchWidget: Widget {
     let kind: String = "Widgets"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            WidgetsEntryView(entry: entry)
+            LunchWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
     }
 }
 
-struct Widgets_Previews: PreviewProvider {
-    static var previews: some View {
-        WidgetsEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+struct LunchWidgetEntryView : View {
+    @Environment(\.widgetFamily) var widgetFamily
+    
+    var entry: Provider.Entry
+
+    var body: some View {
+        ZStack {
+            switch widgetFamily {
+                case .systemSmall:
+                
+                    LunchWidgetSmall(entry: entry)
+                        .environmentObject(ContentModel())
+                
+                case .systemMedium:
+                
+                    LunchWidgetMedium(entry: entry)
+                        .environmentObject(ContentModel())
+                
+                default:
+                    Text("Not implemented!")
+            }
+        }
+    }
+}
+
+
+@main
+struct StuduWidgetsBundle: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        TimetableWidget()
+        LunchWidget()
     }
 }
