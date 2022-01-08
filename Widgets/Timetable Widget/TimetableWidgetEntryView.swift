@@ -1,5 +1,5 @@
 //
-//  LunchWidgetEntryView.swift
+//  TimetableWidgetEntryView.swift
 //  WidgetsExtension
 //
 //  Created by Rostislav Brož on 1/8/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LunchWidgetEntryView : View {
+struct TimetableWidgetEntryView : View {
     @Environment(\.widgetFamily) var widgetFamily
     
     var entry: Provider.Entry
@@ -17,12 +17,17 @@ struct LunchWidgetEntryView : View {
             switch widgetFamily {
                 case .systemSmall:
                 
-                    LunchWidgetSmall(entry: entry)
+                    TimetableWidgetSmall(entry: entry)
                         .environmentObject(ContentModel())
                 
                 case .systemMedium:
                 
-                    LunchWidgetMedium(entry: entry)
+                    TimetableWidgetMedium(entry: entry)
+                        .environmentObject(ContentModel())
+                
+                case .systemLarge:
+                
+                    TimetableWidgetLarge(entry: entry)
                         .environmentObject(ContentModel())
                 
                 default:
@@ -31,4 +36,3 @@ struct LunchWidgetEntryView : View {
         }
     }
 }
-

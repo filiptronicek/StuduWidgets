@@ -25,7 +25,7 @@ struct Provider: IntentTimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
@@ -59,36 +59,6 @@ struct TimetableWidget: Widget {
     }
 }
 
-struct TimetableWidgetEntryView : View {
-    @Environment(\.widgetFamily) var widgetFamily
-    
-    var entry: Provider.Entry
-
-    var body: some View {
-        ZStack {
-            switch widgetFamily {
-                case .systemSmall:
-                
-                    TimetableWidgetSmall(entry: entry)
-                        .environmentObject(ContentModel())
-                
-                case .systemMedium:
-                
-                    TimetableWidgetMedium(entry: entry)
-                        .environmentObject(ContentModel())
-                
-                case .systemLarge:
-                
-                    TimetableWidgetLarge(entry: entry)
-                        .environmentObject(ContentModel())
-                
-                default:
-                    Text("Not implemented!")
-            }
-        }
-    }
-}
-
 
 struct LunchWidget: Widget {
     let kind: String = "Widgets"
@@ -99,31 +69,6 @@ struct LunchWidget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-    }
-}
-
-struct LunchWidgetEntryView : View {
-    @Environment(\.widgetFamily) var widgetFamily
-    
-    var entry: Provider.Entry
-
-    var body: some View {
-        ZStack {
-            switch widgetFamily {
-                case .systemSmall:
-                
-                    LunchWidgetSmall(entry: entry)
-                        .environmentObject(ContentModel())
-                
-                case .systemMedium:
-                
-                    LunchWidgetMedium(entry: entry)
-                        .environmentObject(ContentModel())
-                
-                default:
-                    Text("Not implemented!")
-            }
-        }
     }
 }
 

@@ -32,7 +32,8 @@
 		90A6A13C2778CC320056C953 /* WidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90A6A12E2778CC310056C953 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		90BDB21D277E570C00C73AD5 /* HomeViewConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */; };
 		90BDB222278081D900C73AD5 /* ConfettiConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB221278081D900C73AD5 /* ConfettiConcept.swift */; };
-		90E949502789CCB800C6DEA9 /* LunchWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E9494F2789CCB800C6DEA9 /* LunchWidgetEntryView.swift */; };
+		90E949522789D01A00C6DEA9 /* TimetableWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */; };
+		90E949542789D03000C6DEA9 /* LunchWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */; };
 		DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A1CB6277918620052135A /* StravaLoginSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,7 +89,8 @@
 		90A6A1372778CC320056C953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConcept.swift; sourceTree = "<group>"; };
 		90BDB221278081D900C73AD5 /* ConfettiConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiConcept.swift; sourceTree = "<group>"; };
-		90E9494F2789CCB800C6DEA9 /* LunchWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetEntryView.swift; sourceTree = "<group>"; };
+		90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetEntryView.swift; sourceTree = "<group>"; };
+		90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetEntryView.swift; sourceTree = "<group>"; };
 		DC7A1CB6277918620052135A /* StravaLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaLoginSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +117,7 @@
 		902858BD2787103800482F93 /* Lunch Widget */ = {
 			isa = PBXGroup;
 			children = (
-				90E9494F2789CCB800C6DEA9 /* LunchWidgetEntryView.swift */,
+				90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */,
 				902858BE2787105F00482F93 /* LunchWidgetSmall.swift */,
 				902858C02787106F00482F93 /* LunchWidgetMedium.swift */,
 			);
@@ -197,6 +199,7 @@
 		90A20E512778CD72005F1E33 /* Timetable Widget */ = {
 			isa = PBXGroup;
 			children = (
+				90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */,
 				90A20E522778CD8B005F1E33 /* TimetableWidgetSmall.swift */,
 				90A20E542778CDD9005F1E33 /* TimetableWidgetMedium.swift */,
 				90A20E562778CDEE005F1E33 /* TimetableWidgetLarge.swift */,
@@ -343,7 +346,6 @@
 				90A1FF27277A623700C15484 /* SettingsView.swift in Sources */,
 				90BDB21D277E570C00C73AD5 /* HomeViewConcept.swift in Sources */,
 				903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */,
-				90E949502789CCB800C6DEA9 /* LunchWidgetEntryView.swift in Sources */,
 				9096C648277365C800A706B0 /* ContentModel.swift in Sources */,
 				90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				90A1FF25277A622200C15484 /* WidgetsView.swift in Sources */,
@@ -357,10 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */,
+				90E949522789D01A00C6DEA9 /* TimetableWidgetEntryView.swift in Sources */,
 				902858C22788ADAF00482F93 /* ContentModel.swift in Sources */,
 				90A20E532778CD8B005F1E33 /* TimetableWidgetSmall.swift in Sources */,
 				902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */,
 				90A20E552778CDD9005F1E33 /* TimetableWidgetMedium.swift in Sources */,
+				90E949542789D03000C6DEA9 /* LunchWidgetEntryView.swift in Sources */,
 				90A20E572778CDEE005F1E33 /* TimetableWidgetLarge.swift in Sources */,
 				90A6A1332778CC310056C953 /* Widgets.swift in Sources */,
 				902858C12787106F00482F93 /* LunchWidgetMedium.swift in Sources */,
