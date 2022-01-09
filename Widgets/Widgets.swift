@@ -48,27 +48,27 @@ struct SimpleEntry: TimelineEntry {
 
 
 struct TimetableWidget: Widget {
-    let kind: String = "Widgets"
+    let kind: String = "TimetableWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             TimetableWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Timetable Widget")
+        .description("This widget allows you to view your timetable conveniently on your Home Screen.")
     }
 }
 
 
 struct LunchWidget: Widget {
-    let kind: String = "Widgets"
+    let kind: String = "LunchWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             LunchWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Lunch Widget")
+        .description("This little guy let's you view your lunches on your Home Screen.")
     }
 }
 
