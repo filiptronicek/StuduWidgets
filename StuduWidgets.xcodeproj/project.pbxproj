@@ -34,6 +34,7 @@
 		90BDB222278081D900C73AD5 /* ConfettiConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB221278081D900C73AD5 /* ConfettiConcept.swift */; };
 		90E949522789D01A00C6DEA9 /* TimetableWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */; };
 		90E949542789D03000C6DEA9 /* LunchWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */; };
+		90E94956278B0E6300C6DEA9 /* LunchWidgetLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E94955278B0E6300C6DEA9 /* LunchWidgetLarge.swift */; };
 		DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7A1CB6277918620052135A /* StravaLoginSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		90BDB221278081D900C73AD5 /* ConfettiConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiConcept.swift; sourceTree = "<group>"; };
 		90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetEntryView.swift; sourceTree = "<group>"; };
 		90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetEntryView.swift; sourceTree = "<group>"; };
+		90E94955278B0E6300C6DEA9 /* LunchWidgetLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetLarge.swift; sourceTree = "<group>"; };
 		DC7A1CB6277918620052135A /* StravaLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StravaLoginSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */,
 				902858BE2787105F00482F93 /* LunchWidgetSmall.swift */,
 				902858C02787106F00482F93 /* LunchWidgetMedium.swift */,
+				90E94955278B0E6300C6DEA9 /* LunchWidgetLarge.swift */,
 			);
 			path = "Lunch Widget";
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			files = (
 				90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				90E949522789D01A00C6DEA9 /* TimetableWidgetEntryView.swift in Sources */,
+				90E94956278B0E6300C6DEA9 /* LunchWidgetLarge.swift in Sources */,
 				902858C22788ADAF00482F93 /* ContentModel.swift in Sources */,
 				90A20E532778CD8B005F1E33 /* TimetableWidgetSmall.swift in Sources */,
 				902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */,
