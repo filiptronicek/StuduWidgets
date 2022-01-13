@@ -8,10 +8,29 @@
 import SwiftUI
 
 struct LunchWidgetSmall: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
     
     var entry: SimpleEntry
     
     var body: some View {
-        Text("LunchWidgetSmall")
+        ZStack {
+            model.bg.ignoresSafeArea()
+            
+            VStack {
+                HStack {
+                    Text("<Date>")
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 10))
+                    
+                    Image(systemName: "fork.knife.circle")
+                        .resizable()
+                        .frame(width: model.screenSize.width / 10, height: model.screenSize.width / 10)
+                        .foregroundColor(model.fontClrDark)
+                }
+            }
+        }
     }
 }

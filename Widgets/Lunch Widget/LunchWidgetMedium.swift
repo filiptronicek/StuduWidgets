@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct LunchWidgetMedium: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
     
     var entry: SimpleEntry
     

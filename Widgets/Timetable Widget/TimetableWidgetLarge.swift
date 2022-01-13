@@ -9,6 +9,11 @@ import WidgetKit
 import SwiftUI
 
 struct TimetableWidgetLarge: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    
     var entry: SimpleEntry
     
     var body: some View {
