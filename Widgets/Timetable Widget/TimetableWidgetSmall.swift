@@ -7,14 +7,10 @@
 
 import SwiftUI
 
-let date = Date()
-let calendar = Calendar.current
-let hour = calendar.component(.hour, from: date)
-let minutes = calendar.component(.minute, from: date)
-let seconds = calendar.component(.second, from: date)
-
 // ((hour * 3 600) + (minutes * 60) + seconds)
 // 28,800 (number of seconds at 8am) / 338.823 = 85 (aka the offset we need at 8am)
+
+var xcorSmall:CGFloat = ((CGFloat(hour) * 3600) + (CGFloat(minutes) * 60) + CGFloat(seconds)) / 338.823
 
 struct TimetableWidgetSmall: View {
     // Access data in ContentModel.swift
@@ -37,7 +33,7 @@ struct TimetableWidgetSmall: View {
                     ZStack {
                         Text("Ch")
                             .foregroundColor(model.fontClrDark)
-                            .font(.system(size: model.screenSize.width / 10))
+                            .font(.system(size: model.screenSize.width / 30))
                             .padding([.top, .leading], model.screenSize.width / 60)
                         
                         Text("Ch")
@@ -77,7 +73,7 @@ struct TimetableWidgetSmall: View {
                     
                     // TODO - Create child appending based on the number of subjects in a list
                     
-                }.offset(x: model.xcor)
+                }.offset(x: xcorSmall)
             }
         }
     }

@@ -9,6 +9,14 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+
+let date = Date()
+let calendar = Calendar.current
+let hour = calendar.component(.hour, from: date) // 2 PM == 14
+let minutes = calendar.component(.minute, from: date)
+let seconds = calendar.component(.second, from: date)
+
+
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
