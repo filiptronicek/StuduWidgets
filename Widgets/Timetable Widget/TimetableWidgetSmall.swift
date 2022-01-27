@@ -33,7 +33,7 @@ struct TimetableWidgetSmall: View {
                     ZStack {
                         Text(model.timetableTuesday[0])
                             .foregroundColor(model.fontClrDark)
-                            .font(.system(size: model.screenSize.width / 30))
+                            .font(.system(size: model.screenSize.width / 10))
                             .padding([.top, .leading], model.screenSize.width / 60)
                         
                         Text(model.timetableTuesday[0])
@@ -71,9 +71,25 @@ struct TimetableWidgetSmall: View {
                             .font(.system(size: model.screenSize.width / 10))
                     }
                     
+                    Rectangle()
+                        .fill(model.fontClr)
+                        .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
+                    
+                    ZStack {
+                        Text(model.timetableTuesday[3])
+                            .foregroundColor(model.fontClrDark)
+                            .font(.system(size: model.screenSize.width / 10))
+                            .padding([.top, .leading], model.screenSize.width / 60)
+                        
+                        Text(model.timetableTuesday[3])
+                            .foregroundColor(model.fontClr)
+                            .font(.system(size: model.screenSize.width / 10))
+                    }
+                    
                     // TODO - Create child appending based on the number of subjects in a list
                     
-                }.offset(x: 0)
+                }.frame(width: model.screenSize.width / 0.1, height: model.screenSize.width)
+                    .offset(x: 0)
             }
         }
     }
