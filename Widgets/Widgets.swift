@@ -9,12 +9,6 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-
-// declaration of a constant from which screen width and height is accessed to properly position and size objects
-
-let screenSize: CGRect = UIScreen.main.bounds
-
-
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
