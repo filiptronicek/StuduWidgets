@@ -87,17 +87,28 @@ struct WidgetsView: View {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
-                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 3)
                                 .cornerRadius(model.screenSize.width / 28)
                             
                             HStack {
-                                Text("Timetable Widget")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 16))
+                                Image("TimetableWidget")
+                                    .resizable()
+                                    .frame(width: model.screenSize.width / 6, height: model.screenSize.width / 6.3)
+                                
+                                VStack {
+                                    Text("Timetable Widget")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 16))
+                                    
+                                    Text("~ let's you view timetable on \nyour Home Screen")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 25))
+                                }
+                                
                                 Image(systemName: "chevron.right")
                                     .resizable()
                                     .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
-                                    .padding(.leading, model.screenSize.width / 5.95)
+                                    .padding(.leading, model.screenSize.width / 25)
                                     .foregroundColor(Color.gray)
                             }
                         }
