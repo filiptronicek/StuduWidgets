@@ -31,12 +31,12 @@ struct TimetableWidgetSmall: View {
             VStack {
                 HStack {
                     ZStack {
-                        Text("Ch")
+                        Text(model.timetableTuesday[0])
                             .foregroundColor(model.fontClrDark)
                             .font(.system(size: model.screenSize.width / 30))
                             .padding([.top, .leading], model.screenSize.width / 60)
                         
-                        Text("Ch")
+                        Text(model.timetableTuesday[0])
                             .foregroundColor(model.fontClr)
                             .font(.system(size: model.screenSize.width / 10))
                     }
@@ -46,12 +46,12 @@ struct TimetableWidgetSmall: View {
                         .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
                     
                     ZStack {
-                        Text("F")
+                        Text(model.timetableTuesday[1])
                             .foregroundColor(model.fontClrDark)
                             .font(.system(size: model.screenSize.width / 10))
                             .padding([.top, .leading], model.screenSize.width / 60)
                         
-                        Text("F")
+                        Text(model.timetableTuesday[1])
                             .foregroundColor(model.fontClr)
                             .font(.system(size: model.screenSize.width / 10))
                     }
@@ -61,19 +61,19 @@ struct TimetableWidgetSmall: View {
                         .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
                     
                     ZStack {
-                        Text("M")
+                        Text(model.timetableTuesday[2])
                             .foregroundColor(model.fontClrDark)
                             .font(.system(size: model.screenSize.width / 10))
                             .padding([.top, .leading], model.screenSize.width / 60)
                         
-                        Text("M")
+                        Text(model.timetableTuesday[2])
                             .foregroundColor(model.fontClr)
                             .font(.system(size: model.screenSize.width / 10))
                     }
                     
                     // TODO - Create child appending based on the number of subjects in a list
                     
-                }.offset(x: xcorSmall)
+                }.offset(x: 0)
             }
         }
     }
