@@ -156,7 +156,11 @@ struct SettingsView: View {
                         .padding(.top, model.screenSize.width / 15)
                         .padding(.trailing, model.screenSize.width / 1.986)
                     
-                    Button(action: {model.changeColorTheme(theme: "dark")}, label: {
+                    Button(action: {
+                                model.darkThemeIsActive = true
+                        
+                                model.changeColorTheme()
+                    }, label: {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
@@ -169,7 +173,7 @@ struct SettingsView: View {
                                     .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
                                     
                                 
-                                Image(systemName: model.currentTheme == "dark" ? "checkmark" : "")
+                                Image(systemName: model.darkThemeIsActive ? "checkmark" : "")
                                     .resizable()
                                     .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                     .foregroundColor(model.objectsClrLight)
@@ -178,7 +182,11 @@ struct SettingsView: View {
                         }
                     })
                     
-                    Button(action: {model.changeColorTheme(theme: "light")}, label: {
+                    Button(action: {
+                        model.darkThemeIsActive = false
+                            
+                                model.changeColorTheme()
+                    }, label: {
                         ZStack {
                             Rectangle()
                                 .fill(model.objectsClrDark)
@@ -191,7 +199,7 @@ struct SettingsView: View {
                                     .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
                                     
                                 
-                                Image(systemName: model.currentTheme == "dark" ? "" : "checkmark")
+                                Image(systemName: model.darkThemeIsActive ? "" : "checkmark")
                                     .resizable()
                                     .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                     .foregroundColor(model.objectsClrLight)
