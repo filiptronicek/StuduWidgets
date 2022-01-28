@@ -20,7 +20,11 @@ class ContentModel: ObservableObject {
     
     @Published var showingTimetableSheet:Bool = false
     @Published var showingLunchSheet:Bool = false
+    
     @Published var showingDataSheet:Bool = false
+    @Published var showingNewsSheet:Bool = false
+    
+    @Published var showingCustomizableWidgets:Bool = false
     
     @Published var showingLoginStrava:Bool = false
     @Published var showingLoginBakalari:Bool = false

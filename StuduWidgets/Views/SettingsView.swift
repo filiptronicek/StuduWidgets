@@ -214,6 +214,26 @@ struct SettingsView: View {
                         .padding(.top, model.screenSize.width / 15)
                         .padding(.trailing, model.screenSize.width / 1.986)
                     
+                    Button(action: {model.showingNewsSheet.toggle()}, label: {
+                            ZStack {
+                                Rectangle()
+                                    .fill(model.objectsClrDark)
+                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                    .cornerRadius(model.screenSize.width / 28)
+                                
+                                HStack {
+                                    Text("What's coming?")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 16))
+                                    Image(systemName: "chevron.right")
+                                        .resizable()
+                                        .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
+                                        .padding(.leading, model.screenSize.width / 4.81)
+                                        .foregroundColor(Color.gray)
+                                }
+                            }
+                    }).sheet(isPresented: $model.showingNewsSheet) {NewsSheet()}
+                    
                     Button(action: {model.showingDataSheet.toggle()}, label: {
                             ZStack {
                                 Rectangle()
