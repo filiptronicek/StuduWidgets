@@ -183,7 +183,7 @@ struct SettingsView: View {
                     })
                     
                     Button(action: {
-                        model.darkThemeIsActive = false
+                                model.darkThemeIsActive = false
                             
                                 model.changeColorTheme()
                     }, label: {
