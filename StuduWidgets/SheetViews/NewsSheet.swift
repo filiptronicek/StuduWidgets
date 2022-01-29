@@ -18,18 +18,11 @@ struct NewsSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Text("What's coming?")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 12))
-                    .padding(.trailing, model.screenSize.width / 5)
-                    .padding([.top, .bottom], model.screenSize.width / 18)
+                Title(text: "What's coming?")
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        Text("News")
-                            .foregroundColor(model.objectsClrLight)
-                            .font(.system(size: model.screenSize.width / 15))
-                            .padding(.trailing, model.screenSize.width / 1.54)
+                        Heading(text: "News")
                         
                         Button(action: {model.showingCustomizableWidgets.toggle()}, label: {
                             ZStack {

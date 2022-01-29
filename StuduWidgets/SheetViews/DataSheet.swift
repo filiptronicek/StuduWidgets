@@ -18,11 +18,7 @@ struct DataSheet: View {
             model.objectsClrDark.ignoresSafeArea()
 
             VStack {
-                Text("Learn how your data is handled...")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 12))
-                    .padding(.trailing, model.screenSize.width / 10.9)
-                    .padding([.top, .bottom], model.screenSize.width / 18)
+                Title(text: "Data handling")
 
                 ScrollView {
                     VStack {

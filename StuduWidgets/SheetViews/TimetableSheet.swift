@@ -20,11 +20,7 @@ struct TimetableSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Text("Timetable Widget")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 12))
-                    .padding(.trailing, model.screenSize.width / 5)
-                    .padding([.top, .bottom], model.screenSize.width / 18)
+                Title(text: "Timetable Widget")
                 
                 ScrollView(showsIndicators: false) {
                     VStack {

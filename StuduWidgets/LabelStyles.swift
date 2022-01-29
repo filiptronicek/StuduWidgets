@@ -51,3 +51,19 @@ struct Heading: View {
             .frame(width: model.screenSize.width / 1.2, alignment: .leading)
     }
 }
+
+struct Title: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .foregroundColor(model.fontClr)
+            .font(.system(size: model.screenSize.width / 12))
+            .frame(width: model.screenSize.width / 1.12, alignment: .leading)
+            .padding([.top, .bottom], model.screenSize.width / 18)
+    }
+}

@@ -25,11 +25,7 @@ struct StravaLoginSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Text("Strava login")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 12))
-                    .padding(.trailing, model.screenSize.width / 3.02)
-                    .padding([.top, .bottom], model.screenSize.width / 18)
+                Title(text: "Strava.cz login")
                 
                 ScrollView {
                     VStack {
