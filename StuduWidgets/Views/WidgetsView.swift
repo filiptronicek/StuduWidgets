@@ -115,24 +115,7 @@ struct WidgetsView: View {
                 }).sheet(isPresented: $model.showingTimetableSheet) {TimetableSheet()}
                 
                 Button(action: {model.showingLunchSheet.toggle()},
-                       label: {
-                            ZStack {
-                                Rectangle()
-                                    .fill(model.objectsClrDark)
-                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                    .cornerRadius(model.screenSize.width / 28)
-                                
-                                HStack {
-                                    Text("Lunch Widget")
-                                        .foregroundColor(model.fontClr)
-                                        .font(.system(size: model.screenSize.width / 16))
-                                    Image(systemName: "chevron.right")
-                                        .resizable()
-                                        .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
-                                        .padding(.leading, model.screenSize.width / 3.75)
-                                        .foregroundColor(Color.gray)
-                                }
-                            }
+                       label: {ButtonLabel(text: "Lunch Widget")
                 }).sheet(isPresented: $model.showingLunchSheet) {LunchSheet()}
             }
         }
