@@ -26,10 +26,7 @@ struct LunchSheet: View {
                 
                 ScrollView {
                     VStack {
-                        Text("Customization")
-                            .foregroundColor(model.objectsClrLight)
-                            .font(.system(size: model.screenSize.width / 15))
-                            .padding(.trailing, model.screenSize.width / 4.2)
+                        Heading(text: "Customization")
                         
                         Button(action: {},
                                label: {

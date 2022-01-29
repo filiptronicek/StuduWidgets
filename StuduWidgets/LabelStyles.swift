@@ -49,6 +49,5 @@ struct Heading: View {
             .foregroundColor(model.objectsClrLight)
             .font(.system(size: model.screenSize.width / 15))
             .frame(width: model.screenSize.width / 1.2, alignment: .leading)
-            .padding(.top, model.screenSize.width / 15)
     }
 }

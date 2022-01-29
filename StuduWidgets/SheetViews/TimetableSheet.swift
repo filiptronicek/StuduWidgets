@@ -28,10 +28,7 @@ struct TimetableSheet: View {
                 
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        Text("Customization")
-                            .foregroundColor(model.objectsClrLight)
-                            .font(.system(size: model.screenSize.width / 15))
-                            .padding(.trailing, model.screenSize.width / 2.2)
+                        Heading(text: "Customization")
                         
                         ZStack {
                             Rectangle()
@@ -99,12 +96,9 @@ struct TimetableSheet: View {
                         })
                     }
                     
-                    Text("Get started")
-                        .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: model.screenSize.width / 15))
-                        .padding(.trailing, model.screenSize.width / 1.85)
+                    Heading(text: "Get started")
                         .padding(.top, model.screenSize.width / 15)
-                        .padding(.bottom, model.screenSize.width / 40)
+                        .padding(.bottom, model.screenSize.width / 60)
                     
                     Text("TimeTable Widget lets you view your school subjects on Home Screen!")
                         .foregroundColor(model.fontClr)

@@ -16,11 +16,7 @@ struct SettingsView: View {
         VStack {
             ScrollView {
                 VStack {
-                    Text("Accounts")
-                        .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: model.screenSize.width / 15))
-                        .padding(.trailing, model.screenSize.width / 1.8)
-                        // this padding is 0.3 pixels off and it's pissing me off
+                    Heading(text: "Accounts")
                     
                     VStack {
                         if model.isSignedInToBakalari {
@@ -150,11 +146,8 @@ struct SettingsView: View {
                             }
                         }
 
-                    Text("Color theme")
-                        .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: model.screenSize.width / 15))
+                    Heading(text: "Color theme")
                         .padding(.top, model.screenSize.width / 15)
-                        .padding(.trailing, model.screenSize.width / 1.986)
                     
                     Button(action: {
                                 model.darkThemeIsActive = true
@@ -208,11 +201,8 @@ struct SettingsView: View {
                         }
                     })
                     
-                    Text("Information")
-                        .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: model.screenSize.width / 15))
+                    Heading(text: "Information")
                         .padding(.top, model.screenSize.width / 15)
-                        .padding(.trailing, model.screenSize.width / 1.986)
                     
                     Button(action: {model.showingNewsSheet.toggle()},
                            label: {ButtonLabel(text: "What's coming?")

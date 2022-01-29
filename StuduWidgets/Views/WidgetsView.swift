@@ -17,11 +17,7 @@ struct WidgetsView: View {
         ScrollView {
             VStack {
                 if !model.isSignedInToBakalari && !model.isSignedInToStrava {
-                    Text("Get started")
-                        .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: model.screenSize.width / 15))
-                        .padding(.trailing, model.screenSize.width / 1.8)
-                        .padding(.bottom, model.screenSize.width / 60)
+                    Heading(text: "Get started")
                     
                     Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
                         .foregroundColor(model.fontClr)
@@ -77,11 +73,8 @@ struct WidgetsView: View {
                         .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 15)
                 }
                 
-                Text("Widgets")
-                    .foregroundColor(model.objectsClrLight)
-                    .font(.system(size: model.screenSize.width / 15))
-                    .padding(.trailing, model.screenSize.width / 1.6)
-                    .padding(.top, model.screenSize.width / 18)
+                Heading(text: "Widgets")
+                    .padding(.top, model.screenSize.width / 15)
                 
                 Button(action: {model.showingTimetableSheet.toggle()}, label: {
                         ZStack {
