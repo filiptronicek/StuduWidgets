@@ -35,3 +35,20 @@ struct ButtonLabel: View {
         }
     }
 }
+
+
+struct Heading: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    var text: String
+    
+    var body: some View {
+        Text(text)
+            .foregroundColor(model.objectsClrLight)
+            .font(.system(size: model.screenSize.width / 15))
+            .frame(width: model.screenSize.width / 1.2, alignment: .leading)
+            .padding(.top, model.screenSize.width / 15)
+    }
+}
