@@ -111,7 +111,7 @@ class ContentModel: ObservableObject {
         }
     }
     
-    // MARK: Getting timetable
+    // MARK: GETTING TIMETABLE DATA
     
     var timetableMonday: [String] = ["Eh", "Eh", "M", "Nj", "Aj", "Cj"]
     var timetableTuesday: [String] = ["M", "F", "Ch", "Cj", "Aj", "D", "Tv"]
