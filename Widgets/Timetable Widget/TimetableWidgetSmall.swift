@@ -89,7 +89,7 @@ struct TimetableWidgetSmall: View {
                     // TODO - Create child appending based on the number of subjects in a list
                     
                 }.frame(width: model.screenSize.width / 0.5, height: model.screenSize.width)
-                    .offset(x: 0)
+                    .offset(x: 100)
             }
         }
     }
