@@ -10,7 +10,7 @@ StuduWidgets are currently in active development
 
 ### Latest release on the App Store: 
 
-<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"> <img width="250" alt="Download on the App Store" src="https://files.catbox.moe/bpoouz.svg"> </a>
+<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank"> <img width="250" alt="Download on the App Store" src="https://ipfs.io/ipfs/bafkreifcn7c3ha4ae4wjf2ibtixlrncviktgqfft4kzag5znxciexh5zt4?filename=bpoouz.svg"> </a>
 
   - App Store® and the Apple logo® are trademarks of Apple Inc.
 
