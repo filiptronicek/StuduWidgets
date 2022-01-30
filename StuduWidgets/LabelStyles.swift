@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+// MARK: Button label
+
 struct ButtonLabel: View {
     // Access data in ContentModel.swift
     
@@ -37,6 +40,8 @@ struct ButtonLabel: View {
 }
 
 
+// MARK: Heading
+
 struct Heading: View {
     // Access data in ContentModel.swift
     
@@ -51,6 +56,9 @@ struct Heading: View {
             .frame(width: model.screenSize.width / 1.2, alignment: .leading)
     }
 }
+
+
+// MARK: Title
 
 struct Title: View {
     // Access data in ContentModel.swift

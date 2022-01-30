@@ -16,6 +16,8 @@ struct SettingsView: View {
         VStack {
             ScrollView {
                 VStack {
+                    // MARK: Accounts section
+                    
                     Heading(text: "Accounts")
                     
                     VStack {
@@ -145,6 +147,9 @@ struct SettingsView: View {
                                 }
                             }
                         }
+                    
+                    
+                    // MARK: Color theme section
 
                     Heading(text: "Color theme")
                         .padding(.top, model.screenSize.width / 15)
@@ -200,6 +205,9 @@ struct SettingsView: View {
                             }
                         }
                     })
+                    
+                    
+                    // MARK: Information section
                     
                     Heading(text: "Information")
                         .padding(.top, model.screenSize.width / 15)

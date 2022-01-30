@@ -10,12 +10,16 @@ import SwiftUI
 import Intents
 
 
+// MARK: Getting current time
+
 let date = Date()
 let calendar = Calendar.current
 let hour = calendar.component(.hour, from: date) // 2 PM == 14
 let minutes = calendar.component(.minute, from: date)
 let seconds = calendar.component(.second, from: date)
 
+
+// MARK: Provider
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -50,6 +54,8 @@ struct SimpleEntry: TimelineEntry {
 }
 
 
+// MARK: TimetableWidget struct
+
 struct TimetableWidget: Widget {
     let kind: String = "TimetableWidget"
 
@@ -63,6 +69,8 @@ struct TimetableWidget: Widget {
 }
 
 
+// MARK: LunchWidget struct
+
 struct LunchWidget: Widget {
     let kind: String = "LunchWidget"
 
@@ -75,6 +83,8 @@ struct LunchWidget: Widget {
     }
 }
 
+
+// MARK: @main
 
 @main
 struct StuduWidgetsBundle: WidgetBundle {

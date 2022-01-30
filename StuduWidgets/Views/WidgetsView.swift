@@ -16,6 +16,8 @@ struct WidgetsView: View {
     var body: some View {
         ScrollView {
             VStack {
+                // MARK: Get started section
+                
                 if !model.isSignedInToBakalari && !model.isSignedInToStrava {
                     Heading(text: "Get started")
                     
@@ -72,6 +74,9 @@ struct WidgetsView: View {
                         .padding(.bottom, model.screenSize.width / 18)
                         .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 15)
                 }
+                
+                
+                // MARK: Widgets section
                 
                 Heading(text: "Widgets")
                     .padding(.top, model.screenSize.width / 15)

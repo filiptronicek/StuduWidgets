@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 class ContentModel: ObservableObject {
-    // MARK: SCREEN SIZE BOUNDS
+    // MARK: Screen bounds
 
     let screenSize: CGRect = UIScreen.main.bounds
     
     
-    // MARK: STATE VARIABLES
+    // MARK: State variables
     
     @Published var showingSettings:Bool = false
     
@@ -33,7 +33,7 @@ class ContentModel: ObservableObject {
     @Published var isSignedInToStrava:Bool = false
     
     
-    // MARK: UI COLORS
+    // MARK: UI colors
     
     @AppStorage("darkThemeState") var darkThemeIsActive:Bool = true
     @Published var bg = Color(red: 0.05, green: 0, blue: 0)
@@ -45,7 +45,7 @@ class ContentModel: ObservableObject {
     @Published var fontClr = Color(red: 1, green: 1, blue: 1)
     
     
-    // MARK: CHANGING THE COLOR THEME
+    // MARK: Changing the color theme
     
     func changeColorTheme() {
         // Switch to light theme
@@ -71,7 +71,7 @@ class ContentModel: ObservableObject {
     }
     
     
-    // MARK: GETTING STRAVA.CZ TOKEN
+    // MARK: Getting strava.cz token
     
     func fetchAPI<D: Decodable>(url: URL) async throws -> D {
         let task = Task { () -> D in
@@ -111,7 +111,7 @@ class ContentModel: ObservableObject {
         }
     }
     
-    // MARK: GETTING TIMETABLE DATA
+    // MARK: Getting timetable data
     
     var timetableMonday: [String] = ["Eh", "Eh", "M", "Nj", "Aj", "Cj"]
     var timetableTuesday: [String] = ["M", "F", "Ch", "Cj", "Aj", "D", "Tv"]

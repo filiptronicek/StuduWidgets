@@ -18,6 +18,8 @@ struct HomeView: View {
             model.bg.ignoresSafeArea()
             
             VStack {
+                // MARK: Heading and views
+                
                 Text("StuduWidgets")
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 10))
@@ -31,6 +33,9 @@ struct HomeView: View {
                 else {
                     SettingsView()
                 }
+                
+                
+                // MARK: Navigation menu
                 
                 ZStack {
                     HStack {
