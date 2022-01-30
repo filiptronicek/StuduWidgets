@@ -69,7 +69,7 @@ struct OnboardingView: View {
                                 }
                                 
                                 else if tabSelection == 1 {
-                                    Text("Proceed to the app")
+                                    Text("Jump to the app")
                                         .foregroundColor(model.fontClr)
                                         .font(.system(size: model.screenSize.width / 17))
                                 }
