@@ -34,6 +34,8 @@
 		90BDB21D277E570C00C73AD5 /* HomeViewConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */; };
 		90BDB222278081D900C73AD5 /* ConfettiConcept.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB221278081D900C73AD5 /* ConfettiConcept.swift */; };
 		90D7CD8B27A5E1A70027D6D7 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */; };
+		90D7CD8F27A6D9290027D6D7 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7CD8E27A6D9290027D6D7 /* LaunchView.swift */; };
+		90D7CD9327A6D9500027D6D7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7CD9227A6D9500027D6D7 /* OnboardingView.swift */; };
 		90E949522789D01A00C6DEA9 /* TimetableWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */; };
 		90E949542789D03000C6DEA9 /* LunchWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */; };
 		90E94956278B0E6300C6DEA9 /* LunchWidgetLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E94955278B0E6300C6DEA9 /* LunchWidgetLarge.swift */; };
@@ -94,6 +96,8 @@
 		90BDB21C277E570C00C73AD5 /* HomeViewConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConcept.swift; sourceTree = "<group>"; };
 		90BDB221278081D900C73AD5 /* ConfettiConcept.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiConcept.swift; sourceTree = "<group>"; };
 		90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
+		90D7CD8E27A6D9290027D6D7 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		90D7CD9227A6D9500027D6D7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		90E949512789D01A00C6DEA9 /* TimetableWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableWidgetEntryView.swift; sourceTree = "<group>"; };
 		90E949532789D03000C6DEA9 /* LunchWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetEntryView.swift; sourceTree = "<group>"; };
 		90E94955278B0E6300C6DEA9 /* LunchWidgetLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetLarge.swift; sourceTree = "<group>"; };
@@ -134,9 +138,9 @@
 		9036D074277367E100480599 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				903AA922276D535F0044B05F /* HomeView.swift */,
-				90A1FF24277A622200C15484 /* WidgetsView.swift */,
-				90A1FF26277A623700C15484 /* SettingsView.swift */,
+				90D7CD8E27A6D9290027D6D7 /* LaunchView.swift */,
+				90D7CD8D27A6D9160027D6D7 /* Onboarding */,
+				90D7CD8C27A6D9070027D6D7 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +251,24 @@
 			path = Concepts;
 			sourceTree = "<group>";
 		};
+		90D7CD8C27A6D9070027D6D7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				903AA922276D535F0044B05F /* HomeView.swift */,
+				90A1FF24277A622200C15484 /* WidgetsView.swift */,
+				90A1FF26277A623700C15484 /* SettingsView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		90D7CD8D27A6D9160027D6D7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				90D7CD9227A6D9500027D6D7 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90BDB222278081D900C73AD5 /* ConfettiConcept.swift in Sources */,
+				90D7CD8F27A6D9290027D6D7 /* LaunchView.swift in Sources */,
 				903AA923276D535F0044B05F /* HomeView.swift in Sources */,
 				903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */,
 				9092E80E27A47FC5009D153A /* NewsSheet.swift in Sources */,
@@ -360,6 +383,7 @@
 				9096C648277365C800A706B0 /* ContentModel.swift in Sources */,
 				90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				90A1FF25277A622200C15484 /* WidgetsView.swift in Sources */,
+				90D7CD9327A6D9500027D6D7 /* OnboardingView.swift in Sources */,
 				DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */,
 				90A1FF29277A662000C15484 /* DataSheet.swift in Sources */,
 			);
