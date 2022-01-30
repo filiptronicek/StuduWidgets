@@ -23,10 +23,11 @@ struct OnboardingView: View {
                 
                 Button(action: {model.onboardingShown = true},
                        label: {
-                            Text("Skip")
-                                .foregroundColor(model.fontClr)
-                                .font(.system(size: model.screenSize.width / 20))
-                                .frame(width: model.screenSize.width / 1.3, alignment: .trailing)
+                            HStack {
+                                Text("Skip")
+                                    .foregroundColor(model.fontClr)
+                                    .font(.system(size: model.screenSize.width / 20))
+                            }.frame(width: model.screenSize.width / 1.3, alignment: .trailing)
                 })
                 
                 TabView(selection: $tabSelection) {
