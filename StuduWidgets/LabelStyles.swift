@@ -71,7 +71,8 @@ struct Title: View {
         Text(text)
             .foregroundColor(model.fontClr)
             .font(.system(size: model.screenSize.width / 12))
-            .frame(width: model.screenSize.width / 1.12, alignment: .leading)
-            .padding([.top, .bottom], model.screenSize.width / 18)
+            .frame(width: model.screenSize.width / 1.15, alignment: .leading)
+            .padding([.bottom], model.screenSize.width / 18)
+            .padding([.top], model.screenSize.width / 16)
     }
 }
