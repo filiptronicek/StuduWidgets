@@ -16,6 +16,8 @@ class ContentModel: ObservableObject {
     
     // MARK: State variables
     
+    @AppStorage("onboardingShown") var onboardingShown:Bool = false
+    
     @Published var showingSettings:Bool = false
     
     @Published var showingTimetableSheet:Bool = false
