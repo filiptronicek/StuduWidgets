@@ -29,12 +29,25 @@ struct OnboardingView: View {
                                 .frame(width: model.screenSize.width / 1.3, alignment: .trailing)
                 })
                 
-                Spacer()
-                
                 TabView(selection: $tabSelection) {
                     VStack {
-                        Text("Welcome!")
-                            .foregroundColor(model.fontClr)
+                        ZStack {
+                            Rectangle()
+                                .fill(model.objectsClrDark)
+                                .frame(width: model.screenSize.width / 1.3, height: model.screenSize.width / 1.1)
+                                .cornerRadius(model.screenSize.width / 28)
+                            
+                            VStack {
+                                Text("Welcome to\n\t**StuduWidgets**")
+                                    .foregroundColor(model.fontClr)
+                                    .font(.system(size: model.screenSize.width / 12))
+                                
+                                Image("StuduIcon")
+                                    .resizable()
+                                    .frame(width: model.screenSize.width / 4, height: model.screenSize.width / 4.1)
+                                    .padding([.top], model.screenSize.width / 10)
+                            }
+                        }
                     }.tag(0)
                     
                     VStack {
@@ -42,7 +55,7 @@ struct OnboardingView: View {
                             .foregroundColor(model.fontClr)
                     }.tag(1)
                 }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 0.8)
+                    .frame(width: model.screenSize.width, height: model.screenSize.width / 0.7)
                 
                 Spacer()
                 
