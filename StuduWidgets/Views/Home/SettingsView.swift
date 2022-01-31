@@ -219,6 +219,10 @@ struct SettingsView: View {
                     Button(action: {model.showingDataSheet.toggle()},
                            label: {ButtonLabel(text: "Data handling")
                     }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
+                    
+                    Button(action: {},
+                           label: {ButtonLabel(text: "Help")
+                    })
                 }
             }
         }
