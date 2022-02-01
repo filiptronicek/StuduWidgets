@@ -14,7 +14,7 @@ struct SettingsView: View {
         
     var body: some View {
         VStack {
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 VStack {
                     // MARK: Accounts section
                     
