@@ -81,39 +81,11 @@ struct WidgetsView: View {
                 Heading(text: "Widgets")
                     .padding(.top, model.screenSize.width / 15)
                 
-                Button(action: {model.showingTimetableSheet.toggle()}, label: {
-                        ZStack {
-                            Rectangle()
-                                .fill(model.objectsClrDark)
-                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 3)
-                                .cornerRadius(model.screenSize.width / 28)
-                            
-                            HStack {
-                                Image("TimetableWidget")
-                                    .resizable()
-                                    .frame(width: model.screenSize.width / 6, height: model.screenSize.width / 6.3)
-                                
-                                VStack {
-                                    Text("Timetable Widget")
-                                        .foregroundColor(model.fontClr)
-                                        .font(.system(size: model.screenSize.width / 16))
-                                    
-                                    Text("~ let's you view timetable on \nyour Home Screen")
-                                        .foregroundColor(model.fontClr)
-                                        .font(.system(size: model.screenSize.width / 25))
-                                }
-                                
-                                Image(systemName: "chevron.right")
-                                    .resizable()
-                                    .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
-                                    .padding(.leading, model.screenSize.width / 25)
-                                    .foregroundColor(Color.gray)
-                            }
-                        }
+                Button(action: {model.showingTimetableSheet.toggle()}, label: { WidgetCardLabel(heading: "Timetable Widget", bodyText: "~ let's you view timetable\non your Home Screen", imageLink: "TimetableWidget")
                 }).sheet(isPresented: $model.showingTimetableSheet) {TimetableSheet()}
                 
                 Button(action: {model.showingLunchSheet.toggle()},
-                       label: {ButtonLabel(text: "Lunch Widget")
+                       label: { WidgetCardLabel(heading: "Lunch Widget", bodyText: "~ let's you know whatcha gonna eat today", imageLink: "TimetableWidget")
                 }).sheet(isPresented: $model.showingLunchSheet) {LunchSheet()}
             }
         }

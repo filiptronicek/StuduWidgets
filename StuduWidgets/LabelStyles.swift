@@ -90,6 +90,37 @@ struct WidgetCardLabel: View {
     var imageLink: String
     
     var body: some View {
-        Text(heading)
+        ZStack {
+            Rectangle()
+                .fill(model.objectsClrDark)
+                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 3)
+                .cornerRadius(model.screenSize.width / 28)
+            
+            Group {
+                Image(imageLink)
+                    .resizable()
+                    .frame(width: model.screenSize.width / 6, height: model.screenSize.width / 6.3)
+            }.frame(width: model.screenSize.width / 1.3, alignment: .leading)
+            
+            VStack {
+                Text(heading)
+                    .foregroundColor(model.fontClr)
+                    .font(.system(size: model.screenSize.width / 18))
+                    .frame(width: model.screenSize.width / 1.9, alignment: .leading)
+                
+                Text(bodyText)
+                    .foregroundColor(model.fontClr)
+                    .font(.system(size: model.screenSize.width / 25))
+                    .frame(width: model.screenSize.width / 1.9, alignment: .leading)
+            }.padding([.leading], model.screenSize.width / 6)
+            
+            Group {
+                Image(systemName: "chevron.right")
+                    .resizable()
+                    .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
+                    .padding(.leading, model.screenSize.width / 25)
+                    .foregroundColor(Color.gray)
+            }.frame(width: model.screenSize.width / 1.3, alignment: .trailing)
+        }
     }
 }
