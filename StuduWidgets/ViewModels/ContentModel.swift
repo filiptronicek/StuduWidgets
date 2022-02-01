@@ -25,6 +25,8 @@ class ContentModel: ObservableObject {
     
     @Published var showingDataSheet:Bool = false
     @Published var showingNewsSheet:Bool = false
+    @Published var showingTermsSheet:Bool = false
+    @Published var showingHelpSheet:Bool = false
     
     @Published var showingCustomizableWidgets:Bool = false
     

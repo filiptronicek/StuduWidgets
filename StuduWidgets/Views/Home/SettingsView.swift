@@ -223,9 +223,9 @@ struct SettingsView: View {
                                label: {ButtonLabel(text: "Data handling")
                         }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
                         
-                        Button(action: {},
+                        Button(action: {model.showingTermsSheet.toggle()},
                                label: {ButtonLabel(text: "Terms and Conditions")
-                        })
+                        }).sheet(isPresented: $model.showingTermsSheet) {TermsSheet()}
                         
                         Button(action: {},
                                label: {
@@ -247,9 +247,9 @@ struct SettingsView: View {
                                     }
                         })
                         
-                        Button(action: {},
+                        Button(action: {model.showingHelpSheet.toggle()},
                                label: {ButtonLabel(text: "Help")
-                        })
+                        }).sheet(isPresented: $model.showingHelpSheet) {HelpSheet()}
                     }
                 }
             }
