@@ -41,7 +41,7 @@ struct WidgetsView: View {
                         
                         Spacer()
                     }.padding(.top, model.screenSize.width / 40)
-                        .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 15)
+                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15)
                     
                     HStack {
                         Image(systemName: "plus")
@@ -56,7 +56,7 @@ struct WidgetsView: View {
                         
                         Spacer()
                     }.padding(.top, model.screenSize.width / 50)
-                        .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 15)
+                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15)
                     
                     HStack {
                         Image(systemName: "person.circle")
@@ -72,7 +72,7 @@ struct WidgetsView: View {
                         Spacer()
                     }.padding(.top, model.screenSize.width / 14)
                         .padding(.bottom, model.screenSize.width / 18)
-                        .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 15)
+                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15)
                 }
                 
                 

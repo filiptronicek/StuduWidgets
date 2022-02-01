@@ -93,7 +93,7 @@ struct WidgetCardLabel: View {
         ZStack {
             Rectangle()
                 .fill(model.objectsClrDark)
-                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 3)
+                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 3.2)
                 .cornerRadius(model.screenSize.width / 28)
             
             Group {

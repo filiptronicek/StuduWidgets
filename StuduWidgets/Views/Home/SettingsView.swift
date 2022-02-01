@@ -105,7 +105,7 @@ struct SettingsView: View {
                             
                             Menu {
                                 if !model.isSignedInToBakalari {
-                                    Button (action: {
+                                    Button(action: {
                                                 // Todo(ft): add sign in action
                                                 model.isSignedInToBakalari = true
                                             },
@@ -116,7 +116,7 @@ struct SettingsView: View {
                                 }
                                 
                                 if !model.isSignedInToStrava {
-                                    Button (action: {
+                                    Button(action: {
                                                 // Todo(ft): add sign in action
                                                 model.isSignedInToStrava = true
                                             },
@@ -219,13 +219,12 @@ struct SettingsView: View {
                                label: {ButtonLabel(text: "What's coming?")
                         }).sheet(isPresented: $model.showingNewsSheet) {NewsSheet()}
                         
-                        Button(action: {model.showingDataSheet.toggle()},
-                               label: {ButtonLabel(text: "Data handling")
-                        }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
-                        
                         Button(action: {model.showingTermsSheet.toggle()},
                                label: {ButtonLabel(text: "Terms and Conditions")
                         }).sheet(isPresented: $model.showingTermsSheet) {TermsSheet()}
+                        
+                        Heading(text: "Help")
+                            .padding(.top, model.screenSize.width / 15)
                         
                         Button(action: {},
                                label: {
