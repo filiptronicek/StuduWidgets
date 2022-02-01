@@ -70,7 +70,7 @@ struct HomeView: View {
                         })
                         
                         Spacer()
-                    }.padding(.bottom, model.screenSize.width / 20)
+                    }.padding(.bottom, model.screenSize.width / 30)
                 }
             }
         }
