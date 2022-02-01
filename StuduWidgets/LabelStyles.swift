@@ -76,3 +76,20 @@ struct Title: View {
             .padding([.top], model.screenSize.width / 16)
     }
 }
+
+
+// MARK: Widget card label
+
+struct WidgetCardLabel: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    var heading: String
+    var bodyText: String
+    var imageLink: String
+    
+    var body: some View {
+        Text(heading)
+    }
+}
