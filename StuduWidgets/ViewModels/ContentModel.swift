@@ -48,6 +48,8 @@ class ContentModel: ObservableObject {
     @Published var fontClrDark = Color(red: 0.3320, green: 0.3242, blue: 0.3242)
     @Published var fontClr = Color(red: 1, green: 1, blue: 1)
     
+    @Published var easterEggClr = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+    
     
     // MARK: Changing the color theme
     

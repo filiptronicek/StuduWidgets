@@ -230,7 +230,7 @@ struct SettingsView: View {
                                label: {
                                     ZStack {
                                         Rectangle()
-                                            .fill(model.objectsClrDark)
+                                            .fill(model.easterEggClr)
                                             .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
                                             .cornerRadius(model.screenSize.width / 28)
                                         
@@ -244,6 +244,8 @@ struct SettingsView: View {
                                             .font(.system(size: model.screenSize.width / 18))
                                             .frame(width: model.screenSize.width / 1.4, alignment: .trailing)
                                     }
+                        }).simultaneousGesture(LongPressGesture(minimumDuration: 2).onEnded { _ in
+                            model.easterEggClr = Color(red: 0 / 255, green: 255 / 255, blue: 240 / 255)
                         })
                         
                         Button(action: {model.showingHelpSheet.toggle()},
