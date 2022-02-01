@@ -154,57 +154,59 @@ struct SettingsView: View {
                     Heading(text: "Color theme")
                         .padding(.top, model.screenSize.width / 15)
                     
-                    Button(action: {
-                                model.darkThemeIsActive = true
-                        
-                                model.changeColorTheme()
-                    }, label: {
-                        ZStack {
-                            Rectangle()
-                                .fill(model.objectsClrDark)
-                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                .cornerRadius(model.screenSize.width / 28)
-                            HStack {
-                                Text("Dark (default)")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 18))
-                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
-                                    
-                                
-                                Image(systemName: model.darkThemeIsActive ? "checkmark" : "")
-                                    .resizable()
-                                    .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
-                                    .foregroundColor(model.objectsClrLight)
-                                    
-                            }
-                        }
-                    })
-                    
-                    Button(action: {
-                                model.darkThemeIsActive = false
+                    Group {
+                        Button(action: {
+                                    model.darkThemeIsActive = true
                             
-                                model.changeColorTheme()
-                    }, label: {
-                        ZStack {
-                            Rectangle()
-                                .fill(model.objectsClrDark)
-                                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                .cornerRadius(model.screenSize.width / 28)
-                            HStack {
-                                Text("Light (lamer)")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 18))
-                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
+                                    model.changeColorTheme()
+                        }, label: {
+                            ZStack {
+                                Rectangle()
+                                    .fill(model.objectsClrDark)
+                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                    .cornerRadius(model.screenSize.width / 28)
+                                HStack {
+                                    Text("Dark (default)")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 18))
+                                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
+                                        
                                     
-                                
-                                Image(systemName: model.darkThemeIsActive ? "" : "checkmark")
-                                    .resizable()
-                                    .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
-                                    .foregroundColor(model.objectsClrLight)
-                                    
+                                    Image(systemName: model.darkThemeIsActive ? "checkmark" : "")
+                                        .resizable()
+                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                        .foregroundColor(model.objectsClrLight)
+                                        
+                                }
                             }
-                        }
-                    })
+                        })
+                        
+                        Button(action: {
+                                    model.darkThemeIsActive = false
+                                
+                                    model.changeColorTheme()
+                        }, label: {
+                            ZStack {
+                                Rectangle()
+                                    .fill(model.objectsClrDark)
+                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                    .cornerRadius(model.screenSize.width / 28)
+                                HStack {
+                                    Text("Light (lamer)")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 18))
+                                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
+                                        
+                                    
+                                    Image(systemName: model.darkThemeIsActive ? "" : "checkmark")
+                                        .resizable()
+                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                        .foregroundColor(model.objectsClrLight)
+                                        
+                                }
+                            }
+                        })
+                    }
                     
                     
                     // MARK: Information section
@@ -212,37 +214,43 @@ struct SettingsView: View {
                     Heading(text: "Information")
                         .padding(.top, model.screenSize.width / 15)
                     
-                    Button(action: {model.showingNewsSheet.toggle()},
-                           label: {ButtonLabel(text: "What's coming?")
-                    }).sheet(isPresented: $model.showingNewsSheet) {NewsSheet()}
-                    
-                    Button(action: {model.showingDataSheet.toggle()},
-                           label: {ButtonLabel(text: "Data handling")
-                    }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
-                    
-                    Button(action: {},
-                           label: {
-                                ZStack {
-                                    Rectangle()
-                                        .fill(model.objectsClrDark)
-                                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                        .cornerRadius(model.screenSize.width / 28)
-                                    
-                                    Text("Version")
-                                        .foregroundColor(model.fontClr)
-                                        .font(.system(size: model.screenSize.width / 17))
-                                        .frame(width: model.screenSize.width / 1.4, alignment: .leading)
-                                    
-                                    Text("1.0")
-                                        .foregroundColor(model.objectsClrLight)
-                                        .font(.system(size: model.screenSize.width / 18))
-                                        .frame(width: model.screenSize.width / 1.4, alignment: .trailing)
-                                }
-                    })
-                    
-                    Button(action: {},
-                           label: {ButtonLabel(text: "Help")
-                    })
+                    Group {
+                        Button(action: {model.showingNewsSheet.toggle()},
+                               label: {ButtonLabel(text: "What's coming?")
+                        }).sheet(isPresented: $model.showingNewsSheet) {NewsSheet()}
+                        
+                        Button(action: {model.showingDataSheet.toggle()},
+                               label: {ButtonLabel(text: "Data handling")
+                        }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
+                        
+                        Button(action: {},
+                               label: {ButtonLabel(text: "Terms and Conditions")
+                        })
+                        
+                        Button(action: {},
+                               label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(model.objectsClrDark)
+                                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                            .cornerRadius(model.screenSize.width / 28)
+                                        
+                                        Text("Version")
+                                            .foregroundColor(model.fontClr)
+                                            .font(.system(size: model.screenSize.width / 17))
+                                            .frame(width: model.screenSize.width / 1.4, alignment: .leading)
+                                        
+                                        Text("1.0")
+                                            .foregroundColor(model.objectsClrLight)
+                                            .font(.system(size: model.screenSize.width / 18))
+                                            .frame(width: model.screenSize.width / 1.4, alignment: .trailing)
+                                    }
+                        })
+                        
+                        Button(action: {},
+                               label: {ButtonLabel(text: "Help")
+                        })
+                    }
                 }
             }
         }
