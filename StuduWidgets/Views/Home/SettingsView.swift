@@ -221,6 +221,26 @@ struct SettingsView: View {
                     }).sheet(isPresented: $model.showingDataSheet) {DataSheet()}
                     
                     Button(action: {},
+                           label: {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(model.objectsClrDark)
+                                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                        .cornerRadius(model.screenSize.width / 28)
+                                    
+                                    Text("Version")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 17))
+                                        .frame(width: model.screenSize.width / 1.4, alignment: .leading)
+                                    
+                                    Text("1.0")
+                                        .foregroundColor(model.objectsClrLight)
+                                        .font(.system(size: model.screenSize.width / 18))
+                                        .frame(width: model.screenSize.width / 1.4, alignment: .trailing)
+                                }
+                    })
+                    
+                    Button(action: {},
                            label: {ButtonLabel(text: "Help")
                     })
                 }
