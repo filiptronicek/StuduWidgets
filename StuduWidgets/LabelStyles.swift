@@ -100,7 +100,7 @@ struct WidgetCardLabel: View {
                 Image(imageLink)
                     .resizable()
                     .frame(width: model.screenSize.width / 6, height: model.screenSize.width / 6.3)
-            }.frame(width: model.screenSize.width / 1.3, alignment: .leading)
+            }.frame(width: model.screenSize.width / 1.25, alignment: .leading)
             
             VStack {
                 Text(heading)
@@ -112,7 +112,7 @@ struct WidgetCardLabel: View {
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 25))
                     .frame(width: model.screenSize.width / 1.9, alignment: .leading)
-            }.padding([.leading], model.screenSize.width / 6)
+            }.padding([.leading], model.screenSize.width / 6.3)
             
             Group {
                 Image(systemName: "chevron.right")
