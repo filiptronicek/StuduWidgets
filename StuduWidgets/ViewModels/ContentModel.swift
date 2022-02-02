@@ -57,11 +57,12 @@ class ContentModel: ObservableObject {
         // Switch to light theme
         
         if darkThemeIsActive == false {
-            bg = Color(red: 1, green: 1, blue: 1)
-            objectsClrDark = Color(red: 0.6, green: 0.6, blue: 0.6)
-            objectsClrMedium = Color(red: 0.7, green: 0.7, blue: 0.7)
-            objectsClrLight = Color(red: 0.8, green: 0.8, blue: 0.8)
-            fontClr = Color(red: 0.05, green: 0, blue: 0)
+            bg = Color(red: 255 / 255, green: 227 / 255, blue: 227 / 255)
+            objectsClrDark = Color(red: 228 / 255, green: 216 / 255, blue: 220 / 255)
+            objectsClrMedium = Color(red: 201 / 255, green: 204 / 255, blue: 213 / 255)
+            objectsClrLight = Color(red: 1, green: 1, blue: 1)
+            fontClr = Color(red: 109 / 255, green: 157 / 255, blue: 181 / 255)
+            easterEggClr = Color(red: 228 / 255, green: 216 / 255, blue: 220 / 255)
         }
         
         
@@ -73,6 +74,7 @@ class ContentModel: ObservableObject {
             objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
             objectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
             fontClr = Color(red: 1, green: 1, blue: 1)
+            easterEggClr = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
         }
     }
     
