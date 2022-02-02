@@ -122,7 +122,7 @@ struct SettingsView: View {
                                             },
                                             label: {
                                                 Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                    })
+                                    }).sheet(isPresented: $model.showingLoginStrava) {StravaLoginSheet()}
                                 }
                             } label: {
                                     ZStack {

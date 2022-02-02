@@ -20,6 +20,7 @@ struct LaunchView: View {
         
         else {
             HomeView()
+                .onAppear(perform: model.changeColorTheme)
         }
     }
 }
