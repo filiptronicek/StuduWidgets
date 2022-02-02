@@ -27,52 +27,16 @@ struct WidgetsView: View {
                         .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 10)
                         .padding(.bottom, model.screenSize.width / 25)
                         .padding(.trailing, model.screenSize.width / 9)
-
-                    HStack {
-                        Image(systemName: "gearshape")
-                            .resizable()
-                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
-                            .foregroundColor(model.fontClr)
-                                                            
-                        Text("Open **Settings**")
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 25))
-                            .padding(.leading, model.screenSize.width / 30)
-                        
-                        Spacer()
-                    }.padding(.top, model.screenSize.width / 40)
-                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15)
                     
-                    HStack {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
-                            .foregroundColor(model.fontClr)
-                        
-                        Text("Click on **Add account**")
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 25))
-                            .padding(.leading, model.screenSize.width / 30)
-                        
-                        Spacer()
-                    }.padding(.top, model.screenSize.width / 50)
-                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15)
+                    ItemList(text: "Open **Settings**", icon: "gearshape").padding(.top, model.screenSize.width / 40)
+                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15, alignment: .leading)
+                   
+                    ItemList(text: "Click on **Add account**", icon: "plus").padding(.top, model.screenSize.width / 50)
+                                .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15, alignment: .leading)
                     
-                    HStack {
-                        Image(systemName: "person.circle")
-                            .resizable()
-                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
-                            .foregroundColor(model.fontClr)
-                        
-                        Text("**Sign in** to a service")
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 25))
-                            .padding(.leading, model.screenSize.width / 30)
-                        
-                        Spacer()
-                    }.padding(.top, model.screenSize.width / 14)
-                        .padding(.bottom, model.screenSize.width / 18)
-                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15)
+                    ItemList(text: "**Sign in** to a service", icon: "person.circle").padding(.top, model.screenSize.width / 14)
+                                        .padding(.bottom, model.screenSize.width / 18)
+                                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15, alignment: .leading)
                 }
                 
                 

@@ -46,6 +46,32 @@ struct Title: View {
 }
 
 
+// MARK: Item list
+
+struct ItemList: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    var text: String
+    var icon: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .resizable()
+                .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                .foregroundColor(model.fontClr)
+                                                
+            Text(text)
+                .foregroundColor(model.fontClr)
+                .font(.system(size: model.screenSize.width / 25))
+                .padding(.leading, model.screenSize.width / 30)
+        }
+    }
+}
+
+
 // MARK: Button label
 
 struct ButtonLabel: View {
@@ -54,7 +80,6 @@ struct ButtonLabel: View {
     @EnvironmentObject var model: ContentModel
     
     var text: String
-    
     
     var body: some View {
         ZStack {

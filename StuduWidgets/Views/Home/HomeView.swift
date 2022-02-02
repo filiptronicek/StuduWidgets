@@ -11,7 +11,7 @@ struct HomeView: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-
+    
     
     var body: some View {
         ZStack {
