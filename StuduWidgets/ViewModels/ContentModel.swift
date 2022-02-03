@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class ContentModel: ObservableObject {
     // MARK: Screen bounds
@@ -119,7 +120,40 @@ class ContentModel: ObservableObject {
             return nil
         }
     }
-    
+
+    class UserSettings: ObservableObject {
+        @Published var stravaUsername: String {
+            didSet {
+                UserDefaults.standard.set(stravaUsername, forKey: "stravaUsername")
+            }
+        }
+        
+        @Published var stravaPassword: String {
+            didSet {
+                UserDefaults.standard.set(stravaPassword, forKey: "stravaPassword")
+            }
+        }
+        
+        @Published var stravaCanteen: String {
+            didSet {
+                UserDefaults.standard.set(stravaCanteen, forKey: "stravaCanteen")
+            }
+        }
+
+        @Published var stravaToken: String? {
+            didSet {
+                UserDefaults.standard.set(stravaToken, forKey: "stravaToken")
+            }
+        }
+        
+        init() {
+            self.stravaUsername = UserDefaults.standard.object(forKey: "stravaUsername") as? String ?? ""
+            self.stravaPassword = UserDefaults.standard.object(forKey: "stravaPassword") as? String ?? ""
+            self.stravaCanteen = UserDefaults.standard.object(forKey: "stravaCanteen") as? String ?? ""
+            self.stravaToken = UserDefaults.standard.object(forKey: "stravaToken") as? String ?? ""
+        }
+    }
+
     // MARK: Getting timetable data
     
     var timetableMonday: [String] = ["Eh", "Eh", "M", "Nj", "Aj", "Cj"]

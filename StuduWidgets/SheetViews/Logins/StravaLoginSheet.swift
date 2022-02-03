@@ -11,15 +11,12 @@ struct StravaLoginSheet: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-    
-    
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var canteen: String = ""
-    @State private var token: String = "No token"
-    @State private var statusFontColor: Color = Color.white
 
+    @State private var statusFontColor: Color = Color.white
+    @State private var tokenOutput: String = "No token"
     
+    @ObservedObject var userSettings = ContentModel.UserSettings()
+
     var body: some View {
         ZStack {
             model.objectsClrDark.ignoresSafeArea()
@@ -29,20 +26,20 @@ struct StravaLoginSheet: View {
                 
                 ScrollView {
                     VStack {
-                        TextField("Username", text: $username)
+                        TextField("Username", text: $userSettings.stravaUsername)
                             .padding()
                             .background(model.objectsClrLight)
                             .foregroundColor(model.fontClr)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
                             .padding(.horizontal, model.screenSize.width / 10)
-                        SecureField("Password", text: $password)
+                        SecureField("Password", text: $userSettings.stravaPassword)
                             .padding()
                             .background(model.objectsClrLight)
                             .cornerRadius(5.0)
                             .padding(.bottom, 20)
                             .padding(.horizontal, model.screenSize.width / 10)
-                        TextField("Canteen", text: $canteen)
+                        TextField("Canteen", text: $userSettings.stravaCanteen)
                             .padding()
                             .background(model.objectsClrLight)
                             .cornerRadius(5.0)
@@ -50,27 +47,29 @@ struct StravaLoginSheet: View {
                             .padding(.horizontal, model.screenSize.width / 10)
                         Button("Log in", action: {
                             statusFontColor = model.fontClr
-                            token = "Loading the token"
+                            tokenOutput = "Loading the token"
                             
-                            if (canteen == "" || username == "" || password == "") {
+                            if (userSettings.stravaCanteen == "" || userSettings.stravaUsername == "" || userSettings.stravaPassword == "") {
                                 statusFontColor = Color(red: 1, green: 0, blue: 0)
-                                token = "Missing fields"
+                                tokenOutput = "Missing fields"
                                 return
                             }
                             
                             Task {
-                                let tokenResp = await model.getStravaToken(username: username, password: password, canteen: canteen)
+                                let tokenResp = await model.getStravaToken(username: userSettings.stravaUsername, password: userSettings.stravaPassword, canteen: userSettings.stravaCanteen)
                                 if tokenResp != nil {
-                                    token = tokenResp!
+                                    userSettings.stravaToken = tokenResp!
+                                    tokenOutput = "Signed in successfully"
                                     statusFontColor = Color(red: 0, green: 1, blue: 0)
                                 } else {
                                     statusFontColor = Color(red: 1, green: 0, blue: 0)
-                                    token = "Error getting the token"
+                                    tokenOutput = "Error getting the token"
                                 }
                             }
                         }
                         ).buttonStyle(.bordered)
-                        Text(token).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
+                        Text(tokenOutput).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
+                        Text(userSettings.stravaToken!).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
 
                     }
                 }
