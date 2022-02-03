@@ -81,7 +81,7 @@ struct SettingsView: View {
                                             .padding(.trailing, model.screenSize.width / 50)
                                         
                                         VStack {
-                                            Text("Rostislav Brož")
+                                            Text(userSettings.stravaDisplayName)
                                                 .foregroundColor(model.fontClr)
                                                 .font(.system(size: model.screenSize.width / 18))
                                             

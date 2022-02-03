@@ -57,8 +57,9 @@ struct StravaLoginSheet: View {
                             
                             Task {
                                 let tokenResp = await model.getStravaToken(username: userSettings.stravaUsername, password: userSettings.stravaPassword, canteen: userSettings.stravaCanteen)
-                                if tokenResp != nil {
-                                    userSettings.stravaToken = tokenResp!
+                                if tokenResp.ok {
+                                    userSettings.stravaToken = tokenResp.token!
+                                    userSettings.stravaDisplayName = tokenResp.displayName!
                                     tokenOutput = "Signed in successfully"
                                     statusFontColor = Color(red: 0, green: 1, blue: 0)
                                 } else {
@@ -69,8 +70,7 @@ struct StravaLoginSheet: View {
                         }
                         ).buttonStyle(.bordered)
                         Text(tokenOutput).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
-                        Text(userSettings.stravaToken!).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
-
+                        Text(userSettings.stravaDisplayName).foregroundColor(Color.white)
                     }
                 }
                 

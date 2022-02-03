@@ -94,11 +94,32 @@ class ContentModel: ObservableObject {
 
     let endpoint = "https://strava-api.vercel.app/api"
 
-    // TODO - linking to the API
-    func getStravaToken (username: String, password: String, canteen: String) async -> String? {
+    struct StravaTokenResult {
+        var ok: Bool
+        var token: String?
+        var displayName: String?
+    }
+    
+    func getStravaToken (username: String, password: String, canteen: String) async -> StravaTokenResult {
+        
+        struct User: Decodable {
+            let ElektronickaStravenkarka, TextProRegistrovaneUzivatele, DelkaNecinnosti, ElektronickaStravenkarkaPovolena: String
+            let FunkceTlacitkaOdeslat, SbalitSkupiny, AktivaceHesla, EvCislo: String
+            let Prijmeni, Jmeno, Prezdivka, Trida: String
+            let IdMedium1, IdMedium2, IdMedium3, IdMedium1Dual: String?
+            let IdMedium2Dual, IdMedium3Dual, EMail1, EMail2: String?
+            let VS, ParovaciID, UpozorneniProObjednavani, ZobrazeniPodrobnostiUzivatele: String
+            let PodrobnostiStravnika1, PodrobnostiStravnika2, TypDialogu, AutomatickyRozbalitVM: String
+            let Jazyk, Mena, KontaktNazevJidelny, KontaktAdresa: String
+            let KontaktPSC, KontaktMesto, KontaktCisloUctu, KontaktSmerovyKodBanky: String
+            let KontaktTelefon, KontaktMobil, KontaktEMail, KontaktWww: String
+            let ObjDatumOd, ObjDatumDo, Blokace, CasAktualizace: String
+            let VerzeStravne, ZobrazitVydej, ZobrazitPoctyJidel, PovolitHodnoceni: String
+        }
         
         struct Result: Decodable {
             var token: String
+            var user: User
         }
         
         struct Response: Decodable {
@@ -106,18 +127,26 @@ class ContentModel: ObservableObject {
            var result: Result
         }
         
+        var currResult = StravaTokenResult(ok: true, token: nil, displayName: nil)
+        
         do {
             let url = URL(string: "\(endpoint)/auth/token?username=\(username)&password=\(password)&canteen=\(canteen)")
             guard let requestUrl = url else { fatalError() }
             let data: Response = try await fetchAPI(url: requestUrl)
+            print(data)
+
             if (data.status == "success") {
-                return data.result.token
+                currResult.token = data.result.token
+                currResult.displayName = "\(data.result.user.Jmeno) \(data.result.user.Prijmeni)".capitalized
+                return currResult
             } else {
-                return nil
+                currResult.ok = false
+                return currResult
             }
         } catch {
-            print(error.localizedDescription)
-            return nil
+            print(error)
+            currResult.ok = false
+            return currResult
         }
     }
 
@@ -139,6 +168,12 @@ class ContentModel: ObservableObject {
                 UserDefaults.standard.set(stravaCanteen, forKey: "stravaCanteen")
             }
         }
+        
+        @Published var stravaDisplayName: String {
+            didSet {
+                UserDefaults.standard.set(stravaDisplayName, forKey: "stravaDisplayName")
+            }
+        }
 
         @Published var stravaToken: String? {
             didSet {
@@ -150,6 +185,7 @@ class ContentModel: ObservableObject {
             self.stravaUsername = UserDefaults.standard.object(forKey: "stravaUsername") as? String ?? ""
             self.stravaPassword = UserDefaults.standard.object(forKey: "stravaPassword") as? String ?? ""
             self.stravaCanteen = UserDefaults.standard.object(forKey: "stravaCanteen") as? String ?? ""
+            self.stravaDisplayName = UserDefaults.standard.object(forKey: "stravaDisplayName") as? String ?? ""
             self.stravaToken = UserDefaults.standard.object(forKey: "stravaToken") as? String ?? ""
         }
     }
