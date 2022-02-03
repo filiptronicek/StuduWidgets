@@ -12,13 +12,11 @@ struct StravaLoginSheet: View {
     
     @EnvironmentObject var model: ContentModel
     
-    
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var canteen: String = ""
     @State private var token: String = "No token"
     @State private var statusFontColor: Color = Color.white
-
     
     var body: some View {
         ZStack {

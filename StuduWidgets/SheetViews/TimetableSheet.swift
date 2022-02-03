@@ -12,7 +12,6 @@ struct TimetableSheet: View {
     
     @EnvironmentObject var model: ContentModel
     
-    
     @State private var dividersAreNumbers:Bool = false
     
     var body: some View {

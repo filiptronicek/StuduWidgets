@@ -12,7 +12,6 @@ struct LaunchView: View {
     
     @EnvironmentObject var model: ContentModel
     
-    
     var body: some View {
         if model.onboardingShown == false {
             OnboardingView()

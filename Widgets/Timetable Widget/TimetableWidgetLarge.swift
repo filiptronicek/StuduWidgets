@@ -13,7 +13,6 @@ struct TimetableWidgetLarge: View {
     
     @EnvironmentObject var model: ContentModel
     
-    
     var entry: SimpleEntry
     
     var body: some View {

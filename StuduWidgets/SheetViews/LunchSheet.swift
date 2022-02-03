@@ -12,7 +12,6 @@ struct LunchSheet: View {
     
     @EnvironmentObject var model: ContentModel
     
-    
     var body: some View {
         ZStack {
             model.objectsClrDark.ignoresSafeArea()
