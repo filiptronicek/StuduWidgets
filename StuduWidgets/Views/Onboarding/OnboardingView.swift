@@ -40,7 +40,7 @@ struct OnboardingView: View {
                             .foregroundColor(model.fontClr)
                     }.tag(1)
                 }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 0.7)
+                    .frame(width: model.screenSize.width, height: model.screenSize.width / 0.6)
                 
                 Spacer()
                 
@@ -73,10 +73,10 @@ struct OnboardingView: View {
                                 }
                             }
                 }).padding([.bottom], model.screenSize.width / 20)
-                    .alert("By clicking continue you're agreeing to our Privacy Policy", isPresented: $model.showingPrivacyPopUp) {
+                    .alert("By proceeding you accept our Privacy Policy", isPresented: $model.showingPrivacyPopUp) {
                         Button("Cancel", role: .cancel) {}
                     
-                    Button(action: {model.onboardingShown = true}, label: {Text("Continue")})
+                        Button(action: {model.onboardingShown = true}, label: {Text("Accept")})
                 }
             }
         }
