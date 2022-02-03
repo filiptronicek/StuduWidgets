@@ -62,7 +62,7 @@ class ContentModel: ObservableObject {
             objectsClrDark = Color(red: 228 / 255, green: 216 / 255, blue: 220 / 255)
             objectsClrMedium = Color(red: 201 / 255, green: 204 / 255, blue: 213 / 255)
             objectsClrLight = Color(red: 1, green: 1, blue: 1)
-            fontClr = Color(red: 109 / 255, green: 157 / 255, blue: 181 / 255)
+            fontClr = Color(red: 55 / 255, green: 125 / 255, blue: 161 / 255)
             easterEggClr = Color(red: 228 / 255, green: 216 / 255, blue: 220 / 255)
         }
         
