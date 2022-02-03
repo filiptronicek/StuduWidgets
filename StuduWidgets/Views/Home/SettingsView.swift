@@ -96,6 +96,7 @@ struct SettingsView: View {
                                     Button(role: .destructive,
                                            action: {
                                                 userSettings.stravaToken = ""
+                                                userSettings.stravaDisplayName = ""
                                             },
                                            
                                            label: {
