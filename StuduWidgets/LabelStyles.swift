@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 // MARK: Heading
 
 struct Heading: View {

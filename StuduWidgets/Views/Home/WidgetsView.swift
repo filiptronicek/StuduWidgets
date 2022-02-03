@@ -12,7 +12,6 @@ struct WidgetsView: View {
     
     @EnvironmentObject var model: ContentModel
     
-    
     var body: some View {
         ScrollView {
             VStack {
