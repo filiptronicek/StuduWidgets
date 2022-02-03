@@ -11,7 +11,8 @@ struct SettingsView: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-        
+    @ObservedObject var userSettings = ContentModel.UserSettings()
+
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
@@ -62,7 +63,7 @@ struct SettingsView: View {
                             }
                         }
                             
-                        if model.isSignedInToStrava {
+                        if userSettings.stravaToken != "" {
                                 ZStack {
                                     Rectangle()
                                         .fill(model.objectsClrDark)
@@ -94,7 +95,7 @@ struct SettingsView: View {
                                 }.contextMenu {
                                     Button(role: .destructive,
                                            action: {
-                                                model.isSignedInToStrava = false
+                                                userSettings.stravaToken = ""
                                             },
                                            
                                            label: {
@@ -115,9 +116,8 @@ struct SettingsView: View {
                                     })
                                 }
                                 
-                                if !model.isSignedInToStrava {
+                                if userSettings.stravaToken == "" {
                                     Button(action: {
-                                                // Todo(ft): add sign in action
                                                 model.showingLoginStrava = true
                                             },
                                             label: {
@@ -126,7 +126,7 @@ struct SettingsView: View {
                                 }
                             } label: {
                                     ZStack {
-                                        if !(model.isSignedInToStrava && model.isSignedInToBakalari) {
+                                        if !(userSettings.stravaToken != "" && model.isSignedInToBakalari) {
 
                                         Rectangle()
                                                 .fill(model.objectsClrDark)
