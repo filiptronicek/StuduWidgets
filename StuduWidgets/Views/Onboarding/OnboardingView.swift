@@ -21,38 +21,22 @@ struct OnboardingView: View {
             VStack {
                 Spacer()
                 
-                Button(action: {model.onboardingShown = true},
-                       label: {
-                            HStack {
-                                Text("Skip")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 20))
-                            }.frame(width: model.screenSize.width / 1.3, alignment: .trailing)
-                })
-                
                 TabView(selection: $tabSelection) {
                     VStack {
-                        ZStack {
-                            Rectangle()
-                                .fill(model.objectsClrDark)
-                                .frame(width: model.screenSize.width / 1.3, height: model.screenSize.width / 1.1)
-                                .cornerRadius(model.screenSize.width / 28)
-                            
-                            VStack {
-                                Text("Welcome to\n\t**StuduWidgets**")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 12))
-                                
-                                Image("StuduIcon")
-                                    .resizable()
-                                    .frame(width: model.screenSize.width / 4, height: model.screenSize.width / 4.1)
-                                    .padding([.top], model.screenSize.width / 10)
-                            }
+                        VStack {
+                            Text("Welcome to\n\t**StuduWidgets**")
+                                .foregroundColor(model.fontClr)
+                                .font(.system(size: model.screenSize.width / 12))
                         }
                     }.tag(0)
                     
                     VStack {
-                        Text("Jump to the app")
+                        Text("Privacy policy")
+                            .foregroundColor(model.fontClr)
+                            .font(.system(size: model.screenSize.width / 12))
+                            .frame(width: model.screenSize.width / 1.4, alignment: .leading)
+                        
+                        Text("bla bla")
                             .foregroundColor(model.fontClr)
                     }.tag(1)
                 }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
@@ -66,7 +50,7 @@ struct OnboardingView: View {
                             }
                     
                             else {
-                                model.onboardingShown = true
+                                model.showingPrivacyPopUp = true
                             }
                         },
                        label: {
@@ -83,12 +67,17 @@ struct OnboardingView: View {
                                 }
                                 
                                 else if tabSelection == 1 {
-                                    Text("Proceed to the app")
+                                    Text("Continue")
                                         .foregroundColor(model.fontClr)
                                         .font(.system(size: model.screenSize.width / 17))
                                 }
                             }
                 }).padding([.bottom], model.screenSize.width / 20)
+                    .alert("By clicking continue you're agreeing to our Privacy Policy", isPresented: $model.showingPrivacyPopUp) {
+                        Button("Cancel", role: .cancel) {}
+                    
+                    Button(action: {model.onboardingShown = true}, label: {Text("Continue")})
+                }
             }
         }
     }

@@ -192,7 +192,7 @@ struct SettingsView: View {
                                     .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
                                     .cornerRadius(model.screenSize.width / 28)
                                 HStack {
-                                    Text("Light (lamer)")
+                                    Text("Light (lame)")
                                         .foregroundColor(model.fontClr)
                                         .font(.system(size: model.screenSize.width / 18))
                                         .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
