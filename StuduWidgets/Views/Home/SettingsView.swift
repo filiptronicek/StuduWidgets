@@ -175,9 +175,8 @@ struct SettingsView: View {
                                     
                                     Image(systemName: model.darkThemeIsActive ? "checkmark" : "")
                                         .resizable()
-                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                         .foregroundColor(model.objectsClrLight)
-                                        
+                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                 }
                             }
                         })
@@ -201,9 +200,8 @@ struct SettingsView: View {
                                     
                                     Image(systemName: model.darkThemeIsActive ? "" : "checkmark")
                                         .resizable()
-                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                         .foregroundColor(model.objectsClrLight)
-                                        
+                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                 }
                             }
                         })

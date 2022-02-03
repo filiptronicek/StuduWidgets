@@ -94,9 +94,9 @@ struct ButtonLabel: View {
             
             Image(systemName: "chevron.right")
                 .resizable()
+                .foregroundColor(model.objectsClrLight)
                 .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
                 .padding(.leading, model.screenSize.width / 1.5)
-                .foregroundColor(.gray)
         }
     }
 }
@@ -141,9 +141,9 @@ struct WidgetCardLabel: View {
             Group {
                 Image(systemName: "chevron.right")
                     .resizable()
+                    .foregroundColor(model.objectsClrLight)
                     .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
                     .padding(.leading, model.screenSize.width / 25)
-                    .foregroundColor(Color.gray)
             }.frame(width: model.screenSize.width / 1.3, alignment: .trailing)
         }
     }

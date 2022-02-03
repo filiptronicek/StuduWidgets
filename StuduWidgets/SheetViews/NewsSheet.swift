@@ -31,7 +31,7 @@ struct NewsSheet: View {
                                     .cornerRadius(model.screenSize.width / 28)
                                 
                                 Text("Customizable \n\t\t\t\t\twidgets")
-                                    .foregroundColor(model.fontClr)
+                                    .foregroundColor(.white)
                                     .font(.system(size: model.screenSize.width / 12))
                                     .padding([.trailing], model.screenSize.width / 7.5)
                             }
