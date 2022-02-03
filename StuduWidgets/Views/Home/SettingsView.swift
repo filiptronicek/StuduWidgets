@@ -107,7 +107,7 @@ struct SettingsView: View {
                                 if !model.isSignedInToBakalari {
                                     Button(action: {
                                                 // Todo(ft): add sign in action
-                                                model.isSignedInToBakalari = true
+                                                model.showingLoginBakalari = true
                                             },
                                             
                                             label: {
@@ -118,11 +118,11 @@ struct SettingsView: View {
                                 if !model.isSignedInToStrava {
                                     Button(action: {
                                                 // Todo(ft): add sign in action
-                                                model.isSignedInToStrava = true
+                                                model.showingLoginStrava = true
                                             },
                                             label: {
                                                 Label("Sign in to Strava.cz", systemImage: "fork.knife")
-                                    }).sheet(isPresented: $model.showingLoginStrava) {StravaLoginSheet()}
+                                    })
                                 }
                             } label: {
                                     ZStack {
@@ -145,7 +145,8 @@ struct SettingsView: View {
                                         }
                                     }
                                 }
-                            }
+                            }.sheet(isPresented: $model.showingLoginStrava) {StravaLoginSheet()}
+                            .sheet(isPresented: $model.showingLoginBakalari) {BakalariLoginSheet()}
                         }
                     
                     
