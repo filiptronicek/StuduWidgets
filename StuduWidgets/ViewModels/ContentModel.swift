@@ -58,19 +58,15 @@ class ContentModel: ObservableObject {
     func changeColorTheme() {
         // Switch to light theme
         
-        if darkThemeIsActive == false {
+        if !darkThemeIsActive {
             bg = Color(red: 255 / 255, green: 227 / 255, blue: 227 / 255)
             objectsClrDark = Color(red: 228 / 255, green: 216 / 255, blue: 220 / 255)
             objectsClrMedium = Color(red: 201 / 255, green: 204 / 255, blue: 213 / 255)
             objectsClrLight = Color(red: 1, green: 1, blue: 1)
             fontClr = Color(red: 55 / 255, green: 125 / 255, blue: 161 / 255)
             easterEggClr = Color(red: 228 / 255, green: 216 / 255, blue: 220 / 255)
-        }
-        
-        
-        // Switch back to dark theme
-        
-        if darkThemeIsActive == true {
+        } else {
+            // Switch back to dark theme
             bg = Color(red: 0.05, green: 0, blue: 0)
             objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
             objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
