@@ -44,7 +44,7 @@ struct HomeView: View {
                     .padding(.trailing, model.screenSize.width / 5)
                     .padding([.top, .bottom], model.screenSize.width / 18)
                     .background(Rectangle()
-                                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.1), location: 1)]), startPoint: .top, endPoint: .bottom)))
+                                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom)))
                 
                 Spacer()
             }
@@ -98,7 +98,7 @@ struct HomeView: View {
                 }.ignoresSafeArea()
                     .padding([.top, .bottom], model.screenSize.width / 50)
                     .background(Rectangle()
-                                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.01), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom)))
+                                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.001), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom)))
             }
         }
     }
