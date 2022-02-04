@@ -13,7 +13,7 @@ struct StravaLoginSheet: View {
     @EnvironmentObject var model: ContentModel
 
     @State private var statusFontColor: Color = Color.white
-    @State private var tokenOutput: String = "No token"
+    @State private var tokenOutput: String = ""
     
     @ObservedObject var userSettings = ContentModel.UserSettings()
 
@@ -47,7 +47,7 @@ struct StravaLoginSheet: View {
                             .padding(.horizontal, model.screenSize.width / 10)
                         Button("Log in", action: {
                             statusFontColor = model.fontClr
-                            tokenOutput = "Loading the token"
+                            tokenOutput = "Loading..."
                             
                             if (userSettings.stravaCanteen == "" || userSettings.stravaUsername == "" || userSettings.stravaPassword == "") {
                                 statusFontColor = Color(red: 1, green: 0, blue: 0)
@@ -61,6 +61,7 @@ struct StravaLoginSheet: View {
                                     userSettings.stravaToken = tokenResp.token!
                                     userSettings.stravaDisplayName = tokenResp.displayName!
                                     tokenOutput = "Signed in successfully"
+                                    model.showingLoginStrava = false
                                     statusFontColor = Color(red: 0, green: 1, blue: 0)
                                 } else {
                                     statusFontColor = Color(red: 1, green: 0, blue: 0)
