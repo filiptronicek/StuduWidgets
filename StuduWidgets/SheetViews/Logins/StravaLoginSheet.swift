@@ -64,7 +64,7 @@ struct StravaLoginSheet: View {
                                     statusFontColor = Color(red: 0, green: 1, blue: 0)
                                 } else {
                                     statusFontColor = Color(red: 1, green: 0, blue: 0)
-                                    tokenOutput = "Error getting the token"
+                                    tokenOutput = "Error getting the token: \(tokenResp.errorMessage ?? "")"
                                 }
                             }
                         }

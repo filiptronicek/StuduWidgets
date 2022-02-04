@@ -98,6 +98,7 @@ class ContentModel: ObservableObject {
         var ok: Bool
         var token: String?
         var displayName: String?
+        var errorMessage: String?
     }
     
     func getStravaToken (username: String, password: String, canteen: String) async -> StravaTokenResult {
@@ -133,7 +134,6 @@ class ContentModel: ObservableObject {
             let url = URL(string: "\(endpoint)/auth/token?username=\(username)&password=\(password)&canteen=\(canteen)")
             guard let requestUrl = url else { fatalError() }
             let data: Response = try await fetchAPI(url: requestUrl)
-            print(data)
 
             if (data.status == "success") {
                 currResult.token = data.result.token
@@ -141,11 +141,14 @@ class ContentModel: ObservableObject {
                 return currResult
             } else {
                 currResult.ok = false
+                // ToDo(ft): add dynamic error message returned by the server
+                currResult.errorMessage = "API Error"
                 return currResult
             }
         } catch {
             print(error)
             currResult.ok = false
+            currResult.errorMessage = error.localizedDescription
             return currResult
         }
     }
