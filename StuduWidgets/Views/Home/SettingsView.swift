@@ -20,6 +20,7 @@ struct SettingsView: View {
                     // MARK: Accounts section
                     
                     Heading(text: "Accounts")
+                        .padding(.top, model.screenSize.width / 5)
                     
                     VStack {
                         if model.isSignedInToBakalari {
