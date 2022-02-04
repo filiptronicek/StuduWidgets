@@ -253,7 +253,7 @@ struct SettingsView: View {
                                label: {ButtonLabel(text: "Help")
                         }).sheet(isPresented: $model.showingHelpSheet) {HelpSheet()}
                     }
-                }
+                }.padding(.bottom, model.screenSize.width / 5)
             }
         }
     }

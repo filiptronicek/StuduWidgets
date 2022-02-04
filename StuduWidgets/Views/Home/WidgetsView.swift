@@ -51,7 +51,7 @@ struct WidgetsView: View {
                 Button(action: {model.showingLunchSheet.toggle()},
                        label: { WidgetCardLabel(heading: "Lunch Widget", bodyText: "~ let's you know whatcha gonna eat today", imageLink: "TimetableWidget")
                 }).sheet(isPresented: $model.showingLunchSheet) {LunchSheet()}
-            }
+            }.padding(.bottom, model.screenSize.width / 5)
         }
     }
 }
