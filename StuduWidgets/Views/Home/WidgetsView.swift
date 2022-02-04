@@ -19,6 +19,7 @@ struct WidgetsView: View {
                 
                 if !model.isSignedInToBakalari && !model.isSignedInToStrava {
                     Heading(text: "Get started")
+                        .padding(.top, model.screenSize.width / 5)
                     
                     Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
                         .foregroundColor(model.fontClr)
@@ -42,7 +43,7 @@ struct WidgetsView: View {
                 // MARK: Widgets section
                 
                 Heading(text: "Widgets")
-                    .padding(.top, model.screenSize.width / 15)
+                    .padding(.top, model.screenSize.width / 5)
                 
                 Button(action: {model.showingTimetableSheet.toggle()}, label: { WidgetCardLabel(heading: "Timetable Widget", bodyText: "~ let's you view timetable\non your Home Screen", imageLink: "TimetableWidget")
                 }).sheet(isPresented: $model.showingTimetableSheet) {TimetableSheet()}
@@ -50,7 +51,7 @@ struct WidgetsView: View {
                 Button(action: {model.showingLunchSheet.toggle()},
                        label: { WidgetCardLabel(heading: "Lunch Widget", bodyText: "~ let's you know whatcha gonna eat today", imageLink: "TimetableWidget")
                 }).sheet(isPresented: $model.showingLunchSheet) {LunchSheet()}
-            }
+            }.padding(.bottom, model.screenSize.width / 5)
         }
     }
 }
