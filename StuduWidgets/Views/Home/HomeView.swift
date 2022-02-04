@@ -54,7 +54,7 @@ struct HomeView: View {
                 
                 Rectangle()
                     .fill(model.bg)
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 11)
+                    .frame(width: model.screenSize.width, height: model.screenSize.width / 12)
             }.ignoresSafeArea()
                 
                 
@@ -95,10 +95,8 @@ struct HomeView: View {
                     })
                     
                     Spacer()
-                }.ignoresSafeArea()
-                    .padding([.top, .bottom], model.screenSize.width / 50)
-                    .background(Rectangle()
-                                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.001), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom)))
+                }.background(Rectangle()
+                                .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.001), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom)))
             }
         }
     }
