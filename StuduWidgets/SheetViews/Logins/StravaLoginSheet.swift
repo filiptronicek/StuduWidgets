@@ -25,6 +25,8 @@ struct StravaLoginSheet: View {
                 ScrollView {
                     VStack {
                         TextField("Username", text: $userSettings.stravaUsername)
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
                             .padding()
                             .background(model.objectsClrLight)
                             .foregroundColor(model.fontClr)
@@ -41,6 +43,8 @@ struct StravaLoginSheet: View {
                             .padding(.horizontal, model.screenSize.width / 10)
                         
                         TextField("Canteen", text: $userSettings.stravaCanteen)
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
                             .padding()
                             .background(model.objectsClrLight)
                             .cornerRadius(model.screenSize.width / 28)
