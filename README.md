@@ -41,3 +41,4 @@ We, as highschool students find it hard to manage and get quick answers to quest
 
 See the <a href="https://github.com/filiptronicek/StuduWidgets/wiki">StuduWidgets Wiki</a> for full documentation, code structure, and other information. 
 
+Built with love by [@filiptronicek](https://github.com/filiptronicek) & [@scraptechguy](https://github.com/scraptechguy)
