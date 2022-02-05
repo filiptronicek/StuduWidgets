@@ -17,11 +17,10 @@ struct NewsSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "What's coming?")
-                
                 ScrollView(showsIndicators: false) {
                     VStack {
                         Heading(text: "News")
+                            .padding([.top], model.screenSize.width / 5)
                         
                         Button(action: {model.showingCustomizableWidgets.toggle()}, label: {
                             ZStack {
@@ -48,9 +47,21 @@ struct NewsSheet: View {
                                 .resizable()
                                 .frame(width: model.screenSize.width / 2.7, height: model.screenSize.width / 3)
                         }
-                    }
+                    }.padding(.bottom, model.screenSize.width / 5)
                 }
             }
+            
+            VStack {
+                Title(text: "What's coming?")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

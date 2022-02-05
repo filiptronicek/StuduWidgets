@@ -17,10 +17,11 @@ struct TermsSheet: View {
             model.objectsClrDark.ignoresSafeArea()
 
             VStack {
-                Title(text: "Terms and Conditions")
-
                 ScrollView {
                     VStack {
+                        Heading(text: "Data handling")
+                            .padding([.top], model.screenSize.width / 5)
+                        
                         HStack {
                             Spacer()
 
@@ -103,9 +104,21 @@ struct TermsSheet: View {
                             .frame(width: model.screenSize.width / 100, height: model.screenSize.width / 10)
                             .padding(.trailing, model.screenSize.width / 8)
                         }
-                    }
+                    }.padding(.bottom, model.screenSize.width / 5)
                 }
             }
+            
+            VStack {
+                Title(text: "Terms and Conditions")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

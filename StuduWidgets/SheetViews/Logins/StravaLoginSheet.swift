@@ -22,63 +22,97 @@ struct StravaLoginSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "Strava.cz login")
-                
                 ScrollView {
                     VStack {
                         TextField("Username", text: $userSettings.stravaUsername)
                             .padding()
                             .background(model.objectsClrLight)
                             .foregroundColor(model.fontClr)
-                            .cornerRadius(5.0)
+                            .cornerRadius(model.screenSize.width / 28)
                             .padding(.bottom, 20)
                             .padding(.horizontal, model.screenSize.width / 10)
+                        
                         SecureField("Password", text: $userSettings.stravaPassword)
                             .padding()
                             .background(model.objectsClrLight)
-                            .cornerRadius(5.0)
+                            .cornerRadius(model.screenSize.width / 28)
                             .padding(.bottom, 20)
                             .padding(.horizontal, model.screenSize.width / 10)
+                        
                         TextField("Canteen", text: $userSettings.stravaCanteen)
                             .padding()
                             .background(model.objectsClrLight)
-                            .cornerRadius(5.0)
+                            .cornerRadius(model.screenSize.width / 28)
                             .padding(.bottom, 20)
                             .padding(.horizontal, model.screenSize.width / 10)
-                        Button("Log in", action: {
-                            statusFontColor = model.fontClr
-                            tokenOutput = "Loading..."
+                        
+                        HStack {
+                            Circle()
+                                .fill(statusFontColor)
+                                .frame(width: model.screenSize.width / 40, height: model.screenSize.width / 40)
                             
-                            if (userSettings.stravaCanteen == "" || userSettings.stravaUsername == "" || userSettings.stravaPassword == "") {
-                                statusFontColor = Color(red: 1, green: 0, blue: 0)
-                                tokenOutput = "Missing fields"
-                                return
-                            }
+                            Text("Status: ")
+                                .foregroundColor(model.objectsClrLight)
+                                .font(.system(size: model.screenSize.width / 25))
                             
-                            Task {
-                                let tokenResp = await model.getStravaToken(username: userSettings.stravaUsername, password: userSettings.stravaPassword, canteen: userSettings.stravaCanteen)
-                                if tokenResp.ok {
-                                    userSettings.stravaToken = tokenResp.token!
-                                    userSettings.stravaDisplayName = tokenResp.displayName!
-                                    tokenOutput = "Signed in successfully"
-                                    model.showingLoginStrava = false
-                                    statusFontColor = Color(red: 0, green: 1, blue: 0)
-                                } else {
-                                    statusFontColor = Color(red: 1, green: 0, blue: 0)
-                                    tokenOutput = "Error getting the token: \(tokenResp.errorMessage ?? "")"
-                                }
-                            }
+                            Text(tokenOutput)
+                                .foregroundColor(model.fontClr) // TODO - add confetti effect after successful login
                         }
-                        ).buttonStyle(.bordered)
-                        Text(tokenOutput).foregroundColor(statusFontColor) // TODO - add confetti effect after successful login
+                        
+                        Button(action: {
+                                    statusFontColor = model.fontClr
+                                    tokenOutput = "Loading..."
+                                    
+                                    if (userSettings.stravaCanteen == "" || userSettings.stravaUsername == "" || userSettings.stravaPassword == "") {
+                                        statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
+                                        tokenOutput = "Missing fields"
+                                        return
+                                    }
+                                    
+                                    Task {
+                                        let tokenResp = await model.getStravaToken(username: userSettings.stravaUsername, password: userSettings.stravaPassword, canteen: userSettings.stravaCanteen)
+                                        if tokenResp.ok {
+                                            userSettings.stravaToken = tokenResp.token!
+                                            userSettings.stravaDisplayName = tokenResp.displayName!
+                                            tokenOutput = "Signed in successfully"
+                                            model.showingLoginStrava = false
+                                            statusFontColor = Color(red: 98 / 255, green: 252 / 255, blue: 98 / 255)
+                                        } else {
+                                            statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
+                                            tokenOutput = "Error getting the token: \(tokenResp.errorMessage ?? "")"
+                                        }
+                                    }
+                                },
+                               label: {
+                                    ZStack {
+                                        Rectangle()
+                                            .fill(model.objectsClrMedium)
+                                            .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 8)
+                                            .cornerRadius(model.screenSize.width / 28)
+                                    
+                                        Text("Log in")
+                                            .foregroundColor(model.fontClr)
+                                            .font(.system(size: model.screenSize.width / 17))
+                                            .frame(width: model.screenSize.width / 1.6, height: model.screenSize.width / 8, alignment: .center)
+                                    }
+                        })
+                        
                         Text(userSettings.stravaDisplayName).foregroundColor(Color.white)
                     }
                 }
-                
-                Text("Swipe down to cancel")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 18))
             }
+            
+            VStack {
+                Title(text: "Strava.cz login")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

@@ -17,14 +17,25 @@ struct FeedbackSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "Feedback")
-                
                 ScrollView {
                     VStack {
-                        Text("Hello, World!")
-                    }
+                        Heading(text: "Let us know what we suck at")
+                            .padding([.top], model.screenSize.width / 5)
+                    }.padding(.bottom, model.screenSize.width / 5)
                 }
             }
+            
+            VStack {
+                Title(text: "Feedback")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

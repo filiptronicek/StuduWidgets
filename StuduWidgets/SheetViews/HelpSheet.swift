@@ -17,14 +17,25 @@ struct HelpSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "Help")
-                
                 ScrollView {
                     VStack {
-                        Text("Hello, World!")
-                    }
+                        Heading(text: "Start over")
+                            .padding([.top], model.screenSize.width / 5)
+                    }.padding(.bottom, model.screenSize.width / 5)
                 }
             }
+            
+            VStack {
+                Title(text: "Help center")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

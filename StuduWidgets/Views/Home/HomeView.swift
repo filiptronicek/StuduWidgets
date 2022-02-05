@@ -28,35 +28,18 @@ struct HomeView: View {
             }
             
             VStack {
-                Rectangle()
-                    .fill(model.bg)
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 5, alignment: .top)
-                    .ignoresSafeArea()
-                
-                Spacer()
-            }
-            
-            VStack {
                 Text("StuduWidgets")
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 10))
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 25)
+                    .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
                     .padding(.trailing, model.screenSize.width / 5)
                     .padding([.top, .bottom], model.screenSize.width / 18)
                     .background(Rectangle()
                                     .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom)))
                 
                 Spacer()
-            }
-            
-            VStack {
-                Spacer()
-                
-                Rectangle()
-                    .fill(model.bg)
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 12)
             }.ignoresSafeArea()
-                
+            
                 
             // MARK: Navigation menu
             
@@ -95,9 +78,10 @@ struct HomeView: View {
                     })
                     
                     Spacer()
-                }.background(Rectangle()
-                                .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.001), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom)))
-            }
+                }.padding([.bottom], model.screenSize.width / 12)
+                    .background(Rectangle()
+                                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.001), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom)))
+            }.ignoresSafeArea()
         }
     }
 }

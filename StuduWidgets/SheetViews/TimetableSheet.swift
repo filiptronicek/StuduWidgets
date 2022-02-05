@@ -19,11 +19,10 @@ struct TimetableSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "Timetable Widget")
-                
                 ScrollView(showsIndicators: false) {
                     VStack {
                         Heading(text: "Customization")
+                            .padding([.top], model.screenSize.width / 5)
                         
                         ZStack {
                             Rectangle()
@@ -121,13 +120,22 @@ struct TimetableSheet: View {
                             .foregroundColor(model.fontClr)
                             .font(.system(size: model.screenSize.width / 25))
                             .padding(.leading, model.screenSize.width / 25)
-                    }.frame(width: model.screenSize.width / 1.2)
+                    }.padding(.bottom, model.screenSize.width / 5)
+                        .frame(width: model.screenSize.width / 1.2)
                 }
-                
-                Text("Swipe down")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 18))
             }
+            
+            VStack {
+                Title(text: "Timetable Widget")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

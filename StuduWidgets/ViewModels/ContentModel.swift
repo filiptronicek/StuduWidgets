@@ -17,32 +17,32 @@ class ContentModel: ObservableObject {
     
     // MARK: State variables
     
-    @AppStorage("onboardingShown") var onboardingShown:Bool = false
-    @Published var showingPrivacyPopUp:Bool = false
+    @AppStorage("onboardingShown") var onboardingShown: Bool = false
+    @Published var showingPrivacyPopUp: Bool = false
     
-    @Published var showingSettings:Bool = false
+    @Published var showingSettings: Bool = false
     
-    @Published var showingTimetableSheet:Bool = false
-    @Published var showingLunchSheet:Bool = false
+    @Published var showingTimetableSheet: Bool = false
+    @Published var showingLunchSheet: Bool = false
     
-    @Published var showingDataSheet:Bool = false
-    @Published var showingNewsSheet:Bool = false
-    @Published var showingTermsSheet:Bool = false
-    @Published var showingFeedbackSheet:Bool = false
-    @Published var showingHelpSheet:Bool = false
+    @Published var showingDataSheet: Bool = false
+    @Published var showingNewsSheet: Bool = false
+    @Published var showingTermsSheet: Bool = false
+    @Published var showingFeedbackSheet: Bool = false
+    @Published var showingHelpSheet: Bool = false
     
-    @Published var showingCustomizableWidgets:Bool = false
+    @Published var showingCustomizableWidgets: Bool = false
     
-    @Published var showingLoginStrava:Bool = false
-    @Published var showingLoginBakalari:Bool = false
+    @Published var showingLoginStrava: Bool = false
+    @Published var showingLoginBakalari: Bool = false
     
-    @Published var isSignedInToBakalari:Bool = false
-    @Published var isSignedInToStrava:Bool = false
+    @Published var isSignedInToBakalari: Bool = false
+    @Published var isSignedInToStrava: Bool = false
     
     
     // MARK: UI colors
     
-    @AppStorage("darkThemeState") var darkThemeIsActive:Bool = true
+    @AppStorage("darkThemeState") var darkThemeIsActive: Bool = true
     @Published var bg = Color(red: 0.05, green: 0, blue: 0)
     @Published var objectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
     @Published var objectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)

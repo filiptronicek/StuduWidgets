@@ -17,11 +17,10 @@ struct LunchSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "Lunch Widget")
-                
                 ScrollView {
                     VStack {
                         Heading(text: "Customization")
+                            .padding([.top], model.screenSize.width / 5)
                         
                         Button(action: {},
                                label: {
@@ -39,13 +38,21 @@ struct LunchSheet: View {
                                         }
                                 }
                         })
-                    }
+                    }.padding(.bottom, model.screenSize.width / 5)
                 }
-                
-                Text("Swipe down")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 18))
             }
+            
+            VStack {
+                Title(text: "Lunch Widget")
+                
+                Spacer()
+            }.ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                SheetFooter()
+            }.ignoresSafeArea()
         }
     }
 }

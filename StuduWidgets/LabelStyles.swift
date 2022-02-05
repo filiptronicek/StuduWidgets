@@ -38,9 +38,31 @@ struct Title: View {
         Text(text)
             .foregroundColor(model.fontClr)
             .font(.system(size: model.screenSize.width / 12))
-            .frame(width: model.screenSize.width / 1.15, alignment: .leading)
+            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 5, alignment: .leading)
+            .padding([.leading], model.screenSize.width / 30)
             .padding([.bottom], model.screenSize.width / 18)
-            .padding([.top], model.screenSize.width / 16)
+            .background(Rectangle()
+                            .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.objectsClrDark, location: 0), .init(color: model.objectsClrDark.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom)))
+    }
+}
+
+
+// MARK: Sheet footer
+
+struct SheetFooter: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    var body: some View {
+        ZStack {
+            Text("Swipe down")
+                .foregroundColor(model.fontClr)
+                .font(.system(size: model.screenSize.width / 18))
+                .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
+                .background(Rectangle()
+                                .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.objectsClrDark.opacity(0.001), location: 0), .init(color: model.objectsClrDark, location: 1)]), startPoint: .top, endPoint: .bottom)))
+        }
     }
 }
 
