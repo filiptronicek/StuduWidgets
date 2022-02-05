@@ -29,6 +29,7 @@ struct StravaLoginSheet: View {
                             .background(model.objectsClrLight)
                             .foregroundColor(model.fontClr)
                             .cornerRadius(model.screenSize.width / 28)
+                            .padding([.top], model.screenSize.width / 4)
                             .padding(.bottom, 20)
                             .padding(.horizontal, model.screenSize.width / 10)
                         
