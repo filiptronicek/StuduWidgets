@@ -1,13 +1,13 @@
 //
-//  HelpSheet.swift
+//  FeedbackSheet.swift
 //  StuduWidgets
 //
-//  Created by Rostislav Brož on 2/1/22.
+//  Created by Rostislav Brož on 2/5/22.
 //
 
 import SwiftUI
 
-struct HelpSheet: View {
+struct FeedbackSheet: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
@@ -17,7 +17,7 @@ struct HelpSheet: View {
             model.objectsClrDark.ignoresSafeArea()
             
             VStack {
-                Title(text: "Help")
+                Title(text: "Feedback")
                 
                 ScrollView {
                     VStack {
@@ -29,9 +29,9 @@ struct HelpSheet: View {
     }
 }
 
-struct HelpSheet_Previews: PreviewProvider {
+struct FeedbackSheet_Previews: PreviewProvider {
     static var previews: some View {
-        HelpSheet()
+        FeedbackSheet()
             .environmentObject(ContentModel())
     }
 }

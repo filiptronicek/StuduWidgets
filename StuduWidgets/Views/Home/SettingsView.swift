@@ -227,6 +227,14 @@ struct SettingsView: View {
                         Heading(text: "Help")
                             .padding(.top, model.screenSize.width / 15)
                         
+                        Button(action: {model.showingFeedbackSheet.toggle()},
+                               label: {ButtonLabel(text: "Feedback")
+                        }).sheet(isPresented: $model.showingFeedbackSheet) {FeedbackSheet()}
+                        
+                        Button(action: {model.showingHelpSheet.toggle()},
+                               label: {ButtonLabel(text: "Help")
+                        }).sheet(isPresented: $model.showingHelpSheet) {HelpSheet()}
+                        
                         Button(action: {},
                                label: {
                                     ZStack {
@@ -248,10 +256,6 @@ struct SettingsView: View {
                         }).simultaneousGesture(LongPressGesture(minimumDuration: 2).onEnded { _ in
                             model.easterEggClr = Color(red: 0 / 255, green: 255 / 255, blue: 240 / 255)
                         })
-                        
-                        Button(action: {model.showingHelpSheet.toggle()},
-                               label: {ButtonLabel(text: "Help")
-                        }).sheet(isPresented: $model.showingHelpSheet) {HelpSheet()}
                     }
                 }.padding(.bottom, model.screenSize.width / 5)
             }
