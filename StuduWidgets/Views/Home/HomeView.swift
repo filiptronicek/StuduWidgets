@@ -33,7 +33,8 @@ struct HomeView: View {
                     .font(.system(size: model.screenSize.width / 10))
                     .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
                     .padding(.trailing, model.screenSize.width / 5)
-                    .padding([.top, .bottom], model.screenSize.width / 18)
+                    .padding([.top], model.screenSize.width / 10)
+                    .padding([.bottom], model.screenSize.width / 25)
                     .background(Rectangle()
                                     .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom)))
                 
