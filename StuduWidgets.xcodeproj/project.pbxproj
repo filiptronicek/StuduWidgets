@@ -189,7 +189,7 @@
 				908D1AFC277690E1002A0595 /* StuduWidgetsDebug.entitlements */,
 				9096C6242773545300A706B0 /* StuduWidgets.entitlements */,
 				903AA920276D535F0044B05F /* StuduWidgetsApp.swift */,
-				90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */,
+				90C08AC027AEF4F9001EC76E /* Helpers */,
 				9036D074277367E100480599 /* Views */,
 				903AA92E276FBF480044B05F /* SheetViews */,
 				9096C6462773658D00A706B0 /* ViewModels */,
@@ -270,6 +270,14 @@
 				90BDB221278081D900C73AD5 /* ConfettiConcept.swift */,
 			);
 			path = Concepts;
+			sourceTree = "<group>";
+		};
+		90C08AC027AEF4F9001EC76E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		90D7CD8C27A6D9070027D6D7 /* Home */ = {
