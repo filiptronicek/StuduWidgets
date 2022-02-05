@@ -20,7 +20,7 @@ struct SettingsView: View {
                     // MARK: Accounts section
                     
                     Heading(text: "Accounts")
-                        .padding(.top, model.screenSize.width / 5)
+                        .padding(.top, model.screenSize.width / 4)
                     
                     VStack {
                         if model.isSignedInToBakalari {
@@ -257,7 +257,7 @@ struct SettingsView: View {
                             model.easterEggClr = Color(red: 0 / 255, green: 255 / 255, blue: 240 / 255)
                         })
                     }
-                }.padding(.bottom, model.screenSize.width / 5)
+                }.padding(.bottom, model.screenSize.width / 3)
             }
         }
     }

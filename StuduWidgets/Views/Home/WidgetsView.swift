@@ -13,13 +13,13 @@ struct WidgetsView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 // MARK: Get started section
                 
                 if !model.isSignedInToBakalari && !model.isSignedInToStrava {
                     Heading(text: "Get started")
-                        .padding(.top, model.screenSize.width / 5)
+                        .padding(.top, model.screenSize.width / 4)
                     
                     Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
                         .foregroundColor(model.fontClr)
@@ -51,7 +51,7 @@ struct WidgetsView: View {
                 Button(action: {model.showingLunchSheet.toggle()},
                        label: { WidgetCardLabel(heading: "Lunch Widget", bodyText: "~ let's you know whatcha gonna eat today", imageLink: "TimetableWidget")
                 }).sheet(isPresented: $model.showingLunchSheet) {LunchSheet()}
-            }.padding(.bottom, model.screenSize.width / 5)
+            }.padding(.bottom, model.screenSize.width / 3)
         }
     }
 }
