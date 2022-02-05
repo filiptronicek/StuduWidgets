@@ -211,12 +211,8 @@
 		903AA92E276FBF480044B05F /* SheetViews */ = {
 			isa = PBXGroup;
 			children = (
-				903AA930276FBF720044B05F /* TimetableSheet.swift */,
-				903AA9322770801F0044B05F /* LunchSheet.swift */,
-				9092E80D27A47FC5009D153A /* NewsSheet.swift */,
-				900D7A0527A91F6800048444 /* HelpSheet.swift */,
-				90C08ABE27AEC137001EC76E /* FeedbackSheet.swift */,
-				900D7A0327A91F5D00048444 /* TermsSheet.swift */,
+				90C08AC427AEF738001EC76E /* WidgetsSheets */,
+				90C08AC327AEF725001EC76E /* SettingsSheets */,
 				9027145627AC3E54007900D3 /* Logins */,
 			);
 			path = SheetViews;
@@ -278,6 +274,26 @@
 				90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		90C08AC327AEF725001EC76E /* SettingsSheets */ = {
+			isa = PBXGroup;
+			children = (
+				9092E80D27A47FC5009D153A /* NewsSheet.swift */,
+				900D7A0327A91F5D00048444 /* TermsSheet.swift */,
+				90C08ABE27AEC137001EC76E /* FeedbackSheet.swift */,
+				900D7A0527A91F6800048444 /* HelpSheet.swift */,
+			);
+			path = SettingsSheets;
+			sourceTree = "<group>";
+		};
+		90C08AC427AEF738001EC76E /* WidgetsSheets */ = {
+			isa = PBXGroup;
+			children = (
+				903AA930276FBF720044B05F /* TimetableSheet.swift */,
+				903AA9322770801F0044B05F /* LunchSheet.swift */,
+			);
+			path = WidgetsSheets;
 			sourceTree = "<group>";
 		};
 		90D7CD8C27A6D9070027D6D7 /* Home */ = {
