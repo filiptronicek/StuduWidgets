@@ -150,21 +150,29 @@ class ContentModel: ObservableObject {
         }
     }
     
-    func getBakalariToken (username: String, password: String, endpoint: String) async -> StravaTokenResult {
+    struct BakalariTokenResult {
+        var ok: Bool
+        var accessToken: String?
+        var refreshToken: String?
+        var displayName: String?
+        var errorMessage: String?
+    }
+    
+    func getBakalariToken (username: String, password: String, endpoint: String) async -> BakalariTokenResult {
 
-        struct Result: Decodable {
+        struct ErrorResponse {
+            var error: String
+            var error_description: String
+        }
+
+        struct Response: Decodable {
             let bakAPIVersion, bakAppVersion, bakUserID, accessToken: String
             let refreshToken, idToken, tokenType: String
             let expiresIn: Int
             let scope: String
         }
-        
-        struct Response: Decodable {
-           var status: String
-           var result: Result
-        }
-        
-        var currResult = StravaTokenResult(ok: true, token: nil, displayName: nil)
+
+        var currResult = BakalariTokenResult(ok: true, accessToken: nil, refreshToken: nil, displayName: nil)
         
         do {
             let urlSession = URLSession(configuration: .default)
@@ -176,6 +184,7 @@ class ContentModel: ObservableObject {
                 URLQueryItem(name: "username", value: username),
                 URLQueryItem(name: "password", value: password)
             ]
+            var tokenResponse: Response?
             
             var request = URLRequest(url: URL(string: "https://\(endpoint)/api/login")!)
             request.httpMethod = "POST"
@@ -188,23 +197,34 @@ class ContentModel: ObservableObject {
                 }
                 let statusCode = (response as? HTTPURLResponse)?.statusCode
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                if let responseJSON = responseJSON as? [String: Any] {
+                if let responseJSON = responseJSON as? Response {
                     print(responseJSON) //Code after Successfull POST Request
+                    tokenResponse = responseJSON
+                    
                 }
                 print("💁🏻‍♂️ \(String(describing: statusCode))")
+                if (statusCode == 400) {
+                    currResult.ok = false
+                    if let responseJSON = responseJSON as? ErrorResponse {
+                        currResult.errorMessage = "\(responseJSON.error_description) (\(responseJSON.error))"
+                    }
+                }
             }
-            
+
             task.resume()
-            
-            if ("ye" == "ye") {
-                // Todo(ft): Set token to user prefs (both access and refresh)
-                return currResult
-            } else {
-                currResult.ok = false
-                // ToDo(ft): add dynamic error message returned by the server
-                currResult.errorMessage = "API Error"
+
+            // If there was an error, return it
+            if (currResult.errorMessage != nil) {
                 return currResult
             }
+            
+            // Todo(ft): Set token to user prefs (both access and refresh)
+            currResult.accessToken = tokenResponse?.accessToken
+            currResult.refreshToken = tokenResponse?.refreshToken
+            currResult.displayName = tokenResponse?.bakUserID
+
+            return currResult
+
         } catch {
             print(error)
             currResult.ok = false
