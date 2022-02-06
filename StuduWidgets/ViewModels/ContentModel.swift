@@ -149,6 +149,73 @@ class ContentModel: ObservableObject {
             return currResult
         }
     }
+    
+    func getBakalariToken (username: String, password: String, endpoint: String) async -> StravaTokenResult {
+
+        struct Result: Decodable {
+            let bakAPIVersion, bakAppVersion, bakUserID, accessToken: String
+            let refreshToken, idToken, tokenType: String
+            let expiresIn: Int
+            let scope: String
+        }
+        
+        struct Response: Decodable {
+           var status: String
+           var result: Result
+        }
+        
+        var currResult = StravaTokenResult(ok: true, token: nil, displayName: nil)
+        
+        do {
+            let url = URL(string: "\(endpoint)/auth/token?username=\(username)&password=\(password)&canteen=\(endpoint)")
+            guard let requestUrl = url else { fatalError() }
+
+            let urlSession = URLSession(configuration: .default)
+            let requestHeaders: [String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
+            var requestBodyComponents = URLComponents()
+            requestBodyComponents.queryItems = [
+                URLQueryItem(name: "client_id", value: "ANDR"),
+                URLQueryItem(name: "grant_type", value: "password"),
+                URLQueryItem(name: "username", value: username),
+                URLQueryItem(name: "password", value: password)
+            ]
+            
+            var request = URLRequest(url: URL(string: "https://\(endpoint)/api/login")!)
+            request.httpMethod = "POST"
+            request.allHTTPHeaderFields = requestHeaders
+
+            let task = urlSession.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                let statusCode = (response as? HTTPURLResponse)?.statusCode
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    print(responseJSON) //Code after Successfull POST Request
+                }
+                print("💁🏻‍♂️ \(String(describing: statusCode))")
+            }
+            
+            task.resume()
+            
+            if ("ye" == "ye") {
+                // Todo(ft): Set token to user prefs (both access and refresh)
+                return currResult
+            } else {
+                currResult.ok = false
+                // ToDo(ft): add dynamic error message returned by the server
+                currResult.errorMessage = "API Error"
+                return currResult
+            }
+        } catch {
+            print(error)
+            currResult.ok = false
+            currResult.errorMessage = error.localizedDescription
+            return currResult
+        }
+    }
+
 
     class UserSettings: ObservableObject {
         @Published var stravaUsername: String {
