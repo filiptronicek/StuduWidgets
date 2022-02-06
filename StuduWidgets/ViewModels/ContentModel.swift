@@ -20,7 +20,7 @@ class ContentModel: ObservableObject {
     @AppStorage("onboardingShown") var onboardingShown: Bool = false
     @Published var showingPrivacyPopUp: Bool = false
     
-    @Published var showingSettings: Bool = false
+    @Published var showingSettings: Int = 0
     
     @Published var showingTimetableSheet: Bool = false
     @Published var showingLunchSheet: Bool = false
