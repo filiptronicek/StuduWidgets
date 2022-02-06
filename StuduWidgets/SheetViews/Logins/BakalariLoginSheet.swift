@@ -88,7 +88,7 @@ struct BakalariLoginSheet: View {
                                                 }
                                             } else {
                                                 statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
-                                                tokenOutput = "Error getting the token: \(data.errorMessage ?? "")"
+                                                tokenOutput = "\(data.errorMessage ?? "Error getting the token")"
                                             }
                                         } else {
                                             if let error = error {

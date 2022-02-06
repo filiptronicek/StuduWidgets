@@ -222,7 +222,8 @@ class ContentModel: ObservableObject {
                     currResult.errorMessage = "\(responseJSON.error_description) (\(responseJSON.error))"
                     userCompletionHandler(currResult, nil)
                 } else {
-                    currResult.errorMessage = "Unknown error"
+                    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    currResult.errorMessage = responseJSON!["error_description"] as? String ?? "Unknown error"
                     userCompletionHandler(currResult, nil)
                 }
             } else if (statusCode == 200) {
