@@ -245,7 +245,7 @@ class ContentModel: ObservableObject {
         }
 
         task.resume()
-}
+    }
 
 
     class UserSettings: ObservableObject {
