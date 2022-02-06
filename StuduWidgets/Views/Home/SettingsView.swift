@@ -23,7 +23,7 @@ struct SettingsView: View {
                         .padding(.top, model.screenSize.width / 4.5)
                     
                     VStack {
-                        if model.isSignedInToBakalari {
+                        if userSettings.bakalariRefreshToken != "" {
                             ZStack {
                                 Rectangle()
                                     .fill(model.objectsClrDark)
@@ -41,7 +41,7 @@ struct SettingsView: View {
                                         .padding(.trailing, model.screenSize.width / 50)
                                     
                                     VStack {
-                                        Text("Rostislav Brož")
+                                        Text(userSettings.bakalariUsername)
                                             .foregroundColor(model.fontClr)
                                             .font(.system(size: model.screenSize.width / 18))
                                         
@@ -55,7 +55,8 @@ struct SettingsView: View {
                             }.contextMenu {
                                 Button(role: .destructive,
                                        action: {
-                                            model.isSignedInToBakalari = false
+                                            userSettings.bakalariRefreshToken = ""
+                                            userSettings.bakalariAccessToken = ""
                                         },
                                        
                                        label: {
@@ -107,7 +108,7 @@ struct SettingsView: View {
                             }
                             
                             Menu {
-                                if !model.isSignedInToBakalari {
+                                if userSettings.bakalariRefreshToken == "" {
                                     Button(action: {
                                                 // Todo(ft): add sign in action
                                                 model.showingLoginBakalari = true
@@ -128,7 +129,7 @@ struct SettingsView: View {
                                 }
                             } label: {
                                     ZStack {
-                                        if !(userSettings.stravaToken != "" && model.isSignedInToBakalari) {
+                                        if !(userSettings.stravaToken != "" && userSettings.bakalariRefreshToken != "") {
 
                                         Rectangle()
                                                 .fill(model.objectsClrDark)

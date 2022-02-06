@@ -11,13 +11,14 @@ struct WidgetsView: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-    
+    @ObservedObject var userSettings = ContentModel.UserSettings()
+
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
                 // MARK: Get started section
                 
-                if !model.isSignedInToBakalari && !model.isSignedInToStrava {
+                if userSettings.bakalariRefreshToken == "" && userSettings.stravaToken == "" {
                     Heading(text: "Get started")
                         .padding(.top, model.screenSize.width / 4.5)
                     

@@ -63,10 +63,6 @@ class ContentModel: ObservableObject {
     @Published var showingLoginStrava: Bool = false
     @Published var showingLoginBakalari: Bool = false
     
-    @Published var isSignedInToBakalari: Bool = false
-    @Published var isSignedInToStrava: Bool = false
-    
-    
     // MARK: UI colors
     
     @AppStorage("darkThemeState") var darkThemeIsActive: Bool = true
