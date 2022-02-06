@@ -248,6 +248,74 @@ class ContentModel: ObservableObject {
     }
 
 
+    struct BakalariSingleCity {
+        var name: String
+        var totalCount: Int
+    }
+
+    struct BakalariSingleCityResult {
+        var ok: Bool
+        var errorMessage: String?
+        var city: [BakalariSingleCity]?
+    }
+
+    /**
+      Function to fetch all cities from the Bakaláři API (GET https://sluzby.bakalari.cz/api/v1/municipality).
+      The request must only accept JSON data.
+      - Returns: Array of all cities, their `name` and `schoolCount`
+    */
+    func getCities (userCompletionHandler: @escaping (BakalariSingleCityResult?, Error?) -> Void) {
+
+        struct ErrorResponse: Decodable {
+            var error: String
+            var error_description: String
+        }
+
+        let urlSession = URLSession(configuration: .default)
+        let requestHeaders: [String:String] = ["Content-Type" : "application/json"]
+        
+        var request = URLRequest(url: URL(string: "https://sluzby.bakalari.cz/api/v1/municipality")!)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = requestHeaders
+
+        let task = urlSession.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                userCompletionHandler(nil, error)
+                return
+            }
+            let statusCode = (response as? HTTPURLResponse)?.statusCode
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+
+            print("💁🏻‍♂️ \(String(describing: statusCode))")
+            if (statusCode == 400) {
+                if let responseJSON = responseJSON as? ErrorResponse {
+                    print("\(responseJSON.error_description) (\(responseJSON.error))")
+                } else {
+                    let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                    let error_description = (responseJSON!["error_description"] as? String ?? "Unknown error")
+                    let response = BakalariSingleCityResult(ok: false, errorMessage: error_description, city: nil)
+                    userCompletionHandler(response, nil)
+                }
+            } else if (statusCode == 200) {
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                let cities
+                    = responseJSON!["data"] as! [[String:Any]]
+                var cityArray = [BakalariSingleCity]()
+                for city in cities {
+                    let cityName = city["name"] as! String
+                    let schoolCount = city["schoolCount"] as! Int
+                    cityArray.append(BakalariSingleCity(name: cityName, totalCount: schoolCount))
+                }
+                var response = BakalariSingleCityResult(ok: true, errorMessage: nil, city: cityArray)
+                userCompletionHandler(response, nil)
+            }
+        }
+        task.resume()
+    }
+
+
+
     class UserSettings: ObservableObject {
         @Published var stravaUsername: String {
             didSet {
