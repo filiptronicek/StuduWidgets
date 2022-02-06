@@ -40,7 +40,7 @@ struct OnboardingView: View {
                             .foregroundColor(model.fontClr)
                     }.tag(1)
                 }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 0.6)
+                    .frame(width: model.screenSize.width, height: model.screenSize.width / 0.7)
                 
                 Spacer()
                 
