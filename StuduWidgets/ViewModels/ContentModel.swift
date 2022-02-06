@@ -9,6 +9,33 @@ import Foundation
 import SwiftUI
 import Combine
 
+class BakalariResponseData : Decodable, Identifiable, ObservableObject {
+
+    var access_token : String
+    var refresh_token : String
+    var token_type : String
+    var expires_in : Int64
+    var scope : String
+    var id_token : String?
+
+    var bak_ApiVersion : String
+    var bak_AppVersion : String
+    var bak_UserId : String
+
+    enum CodingKey: String {
+        case access_token
+        case refresh_token
+        case token_type
+        case expires_in
+        case scope
+        case id_token
+
+        case bak_ApiVersion = "bak:ApiVersion"
+        case bak_AppVersion = "bak:AppVersion"
+        case bak_UserId = "bak:UserId"
+    }
+}
+
 class ContentModel: ObservableObject {
     // MARK: Screen bounds
 
@@ -160,80 +187,60 @@ class ContentModel: ObservableObject {
         var errorMessage: String?
     }
     
-    func getBakalariToken (username: String, password: String, endpoint: String) async -> BakalariTokenResult {
+    func getBakalariToken (username: String, password: String, endpoint: String, userCompletionHandler: @escaping (BakalariTokenResult?, Error?) -> Void) {
 
         struct ErrorResponse {
             var error: String
             var error_description: String
         }
 
-        struct Response: Decodable {
-            let bakAPIVersion, bakAppVersion, bakUserID, accessToken: String
-            let refreshToken, idToken, tokenType: String
-            let expiresIn: Int
-            let scope: String
-        }
-
         var currResult = BakalariTokenResult(ok: true, accessToken: nil, refreshToken: nil, displayName: nil)
         
-        do {
-            let urlSession = URLSession(configuration: .default)
-            let requestHeaders: [String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
-            var requestBodyComponents = URLComponents()
-            requestBodyComponents.queryItems = [
-                URLQueryItem(name: "client_id", value: "ANDR"),
-                URLQueryItem(name: "grant_type", value: "password"),
-                URLQueryItem(name: "username", value: username),
-                URLQueryItem(name: "password", value: password)
-            ]
-            var tokenResponse: Response?
-            
-            var request = URLRequest(url: URL(string: "https://\(endpoint)/api/login")!)
-            request.httpMethod = "POST"
-            request.allHTTPHeaderFields = requestHeaders
+        let urlSession = URLSession(configuration: .default)
+        let requestHeaders: [String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
+        var requestBodyComponents = URLComponents()
+        requestBodyComponents.queryItems = [
+            URLQueryItem(name: "client_id", value: "ANDR"),
+            URLQueryItem(name: "grant_type", value: "password"),
+            URLQueryItem(name: "username", value: username),
+            URLQueryItem(name: "password", value: password)
+        ]
+        
+        var request = URLRequest(url: URL(string: "https://\(endpoint)/api/login")!)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = requestHeaders
+        request.httpBody = requestBodyComponents.query?.data(using: .utf8)
 
-            let task = urlSession.dataTask(with: request) { data, response, error in
-                guard let data = data, error == nil else {
-                    print(error?.localizedDescription ?? "No data")
-                    return
+        let task = urlSession.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            let statusCode = (response as? HTTPURLResponse)?.statusCode
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+
+            print("💁🏻‍♂️ \(String(describing: statusCode))")
+            if (statusCode == 400) {
+                currResult.ok = false
+                if let responseJSON = responseJSON as? ErrorResponse {
+                    currResult.errorMessage = "\(responseJSON.error_description) (\(responseJSON.error))"
+                    userCompletionHandler(currResult, nil)
+                } else {
+                    currResult.errorMessage = "Unknown error"
+                    userCompletionHandler(currResult, nil)
                 }
-                let statusCode = (response as? HTTPURLResponse)?.statusCode
-                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                if let responseJSON = responseJSON as? Response {
-                    print(responseJSON) //Code after Successfull POST Request
-                    tokenResponse = responseJSON
-                    
-                }
-                print("💁🏻‍♂️ \(String(describing: statusCode))")
-                if (statusCode == 400) {
-                    currResult.ok = false
-                    if let responseJSON = responseJSON as? ErrorResponse {
-                        currResult.errorMessage = "\(responseJSON.error_description) (\(responseJSON.error))"
-                    }
+            } else if (statusCode == 200) {
+                if let responseJSON = responseJSON as? BakalariResponseData {
+                    currResult.accessToken = responseJSON.access_token
+                    currResult.refreshToken = responseJSON.refresh_token
+                    currResult.displayName = responseJSON.scope
+                    userCompletionHandler(currResult, nil)
                 }
             }
-
-            task.resume()
-
-            // If there was an error, return it
-            if (currResult.errorMessage != nil) {
-                return currResult
-            }
-            
-            // Todo(ft): Set token to user prefs (both access and refresh)
-            currResult.accessToken = tokenResponse?.accessToken
-            currResult.refreshToken = tokenResponse?.refreshToken
-            currResult.displayName = tokenResponse?.bakUserID
-
-            return currResult
-
-        } catch {
-            print(error)
-            currResult.ok = false
-            currResult.errorMessage = error.localizedDescription
-            return currResult
         }
-    }
+
+        task.resume()
+}
 
 
     class UserSettings: ObservableObject {
