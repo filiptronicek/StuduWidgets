@@ -19,14 +19,14 @@ struct HomeView: View {
             
             // MARK: Heading and views
             
-            if !model.showingSettings {
-                WidgetsView()
-            }
-            
-            else {
-                SettingsView()
-            }
-            
+            TabView(selection: $model.showingSettings) {
+                WidgetsView().tag(0)
+                
+                SettingsView().tag(1)
+            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .frame(width: model.screenSize.width, height: model.screenSize.height)
+                .ignoresSafeArea()
+                
             VStack {
                 Text("StuduWidgets")
                     .foregroundColor(model.fontClr)
@@ -50,12 +50,19 @@ struct HomeView: View {
                 HStack {
                     Spacer()
                     
-                    Button(action: {model.showingSettings = false}, label: {
+                    Button(action: {model.showingSettings = 0}, label: {
                         VStack {
-                            Image(systemName: model.showingSettings ? "square.text.square" : "square.text.square.fill")
-                                .resizable()
-                                .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
-                                .foregroundColor(model.fontClr)
+                            if model.showingSettings == 0 {
+                                Image(systemName: "square.text.square.fill")
+                                    .resizable()
+                                    .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
+                                    .foregroundColor(model.fontClr)
+                            } else {
+                                Image(systemName: "square.text.square")
+                                    .resizable()
+                                    .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
+                                    .foregroundColor(model.fontClr)
+                            }
                             
                             Text("Widgets")
                                 .foregroundColor(model.fontClr)
@@ -65,12 +72,19 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Button(action: {model.showingSettings = true}, label: {
+                    Button(action: {model.showingSettings = 1}, label: {
                         VStack {
-                            Image(systemName: model.showingSettings ? "gearshape.fill" : "gearshape")
-                                .resizable()
-                                .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
-                                .foregroundColor(model.fontClr)
+                            if model.showingSettings == 1 {
+                                Image(systemName: "gearshape.fill")
+                                    .resizable()
+                                    .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
+                                    .foregroundColor(model.fontClr)
+                            } else {
+                                Image(systemName: "gearshape")
+                                    .resizable()
+                                    .frame(width: model.screenSize.width / 18, height: model.screenSize.width / 18)
+                                    .foregroundColor(model.fontClr)
+                            }
                             
                             Text("Settings")
                                 .foregroundColor(model.fontClr)
