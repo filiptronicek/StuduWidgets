@@ -77,12 +77,12 @@ struct BakalariLoginSheet: View {
                                     }
                                     
                                     Task {
-                                        let tokenResp = await model.getStravaToken(username: userSettings.stravaUsername, password: userSettings.stravaPassword, canteen: userSettings.stravaCanteen)
+                                        let tokenResp = await model.getBakalariToken(username: userSettings.bakalariUsername, password: userSettings.bakalariPassword, endpoint: userSettings.bakalariEndpoint)
                                         if tokenResp.ok {
-                                            userSettings.stravaToken = tokenResp.token!
+                                            userSettings.bakalariAccessToken = tokenResp.accessToken!
                                             userSettings.stravaDisplayName = tokenResp.displayName!
                                             tokenOutput = "Signed in successfully"
-                                            model.showingLoginStrava = false
+                                            model.showingLoginBakalari = false
                                             statusFontColor = Color(red: 98 / 255, green: 252 / 255, blue: 98 / 255)
                                         } else {
                                             statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)

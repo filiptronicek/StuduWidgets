@@ -282,6 +282,18 @@ class ContentModel: ObservableObject {
                 UserDefaults.standard.set(bakalariEndpoint, forKey: "bakalariEndpoint")
             }
         }
+
+        @Published var bakalariAccessToken: String {
+            didSet {
+                UserDefaults.standard.set(bakalariAccessToken, forKey: "bakalariAccessToken")
+            }
+        }
+        
+        @Published var bakalariRefreshToken: String {
+            didSet {
+                UserDefaults.standard.set(bakalariRefreshToken, forKey: "bakalariRefreshToken")
+            }
+        }
         
         init() {
             self.stravaUsername = UserDefaults.standard.object(forKey: "stravaUsername") as? String ?? ""
@@ -292,6 +304,8 @@ class ContentModel: ObservableObject {
             self.bakalariUsername = UserDefaults.standard.object(forKey: "bakalariUsername") as? String ?? ""
             self.bakalariPassword = UserDefaults.standard.object(forKey: "bakalariPassword") as? String ?? ""
             self.bakalariEndpoint = UserDefaults.standard.object(forKey: "bakalariEndpoint") as? String ?? ""
+            self.bakalariAccessToken = UserDefaults.standard.object(forKey: "bakalariAccessToken") as? String ?? ""
+            self.bakalariRefreshToken = UserDefaults.standard.object(forKey: "bakalariRefreshToken") as? String ?? ""
         }
     }
 
