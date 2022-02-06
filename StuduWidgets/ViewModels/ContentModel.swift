@@ -167,9 +167,6 @@ class ContentModel: ObservableObject {
         var currResult = StravaTokenResult(ok: true, token: nil, displayName: nil)
         
         do {
-            let url = URL(string: "\(endpoint)/auth/token?username=\(username)&password=\(password)&canteen=\(endpoint)")
-            guard let requestUrl = url else { fatalError() }
-
             let urlSession = URLSession(configuration: .default)
             let requestHeaders: [String:String] = ["Content-Type" : "application/x-www-form-urlencoded"]
             var requestBodyComponents = URLComponents()
