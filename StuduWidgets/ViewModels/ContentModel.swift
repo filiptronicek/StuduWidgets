@@ -185,7 +185,7 @@ class ContentModel: ObservableObject {
     
     func getBakalariToken (username: String, password: String, endpoint: String, userCompletionHandler: @escaping (BakalariTokenResult?, Error?) -> Void) {
 
-        struct ErrorResponse {
+        struct ErrorResponse: Decodable {
             var error: String
             var error_description: String
         }
