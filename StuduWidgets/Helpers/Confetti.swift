@@ -1,24 +1,12 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Balaji on 31/05/21.
-//
 
+import Foundation
 import SwiftUI
-
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
-
+import UIKit
 
 struct Home: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
-    
     
     @State var wish = false
     // Finish Wishes..
@@ -29,7 +17,7 @@ struct Home: View {
         ZStack {
             
             VStack(spacing: 30){
-                Button(action: doAnimation, label: {
+                Button(action: {doAnimation()}, label: {
                     Text("Confetti GO!")
                 })
                 .disabled(wish)
@@ -157,5 +145,11 @@ struct EmitterView: UIViewRepresentable {
         else{
             return "triangle"
         }
+    }
+}
+
+struct Home_Previews: PreviewProvider {
+    static var previews: some View {
+        Home()
     }
 }
