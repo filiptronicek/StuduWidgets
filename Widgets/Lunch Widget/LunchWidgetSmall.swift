@@ -40,7 +40,7 @@ struct LunchWidgetSmall: View {
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 28))
                     .frame(width: model.screenSize.width / 3, height: model.screenSize.width / 6)
-                    .padding([.leading], model.screenSize.width / 30)
+                    .padding([.vertical], model.screenSize.width / 40)
                     .background(
                         Rectangle()
                             .fill(model.objectsClrMedium)
