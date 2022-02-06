@@ -76,27 +76,27 @@ struct BakalariLoginSheet: View {
                                         return
                                     }
                                     
-                                    Task {
-                                        model.getBakalariToken(username: userSettings.bakalariUsername, password: userSettings.bakalariPassword, endpoint: userSettings.bakalariEndpoint, userCompletionHandler: { data, error in
-                                            if let data = data {
-                                                if data.ok {
+                                    model.getBakalariToken(username: userSettings.bakalariUsername, password: userSettings.bakalariPassword, endpoint: userSettings.bakalariEndpoint, userCompletionHandler: { data, error in
+                                        if let data = data {
+                                            if data.ok {
+                                                DispatchQueue.main.async {
                                                     userSettings.bakalariAccessToken = (data.accessToken!)
-                                                    userSettings.stravaDisplayName = (data.displayName!)
+                                                    userSettings.bakalariRefreshToken = data.refreshToken!
                                                     tokenOutput = "Signed in successfully"
                                                     model.showingLoginBakalari = false
                                                     statusFontColor = Color(red: 98 / 255, green: 252 / 255, blue: 98 / 255)
-                                                } else {
-                                                    statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
-                                                    tokenOutput = "Error getting the token: \(data.errorMessage ?? "")"
                                                 }
                                             } else {
-                                                if let error = error {
-                                                    statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
-                                                    tokenOutput = "Error getting the token: \(error.localizedDescription)"
-                                                }
+                                                statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
+                                                tokenOutput = "Error getting the token: \(data.errorMessage ?? "")"
                                             }
-                                          })
-                                    }
+                                        } else {
+                                            if let error = error {
+                                                statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
+                                                tokenOutput = "Error getting the token: \(error.localizedDescription)"
+                                            }
+                                        }
+                                      })
                                 },
                                label: {
                                     ZStack {
@@ -112,7 +112,6 @@ struct BakalariLoginSheet: View {
                                     }
                         })
                         
-                        Text(userSettings.stravaDisplayName).foregroundColor(Color.white)
                     }
                 }
             }

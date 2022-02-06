@@ -226,12 +226,20 @@ class ContentModel: ObservableObject {
                     userCompletionHandler(currResult, nil)
                 }
             } else if (statusCode == 200) {
+                // Skip type check
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as! [String:Any]
+                currResult.accessToken = responseJSON!["access_token"] as? String
+                currResult.refreshToken = responseJSON!["refresh_token"] as? String
+                currResult.displayName = responseJSON!["bak:UserId"] as? String
+                userCompletionHandler(currResult, nil)
+                /*
                 if let responseJSON = responseJSON as? BakalariResponseData {
                     currResult.accessToken = responseJSON.access_token
                     currResult.refreshToken = responseJSON.refresh_token
                     currResult.displayName = responseJSON.scope
                     userCompletionHandler(currResult, nil)
                 }
+                */
             }
         }
 
