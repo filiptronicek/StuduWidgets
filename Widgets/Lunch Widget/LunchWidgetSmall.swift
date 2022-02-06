@@ -17,36 +17,30 @@ struct LunchWidgetSmall: View {
     var body: some View {
         ZStack {
             model.objectsClrDark.ignoresSafeArea()
+        
+            VStack(alignment: .leading) {
+                Text("Monday")
+                    .foregroundColor(model.fontClr)
+                    .font(.system(size: model.screenSize.width / 25))
+                
+                Text("07")
+                    .foregroundColor(model.fontClr)
+                    .font(.system(size: model.screenSize.width / 15))
+            }.padding([.trailing], model.screenSize.width / 10)
+                .padding([.bottom], model.screenSize.width / 5.5)
             
             VStack {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Monday")
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 25))
-                        
-                        Text("07")
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 15))
-                    }
-                    
-                    Image(systemName: "fork.knife.circle")
-                        .resizable()
-                        .frame(width: model.screenSize.width / 10, height: model.screenSize.width / 10)
-                        .foregroundColor(model.objectsClrLight)
-                }
-                
                 Text(model.currentLunch)
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 28))
-                    .frame(width: model.screenSize.width / 3, height: model.screenSize.width / 6)
+                    .frame(width: model.screenSize.width / 3.2, height: model.screenSize.width / 6)
                     .padding([.horizontal], model.screenSize.width / 40)
                     .background(
                         Rectangle()
                             .fill(model.objectsClrMedium)
                             .cornerRadius(model.screenSize.width / 28)
                     )
-            }
+            }.padding([.top], model.screenSize.width / 6.3)
         }
     }
 }
