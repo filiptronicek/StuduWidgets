@@ -25,11 +25,6 @@ struct TimetableWidgetEntryView : View {
                     TimetableWidgetMedium(entry: entry)
                         .environmentObject(ContentModel())
                 
-                case .systemLarge:
-                
-                    TimetableWidgetLarge(entry: entry)
-                        .environmentObject(ContentModel())
-                
                 default:
                     Text("Not implemented!")
             }

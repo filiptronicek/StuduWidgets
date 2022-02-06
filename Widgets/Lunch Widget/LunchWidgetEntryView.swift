@@ -25,11 +25,6 @@ struct LunchWidgetEntryView : View {
                     LunchWidgetMedium(entry: entry)
                         .environmentObject(ContentModel())
                 
-                case .systemLarge:
-                
-                    LunchWidgetLarge(entry: entry)
-                        .environmentObject(ContentModel())
-                
                 default:
                     Text("Not implemented!")
             }

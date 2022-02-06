@@ -65,6 +65,7 @@ struct TimetableWidget: Widget {
         }
         .configurationDisplayName("Timetable Widget")
         .description("This widget allows you to view your timetable conveniently on your Home Screen.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
@@ -80,6 +81,7 @@ struct LunchWidget: Widget {
         }
         .configurationDisplayName("Lunch Widget")
         .description("This little guy let's you view your lunches on your Home Screen.")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
