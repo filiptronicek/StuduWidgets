@@ -77,17 +77,25 @@ struct BakalariLoginSheet: View {
                                     }
                                     
                                     Task {
-                                        let tokenResp = await model.getBakalariToken(username: userSettings.bakalariUsername, password: userSettings.bakalariPassword, endpoint: userSettings.bakalariEndpoint)
-                                        if tokenResp.ok {
-                                            userSettings.bakalariAccessToken = tokenResp.accessToken!
-                                            userSettings.stravaDisplayName = tokenResp.displayName!
-                                            tokenOutput = "Signed in successfully"
-                                            model.showingLoginBakalari = false
-                                            statusFontColor = Color(red: 98 / 255, green: 252 / 255, blue: 98 / 255)
-                                        } else {
-                                            statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
-                                            tokenOutput = "Error getting the token: \(tokenResp.errorMessage ?? "")"
-                                        }
+                                        model.getBakalariToken(username: userSettings.bakalariUsername, password: userSettings.bakalariPassword, endpoint: userSettings.bakalariEndpoint, userCompletionHandler: { data, error in
+                                            if let data = data {
+                                                if data.ok {
+                                                    userSettings.bakalariAccessToken = (data.accessToken!)
+                                                    userSettings.stravaDisplayName = (data.displayName!)
+                                                    tokenOutput = "Signed in successfully"
+                                                    model.showingLoginBakalari = false
+                                                    statusFontColor = Color(red: 98 / 255, green: 252 / 255, blue: 98 / 255)
+                                                } else {
+                                                    statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
+                                                    tokenOutput = "Error getting the token: \(data.errorMessage ?? "")"
+                                                }
+                                            } else {
+                                                if let error = error {
+                                                    statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
+                                                    tokenOutput = "Error getting the token: \(error.localizedDescription)"
+                                                }
+                                            }
+                                          })
                                     }
                                 },
                                label: {
