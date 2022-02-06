@@ -28,13 +28,13 @@ struct WidgetsView: View {
                         .padding(.bottom, model.screenSize.width / 25)
                         .padding(.trailing, model.screenSize.width / 9)
                     
-                    ItemList(text: "Open **Settings**", icon: "gearshape").padding(.top, model.screenSize.width / 40)
+                    ItemList(text: "Open Settings", icon: "gearshape").padding(.top, model.screenSize.width / 40)
                                     .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15, alignment: .leading)
                    
-                    ItemList(text: "Click on **Add account**", icon: "plus").padding(.top, model.screenSize.width / 50)
+                    ItemList(text: "Click on Add account", icon: "plus").padding(.top, model.screenSize.width / 50)
                                 .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15, alignment: .leading)
                     
-                    ItemList(text: "**Sign in** to a service", icon: "person.circle").padding(.top, model.screenSize.width / 14)
+                    ItemList(text: "Sign in to a service", icon: "person.circle").padding(.top, model.screenSize.width / 14)
                                         .padding(.bottom, model.screenSize.width / 18)
                                         .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 15, alignment: .leading)
                 }
