@@ -16,19 +16,36 @@ struct LunchWidgetSmall: View {
     
     var body: some View {
         ZStack {
-            model.bg.ignoresSafeArea()
+            model.objectsClrDark.ignoresSafeArea()
             
             VStack {
                 HStack {
-                    Text("<Date>")
-                        .foregroundColor(model.fontClr)
-                        .font(.system(size: model.screenSize.width / 10))
+                    VStack(alignment: .leading) {
+                        Text("Monday")
+                            .foregroundColor(model.fontClr)
+                            .font(.system(size: model.screenSize.width / 25))
+                        
+                        Text("07")
+                            .foregroundColor(model.fontClr)
+                            .font(.system(size: model.screenSize.width / 15))
+                    }
                     
                     Image(systemName: "fork.knife.circle")
                         .resizable()
                         .frame(width: model.screenSize.width / 10, height: model.screenSize.width / 10)
-                        .foregroundColor(model.fontClrDark)
+                        .foregroundColor(model.objectsClrLight)
                 }
+                
+                Text(model.currentLunch)
+                    .foregroundColor(model.fontClr)
+                    .font(.system(size: model.screenSize.width / 28))
+                    .frame(width: model.screenSize.width / 3, height: model.screenSize.width / 6)
+                    .padding([.leading], model.screenSize.width / 30)
+                    .background(
+                        Rectangle()
+                            .fill(model.objectsClrMedium)
+                            .cornerRadius(model.screenSize.width / 28)
+                    )
             }
         }
     }

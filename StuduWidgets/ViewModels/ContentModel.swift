@@ -78,7 +78,9 @@ class ContentModel: ObservableObject {
     }
     
     
-    // MARK: Getting strava.cz token
+    // MARK: Getting strava.cz data
+    
+    @Published var currentLunch: String = "Login to your Strava.cz account first"
     
     func fetchAPI<D: Decodable>(url: URL) async throws -> D {
         let task = Task { () -> D in
