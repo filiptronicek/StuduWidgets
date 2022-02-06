@@ -15,6 +15,31 @@ struct LunchWidgetMedium: View {
     var entry: SimpleEntry
     
     var body: some View {
-        Text("LunchWidgetMedium")
+        ZStack {
+            model.objectsClrDark.ignoresSafeArea()
+            
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Monday")
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 20))
+                    
+                    Text("07")
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 10))
+                }.padding([.horizontal], model.screenSize.width / 40)
+                
+                Text(model.currentLunch)
+                    .foregroundColor(model.fontClr)
+                    .font(.system(size: model.screenSize.width / 28))
+                    .frame(width: model.screenSize.width / 2.2, height: model.screenSize.width / 4)
+                    .padding([.horizontal], model.screenSize.width / 40)
+                    .background(
+                        Rectangle()
+                            .fill(model.objectsClrMedium)
+                            .cornerRadius(model.screenSize.width / 28)
+                    )
+            }
+        }
     }
 }
