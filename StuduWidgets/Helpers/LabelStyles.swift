@@ -41,8 +41,10 @@ struct Title: View {
             .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 5, alignment: .leading)
             .padding([.leading], model.screenSize.width / 30)
             .padding([.bottom], model.screenSize.width / 18)
-            .background(Rectangle()
-                            .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.objectsClrDark, location: 0), .init(color: model.objectsClrDark.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom)))
+            .background(
+                Rectangle()
+                    .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.objectsClrDark, location: 0), .init(color: model.objectsClrDark.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom))
+            )
     }
 }
 
@@ -60,8 +62,10 @@ struct SheetFooter: View {
                 .foregroundColor(model.fontClr)
                 .font(.system(size: model.screenSize.width / 18))
                 .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
-                .background(Rectangle()
-                                .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.objectsClrDark.opacity(0.001), location: 0), .init(color: model.objectsClrDark, location: 1)]), startPoint: .top, endPoint: .bottom)))
+                .background(
+                    Rectangle()
+                        .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.objectsClrDark.opacity(0.001), location: 0), .init(color: model.objectsClrDark, location: 1)]), startPoint: .top, endPoint: .bottom))
+                )
         }
     }
 }
