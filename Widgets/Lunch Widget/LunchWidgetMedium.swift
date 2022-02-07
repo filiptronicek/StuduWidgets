@@ -18,7 +18,7 @@ struct LunchWidgetMedium: View {
         ZStack {
             model.objectsClrDark.ignoresSafeArea()
             
-            HStack {
+            ZStack {
                 VStack(alignment: .center) {
                     Text(Date.now, format: .dateTime.weekday())
                         .foregroundColor(model.fontClr)
@@ -26,19 +26,20 @@ struct LunchWidgetMedium: View {
                     
                     Text(Date.now, format: .dateTime.day())
                         .foregroundColor(model.fontClr)
-                        .font(.system(size: model.screenSize.width / 10))
-                }.padding([.horizontal], model.screenSize.width / 16)
+                        .font(.system(size: model.screenSize.width / 7))
+                }.padding([.trailing], model.screenSize.width / 1.87)
                 
-                Text(model.currentLunch)
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 28))
-                    .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 4)
-                    .padding([.horizontal], model.screenSize.width / 40)
-                    .background(
-                        Rectangle()
-                            .fill(model.objectsClrMedium)
-                            .cornerRadius(model.screenSize.width / 28)
-                    )
+                Group {
+                    Text(model.currentLunch)
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 28))
+                        .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 4)
+                        .background(
+                            Rectangle()
+                                .fill(model.objectsClrMedium)
+                                .cornerRadius(model.screenSize.width / 28)
+                        )
+                }.padding([.leading], model.screenSize.width / 3.7)
             }
         }
     }
