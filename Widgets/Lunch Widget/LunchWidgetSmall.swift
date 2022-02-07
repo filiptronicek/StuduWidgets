@@ -19,13 +19,13 @@ struct LunchWidgetSmall: View {
             model.objectsClrDark.ignoresSafeArea()
         
             HStack() {
-                Text("07")
+                Text(Date.now, format: .dateTime.day())
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 10))
                 
-                Text("Monday")
+                Text(Date.now, format: .dateTime.weekday())
                     .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 22))
+                    .font(.system(size: model.screenSize.width / 20))
             }.padding([.bottom], model.screenSize.width / 5.5)
             
             VStack {

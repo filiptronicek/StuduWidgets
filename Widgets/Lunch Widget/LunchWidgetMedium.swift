@@ -19,20 +19,20 @@ struct LunchWidgetMedium: View {
             model.objectsClrDark.ignoresSafeArea()
             
             HStack {
-                VStack(alignment: .leading) {
-                    Text("Monday")
+                VStack(alignment: .center) {
+                    Text(Date.now, format: .dateTime.weekday())
                         .foregroundColor(model.fontClr)
-                        .font(.system(size: model.screenSize.width / 20))
+                        .font(.system(size: model.screenSize.width / 18))
                     
-                    Text("07")
+                    Text(Date.now, format: .dateTime.day())
                         .foregroundColor(model.fontClr)
                         .font(.system(size: model.screenSize.width / 10))
-                }.padding([.horizontal], model.screenSize.width / 40)
+                }.padding([.horizontal], model.screenSize.width / 16)
                 
                 Text(model.currentLunch)
                     .foregroundColor(model.fontClr)
                     .font(.system(size: model.screenSize.width / 28))
-                    .frame(width: model.screenSize.width / 2.2, height: model.screenSize.width / 4)
+                    .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 4)
                     .padding([.horizontal], model.screenSize.width / 40)
                     .background(
                         Rectangle()
