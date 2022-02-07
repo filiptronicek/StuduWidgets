@@ -36,6 +36,7 @@ class BakalariResponseData : Decodable, Identifiable, ObservableObject {
     }
 }
 
+
 class ContentModel: ObservableObject {
     // MARK: Screen bounds
 
@@ -62,6 +63,7 @@ class ContentModel: ObservableObject {
     
     @Published var showingLoginStrava: Bool = false
     @Published var showingLoginBakalari: Bool = false
+    
     
     // MARK: UI colors
     
@@ -113,9 +115,10 @@ class ContentModel: ObservableObject {
         }
         return try await task.value
     }
-
+    
     let endpoint = "https://strava-api.vercel.app/api"
 
+    
     struct StravaTokenResult {
         var ok: Bool
         var token: String?
@@ -123,8 +126,8 @@ class ContentModel: ObservableObject {
         var errorMessage: String?
     }
     
+    
     func getStravaToken (username: String, password: String, canteen: String) async -> StravaTokenResult {
-        
         struct User: Decodable {
             let ElektronickaStravenkarka, TextProRegistrovaneUzivatele, DelkaNecinnosti, ElektronickaStravenkarkaPovolena: String
             let FunkceTlacitkaOdeslat, SbalitSkupiny, AktivaceHesla, EvCislo: String
@@ -140,10 +143,12 @@ class ContentModel: ObservableObject {
             let VerzeStravne, ZobrazitVydej, ZobrazitPoctyJidel, PovolitHodnoceni: String
         }
         
+        
         struct Result: Decodable {
             var token: String
             var user: User
         }
+        
         
         struct Response: Decodable {
            var status: String
@@ -185,6 +190,7 @@ class ContentModel: ObservableObject {
         var displayName: String?
         var errorMessage: String?
     }
+    
     
     func getBakalariToken (username: String, password: String, endpoint: String, userCompletionHandler: @escaping (BakalariTokenResult?, Error?) -> Void) {
 
@@ -255,6 +261,7 @@ class ContentModel: ObservableObject {
         var name: String
         var totalCount: Int
     }
+    
 
     struct BakalariSingleCityResult {
         var ok: Bool
@@ -267,6 +274,7 @@ class ContentModel: ObservableObject {
       The request must only accept JSON data.
       - Returns: Array of all cities, their `name` and `schoolCount`
     */
+    
     func getCities (userCompletionHandler: @escaping (BakalariSingleCityResult?, Error?) -> Void) {
 
         struct ErrorResponse: Decodable {
@@ -316,7 +324,6 @@ class ContentModel: ObservableObject {
         }
         task.resume()
     }
-
 
 
     class UserSettings: ObservableObject {
@@ -393,6 +400,9 @@ class ContentModel: ObservableObject {
             self.bakalariRefreshToken = UserDefaults.standard.object(forKey: "bakalariRefreshToken") as? String ?? ""
         }
     }
+    
+    
+    // MARK: Timetable data storage
     
     let timetable: [String] = ["M", "F", "Ch", "Cj", "Aj", "D", "Tv"]
 }
