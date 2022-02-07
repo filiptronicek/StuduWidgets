@@ -175,6 +175,9 @@ class ContentModel: ObservableObject {
         }
     }
     
+    
+    // MARK: Getting bakalari.cz data
+    
     struct BakalariTokenResult {
         var ok: Bool
         var accessToken: String?
@@ -390,8 +393,6 @@ class ContentModel: ObservableObject {
             self.bakalariRefreshToken = UserDefaults.standard.object(forKey: "bakalariRefreshToken") as? String ?? ""
         }
     }
-
-    // MARK: Getting timetable data
     
     var timetableMonday: [String] = ["Eh", "Eh", "M", "Nj", "Aj", "Cj"]
     var timetableTuesday: [String] = ["M", "F", "Ch", "Cj", "Aj", "D", "Tv"]
