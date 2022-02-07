@@ -394,9 +394,5 @@ class ContentModel: ObservableObject {
         }
     }
     
-    var timetableMonday: [String] = ["Eh", "Eh", "M", "Nj", "Aj", "Cj"]
-    var timetableTuesday: [String] = ["M", "F", "Ch", "Cj", "Aj", "D", "Tv"]
-    var timetableWednesday: [String] = ["F", "Nj", "M", "Cj", "Zsv", "Bi", "Z"]
-    var timetableThursday: [String] = ["Tv", "Ivt", "Ivt", "Aj", "Aj", "Z", "Ch"]
-    var timetableFriday: [String] = ["Bi", "D", "Zsv", "M", "Cj", "Nj"]
+    let timetable: [String] = ["M", "F", "Ch", "Cj", "Aj", "D", "Tv"]
 }

@@ -29,64 +29,22 @@ struct TimetableWidgetSmall: View {
             
             VStack {
                 HStack {
-                    ZStack {
-                        Text(model.timetableTuesday[0])
-                            .foregroundColor(model.fontClrDark)
-                            .font(.system(size: model.screenSize.width / 10))
-                            .padding([.top, .leading], model.screenSize.width / 60)
+                    ForEach(model.timetable, id: \.self) { subject in
+                        ZStack {
+                            Text(subject)
+                                .foregroundColor(model.fontClrDark)
+                                .font(.system(size: model.screenSize.width / 10))
+                                .padding([.top, .leading], model.screenSize.width / 60)
+                            
+                            Text(subject)
+                                .foregroundColor(model.fontClr)
+                                .font(.system(size: model.screenSize.width / 10))
+                        }
                         
-                        Text(model.timetableTuesday[0])
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 10))
+                        Rectangle()
+                            .fill(model.fontClr)
+                            .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
                     }
-                    
-                    Rectangle()
-                        .fill(model.fontClr)
-                        .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
-                    
-                    ZStack {
-                        Text(model.timetableTuesday[1])
-                            .foregroundColor(model.fontClrDark)
-                            .font(.system(size: model.screenSize.width / 10))
-                            .padding([.top, .leading], model.screenSize.width / 60)
-                        
-                        Text(model.timetableTuesday[1])
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 10))
-                    }
-                    
-                    Rectangle()
-                        .fill(model.fontClr)
-                        .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
-                    
-                    ZStack {
-                        Text(model.timetableTuesday[2])
-                            .foregroundColor(model.fontClrDark)
-                            .font(.system(size: model.screenSize.width / 10))
-                            .padding([.top, .leading], model.screenSize.width / 60)
-                        
-                        Text(model.timetableTuesday[2])
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 10))
-                    }
-                    
-                    Rectangle()
-                        .fill(model.fontClr)
-                        .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
-                    
-                    ZStack {
-                        Text(model.timetableTuesday[3])
-                            .foregroundColor(model.fontClrDark)
-                            .font(.system(size: model.screenSize.width / 10))
-                            .padding([.top, .leading], model.screenSize.width / 60)
-                        
-                        Text(model.timetableTuesday[3])
-                            .foregroundColor(model.fontClr)
-                            .font(.system(size: model.screenSize.width / 10))
-                    }
-                    
-                    // TODO - Create child appending based on the number of subjects in a list
-                    
                 }.frame(width: model.screenSize.width / 0.5, height: model.screenSize.width)
                     .offset(x: 100)
             }
