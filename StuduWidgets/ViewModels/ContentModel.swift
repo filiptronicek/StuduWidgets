@@ -79,6 +79,17 @@ class ContentModel: ObservableObject {
     @Published var easterEggClr = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
     
     
+    // MARK: Widget colors
+    
+    @Published var Wbg = Color(red: 0.05, green: 0, blue: 0)
+    @Published var WobjectsClrDark = Color(red: 0.1333, green: 0.1333, blue: 0.1373)
+    @Published var WobjectsClrMedium = Color(red: 0.2266, green: 0.2266, blue: 0.2266)
+    @Published var WobjectsClrLight = Color(red: 0.6566, green: 0.6566, blue: 0.6566)
+    @Published var WobjectClrBlue = Color(red: 0, green: 1, blue: 0.9375)
+    @Published var WfontClrDark = Color(red: 0.3320, green: 0.3242, blue: 0.3242)
+    @Published var WfontClr = Color(red: 1, green: 1, blue: 1)
+    
+    
     // MARK: Changing the color theme
     
     func changeColorTheme() {

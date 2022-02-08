@@ -16,27 +16,27 @@ struct LunchWidgetSmall: View {
     
     var body: some View {
         ZStack {
-            model.objectsClrDark.ignoresSafeArea()
+            model.WobjectsClrDark.ignoresSafeArea()
         
             HStack() {
                 Text(Date.now, format: .dateTime.day())
-                    .foregroundColor(model.fontClr)
+                    .foregroundColor(model.WfontClr)
                     .font(.system(size: model.screenSize.width / 10))
                 
                 Text(Date.now, format: .dateTime.weekday())
-                    .foregroundColor(model.fontClr)
+                    .foregroundColor(model.WfontClr)
                     .font(.system(size: model.screenSize.width / 20))
             }.padding([.bottom], model.screenSize.width / 5.5)
             
             VStack {
                 Text(model.currentLunch)
-                    .foregroundColor(model.fontClr)
+                    .foregroundColor(model.WfontClr)
                     .font(.system(size: model.screenSize.width / 28))
                     .frame(width: model.screenSize.width / 3.2, height: model.screenSize.width / 6)
                     .padding([.horizontal], model.screenSize.width / 40)
                     .background(
                         Rectangle()
-                            .fill(model.objectsClrMedium)
+                            .fill(model.WobjectsClrMedium)
                             .cornerRadius(model.screenSize.width / 28)
                     )
             }.padding([.top], model.screenSize.width / 6.3)
