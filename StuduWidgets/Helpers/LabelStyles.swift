@@ -58,9 +58,9 @@ struct SheetFooter: View {
     
     var body: some View {
         ZStack {
-            Text("Swipe down")
+            Text("Swipe down to dismiss")
                 .foregroundColor(model.fontClr)
-                .font(.system(size: model.screenSize.width / 18))
+                .font(.system(size: model.screenSize.width / 22))
                 .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
                 .background(
                     Rectangle()
