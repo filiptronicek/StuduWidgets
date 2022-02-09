@@ -108,7 +108,17 @@ struct StravaLoginSheet: View {
             }
             
             VStack {
-                Title(text: "Strava.cz login")
+                ZStack {
+                    Title(text: "Strava.cz login")
+                    
+                    VStack() {
+                        Button(action: { model.showingLoginStrava.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()

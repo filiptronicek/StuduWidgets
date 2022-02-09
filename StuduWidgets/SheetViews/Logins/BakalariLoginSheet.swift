@@ -117,7 +117,17 @@ struct BakalariLoginSheet: View {
             }
             
             VStack {
-                Title(text: "Bakaláři login")
+                ZStack {
+                    Title(text: "Bakaláři login")
+                    
+                    VStack() {
+                        Button(action: { model.showingLoginBakalari.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()
