@@ -126,7 +126,17 @@ struct TimetableSheet: View {
             }
             
             VStack {
-                Title(text: "Timetable Widget")
+                ZStack {
+                    Title(text: "Timetable Widget")
+                    
+                    VStack() {
+                        Button(action: { model.showingTimetableSheet.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()

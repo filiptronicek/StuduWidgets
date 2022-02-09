@@ -43,7 +43,17 @@ struct LunchSheet: View {
             }
             
             VStack {
-                Title(text: "Lunch Widget")
+                ZStack {
+                    Title(text: "Lunch Widget")
+                    
+                    VStack() {
+                        Button(action: { model.showingLunchSheet.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()

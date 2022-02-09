@@ -26,7 +26,17 @@ struct HelpSheet: View {
             }
             
             VStack {
-                Title(text: "Help center")
+                ZStack {
+                    Title(text: "Help center")
+                    
+                    VStack() {
+                        Button(action: { model.showingHelpSheet.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()

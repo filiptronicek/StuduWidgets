@@ -52,7 +52,17 @@ struct NewsSheet: View {
             }
             
             VStack {
-                Title(text: "What's coming?")
+                ZStack {
+                    Title(text: "What's coming?")
+                    
+                    VStack() {
+                        Button(action: { model.showingNewsSheet.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()

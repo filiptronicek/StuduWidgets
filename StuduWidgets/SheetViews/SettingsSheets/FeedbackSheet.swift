@@ -26,7 +26,17 @@ struct FeedbackSheet: View {
             }
             
             VStack {
-                Title(text: "Feedback")
+                ZStack {
+                    Title(text: "Feedback")
+                    
+                    VStack() {
+                        Button(action: { model.showingFeedbackSheet.toggle()},
+                               label: {
+                                    Text("Cancel")
+                                        .padding([.bottom], model.screenSize.width / 25)
+                        })
+                    }.frame(width: model.screenSize.width / 1.15, alignment: .trailing)
+                }
                 
                 Spacer()
             }.ignoresSafeArea()
