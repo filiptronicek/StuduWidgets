@@ -169,17 +169,19 @@ struct SettingsView: View {
                                     .fill(model.objectsClrDark)
                                     .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
                                     .cornerRadius(model.screenSize.width / 28)
-                                HStack {
-                                    Text("Dark (default)")
-                                        .foregroundColor(model.fontClr)
-                                        .font(.system(size: model.screenSize.width / 18))
-                                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
+                                
+                                Text("Dark (default)")
+                                    .foregroundColor(model.fontClr)
+                                    .font(.system(size: model.screenSize.width / 18))
+                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
                                         
-                                    
-                                    Image(systemName: model.darkThemeIsActive ? "checkmark" : "")
-                                        .resizable()
-                                        .foregroundColor(model.objectsClrLight)
-                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                if model.darkThemeIsActive {
+                                    Group {
+                                        Image(systemName: "checkmark")
+                                            .resizable()
+                                            .foregroundColor(model.objectsClrLight)
+                                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                    }.frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .trailing)
                                 }
                             }
                         })
@@ -194,17 +196,19 @@ struct SettingsView: View {
                                     .fill(model.objectsClrDark)
                                     .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
                                     .cornerRadius(model.screenSize.width / 28)
-                                HStack {
-                                    Text("Light (lame)")
-                                        .foregroundColor(model.fontClr)
-                                        .font(.system(size: model.screenSize.width / 18))
-                                        .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
-                                        
+
+                                Text("Light (lame)")
+                                    .foregroundColor(model.fontClr)
+                                    .font(.system(size: model.screenSize.width / 18))
+                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
                                     
-                                    Image(systemName: model.darkThemeIsActive ? "" : "checkmark")
-                                        .resizable()
-                                        .foregroundColor(model.objectsClrLight)
-                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                if !model.darkThemeIsActive {
+                                    Group {
+                                        Image(systemName: "checkmark")
+                                            .resizable()
+                                            .foregroundColor(model.objectsClrLight)
+                                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                    }.frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .trailing)
                                 }
                             }
                         })
