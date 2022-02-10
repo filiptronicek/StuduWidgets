@@ -13,6 +13,7 @@
 		902858BF2787105F00482F93 /* LunchWidgetSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858BE2787105F00482F93 /* LunchWidgetSmall.swift */; };
 		902858C12787106F00482F93 /* LunchWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858C02787106F00482F93 /* LunchWidgetMedium.swift */; };
 		902858C22788ADAF00482F93 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096C647277365C800A706B0 /* ContentModel.swift */; };
+		90333CEB27B542C200DDD2EC /* WidgetPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90333CEA27B542C200DDD2EC /* WidgetPreviews.swift */; };
 		903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA920276D535F0044B05F /* StuduWidgetsApp.swift */; };
 		903AA923276D535F0044B05F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA922276D535F0044B05F /* HomeView.swift */; };
 		903AA925276D53600044B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA924276D53600044B05F /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		9027145427AC3E50007900D3 /* BakalariLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BakalariLoginSheet.swift; sourceTree = "<group>"; };
 		902858BE2787105F00482F93 /* LunchWidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetSmall.swift; sourceTree = "<group>"; };
 		902858C02787106F00482F93 /* LunchWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetMedium.swift; sourceTree = "<group>"; };
+		90333CEA27B542C200DDD2EC /* WidgetPreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviews.swift; sourceTree = "<group>"; };
 		903AA91D276D535F0044B05F /* StuduWidgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuduWidgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903AA920276D535F0044B05F /* StuduWidgetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuduWidgetsApp.swift; sourceTree = "<group>"; };
 		903AA922276D535F0044B05F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */,
+				90333CEA27B542C200DDD2EC /* WidgetPreviews.swift */,
 				90BDB221278081D900C73AD5 /* Confetti.swift */,
 			);
 			path = Helpers;
@@ -413,6 +416,7 @@
 				903AA931276FBF720044B05F /* TimetableSheet.swift in Sources */,
 				90D7CD8B27A5E1A70027D6D7 /* LabelStyles.swift in Sources */,
 				9096C648277365C800A706B0 /* ContentModel.swift in Sources */,
+				90333CEB27B542C200DDD2EC /* WidgetPreviews.swift in Sources */,
 				90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				9027145527AC3E50007900D3 /* BakalariLoginSheet.swift in Sources */,
 				90A1FF25277A622200C15484 /* WidgetsView.swift in Sources */,
