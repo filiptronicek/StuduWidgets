@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+// MARK: TimetableWidget small
+
 struct TimetableWidgetSmallPreview: View {
     // Access data in ContentModel.swift
     
@@ -19,6 +22,8 @@ struct TimetableWidgetSmallPreview: View {
     }
 }
 
+
+// MARK: TimetableWidget medium
 
 struct TimetableWidgetMediumPreview: View {
     // Access data in ContentModel.swift
@@ -33,6 +38,8 @@ struct TimetableWidgetMediumPreview: View {
 }
 
 
+// MARK: LunchWidget small
+
 struct LunchWidgetSmallPreview: View {
     // Access data in ContentModel.swift
     
@@ -45,6 +52,8 @@ struct LunchWidgetSmallPreview: View {
     }
 }
 
+
+// MARK: LunchWidget medium
 
 struct LunchWidgetMediumPreview: View {
     // Access data in ContentModel.swift
