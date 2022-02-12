@@ -162,7 +162,9 @@ struct SettingsView: View {
                         Button(action: {
                                     model.darkThemeIsActive = true
                             
-                                    model.changeColorTheme()
+                                    withAnimation {
+                                        model.changeColorTheme()
+                                    }
                         }, label: {
                             ZStack {
                                 Rectangle()
@@ -188,8 +190,10 @@ struct SettingsView: View {
                         
                         Button(action: {
                                     model.darkThemeIsActive = false
-                                
-                                    model.changeColorTheme()
+                                    
+                                    withAnimation {
+                                        model.changeColorTheme()
+                                    }
                         }, label: {
                             ZStack {
                                 Rectangle()
