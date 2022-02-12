@@ -108,7 +108,7 @@ struct HomeView: View {
                     .background(
                         Rectangle()
                             .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.01), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom))
-                            .frame(width: model.screenSize.width, height: model.screenSize.width / 4)
+                            .frame(width: model.screenSize.width, height: model.screenSize.width / 3)
                             .padding([.bottom], model.screenSize.width / 12)
                     )
             }.ignoresSafeArea()
