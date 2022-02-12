@@ -160,9 +160,9 @@ struct SettingsView: View {
                     
                     Group {
                         Button(action: {
-                                    model.darkThemeIsActive = true
-                            
                                     withAnimation {
+                                        model.darkThemeIsActive = true
+                            
                                         model.changeColorTheme()
                                     }
                         }, label: {
@@ -189,9 +189,9 @@ struct SettingsView: View {
                         })
                         
                         Button(action: {
-                                    model.darkThemeIsActive = false
-                                    
                                     withAnimation {
+                                        model.darkThemeIsActive = false
+                                    
                                         model.changeColorTheme()
                                     }
                         }, label: {
