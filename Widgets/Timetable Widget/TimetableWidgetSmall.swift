@@ -51,6 +51,3 @@ struct TimetableWidgetSmall: View {
         }
     }
 }
-
-
-
