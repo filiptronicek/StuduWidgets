@@ -38,7 +38,7 @@ struct TimetableSheet: View {
                             
                             Image("TimetableWidget")
                                 .resizable()
-                                .frame(width: model.screenSize.width / 2.7, height: model.screenSize.width / 3)
+                                .frame(width: model.screenSize.width / 3, height: model.screenSize.width / 3)
                         }.frame(width: model.screenSize.width / 1.2)
                             .padding([.top, .bottom], model.screenSize.width / 10)
                         

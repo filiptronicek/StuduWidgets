@@ -150,7 +150,7 @@ struct WidgetCardLabel: View {
             Group {
                 Image(imageLink)
                     .resizable()
-                    .frame(width: model.screenSize.width / 6, height: model.screenSize.width / 6.3)
+                    .frame(width: model.screenSize.width / 6, height: model.screenSize.width / 6)
             }.frame(width: model.screenSize.width / 1.25, alignment: .leading)
             
             VStack {
