@@ -20,7 +20,7 @@ struct SettingsView: View {
                     // MARK: Accounts section
                     
                     Heading(text: "Accounts")
-                        .padding(.top, model.screenSize.width / 4.5)
+                        .padding(.top, model.screenSize.width / 5)
                     
                     VStack {
                         if userSettings.bakalariRefreshToken != "" {

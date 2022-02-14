@@ -21,7 +21,7 @@ struct WidgetsView: View {
                     
                     if userSettings.bakalariRefreshToken == "" && userSettings.stravaToken == "" {
                         Heading(text: "Get started")
-                            .padding(.top, model.screenSize.width / 4.5)
+                            .padding(.top, model.screenSize.width / 5)
                         
                         Text("For a widget to work, you need to **sign in** \nto a corresponding service...")
                             .foregroundColor(model.fontClr)
