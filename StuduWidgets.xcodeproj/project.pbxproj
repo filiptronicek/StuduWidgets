@@ -83,6 +83,7 @@
 		903AA927276D53600044B05F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		903AA930276FBF720044B05F /* TimetableSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableSheet.swift; sourceTree = "<group>"; };
 		903AA9322770801F0044B05F /* LunchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchSheet.swift; sourceTree = "<group>"; };
+		906D20C527BAD1560075EB64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		908D1AFC277690E1002A0595 /* StuduWidgetsDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuduWidgetsDebug.entitlements; sourceTree = "<group>"; };
 		9092E80D27A47FC5009D153A /* NewsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSheet.swift; sourceTree = "<group>"; };
 		9096C6242773545300A706B0 /* StuduWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StuduWidgets.entitlements; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 		903AA91F276D535F0044B05F /* StuduWidgets */ = {
 			isa = PBXGroup;
 			children = (
+				906D20C527BAD1560075EB64 /* Info.plist */,
 				908D1AFC277690E1002A0595 /* StuduWidgetsDebug.entitlements */,
 				9096C6242773545300A706B0 /* StuduWidgets.entitlements */,
 				903AA920276D535F0044B05F /* StuduWidgetsApp.swift */,
@@ -581,9 +583,11 @@
 				DEVELOPMENT_TEAM = H4NW3RCM58;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StuduWidgets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait ";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -613,9 +617,11 @@
 				DEVELOPMENT_TEAM = 9K37685DN3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StuduWidgets/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait ";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
