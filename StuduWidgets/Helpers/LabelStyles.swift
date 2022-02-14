@@ -175,3 +175,21 @@ struct WidgetCardLabel: View {
         }
     }
 }
+
+
+// MARK: User profile card
+
+struct UserProfileCard: View {
+    // Access data in ContentModel.swift
+    
+    @EnvironmentObject var model: ContentModel
+    
+    var profilePicture: String
+    var name: String
+    var service: String
+    var description: String
+    
+    var body: some View {
+        Text("Hello, World!")
+    }
+}
