@@ -41,18 +41,6 @@ struct TimetableSheet: View {
                                 .frame(width: model.screenSize.width / 3, height: model.screenSize.width / 3)
                         }.frame(width: model.screenSize.width / 1.2)
                             .padding([.top, .bottom], model.screenSize.width / 10)
-                        
-                        HStack {
-                            Image("CustomTimetableWidget")
-                                .resizable()
-                                .frame(width: model.screenSize.width / 2.7, height: model.screenSize.width / 3)
-                            
-                            Text("The widget is customizable in the app. Make it yours!")
-                                .foregroundColor(model.fontClr)
-                                .font(.system(size: model.screenSize.width / 25))
-                                .padding(.leading, model.screenSize.width / 25)
-                        }.padding(.bottom, model.screenSize.width / 5)
-                            .frame(width: model.screenSize.width / 1.2)
                     }
                 }
             }
