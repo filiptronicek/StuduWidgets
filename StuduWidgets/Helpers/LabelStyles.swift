@@ -196,44 +196,88 @@ struct UserProfileCard: View {
     var profilePicture: String
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(model.objectsClrDark)
-                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
-                .cornerRadius(model.screenSize.width / 28)
-            
-            HStack {
-                Spacer()
-                
-                Image(profilePicture)
-                    .resizable()
-                    .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
-                    .padding(.trailing, model.screenSize.width / 50)
-                
-                VStack {
-                    Text(userSettings.bakalariUsername)
-                        .foregroundColor(model.fontClr)
-                        .font(.system(size: model.screenSize.width / 18))
+        switch service {
+            case .bakalari:
+                ZStack {
+                    Rectangle()
+                        .fill(model.objectsClrDark)
+                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
+                        .cornerRadius(model.screenSize.width / 28)
                     
-                    Text(description)
-                        .foregroundColor(model.objectsClrLight)
-                        .font(.system(size: model.screenSize.width / 25))
+                    HStack {
+                        Spacer()
+                        
+                        Image(profilePicture)
+                            .resizable()
+                            .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                            .padding(.trailing, model.screenSize.width / 50)
+                        
+                        VStack {
+                            Text(userSettings.bakalariUsername)
+                                .foregroundColor(model.fontClr)
+                                .font(.system(size: model.screenSize.width / 18))
+                            
+                            Text(description)
+                                .foregroundColor(model.objectsClrLight)
+                                .font(.system(size: model.screenSize.width / 25))
+                        }
+                        
+                        Spacer()
+                    }
+                }.contextMenu {
+                    Button(role: .destructive,
+                           action: {
+                                userSettings.bakalariRefreshToken = ""
+                                userSettings.bakalariAccessToken = ""
+                            },
+                           
+                           label: {
+                                Label("Sign out", systemImage: "trash")
+                    })
                 }
-                
-                Spacer()
+            
+            case .strava:
+                ZStack {
+                    Rectangle()
+                        .fill(model.objectsClrDark)
+                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
+                        .cornerRadius(model.screenSize.width / 28)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Image(profilePicture)
+                            .resizable()
+                            .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                            .padding(.trailing, model.screenSize.width / 50)
+                        
+                        VStack {
+                            Text(userSettings.stravaDisplayName)
+                                .foregroundColor(model.fontClr)
+                                .font(.system(size: model.screenSize.width / 18))
+                            
+                            Text(description)
+                                .foregroundColor(model.objectsClrLight)
+                                .font(.system(size: model.screenSize.width / 25))
+                        }
+                        
+                        Spacer()
+                    }
+                }.contextMenu {
+                    Button(role: .destructive,
+                           action: {
+                                userSettings.stravaToken = ""
+                                userSettings.stravaDisplayName = ""
+                            },
+                           
+                           label: {
+                                Label("Sign out", systemImage: "trash")
+                    })
             }
-        }.contextMenu {
-            Button(role: .destructive,
-                   action: {
-                        userSettings.bakalariRefreshToken = ""
-                        userSettings.bakalariAccessToken = ""
-                    },
-                   
-                   label: {
-                        Label("Sign out", systemImage: "trash")
-            })
         }
     }
 }
