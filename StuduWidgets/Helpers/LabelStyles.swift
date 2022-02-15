@@ -176,6 +176,11 @@ struct WidgetCardLabel: View {
     }
 }
 
+enum LoginService: String {
+    case strava = "Strava.cz"
+    case bakalari = "Bakaláři"
+}
+
 
 // MARK: User profile card
 
@@ -186,7 +191,7 @@ struct UserProfileCard: View {
     
     var profilePicture: String
     var name: String
-    var service: String
+    var service: LoginService
     var description: String
     
     var body: some View {
