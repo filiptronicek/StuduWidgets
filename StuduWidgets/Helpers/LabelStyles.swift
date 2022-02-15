@@ -178,7 +178,7 @@ struct WidgetCardLabel: View {
 
 enum LoginService: String {
     case strava = "Strava.cz"
-    case bakalari = "Bakaláři"
+    case bakalari = "Bakaláři.cz"
 }
 
 
@@ -188,13 +188,52 @@ struct UserProfileCard: View {
     // Access data in ContentModel.swift
     
     @EnvironmentObject var model: ContentModel
+    @ObservedObject var userSettings = ContentModel.UserSettings()
     
-    var profilePicture: String
-    var name: String
     var service: LoginService
     var description: String
     
+    var profilePicture: String
+    
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            Rectangle()
+                .fill(model.objectsClrDark)
+                .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
+                .cornerRadius(model.screenSize.width / 28)
+            
+            HStack {
+                Spacer()
+                
+                Image(profilePicture)
+                    .resizable()
+                    .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                    .padding(.trailing, model.screenSize.width / 50)
+                
+                VStack {
+                    Text(userSettings.bakalariUsername)
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 18))
+                    
+                    Text(description)
+                        .foregroundColor(model.objectsClrLight)
+                        .font(.system(size: model.screenSize.width / 25))
+                }
+                
+                Spacer()
+            }
+        }.contextMenu {
+            Button(role: .destructive,
+                   action: {
+                        userSettings.bakalariRefreshToken = ""
+                        userSettings.bakalariAccessToken = ""
+                    },
+                   
+                   label: {
+                        Label("Sign out", systemImage: "trash")
+            })
+        }
     }
 }
