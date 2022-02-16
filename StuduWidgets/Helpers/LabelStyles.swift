@@ -193,7 +193,8 @@ struct UserProfileCard: View {
     var service: LoginService
     var description: String
     
-    var profilePicture: String
+    var profilePicture: [String] = ["maleicon", "femaleicon"]
+    var index: Int = Int.random(in: 0...1)
     
     var body: some View {
         switch service {
@@ -207,7 +208,7 @@ struct UserProfileCard: View {
                     HStack {
                         Spacer()
                         
-                        Image(profilePicture)
+                        Image(profilePicture[index])
                             .resizable()
                             .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                             .clipShape(Circle())
@@ -248,7 +249,7 @@ struct UserProfileCard: View {
                     HStack {
                         Spacer()
                         
-                        Image(profilePicture)
+                        Image(profilePicture[index])
                             .resizable()
                             .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                             .clipShape(Circle())
@@ -284,7 +285,7 @@ struct UserProfileCard: View {
 
 struct UserProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileCard(service: .strava, description: "Strava.cz", profilePicture: "circle.fill")
+        UserProfileCard(service: .strava, description: "Strava.cz")
             .environmentObject(ContentModel())
     }
 }
