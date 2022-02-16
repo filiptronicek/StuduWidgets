@@ -292,7 +292,7 @@ struct UserProfileCard: View {
 
 struct UserProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileCard(service: .strava, description: "Strava.cz")
+        UserProfileCard(service: .bakalari, description: "Strava.cz")
             .environmentObject(ContentModel())
     }
 }
