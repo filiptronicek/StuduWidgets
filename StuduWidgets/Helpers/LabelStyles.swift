@@ -195,6 +195,7 @@ struct UserProfileCard: View {
     
     var profilePicture: [String] = ["maleicon", "femaleicon"]
     var index: Int = Int.random(in: 0...1)
+    var hueDegrees: Double = Double.random(in: 30...330)
     
     var body: some View {
         switch service {
@@ -210,6 +211,7 @@ struct UserProfileCard: View {
                         
                         Image(profilePicture[index])
                             .resizable()
+                            .hueRotation(.degrees(hueDegrees))
                             .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
@@ -251,6 +253,7 @@ struct UserProfileCard: View {
                         
                         Image(profilePicture[index])
                             .resizable()
+                            .hueRotation(.degrees(hueDegrees))
                             .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
