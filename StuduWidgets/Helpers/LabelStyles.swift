@@ -194,7 +194,7 @@ struct UserProfileCard: View {
     var description: String
     
     var profilePicture: [String] = ["maleicon", "femaleicon"]
-    var index: Int = Int.random(in: 0...1)
+    @State var index: Int = Int.random(in: 0...1)
     @State var hueDegrees: Double = Double.random(in: 30...330)
     
     var body: some View {
@@ -207,6 +207,7 @@ struct UserProfileCard: View {
                         .cornerRadius(model.screenSize.width / 28)
                     
                     Button(action: {
+                                index = Int.random(in: 0...1)
                                 hueDegrees = Double.random(in: 0...360)
                             },
                            label: {
@@ -251,6 +252,7 @@ struct UserProfileCard: View {
                         .cornerRadius(model.screenSize.width / 28)
                     
                     Button(action: {
+                                index = Int.random(in: 0...1)
                                 hueDegrees = Double.random(in: 0...360)
                             },
                            label: {
