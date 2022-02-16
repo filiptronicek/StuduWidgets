@@ -195,7 +195,7 @@ struct UserProfileCard: View {
     
     var profilePicture: [String] = ["maleicon", "femaleicon"]
     var index: Int = Int.random(in: 0...1)
-    var hueDegrees: Double = Double.random(in: 30...330)
+    @State var hueDegrees: Double = Double.random(in: 30...330)
     
     var body: some View {
         switch service {
@@ -206,18 +206,23 @@ struct UserProfileCard: View {
                         .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
                         .cornerRadius(model.screenSize.width / 28)
                     
+                    Button(action: {
+                                hueDegrees = Double.random(in: 0...360)
+                            },
+                           label: {
+                                Image(profilePicture[index])
+                                    .resizable()
+                                    .hueRotation(.degrees(hueDegrees))
+                                    .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                                    .padding(.trailing, model.screenSize.width / 50)
+                    }).frame(width: model.screenSize.width / 1.6, alignment: .leading)
+                   
                     HStack {
                         Spacer()
                         
-                        Image(profilePicture[index])
-                            .resizable()
-                            .hueRotation(.degrees(hueDegrees))
-                            .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
-                            .padding(.trailing, model.screenSize.width / 50)
-                        
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(userSettings.bakalariUsername)
                                 .foregroundColor(model.fontClr)
                                 .font(.system(size: model.screenSize.width / 18))
@@ -225,9 +230,7 @@ struct UserProfileCard: View {
                             Text(description)
                                 .foregroundColor(model.objectsClrLight)
                                 .font(.system(size: model.screenSize.width / 25))
-                        }
-                        
-                        Spacer()
+                        }.frame(width: model.screenSize.width / 1.8, alignment: .leading)
                     }
                 }.contextMenu {
                     Button(role: .destructive,
@@ -248,18 +251,23 @@ struct UserProfileCard: View {
                         .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 4)
                         .cornerRadius(model.screenSize.width / 28)
                     
+                    Button(action: {
+                                hueDegrees = Double.random(in: 0...360)
+                            },
+                           label: {
+                                Image(profilePicture[index])
+                                    .resizable()
+                                    .hueRotation(.degrees(hueDegrees))
+                                    .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
+                                    .padding(.trailing, model.screenSize.width / 50)
+                    }).frame(width: model.screenSize.width / 1.6, alignment: .leading)
+                   
                     HStack {
                         Spacer()
                         
-                        Image(profilePicture[index])
-                            .resizable()
-                            .hueRotation(.degrees(hueDegrees))
-                            .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
-                            .padding(.trailing, model.screenSize.width / 50)
-                        
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text(userSettings.stravaDisplayName)
                                 .foregroundColor(model.fontClr)
                                 .font(.system(size: model.screenSize.width / 18))
@@ -267,9 +275,7 @@ struct UserProfileCard: View {
                             Text(description)
                                 .foregroundColor(model.objectsClrLight)
                                 .font(.system(size: model.screenSize.width / 25))
-                        }
-                        
-                        Spacer()
+                        }.frame(width: model.screenSize.width / 1.8, alignment: .leading)
                     }
                 }.contextMenu {
                     Button(role: .destructive,
@@ -288,7 +294,7 @@ struct UserProfileCard: View {
 
 struct UserProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileCard(service: .strava, description: "Strava.cz")
+        UserProfileCard(service: .bakalari, description: "Strava.cz")
             .environmentObject(ContentModel())
     }
 }
