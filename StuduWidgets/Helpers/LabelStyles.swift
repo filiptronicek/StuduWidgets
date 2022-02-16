@@ -176,6 +176,7 @@ struct WidgetCardLabel: View {
     }
 }
 
+
 enum LoginService: String {
     case strava = "Strava.cz"
     case bakalari = "Bakaláři.cz"
@@ -245,7 +246,7 @@ struct UserProfileCard: View {
                            label: {
                                 Label("Sign out", systemImage: "trash")
                     })
-                }
+                }.preferredColorScheme(.dark)
             
             // MARK: case .strava
             
@@ -292,7 +293,7 @@ struct UserProfileCard: View {
                            label: {
                                 Label("Sign out", systemImage: "trash")
                     })
-            }
+            }.preferredColorScheme(.dark)
         }
     }
 }
