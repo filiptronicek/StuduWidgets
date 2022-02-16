@@ -69,6 +69,7 @@ struct BakalariLoginSheet: View {
                         Button(action: {
                                     statusFontColor = Color(red: 1, green: 203 / 255, blue: 107 / 255)
                                     tokenOutput = "Loading..."
+                                    userSettings.bakalariRefreshToken = "0"
                                     
                                     if (userSettings.bakalariEndpoint == "" || userSettings.bakalariUsername == "" || userSettings.bakalariPassword == "") {
                                         statusFontColor = Color(red: 252 / 255, green: 98 / 255, blue: 98 / 255)
