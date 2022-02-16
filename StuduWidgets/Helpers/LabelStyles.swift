@@ -216,8 +216,7 @@ struct UserProfileCard: View {
                                     .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                                     .clipShape(Circle())
                                     .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
-                                    .padding(.trailing, model.screenSize.width / 50)
-                    }).frame(width: model.screenSize.width / 1.6, alignment: .leading)
+                    }).frame(width: model.screenSize.width / 1.45, alignment: .leading)
                    
                     HStack {
                         Spacer()
@@ -230,7 +229,7 @@ struct UserProfileCard: View {
                             Text(description)
                                 .foregroundColor(model.objectsClrLight)
                                 .font(.system(size: model.screenSize.width / 25))
-                        }.frame(width: model.screenSize.width / 1.8, alignment: .leading)
+                        }.frame(width: model.screenSize.width / 1.65, alignment: .leading)
                     }
                 }.contextMenu {
                     Button(role: .destructive,
@@ -261,8 +260,7 @@ struct UserProfileCard: View {
                                     .frame(width: model.screenSize.width / 5.5, height: model.screenSize.width / 5.5)
                                     .clipShape(Circle())
                                     .overlay(Circle().stroke(model.fontClr, lineWidth: model.screenSize.width / 150))
-                                    .padding(.trailing, model.screenSize.width / 50)
-                    }).frame(width: model.screenSize.width / 1.6, alignment: .leading)
+                    }).frame(width: model.screenSize.width / 1.45, alignment: .leading)
                    
                     HStack {
                         Spacer()
@@ -275,7 +273,7 @@ struct UserProfileCard: View {
                             Text(description)
                                 .foregroundColor(model.objectsClrLight)
                                 .font(.system(size: model.screenSize.width / 25))
-                        }.frame(width: model.screenSize.width / 1.8, alignment: .leading)
+                        }.frame(width: model.screenSize.width / 1.65, alignment: .leading)
                     }
                 }.contextMenu {
                     Button(role: .destructive,
@@ -294,7 +292,7 @@ struct UserProfileCard: View {
 
 struct UserProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileCard(service: .bakalari, description: "Strava.cz")
+        UserProfileCard(service: .strava, description: "Strava.cz")
             .environmentObject(ContentModel())
     }
 }
