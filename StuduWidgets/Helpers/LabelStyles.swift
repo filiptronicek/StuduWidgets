@@ -199,6 +199,9 @@ struct UserProfileCard: View {
     
     var body: some View {
         switch service {
+            
+            // MARK: case .bakalari
+            
             case .bakalari:
                 ZStack {
                     Rectangle()
@@ -243,6 +246,8 @@ struct UserProfileCard: View {
                                 Label("Sign out", systemImage: "trash")
                     })
                 }
+            
+            // MARK: case .strava
             
             case .strava:
                 ZStack {
@@ -294,7 +299,7 @@ struct UserProfileCard: View {
 
 struct UserProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileCard(service: .bakalari, description: "Strava.cz")
+        UserProfileCard(service: .strava, description: "Strava.cz")
             .environmentObject(ContentModel())
     }
 }
