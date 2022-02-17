@@ -287,7 +287,6 @@ struct UserProfileCard: View {
                     Button(role: .destructive,
                            action: {
                                 userSettings.stravaToken = ""
-                                userSettings.stravaDisplayName = ""
                             },
                            
                            label: {
@@ -300,7 +299,7 @@ struct UserProfileCard: View {
 
 struct UserProfileCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserProfileCard(service: .strava, description: "Strava.cz")
+        UserProfileCard(service: .bakalari, description: "Strava.cz")
             .environmentObject(ContentModel())
     }
 }
