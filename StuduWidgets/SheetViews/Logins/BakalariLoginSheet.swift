@@ -135,5 +135,6 @@ struct BakalariLoginSheet: View {
 struct BakalariLoginSheet_Previews: PreviewProvider {
     static var previews: some View {
         BakalariLoginSheet()
+            .environmentObject(ContentModel())
     }
 }
