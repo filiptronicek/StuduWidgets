@@ -19,8 +19,26 @@ struct FeedbackSheet: View {
             VStack {
                 ScrollView {
                     VStack {
-                        Heading(text: "Let us know what we suck at")
+                        Heading(text: "Form")
                             .padding([.top], model.screenSize.width / 5)
+                        
+                        Rectangle()
+                            .fill(model.objectsClrMedium)
+                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width)
+                            .cornerRadius(model.screenSize.width / 28)
+                            .padding()
+                        
+                        ZStack {
+                            Rectangle()
+                                .fill(model.objectsClrMedium)
+                                .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 8)
+                                .cornerRadius(model.screenSize.width / 28)
+                        
+                            Text("Send")
+                                .foregroundColor(model.fontClr)
+                                .font(.system(size: model.screenSize.width / 17))
+                                .frame(width: model.screenSize.width / 1.6, height: model.screenSize.width / 8, alignment: .center)
+                        }
                     }.padding(.bottom, model.screenSize.width / 5)
                 }
             }
