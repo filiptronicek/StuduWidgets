@@ -130,9 +130,26 @@ struct SettingsView: View {
                                label: {ButtonLabel(text: "What's coming?")
                         }).sheet(isPresented: $model.showingNewsSheet) {NewsSheet()}
                         
-                        Button(action: {model.showingTermsSheet.toggle()},
-                               label: {ButtonLabel(text: "Terms and Conditions")
-                        }).sheet(isPresented: $model.showingTermsSheet) {TermsSheet()}
+                        Link(destination: URL(string: "https://github.com/filiptronicek/StuduWidgets/blob/main/docs/PRIVACY.md")!,
+                             label: {
+                                ZStack {
+                                    Rectangle()
+                                        .fill(model.objectsClrDark)
+                                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                        .cornerRadius(model.screenSize.width / 28)
+                                
+                                    Text("Privacy policy")
+                                        .foregroundColor(model.fontClr)
+                                        .font(.system(size: model.screenSize.width / 17))
+                                        .frame(width: model.screenSize.width / 1.4, height: model.screenSize.width / 8, alignment: .leading)
+                                    
+                                    Image(systemName: "chevron.right")
+                                        .resizable()
+                                        .foregroundColor(model.objectsClrLight)
+                                        .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
+                                        .padding(.leading, model.screenSize.width / 1.5)
+                                }
+                        })
                         
                         Heading(text: "Help")
                             .padding(.top, model.screenSize.width / 15)
