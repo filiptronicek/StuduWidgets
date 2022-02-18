@@ -143,10 +143,10 @@ struct SettingsView: View {
                                         .font(.system(size: model.screenSize.width / 17))
                                         .frame(width: model.screenSize.width / 1.4, height: model.screenSize.width / 8, alignment: .leading)
                                     
-                                    Image(systemName: "chevron.right")
+                                    Image(systemName: "square.and.arrow.up")
                                         .resizable()
                                         .foregroundColor(model.objectsClrLight)
-                                        .frame(width: model.screenSize.width / 30, height: model.screenSize.width / 20)
+                                        .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 16)
                                         .padding(.leading, model.screenSize.width / 1.5)
                                 }
                         })
