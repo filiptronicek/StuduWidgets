@@ -99,7 +99,7 @@ struct SettingsView: View {
                                 
                                 Text("Appearance")
                                     .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 18))
+                                    .font(.system(size: model.screenSize.width / 17))
                                     .frame(width: model.screenSize.width / 1.4, height: model.screenSize.width / 8, alignment: .leading)
                                         
                                 if model.darkThemeIsActive {
