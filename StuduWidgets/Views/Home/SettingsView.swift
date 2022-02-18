@@ -17,7 +17,7 @@ struct SettingsView: View {
         VStack {
             ScrollView(showsIndicators: false) {
                 VStack {
-                    // MARK: Accounts section
+                    // MARK: Accounts
                     
                     Heading(text: "Accounts")
                         .padding(.top, model.screenSize.width / 5)
@@ -78,15 +78,15 @@ struct SettingsView: View {
                         }
                     
                     
-                    // MARK: Color theme section
+                    // MARK: General
 
-                    Heading(text: "Color theme")
+                    Heading(text: "General")
                         .padding(.top, model.screenSize.width / 15)
                     
                     Group {
                         Button(action: {
                                     withAnimation {
-                                        model.darkThemeIsActive = true
+                                        model.darkThemeIsActive.toggle()
                             
                                         model.changeColorTheme()
                                     }
@@ -97,46 +97,22 @@ struct SettingsView: View {
                                     .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
                                     .cornerRadius(model.screenSize.width / 28)
                                 
-                                Text("Dark (default)")
+                                Text("Appearance")
                                     .foregroundColor(model.fontClr)
                                     .font(.system(size: model.screenSize.width / 18))
-                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
+                                    .frame(width: model.screenSize.width / 1.4, height: model.screenSize.width / 8, alignment: .leading)
                                         
                                 if model.darkThemeIsActive {
                                     Group {
-                                        Image(systemName: "checkmark")
-                                            .resizable()
+                                        Text("Dark")
                                             .foregroundColor(model.objectsClrLight)
-                                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                            .font(.system(size: model.screenSize.width / 20))
                                     }.frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .trailing)
-                                }
-                            }
-                        })
-                        
-                        Button(action: {
-                                    withAnimation {
-                                        model.darkThemeIsActive = false
-                                    
-                                        model.changeColorTheme()
-                                    }
-                        }, label: {
-                            ZStack {
-                                Rectangle()
-                                    .fill(model.objectsClrDark)
-                                    .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                    .cornerRadius(model.screenSize.width / 28)
-
-                                Text("Light (lame)")
-                                    .foregroundColor(model.fontClr)
-                                    .font(.system(size: model.screenSize.width / 18))
-                                    .frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .leading)
-                                    
-                                if !model.darkThemeIsActive {
+                                } else {
                                     Group {
-                                        Image(systemName: "checkmark")
-                                            .resizable()
+                                        Text("Light")
                                             .foregroundColor(model.objectsClrLight)
-                                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
+                                            .font(.system(size: model.screenSize.width / 20))
                                     }.frame(width: model.screenSize.width / 1.5, height: model.screenSize.width / 8, alignment: .trailing)
                                 }
                             }
@@ -144,7 +120,7 @@ struct SettingsView: View {
                     }
                     
                     
-                    // MARK: Information section
+                    // MARK: Information
                     
                     Heading(text: "Information")
                         .padding(.top, model.screenSize.width / 15)
