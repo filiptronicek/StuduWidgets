@@ -17,7 +17,7 @@ struct WidgetsView: View {
         ScrollView(showsIndicators: false) {
             ZStack {
                 VStack {
-                    // MARK: Get started section
+                    // MARK: Get started
                     
                     if userSettings.bakalariRefreshToken == "" && userSettings.stravaToken == "" {
                         Heading(text: "Get started")
@@ -42,7 +42,7 @@ struct WidgetsView: View {
                     }
                     
                     
-                    // MARK: Widgets section
+                    // MARK: Widgets
                     
                     Heading(text: "Widgets")
                         .padding(.top, model.screenSize.width / 5)
