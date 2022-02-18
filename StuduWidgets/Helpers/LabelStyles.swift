@@ -271,7 +271,7 @@ struct UserProfileCard: View {
                            label: {
                                 Label("Sign out", systemImage: "trash")
                     })
-                }.preferredColorScheme(.dark)
+                }
             
             // MARK: case .strava
             
@@ -317,7 +317,7 @@ struct UserProfileCard: View {
                            label: {
                                 Label("Sign out", systemImage: "trash")
                     })
-            }.preferredColorScheme(.dark)
+            }
         }
     }
 }

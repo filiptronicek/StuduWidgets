@@ -74,7 +74,6 @@ struct SettingsView: View {
                                 }
                             }.sheet(isPresented: $model.showingLoginStrava) {StravaLoginSheet()}
                             .sheet(isPresented: $model.showingLoginBakalari) {BakalariLoginSheet()}
-                            .preferredColorScheme(.dark)
                         }
                     
                     
