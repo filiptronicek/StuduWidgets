@@ -90,17 +90,7 @@ struct StravaLoginSheet: View {
                                     }
                                 },
                                label: {
-                                    ZStack {
-                                        Rectangle()
-                                            .fill(model.objectsClrMedium)
-                                            .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 8)
-                                            .cornerRadius(model.screenSize.width / 28)
-                                    
-                                        Text("Log in")
-                                            .foregroundColor(model.fontClr)
-                                            .font(.system(size: model.screenSize.width / 17))
-                                            .frame(width: model.screenSize.width / 1.6, height: model.screenSize.width / 8, alignment: .center)
-                                    }
+                                    SmallButtonLabel(text: "Log in")
                         })
                         
                         Text(userSettings.stravaDisplayName).foregroundColor(Color.white)
