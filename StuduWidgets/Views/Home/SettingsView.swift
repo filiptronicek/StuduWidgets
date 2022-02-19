@@ -30,7 +30,8 @@ struct SettingsView: View {
                         if userSettings.stravaToken != "" {
                             UserProfileCard(service: .strava, description: "Strava.cz")
                         }
-                            
+                                
+                        if !(userSettings.stravaToken != "" && userSettings.bakalariRefreshToken != "") {
                             Menu {
                                 if userSettings.bakalariRefreshToken == "" {
                                     Button(action: {
@@ -52,29 +53,27 @@ struct SettingsView: View {
                                     })
                                 }
                             } label: {
-                                    ZStack {
-                                        if !(userSettings.stravaToken != "" && userSettings.bakalariRefreshToken != "") {
-
-                                        Rectangle()
-                                                .fill(model.objectsClrDark)
-                                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                            .cornerRadius(model.screenSize.width / 28)
+                                ZStack {
+                                    Rectangle()
+                                            .fill(model.objectsClrDark)
+                                        .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
+                                        .cornerRadius(model.screenSize.width / 28)
+                                    
+                                    HStack {
+                                        Image(systemName: "plus")
+                                            .resizable()
+                                            .foregroundColor(Color.blue)
+                                            .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
                                         
-                                        HStack {
-                                            Image(systemName: "plus")
-                                                .resizable()
-                                                .foregroundColor(Color.blue)
-                                                .frame(width: model.screenSize.width / 20, height: model.screenSize.width / 20)
-                                            
-                                            Text("Add account")
-                                                .foregroundColor(Color.blue)
-                                                .font(.system(size: model.screenSize.width / 18))
-                                        }
+                                        Text("Add account")
+                                            .foregroundColor(Color.blue)
+                                            .font(.system(size: model.screenSize.width / 18))
                                     }
                                 }
                             }.sheet(isPresented: $model.showingLoginStrava) {StravaLoginSheet()}
                             .sheet(isPresented: $model.showingLoginBakalari) {BakalariLoginSheet()}
                         }
+                    }
                     
                     
                     // MARK: General

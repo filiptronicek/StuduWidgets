@@ -264,8 +264,10 @@ struct UserProfileCard: View {
                 }.contextMenu {
                     Button(role: .destructive,
                            action: {
-                                userSettings.bakalariRefreshToken = ""
-                                userSettings.bakalariAccessToken = ""
+                                withAnimation {
+                                    userSettings.bakalariRefreshToken = ""
+                                    userSettings.bakalariAccessToken = ""
+                                }
                             },
                            
                            label: {
@@ -311,7 +313,9 @@ struct UserProfileCard: View {
                 }.contextMenu {
                     Button(role: .destructive,
                            action: {
-                                userSettings.stravaToken = ""
+                                withAnimation {
+                                    userSettings.stravaToken = ""
+                                }
                             },
                            
                            label: {
