@@ -67,6 +67,13 @@ struct TimetableWidgetPreview: View {
     }
 }
 
+struct TimetableWidgetPreview_Previews: PreviewProvider {
+    static var previews: some View {
+        TimetableWidgetPreview(mockData: ["Ch", "M"], size: "Small")
+            .environmentObject(ContentModel())
+    }
+}
+
 
 // MARK: LunchWidget
 
@@ -142,5 +149,12 @@ struct LunchWidgetPreview: View {
         } else {
             Text("Size not implemented")
         }
+    }
+}
+
+struct LunchWidgetPreview_Previews: PreviewProvider {
+    static var previews: some View {
+        LunchWidgetPreview(mockData: "Kuřecí řízek, bramborová kaše", size: "Small")
+            .environmentObject(ContentModel())
     }
 }
