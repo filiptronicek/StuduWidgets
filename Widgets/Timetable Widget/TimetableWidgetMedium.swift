@@ -39,7 +39,7 @@ struct TimetableWidgetMedium: View {
                         
                         Rectangle()
                             .fill(model.WfontClr)
-                            .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 15)
+                            .frame(width: model.screenSize.width / 150, height: model.screenSize.width / 25)
                     }
                 }.frame(width: model.screenSize.width / 0.5, height: model.screenSize.width)
                     .offset(x: 100)

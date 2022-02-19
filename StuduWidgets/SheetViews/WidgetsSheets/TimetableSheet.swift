@@ -21,8 +21,12 @@ struct TimetableSheet: View {
             VStack {
                 ScrollView(showsIndicators: false) {
                     VStack {
+                        Button(action: {},
+                               label: { TimetableWidgetPreview(data: ["Ch", "M"], size: "Small")
+                        }).padding(.top, model.screenSize.width / 3)
+                        
                         Heading(text: "Get started")
-                            .padding(.top, model.screenSize.width / 5)
+                            .padding(.top, model.screenSize.width / 6)
                             .padding(.bottom, model.screenSize.width / 60)
                         
                         Text("TimeTable Widget lets you view your school subjects on Home Screen!")

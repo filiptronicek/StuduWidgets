@@ -19,25 +19,13 @@ struct LunchSheet: View {
             VStack {
                 ScrollView {
                     VStack {
-                        Heading(text: "Customization")
-                            .padding([.top], model.screenSize.width / 5)
-                        
                         Button(action: {},
                                label: {
-                                    ZStack {
-                                        Rectangle()
-                                            .fill(model.objectsClrMedium)
-                                            .frame(width: model.screenSize.width / 1.1, height: model.screenSize.width / 8)
-                                            .cornerRadius(model.screenSize.width / 28)
-                                        
-                                        HStack {
-                                            Text("Layout")
-                                                .foregroundColor(model.fontClr)
-                                                .font(.system(size: model.screenSize.width / 20))
-                                                .padding(.trailing, model.screenSize.width / 1.655)
-                                        }
-                                }
-                        })
+                                    LunchWidgetPreview(data: "Kuřecí řízek, bramborová kaše", size: "Small")
+                        }).padding(.top, model.screenSize.width / 3)
+                        
+                        Heading(text: "Get started")
+                            .padding([.top], model.screenSize.width / 5)
                     }.padding(.bottom, model.screenSize.width / 5)
                 }
             }
