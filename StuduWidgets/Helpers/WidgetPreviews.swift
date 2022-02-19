@@ -15,14 +15,23 @@ struct TimetableWidgetPreview: View {
     
     @EnvironmentObject var model: ContentModel
     
-    var mockData: [String]
+    var data: [String]
     var size: String
     
     var body: some View {
         if size == "Small" {
             ZStack {
+                Rectangle()
+                    .fill(model.Wbg)
+                    .frame(width: model.screenSize.width / 2.5, height: model.screenSize.width / 2.5)
+                    .cornerRadius(23)
+                
+                Rectangle()
+                    .fill(model.WobjectClrBlue)
+                    .frame(width: model.screenSize.width / 300, height: model.screenSize.width / 2.5)
+                
                 HStack {
-                    ForEach(mockData, id: \.self) { subject in
+                    ForEach(data, id: \.self) { subject in
                         ZStack {
                             Text(subject)
                                 .foregroundColor(model.WfontClrDark)
@@ -42,8 +51,17 @@ struct TimetableWidgetPreview: View {
             }
         } else if size == "Medium" {
             ZStack {
+                Rectangle()
+                    .fill(model.Wbg)
+                    .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 2.5)
+                    .cornerRadius(25)
+                
+                Rectangle()
+                    .fill(model.WobjectClrBlue)
+                    .frame(width: model.screenSize.width / 300, height: model.screenSize.width / 2.5)
+                
                 HStack {
-                    ForEach(mockData, id: \.self) { subject in
+                    ForEach(data, id: \.self) { subject in
                         ZStack {
                             Text(subject)
                                 .foregroundColor(model.WfontClrDark)
@@ -69,7 +87,7 @@ struct TimetableWidgetPreview: View {
 
 struct TimetableWidgetPreview_Previews: PreviewProvider {
     static var previews: some View {
-        TimetableWidgetPreview(mockData: ["Ch", "M"], size: "Small")
+        TimetableWidgetPreview(data: ["Ch", "M"], size: "Small")
             .environmentObject(ContentModel())
     }
 }
@@ -82,7 +100,7 @@ struct LunchWidgetPreview: View {
     
     @EnvironmentObject var model: ContentModel
     
-    var mockData: String
+    var data: String
     var size: String
     
     var body: some View {
@@ -90,8 +108,8 @@ struct LunchWidgetPreview: View {
             ZStack {
                 Rectangle()
                     .fill(model.WobjectsClrDark)
-                    .frame(width: model.screenSize.width / 4.5, height: model.screenSize.width / 4.5)
-                    .cornerRadius(15)
+                    .frame(width: model.screenSize.width / 2.5, height: model.screenSize.width / 2.5)
+                    .cornerRadius(23)
             
                 HStack() {
                     Text(Date.now, format: .dateTime.day())
@@ -104,7 +122,7 @@ struct LunchWidgetPreview: View {
                 }.padding([.bottom], model.screenSize.width / 5.5)
                 
                 VStack {
-                    Text(mockData)
+                    Text(data)
                         .foregroundColor(model.WfontClr)
                         .font(.system(size: model.screenSize.width / 28))
                         .frame(width: model.screenSize.width / 3.2, height: model.screenSize.width / 6)
@@ -120,31 +138,32 @@ struct LunchWidgetPreview: View {
             ZStack {
                 Rectangle()
                     .fill(model.WobjectsClrDark)
-                    .frame(width: model.screenSize.width / 4.5, height: model.screenSize.width / 4.5)
-                    .cornerRadius(15)
-            
-                HStack() {
-                    Text(Date.now, format: .dateTime.day())
-                        .foregroundColor(model.WfontClr)
-                        .font(.system(size: model.screenSize.width / 10))
-                    
-                    Text(Date.now, format: .dateTime.weekday())
-                        .foregroundColor(model.WfontClr)
-                        .font(.system(size: model.screenSize.width / 20))
-                }.padding([.bottom], model.screenSize.width / 5.5)
+                    .frame(width: model.screenSize.width / 1.2, height: model.screenSize.width / 2.5)
+                    .cornerRadius(25)
                 
-                VStack {
-                    Text(mockData)
-                        .foregroundColor(model.WfontClr)
-                        .font(.system(size: model.screenSize.width / 28))
-                        .frame(width: model.screenSize.width / 3.2, height: model.screenSize.width / 6)
-                        .padding([.horizontal], model.screenSize.width / 40)
-                        .background(
-                            Rectangle()
-                                .fill(model.WobjectsClrMedium)
-                                .cornerRadius(model.screenSize.width / 28)
-                        )
-                }.padding([.top], model.screenSize.width / 6.3)
+                ZStack {
+                    VStack(alignment: .center) {
+                        Text(Date.now, format: .dateTime.weekday())
+                            .foregroundColor(model.WfontClr)
+                            .font(.system(size: model.screenSize.width / 18))
+                        
+                        Text(Date.now, format: .dateTime.day())
+                            .foregroundColor(model.WfontClr)
+                            .font(.system(size: model.screenSize.width / 7))
+                    }.padding([.trailing], model.screenSize.width / 1.87)
+                    
+                    Group {
+                        Text(model.currentLunch)
+                            .foregroundColor(model.WfontClr)
+                            .font(.system(size: model.screenSize.width / 28))
+                            .frame(width: model.screenSize.width / 2, height: model.screenSize.width / 4)
+                            .background(
+                                Rectangle()
+                                    .fill(model.WobjectsClrMedium)
+                                    .cornerRadius(model.screenSize.width / 28)
+                            )
+                    }.padding([.leading], model.screenSize.width / 3.7)
+                }
             }
         } else {
             Text("Size not implemented")
@@ -154,7 +173,7 @@ struct LunchWidgetPreview: View {
 
 struct LunchWidgetPreview_Previews: PreviewProvider {
     static var previews: some View {
-        LunchWidgetPreview(mockData: "Kuřecí řízek, bramborová kaše", size: "Small")
+        LunchWidgetPreview(data: "Kuřecí řízek, bramborová kaše", size: "Small")
             .environmentObject(ContentModel())
     }
 }
