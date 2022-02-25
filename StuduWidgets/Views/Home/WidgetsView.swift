@@ -56,10 +56,10 @@ struct WidgetsView: View {
                 }.padding(.bottom, model.screenSize.width / 3)
                 
                 if userSettings.bakalariRefreshToken == "" && userSettings.stravaToken == "" {
-                    Text("Swipe left ->")
+                    Text("Start by swiping left")
                         .foregroundColor(model.fontClr)
                         .font(.system(size: model.screenSize.width / 18))
-                        .padding([.bottom], model.screenSize.width / 3.2)
+                        .padding([.bottom], model.screenSize.width / 3)
                 }
             }
         }
