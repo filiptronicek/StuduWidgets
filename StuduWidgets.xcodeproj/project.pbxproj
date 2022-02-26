@@ -97,7 +97,6 @@
 		90A6A1342778CC310056C953 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		90A6A1352778CC320056C953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A6A1372778CC320056C953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		90B2519227CAD7EF0076504F /* StuduWidgets.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StuduWidgets.xctestplan; sourceTree = "<group>"; };
 		90BDB221278081D900C73AD5 /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		90C08ABE27AEC137001EC76E /* FeedbackSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSheet.swift; sourceTree = "<group>"; };
 		90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
@@ -182,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				906D20C527BAD1560075EB64 /* Info.plist */,
-				90B2519227CAD7EF0076504F /* StuduWidgets.xctestplan */,
 				908D1AFC277690E1002A0595 /* StuduWidgetsDebug.entitlements */,
 				9096C6242773545300A706B0 /* StuduWidgets.entitlements */,
 				903AA920276D535F0044B05F /* StuduWidgetsApp.swift */,
