@@ -32,6 +32,7 @@
 		90A6A1382778CC320056C953 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1342778CC310056C953 /* Widgets.intentdefinition */; };
 		90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 90A6A1342778CC310056C953 /* Widgets.intentdefinition */; };
 		90A6A13C2778CC320056C953 /* WidgetsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 90A6A12E2778CC310056C953 /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		90B2519A27CAEC520076504F /* StuduWidgetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B2519927CAEC520076504F /* StuduWidgetsTests.swift */; };
 		90BDB222278081D900C73AD5 /* Confetti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BDB221278081D900C73AD5 /* Confetti.swift */; };
 		90C08ABF27AEC137001EC76E /* FeedbackSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C08ABE27AEC137001EC76E /* FeedbackSheet.swift */; };
 		90D7CD8B27A5E1A70027D6D7 /* LabelStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */; };
@@ -51,6 +52,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 90A6A12D2778CC310056C953;
 			remoteInfo = WidgetsExtension;
+		};
+		90B2519B27CAEC520076504F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 903AA915276D535F0044B05F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 903AA91C276D535F0044B05F;
+			remoteInfo = StuduWidgets;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -97,6 +105,8 @@
 		90A6A1342778CC310056C953 /* Widgets.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Widgets.intentdefinition; sourceTree = "<group>"; };
 		90A6A1352778CC320056C953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A6A1372778CC320056C953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B2519727CAEC510076504F /* StuduWidgetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StuduWidgetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B2519927CAEC520076504F /* StuduWidgetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuduWidgetsTests.swift; sourceTree = "<group>"; };
 		90BDB221278081D900C73AD5 /* Confetti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confetti.swift; sourceTree = "<group>"; };
 		90C08ABE27AEC137001EC76E /* FeedbackSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackSheet.swift; sourceTree = "<group>"; };
 		90D7CD8A27A5E1A70027D6D7 /* LabelStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyles.swift; sourceTree = "<group>"; };
@@ -122,6 +132,13 @@
 			files = (
 				90A6A1302778CC310056C953 /* SwiftUI.framework in Frameworks */,
 				90A6A12F2778CC310056C953 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B2519427CAEC510076504F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +180,7 @@
 			children = (
 				903AA91F276D535F0044B05F /* StuduWidgets */,
 				90A6A1312778CC310056C953 /* Widgets */,
+				90B2519827CAEC520076504F /* StuduWidgetsTests */,
 				90A6A10B27786BDA0056C953 /* Frameworks */,
 				903AA91E276D535F0044B05F /* Products */,
 			);
@@ -173,6 +191,7 @@
 			children = (
 				903AA91D276D535F0044B05F /* StuduWidgets.app */,
 				90A6A12E2778CC310056C953 /* WidgetsExtension.appex */,
+				90B2519727CAEC510076504F /* StuduWidgetsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,6 +269,14 @@
 				90A20E512778CD72005F1E33 /* Timetable Widget */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		90B2519827CAEC520076504F /* StuduWidgetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				90B2519927CAEC520076504F /* StuduWidgetsTests.swift */,
+			);
+			path = StuduWidgetsTests;
 			sourceTree = "<group>";
 		};
 		90C08AC027AEF4F9001EC76E /* Helpers */ = {
@@ -338,6 +365,24 @@
 			productReference = 90A6A12E2778CC310056C953 /* WidgetsExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		90B2519627CAEC510076504F /* StuduWidgetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90B2519F27CAEC520076504F /* Build configuration list for PBXNativeTarget "StuduWidgetsTests" */;
+			buildPhases = (
+				90B2519327CAEC510076504F /* Sources */,
+				90B2519427CAEC510076504F /* Frameworks */,
+				90B2519527CAEC510076504F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90B2519C27CAEC520076504F /* PBXTargetDependency */,
+			);
+			name = StuduWidgetsTests;
+			productName = StuduWidgetsTests;
+			productReference = 90B2519727CAEC510076504F /* StuduWidgetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -353,6 +398,10 @@
 					};
 					90A6A12D2778CC310056C953 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					90B2519627CAEC510076504F = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 903AA91C276D535F0044B05F;
 					};
 				};
 			};
@@ -371,6 +420,7 @@
 			targets = (
 				903AA91C276D535F0044B05F /* StuduWidgets */,
 				90A6A12D2778CC310056C953 /* WidgetsExtension */,
+				90B2519627CAEC510076504F /* StuduWidgetsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -392,6 +442,13 @@
 			files = (
 				90A6A1362778CC320056C953 /* Assets.xcassets in Resources */,
 				90D7CD9C27A6EC450027D6D7 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90B2519527CAEC510076504F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +496,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		90B2519327CAEC510076504F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B2519A27CAEC520076504F /* StuduWidgetsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -446,6 +511,11 @@
 			isa = PBXTargetDependency;
 			target = 90A6A12D2778CC310056C953 /* WidgetsExtension */;
 			targetProxy = 90A6A13A2778CC320056C953 /* PBXContainerItemProxy */;
+		};
+		90B2519C27CAEC520076504F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 903AA91C276D535F0044B05F /* StuduWidgets */;
+			targetProxy = 90B2519B27CAEC520076504F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -690,6 +760,44 @@
 			};
 			name = Release;
 		};
+		90B2519D27CAEC520076504F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H4NW3RCM58;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fifarosta.StuduWidgetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StuduWidgets.app/StuduWidgets";
+			};
+			name = Debug;
+		};
+		90B2519E27CAEC520076504F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H4NW3RCM58;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fifarosta.StuduWidgetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StuduWidgets.app/StuduWidgets";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -716,6 +824,15 @@
 			buildConfigurations = (
 				90A6A13E2778CC320056C953 /* Debug */,
 				90A6A13F2778CC320056C953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90B2519F27CAEC520076504F /* Build configuration list for PBXNativeTarget "StuduWidgetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90B2519D27CAEC520076504F /* Debug */,
+				90B2519E27CAEC520076504F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
