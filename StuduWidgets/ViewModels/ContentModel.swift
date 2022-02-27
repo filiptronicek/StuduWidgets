@@ -402,7 +402,7 @@ class ContentModel: ObservableObject {
             self.stravaUsername = UserDefaults.standard.object(forKey: "stravaUsername") as? String ?? ""
             self.stravaPassword = UserDefaults.standard.object(forKey: "stravaPassword") as? String ?? ""
             self.stravaCanteen = UserDefaults.standard.object(forKey: "stravaCanteen") as? String ?? ""
-            self.stravaDisplayName = UserDefaults.standard.object(forKey: "stravaDisplayName") as? String ?? "Filip Brož"
+            self.stravaDisplayName = UserDefaults.standard.object(forKey: "stravaDisplayName") as? String ?? "Tronislav Rostíček"
             self.stravaToken = UserDefaults.standard.object(forKey: "stravaToken") as? String ?? ""
             self.bakalariUsername = UserDefaults.standard.object(forKey: "bakalariUsername") as? String ?? "Rostislav Troníček"
             self.bakalariPassword = UserDefaults.standard.object(forKey: "bakalariPassword") as? String ?? ""
