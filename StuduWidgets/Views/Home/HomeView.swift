@@ -112,7 +112,7 @@ struct HomeView: View {
                             .padding([.bottom], model.screenSize.width / 12)
                     )
             }.ignoresSafeArea()
-        }
+        }.preferredColorScheme(.dark)
     }
 }
 
