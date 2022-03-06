@@ -16,12 +16,10 @@ struct LunchWidgetEntryView : View {
         ZStack {
             switch widgetFamily {
                 case .systemSmall:
-                
                     LunchWidgetSmall(entry: entry)
                         .environmentObject(ContentModel())
                 
                 case .systemMedium:
-                
                     LunchWidgetMedium(entry: entry)
                         .environmentObject(ContentModel())
                 

@@ -16,12 +16,10 @@ struct TimetableWidgetEntryView : View {
         ZStack {
             switch widgetFamily {
                 case .systemSmall:
-                
                     TimetableWidgetSmall(entry: entry)
                         .environmentObject(ContentModel())
                 
                 case .systemMedium:
-                
                     TimetableWidgetMedium(entry: entry)
                         .environmentObject(ContentModel())
                 
