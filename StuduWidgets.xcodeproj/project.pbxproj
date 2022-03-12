@@ -13,6 +13,7 @@
 		902858C12787106F00482F93 /* LunchWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902858C02787106F00482F93 /* LunchWidgetMedium.swift */; };
 		902858C22788ADAF00482F93 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096C647277365C800A706B0 /* ContentModel.swift */; };
 		90333CEB27B542C200DDD2EC /* WidgetPreviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90333CEA27B542C200DDD2EC /* WidgetPreviews.swift */; };
+		90398AAF27DCAA8900A8FB29 /* NavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90398AAE27DCAA8900A8FB29 /* NavigationMenu.swift */; };
 		903AA921276D535F0044B05F /* StuduWidgetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA920276D535F0044B05F /* StuduWidgetsApp.swift */; };
 		903AA923276D535F0044B05F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903AA922276D535F0044B05F /* HomeView.swift */; };
 		903AA925276D53600044B05F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903AA924276D53600044B05F /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		902858BE2787105F00482F93 /* LunchWidgetSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetSmall.swift; sourceTree = "<group>"; };
 		902858C02787106F00482F93 /* LunchWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchWidgetMedium.swift; sourceTree = "<group>"; };
 		90333CEA27B542C200DDD2EC /* WidgetPreviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetPreviews.swift; sourceTree = "<group>"; };
+		90398AAE27DCAA8900A8FB29 /* NavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenu.swift; sourceTree = "<group>"; };
 		903AA91D276D535F0044B05F /* StuduWidgets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StuduWidgets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		903AA920276D535F0044B05F /* StuduWidgetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuduWidgetsApp.swift; sourceTree = "<group>"; };
 		903AA922276D535F0044B05F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				903AA922276D535F0044B05F /* HomeView.swift */,
+				90398AAE27DCAA8900A8FB29 /* NavigationMenu.swift */,
 				90A1FF24277A622200C15484 /* WidgetsView.swift */,
 				90A1FF26277A623700C15484 /* SettingsView.swift */,
 			);
@@ -418,6 +421,7 @@
 				90A6A1392778CC320056C953 /* Widgets.intentdefinition in Sources */,
 				9027145527AC3E50007900D3 /* BakalariLoginSheet.swift in Sources */,
 				90A1FF25277A622200C15484 /* WidgetsView.swift in Sources */,
+				90398AAF27DCAA8900A8FB29 /* NavigationMenu.swift in Sources */,
 				90D7CD9327A6D9500027D6D7 /* OnboardingView.swift in Sources */,
 				DC7A1CB7277918620052135A /* StravaLoginSheet.swift in Sources */,
 			);
