@@ -13,40 +13,77 @@ struct HomeView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
-        ZStack {
-            model.bg.ignoresSafeArea()
-            
-            
-            // MARK: Heading and views
-            
-            TabView(selection: $model.showingSettings) {
-                WidgetsView().tag(0)
+        if model.darkThemeIsActive {
+            ZStack {
+                model.bg.ignoresSafeArea()
                 
-                SettingsView().tag(1)
-            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                .frame(width: model.screenSize.width, height: model.screenSize.height)
-                .ignoresSafeArea()
                 
-            VStack {
-                Text("StuduWidgets")
-                    .foregroundColor(model.fontClr)
-                    .font(.system(size: model.screenSize.width / 10))
-                    .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
-                    .padding(.trailing, model.screenSize.width / 5)
-                    .padding([.top], model.screenSize.width / 10)
-                    .padding([.bottom], model.screenSize.width / 25)
-                    .background(
-                        Rectangle()
-                            .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom))
-                    )
-                Spacer()
-            }.ignoresSafeArea()
-            
+                // MARK: Heading and views
                 
-            // MARK: Navigation menu
-            
-            NavigationMenu()
-        }.preferredColorScheme(.dark)
+                TabView(selection: $model.showingSettings) {
+                    WidgetsView().tag(0)
+                    
+                    SettingsView().tag(1)
+                }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    .frame(width: model.screenSize.width, height: model.screenSize.height)
+                    .ignoresSafeArea()
+                    
+                VStack {
+                    Text("StuduWidgets")
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 10))
+                        .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
+                        .padding(.trailing, model.screenSize.width / 5)
+                        .padding([.top], model.screenSize.width / 10)
+                        .padding([.bottom], model.screenSize.width / 25)
+                        .background(
+                            Rectangle()
+                                .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom))
+                        )
+                    Spacer()
+                }.ignoresSafeArea()
+                
+                    
+                // MARK: Navigation menu
+                
+                NavigationMenu()
+            }.preferredColorScheme(.dark)
+        } else {
+            ZStack {
+                model.bg.ignoresSafeArea()
+                
+                
+                // MARK: Heading and views
+                
+                TabView(selection: $model.showingSettings) {
+                    WidgetsView().tag(0)
+                    
+                    SettingsView().tag(1)
+                }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                    .frame(width: model.screenSize.width, height: model.screenSize.height)
+                    .ignoresSafeArea()
+                    
+                VStack {
+                    Text("StuduWidgets")
+                        .foregroundColor(model.fontClr)
+                        .font(.system(size: model.screenSize.width / 10))
+                        .frame(width: model.screenSize.width, height: model.screenSize.width / 5)
+                        .padding(.trailing, model.screenSize.width / 5)
+                        .padding([.top], model.screenSize.width / 10)
+                        .padding([.bottom], model.screenSize.width / 25)
+                        .background(
+                            Rectangle()
+                                .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg, location: 0), .init(color: model.bg.opacity(0.01), location: 1)]), startPoint: .top, endPoint: .bottom))
+                        )
+                    Spacer()
+                }.ignoresSafeArea()
+                
+                    
+                // MARK: Navigation menu
+                
+                NavigationMenu()
+            }.preferredColorScheme(.light)
+        }
     }
 }
 
