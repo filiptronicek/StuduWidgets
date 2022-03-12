@@ -75,9 +75,9 @@ struct NavigationMenu: View {
             }.padding([.bottom], model.screenSize.width / 11)
                 .background(
                     Rectangle()
-                        .fill(LinearGradient(gradient: Gradient(stops: [.init(color: model.bg.opacity(0.01), location: 0), .init(color: model.bg, location: 1)]), startPoint: .top, endPoint: .bottom))
-                        .frame(width: model.screenSize.width, height: model.screenSize.width / 3)
-                        .padding([.bottom], model.screenSize.width / 12)
+                        .fill(model.bg)
+                        .frame(width: model.screenSize.width, height: model.screenSize.width / 2.8)
+                        .blur(radius: 15, opaque: false)
                 )
         }.ignoresSafeArea()
     }
